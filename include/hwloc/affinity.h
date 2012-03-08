@@ -28,7 +28,7 @@ struct infoPCI
     char* _name;
     int _deviceId;
     hwloc_obj_t _ancestorSocket_Node;
-    hwloc_cpuset_t _cpuset;
+    hwloc_bitmap_t _cpuSet;
 };
 
 bool queryDisplay(char* displayName, int& gpuId)
@@ -74,9 +74,7 @@ bool queryDisplay(char* displayName, int& gpuId)
     XCloseDisplay(display);
 
     return false;
-
 }
-
 
 int queryDevices()
 {
@@ -117,13 +115,15 @@ int queryDevices()
     return -1;
 }
 
-
 /*
  * Returns a list of the PCI device existing in your topology,
  * and their related information.
  * */
-bool getPciDeviceInfo(infoPCI*& deviceList, int& deviceCount)
+infoPCI* getPciDeviceInfo(int& deviceCount)
 {
+    /* Info about all the PCI device in the topology */
+    infoPCI* deviceList;
+
     /* Topology object */
     hwloc_topology_t topology;
 
@@ -140,21 +140,17 @@ bool getPciDeviceInfo(infoPCI*& deviceList, int& deviceCount)
 
     /* Flags not set */
     if (_return < 0)
-    {
         printf("hwloc_topology_set_flags() failed \n");
-        return false;
-    }
 
     /* Perform topology detection */
     hwloc_topology_load(topology);
 
-    // print_children(topology, hwloc_get_root_obj(topology), 0);
+    print_children(topology, hwloc_get_root_obj(topology), 0);
 
     /* Get the number of PCi devices in this topology */
     const int pciDevCount = hwloc_get_nbobjs_by_type(topology, HWLOC_OBJ_PCI_DEVICE);
     deviceCount = pciDevCount;
     printf("pciDevCount %d \n", pciDevCount);
-
 
     /* A list of structure holding the needed info about the
      * attached PCI devices */
@@ -173,51 +169,64 @@ bool getPciDeviceInfo(infoPCI*& deviceList, int& deviceCount)
         hwloc_obj_attr_u::hwloc_pcidev_attr_s pciDeviceAttr = pciDeviceObject->attr->pcidev;
         deviceList[i]._deviceId = pciDeviceAttr.device_id;
 
-        /* Ancestor socket or node */
+        /* Ancestor socket (or node) */
         hwloc_obj_t parentObj = hwloc_get_ancestor_obj_by_type
-                                 (topology, HWLOC_OBJ_SOCKET, pciDeviceObject);
+                                 (topology, HWLOC_OBJ_MACHINE, pciDeviceObject);
+
+        /* print_children(topology, parentObj, 0); */
+
+        hwloc_bitmap_t _cpuSet;// = hwloc_bitmap_alloc();
+        // hwloc_bitmap_zero(_cpuSet);
+
         if (parentObj != 0)
         {
             printf("parentSocket is existing \n");
             deviceList[i]._ancestorSocket_Node = parentObj;
+            _cpuSet = parentObj->allowed_cpuset;
+            deviceList[i]._cpuSet = _cpuSet;
 
-            /*
-             * Get the cpu set corresponding to that socket
-             * */
-        }
-        else
-        {
-            printf("parentSocket is NOT existing \n");
-            parentObj = hwloc_get_ancestor_obj_by_type
-                        (topology, HWLOC_OBJ_NODE, pciDeviceObject);
+            char* _cpuset_string;
+            hwloc_bitmap_snprintf(_cpuset_string, sizeof(_cpuset_string), _cpuSet);
+            printf("%s \n", _cpuset_string);
+            free(_cpuset_string);
         }
     }
 
     /* Topology object destruction */
     hwloc_topology_destroy(topology);
 
-    /* Final device list */
     return deviceList;
 }
 
 /* Returns the cpuset of the corresponding socket attached to our GPU */
-void getAutoCpuSet()
+hwloc_bitmap_t getAutoCpuSet()
 {
-    int attchedGpuId = queryDevices();
+
+
+
+    /* Get the PCI ID of the connected GPU */
+    const int attchedGpuId = queryDevices();
 
     /* Device list containing info about PCI devices
      * in our topology and their PCI IDs */
-    infoPCI* deviceList;
     int deviceCount;
-    getPciDeviceInfo(deviceList, deviceCount);
+    infoPCI* deviceList = getPciDeviceInfo(deviceCount);
 
+    //hwloc_bitmap_t _cpuset = hwloc_bitmap_alloc();
+    //hwloc_bitmap_zero(_cpuset);
+    return deviceList[0]._cpuSet;
+
+/*
     for (int i = 0; i < deviceCount; ++i)
     {
-        if (deviceList[i]._deviceId = attchedGpuId)
+        if (deviceList[i]._deviceId == attchedGpuId)
         {
-            printf("retreiving the _deviceId for %d", attchedGpuId);
+            printf("Catching the device @ %d \n", deviceList[i]._deviceId);
+            // _cpuset = deviceList[i]._ancestorSocket_Node->cpuset;
+            // return _cpuset;
+
 
         }
     }
-
+*/
 }
