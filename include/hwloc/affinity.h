@@ -9,6 +9,40 @@
 #include <NVCtrlLib.h>
 
 
+static char *display_device_name(int mask)
+{
+    switch (mask) {
+    case (1 <<  0): return "CRT-0"; break;
+    case (1 <<  1): return "CRT-1"; break;
+    case (1 <<  2): return "CRT-2"; break;
+    case (1 <<  3): return "CRT-3"; break;
+    case (1 <<  4): return "CRT-4"; break;
+    case (1 <<  5): return "CRT-5"; break;
+    case (1 <<  6): return "CRT-6"; break;
+    case (1 <<  7): return "CRT-7"; break;
+
+    case (1 <<  8): return "TV-0"; break;
+    case (1 <<  9): return "TV-1"; break;
+    case (1 << 10): return "TV-2"; break;
+    case (1 << 11): return "TV-3"; break;
+    case (1 << 12): return "TV-4"; break;
+    case (1 << 13): return "TV-5"; break;
+    case (1 << 14): return "TV-6"; break;
+    case (1 << 15): return "TV-7"; break;
+
+    case (1 << 16): return "DFP-0"; break;
+    case (1 << 17): return "DFP-1"; break;
+    case (1 << 18): return "DFP-2"; break;
+    case (1 << 19): return "DFP-3"; break;
+    case (1 << 20): return "DFP-4"; break;
+    case (1 << 21): return "DFP-5"; break;
+    case (1 << 22): return "DFP-6"; break;
+    case (1 << 23): return "DFP-7"; break;
+    default: return "Unknown";
+    }
+
+} /* display_device_name() */
+
 /* This function is used for testing this module functionality and shall
  * be removed before committing the code */
 void print_children(hwloc_topology_t topology, hwloc_obj_t obj, int depth)
@@ -51,10 +85,11 @@ int queryDisplay(char* displayName)
     /* Establishing a connection */
     display = XOpenDisplay(displayName);
 
+    // Default screen
     Screen* screen;
     screen = XDefaultScreenOfDisplay(display);
 
-    int screen_number = XScreenNumberOfScreen(screen);
+    int screen_number = DefaultScreen(display);
     printf("screen_number %d \n", screen_number);
 
     /* Existing display */
@@ -71,12 +106,55 @@ int queryDisplay(char* displayName)
      * in the upper 16 bits of the integer, and the PCI device ID is stored in the
      * lower 16 bits of the integer. */
     int nvCtrlPciId;
-    const bool _return = XNVCTRLQueryTargetAttribute(display,
+      bool _return = XNVCTRLQueryTargetAttribute(display,
                          NV_CTRL_TARGET_TYPE_GPU,
-                         0, /* target_id */
+                         0, /* target_id -> "gpu_id" */
                          0, /* display_mask */
                          NV_CTRL_PCI_ID,
                          &nvCtrlPciId);
+
+      int display_devices, mask, major, minor, len, j;
+      char *str, *start, *str0, *str1;
+      char *displayDeviceNames[8];
+      int nDisplayDevice;
+
+      _return = XNVCTRLQueryAttribute(display,
+                           screen_number,
+                           0,
+                           NV_CTRL_CONNECTED_DISPLAYS, // NV_CTRL_TARGET_TYPE_X_SCREEN
+                           &display_devices);
+
+      if (!_return)
+      {
+          fprintf(stderr, "Failed to query the enabled Display Devices.\n\n");
+          return -1;
+      }
+
+      printf("Connected Display Devices:\n");
+
+      nDisplayDevice = 0;
+      for (mask = 1; mask < (1 << 24); mask <<= 1)
+      {
+
+          if (display_devices & mask)
+          {
+              XNVCTRLQueryStringAttribute(display, screen_number, mask,
+              NV_CTRL_STRING_DISPLAY_DEVICE_NAME,
+              &str);
+
+              displayDeviceNames[nDisplayDevice++] = str;
+
+              printf("  %s (0x%08x): %s\n",
+              display_device_name(mask), mask, str);
+          }
+      }
+      printf("\n");
+
+    /**
+     * If NV_CTRL_TARGET_TYPE_X_SCREEN, then the tergate_id would be the screen_id
+     * But which attribute we are looking for
+     *
+     * */
 
     /// check the parameters and also the default screen of the display...
 
