@@ -9,39 +9,6 @@
 #include <NVCtrlLib.h>
 
 
-static char *display_device_name(int mask)
-{
-    switch (mask) {
-    case (1 <<  0): return "CRT-0"; break;
-    case (1 <<  1): return "CRT-1"; break;
-    case (1 <<  2): return "CRT-2"; break;
-    case (1 <<  3): return "CRT-3"; break;
-    case (1 <<  4): return "CRT-4"; break;
-    case (1 <<  5): return "CRT-5"; break;
-    case (1 <<  6): return "CRT-6"; break;
-    case (1 <<  7): return "CRT-7"; break;
-
-    case (1 <<  8): return "TV-0"; break;
-    case (1 <<  9): return "TV-1"; break;
-    case (1 << 10): return "TV-2"; break;
-    case (1 << 11): return "TV-3"; break;
-    case (1 << 12): return "TV-4"; break;
-    case (1 << 13): return "TV-5"; break;
-    case (1 << 14): return "TV-6"; break;
-    case (1 << 15): return "TV-7"; break;
-
-    case (1 << 16): return "DFP-0"; break;
-    case (1 << 17): return "DFP-1"; break;
-    case (1 << 18): return "DFP-2"; break;
-    case (1 << 19): return "DFP-3"; break;
-    case (1 << 20): return "DFP-4"; break;
-    case (1 << 21): return "DFP-5"; break;
-    case (1 << 22): return "DFP-6"; break;
-    case (1 << 23): return "DFP-7"; break;
-    default: return "Unknown";
-    }
-
-} /* display_device_name() */
 
 /* This function is used for testing this module functionality and shall
  * be removed before committing the code */
@@ -61,23 +28,23 @@ void print_children(hwloc_topology_t topology, hwloc_obj_t obj, int depth)
 struct pci_dev_info
 {
     /* Name of the PCI device */
-    char* _name;
+    char* name;
 
     /* ID of the PCI device */
-    int _deviceId;
+    int device_id;
 
-    /* CPU set contained by the Socket connected on the same
-     * level to the PCI device */
-    hwloc_bitmap_t _cpuSet;
+    /* CPU set of the socket connected to the PCI device */
+    hwloc_bitmap_t socket_cpuset;
 };
 
 /* This function checks if a display with the displayName is existing or not.
- * If true, it returns the PCI ID of the GPU connected to the display
- * else, it returns -1.
+ * If true, it returns the PCI ID of the GPU connected to the default screen
+ * of the display else, it returns -1.
  * */
 int queryDisplay(char* displayName)
 {
-    int gpuId = -1;
+    /* PCI ID of the GPU connected to the display displayName */
+    int gpu_pci_id = -1;
 
     /* Display */
     Display* display;
@@ -103,126 +70,125 @@ int queryDisplay(char* displayName)
                    &number_screens);
 
     if (!_return) {
-        fprintf(stderr, "Failed to query number of X Screens \n\n");
-        return 1;
+        fprintf(stderr, "Failed to retrieve the total number of screens attached to %s \n", displayName);
+        return -1;
     }
 
-    printf("  number of X screens (NV-CONTROL): %d\n\n", number_screens);
-    printf("  number of X screens (ScreenCount): %d\n", ScreenCount(display));
+    // TO BE REMOVED
+    printf("Total number of screens of X screens via (NV-CONTROL): %d\n", number_screens);
+    printf("Total number of screens of X screens via (ScreenCount): %d\n", ScreenCount(display));
 
-    /* Screen */
-    Screen* screen;
-
-    /* Default screen */
-    screen = XDefaultScreenOfDisplay(display);
 
     /* Default screen number */
     int default_screen_number = DefaultScreen(display);
-    printf("default_screen_number %d \n", default_screen_number);
 
-    /* Get the GPU number attached to the default screen */
-    unsigned int *pData;
+    // TO BE REMOVED
+    printf("Default screen number is : %d \n", default_screen_number);
+
+    /* For further details, see the NVCtrlLib.h */
+    unsigned int *ptr_binary_data;
     int data_lenght;
 
+    /* Get the GPU number attached to the default screen */
     _return = XNVCTRLQueryTargetBinaryData
               (display,
               NV_CTRL_TARGET_TYPE_X_SCREEN,
-              default_screen_number, /* target_id -> screen_number */
+              default_screen_number, /* target_id -> default_screen_number */
               0,
-              NV_CTRL_BINARY_DATA_GPUS_USED_BY_XSCREEN, /* GPU connected to the X screen */
-              (unsigned char **) &pData,
+              NV_CTRL_BINARY_DATA_GPUS_USED_BY_XSCREEN,
+              (unsigned char **) &ptr_binary_data,
               &data_lenght);
 
-    int gpu_number = pData[1];
-    printf("Connected GPU number is %d \n", gpu_number);
+    if (!_return) {
+        fprintf(stderr, "Failed to query the GPUs attached to the default screen \n");
+        return -1;
+    }
 
-    /*
-    * NV_CTRL_PCI_ID is a "packed" integer attribute; the PCI vendor ID is stored
-    * in the upper 16 bits of the integer, and the PCI device ID is stored in the
-    * lower 16 bits of the integer. */
+    int gpu_number = ptr_binary_data[1];
+    free(ptr_binary_data);
+
+    // TO BE REMOVED
+    printf("Connected GPU number is : %d \n", gpu_number);
+
+    /* For further details, see the NVCtrlLib.h */
     int nvCtrlPciId;
      _return = XNVCTRLQueryTargetAttribute
-                   (display,
-                    NV_CTRL_TARGET_TYPE_GPU,
-                    gpu_number, /* target_id -> "gpu_id" */
-                    0, /* display_mask */
-                    NV_CTRL_PCI_ID,
-                    &nvCtrlPciId);
+               (display,
+                NV_CTRL_TARGET_TYPE_GPU,
+                gpu_number, /* target_id -> "gpu_number" */
+                0, /* display_mask */
+                NV_CTRL_PCI_ID,
+                &nvCtrlPciId);
 
-    /* Attribute exists */
     if (_return)
     {
         /* GPU device ID */
-        gpuId = (int) nvCtrlPciId & 0x0000FFFF;
-        printf("Obtaining gpuId from the NV_control extension : %d \n", gpuId);
+        gpu_pci_id = (int) nvCtrlPciId & 0x0000FFFF;
+
+        // TO BE REMOVED
+        printf("Obtaining GPU PCI ID from the NV_control extension : %d \n", gpu_pci_id);
+
+        /* Closing the connection */
         XCloseDisplay(display);
-        return gpuId;
+        return gpu_pci_id;
     }
 
-    /* Closing the display */
+    /* Closing the connection */
     XCloseDisplay(display);
 
     return -1;
 }
 
-/* Query all the displays on this system and returns the GPU ID connected to an
- * existing display */
+/* Query all the displays on this system and return the GPU ID connected to
+ * the default screen of an existing display */
 int queryDevices(void)
 {
     /* GPU ID is set initially to -1 */
-    int gpuId = -1;
+    int gpu_pci_id = -1;
 
-    int xServerMax = 10;
-    int xScreenMax = 10;
+    int x_server_max = 10;
+    int x_screen_max = 10;
 
-    for (int i = 0; i < xServerMax; ++i)
-    {
-        for (int j = 0; j < xScreenMax; ++j)
-        {
-            /* String formation */
-            char _server [5] ;
-            char _screen [5];
-            char _display [10];
+    for (int i = 0; i < x_server_max; ++i) {
+        for (int j = 0; j < x_screen_max; ++j) {
+            char x_server [5] ;
+            char x_screen [5];
+            char x_display [10];
 
             /*
              * Set the display name with the format
-             * " [:][_server][.][_screen] " */
-            strcat(_display, ":");
-            snprintf(_server,sizeof(_server),"%d",i) ;
-            strcat(_display, _server);
-            strcat(_display, ".");
-            snprintf(_screen,sizeof(_screen),"%d",j) ;
-            strcat(_display, _screen);
+             * " [:][x_server][.][x_screen] " */
+            strcat(x_display, ":");
+            snprintf(x_server,sizeof(x_server),"%d",i) ;
+            strcat(x_display, x_server);
+            strcat(x_display, ".");
+            snprintf(x_screen,sizeof(x_screen),"%d",j) ;
+            strcat(x_display, x_screen);
 
-            // printf("DISPLAY= %s \n", _display);
+            // TO BE REMOVED
+            printf("DISPLAY= %s \n", x_display);
 
-            gpuId = queryDisplay(_display);
+            gpu_pci_id = queryDisplay(x_display);
 
             /* If -1, then it is not a correct display */
-            if (gpuId == -1)
-            {
-                continue;
+            if (gpu_pci_id == -1 && j == 0) {
                 /* Clearing */
-                memset(&_server[0], 0, sizeof(_server));
-                memset(&_screen[0], 0, sizeof(_screen));
-                memset(&_display[0], 0, sizeof(_display));
+                memset(&x_server[0], 0, sizeof(x_server));
+                memset(&x_screen[0], 0, sizeof(x_screen));
+                memset(&x_display[0], 0, sizeof(x_display));
+                break;
             }
-            else
-            {
-                return gpuId;
-            }
+            else { return gpu_pci_id; }
         }
     }
-    // printf("DISPLAY %d \n", gpuId);
     return -1;
 }
 
-
 /*
  * Returns a list of the PCI device existing in your topology,
- * and their related information.
+ * and their relevant info.
  * */
-pci_dev_info* getPciDeviceInfo(int& deviceCount)
+pci_dev_info* getPciDeviceInfo(int& device_count)
 {
     /* Info about all the PCI device in the topology */
     pci_dev_info* device_list;
@@ -233,9 +199,9 @@ pci_dev_info* getPciDeviceInfo(int& deviceCount)
     /* Topology initialization */
     hwloc_topology_init(&topology);
 
-    /* Flags used for loading the I/O devices and their relevant info */
+    /* Flags used for loading the I/O devices, bridges and their relevant info */
     unsigned long flags = 0x0000000000000000;
-    flags ^= HWLOC_TOPOLOGY_FLAG_IO_BRIDGES;    /* I/O bridges TBR */
+    flags ^= HWLOC_TOPOLOGY_FLAG_IO_BRIDGES;    /* I/O bridges */
     flags ^= HWLOC_TOPOLOGY_FLAG_IO_DEVICES;    /* I/O devices */
 
     /* Set the PCI discovery flags */
@@ -248,12 +214,13 @@ pci_dev_info* getPciDeviceInfo(int& deviceCount)
     /* Perform topology detection */
     hwloc_topology_load(topology);
 
-    print_children(topology, hwloc_get_root_obj(topology), 0);
+    // TO BE REMOVED
+    // print_children(topology, hwloc_get_root_obj(topology), 0);
 
     /* Get the number of PCi devices in this topology */
     const int pci_dev_count = hwloc_get_nbobjs_by_type(topology, HWLOC_OBJ_PCI_DEVICE);
-    deviceCount = pci_dev_count;
-    printf("pci_dev_count %d \n", pci_dev_count);
+    device_count = pci_dev_count;
+    printf("Number of PCI devices existing in the topology is: %d \n", pci_dev_count);
 
     /* A list of structure holding the needed info about the
      * attached PCI devices */
@@ -265,21 +232,19 @@ pci_dev_info* getPciDeviceInfo(int& deviceCount)
         /* PCI device object */
         const hwloc_obj_t pci_dev_object = hwloc_get_obj_by_type
                                            (topology, HWLOC_OBJ_PCI_DEVICE, i);
-
         /* PCI device number */
-        device_list[i]._name = pci_dev_object->name;
+        device_list[i].name = pci_dev_object->name;
 
         /* PCI device ID */
-        device_list[i]._deviceId = pci_dev_object->attr->pcidev.device_id;
+        device_list[i].device_id = pci_dev_object->attr->pcidev.device_id;
 
-        /* Host bridge */
+        /* Host bridge of the PCI device */
         const hwloc_obj_t host_bridge = hwloc_get_hostbridge_by_pcibus
                                 (topology,
                                  pci_dev_object->attr->pcidev.domain,
                                  pci_dev_object->attr->pcidev.bus);
 
-        const hwloc_obj_t prev_socket_obj = host_bridge->prev_sibling;
-        device_list[i]._cpuSet = hwloc_bitmap_dup(host_bridge->prev_sibling->cpuset);
+        device_list[i].socket_cpuset = hwloc_bitmap_dup(host_bridge->prev_sibling->cpuset);
     }
 
     /* Topology object destruction */
@@ -292,44 +257,36 @@ pci_dev_info* getPciDeviceInfo(int& deviceCount)
 hwloc_bitmap_t getAutoCpuSet()
 {
     /* Number of PCI devices existing in our topology */
-    int deviceCount;
-    pci_dev_info* deviceList = getPciDeviceInfo(deviceCount);
+    int device_count;
+    pci_dev_info* device_list = getPciDeviceInfo(device_count);
 
     /* GPU ID deom quering the displays */
     int attchedGpuId = queryDevices();
 
-
-    //printf("deviceCount %d \n", deviceCount);
+    // TO BE REMOVED
+    printf("Device Count is %d \n", device_count);
 
     /* Auto- CPU set */
     hwloc_bitmap_t _autoCpuset = hwloc_bitmap_alloc();
     hwloc_bitmap_zero(_autoCpuset);
 
 
-    // Device matching GPU
-    for (int i = 0; i < deviceCount; ++i)
+    // Matching GPU IDs
+    for (int i = 0; i < device_count; ++i)
     {
-        if (deviceList[i]._deviceId != attchedGpuId)
-        {
+        if (device_list[i].device_id != attchedGpuId) {
+            // TO BE REMOVED
             printf("Not existing ... \n");
+
             continue;
         }
-        else
-        {
+        else {
+            // TO BE REMOVED
             printf("Existing ... \n");
-            // hwloc_bitmap_copy(_autoCpuset, deviceList[i]._cpuSet);
-            _autoCpuset = hwloc_bitmap_dup(deviceList[i]._cpuSet);
 
-            // char *str;
-            // int error = errno;
-            // hwloc_bitmap_asprintf(&str, deviceList[i]._cpuSet);
-            // printf("The final cpuset is %s: %s\n", str, strerror(error));
-            // free(str);
+            _autoCpuset = hwloc_bitmap_dup(device_list[i].socket_cpuset);
             return _autoCpuset;
         }
     }
-
-
     return _autoCpuset;
 }
-
