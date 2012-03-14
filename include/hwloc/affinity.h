@@ -85,78 +85,69 @@ int queryDisplay(char* displayName)
     /* Establishing a connection */
     display = XOpenDisplay(displayName);
 
-    // Default screen
-    Screen* screen;
-    screen = XDefaultScreenOfDisplay(display);
-
-    int screen_number = DefaultScreen(display);
-    printf("screen_number %d \n", screen_number);
-
-    /* Existing display */
+    /* Is it an existing display */
     if (display != 0)
         printf("DISPLAY %s is existing \n", displayName);
-    else
-    {
+    else {
         printf("DISPLAY %s is NOT existing \n", displayName);
         return -1;
     }
 
+    /* Total number of screens attached to display */
+    int number_screens;
+
+    /* Query the number of screens connected to display */
+    bool _return = XNVCTRLQueryTargetCount
+                  (display,
+                   NV_CTRL_TARGET_TYPE_X_SCREEN,
+                   &number_screens);
+
+    if (!_return) {
+        fprintf(stderr, "Failed to query number of X Screens \n\n");
+        return 1;
+    }
+
+    printf("  number of X screens (NV-CONTROL): %d\n\n", number_screens);
+    printf("  number of X screens (ScreenCount): %d\n", ScreenCount(display));
+
+    /* Screen */
+    Screen* screen;
+
+    /* Default screen */
+    screen = XDefaultScreenOfDisplay(display);
+
+    /* Default screen number */
+    int default_screen_number = DefaultScreen(display);
+    printf("default_screen_number %d \n", default_screen_number);
+
+    /* Get the GPU number attached to the default screen */
+    unsigned int *pData;
+    int data_lenght;
+
+    _return = XNVCTRLQueryTargetBinaryData
+              (display,
+              NV_CTRL_TARGET_TYPE_X_SCREEN,
+              default_screen_number, /* target_id -> screen_number */
+              0,
+              NV_CTRL_BINARY_DATA_GPUS_USED_BY_XSCREEN, /* GPU connected to the X screen */
+              (unsigned char **) &pData,
+              &data_lenght);
+
+    int gpu_number = pData[1];
+    printf("Connected GPU number is %d \n", gpu_number);
+
     /*
-     * NV_CTRL_PCI_ID is a "packed" integer attribute; the PCI vendor ID is stored
-     * in the upper 16 bits of the integer, and the PCI device ID is stored in the
-     * lower 16 bits of the integer. */
+    * NV_CTRL_PCI_ID is a "packed" integer attribute; the PCI vendor ID is stored
+    * in the upper 16 bits of the integer, and the PCI device ID is stored in the
+    * lower 16 bits of the integer. */
     int nvCtrlPciId;
-      bool _return = XNVCTRLQueryTargetAttribute(display,
-                         NV_CTRL_TARGET_TYPE_GPU,
-                         0, /* target_id -> "gpu_id" */
-                         0, /* display_mask */
-                         NV_CTRL_PCI_ID,
-                         &nvCtrlPciId);
-
-      int display_devices, mask, major, minor, len, j;
-      char *str, *start, *str0, *str1;
-      char *displayDeviceNames[8];
-      int nDisplayDevice;
-
-      _return = XNVCTRLQueryAttribute(display,
-                           screen_number,
-                           0,
-                           NV_CTRL_CONNECTED_DISPLAYS, // NV_CTRL_TARGET_TYPE_X_SCREEN
-                           &display_devices);
-
-      if (!_return)
-      {
-          fprintf(stderr, "Failed to query the enabled Display Devices.\n\n");
-          return -1;
-      }
-
-      printf("Connected Display Devices:\n");
-
-      nDisplayDevice = 0;
-      for (mask = 1; mask < (1 << 24); mask <<= 1)
-      {
-
-          if (display_devices & mask)
-          {
-              XNVCTRLQueryStringAttribute(display, screen_number, mask,
-              NV_CTRL_STRING_DISPLAY_DEVICE_NAME,
-              &str);
-
-              displayDeviceNames[nDisplayDevice++] = str;
-
-              printf("  %s (0x%08x): %s\n",
-              display_device_name(mask), mask, str);
-          }
-      }
-      printf("\n");
-
-    /**
-     * If NV_CTRL_TARGET_TYPE_X_SCREEN, then the tergate_id would be the screen_id
-     * But which attribute we are looking for
-     *
-     * */
-
-    /// check the parameters and also the default screen of the display...
+     _return = XNVCTRLQueryTargetAttribute
+                   (display,
+                    NV_CTRL_TARGET_TYPE_GPU,
+                    gpu_number, /* target_id -> "gpu_id" */
+                    0, /* display_mask */
+                    NV_CTRL_PCI_ID,
+                    &nvCtrlPciId);
 
     /* Attribute exists */
     if (_return)
