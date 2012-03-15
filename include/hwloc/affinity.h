@@ -93,27 +93,28 @@ static __hwloc_inline void print_children_extended(hwloc_topology_t topology, hw
     unsigned i;
 
     hwloc_obj_snprintf(string, sizeof(string), topology, obj, "#", 0);
-    hwloc_obj_type_snprintf(type, sizeof(type), obj, 0);
 
     /* PCI device */
     if (obj->type == HWLOC_OBJ_PCI_DEVICE ) {
-
-
-        /* Getting the PCI devices from the pci_dev_list */
         for (int j = 0; j < pci_dev_count; j++) {
-            //printf("OOOO %d \n", j);
             if (obj->attr->pcidev.device_id == pci_dev_list[j].device_id) {
 
                 /* GPU device */
-                if(!(pci_dev_list[j].is_gpu)) {
-                    printf("%*s%s %d \n", 2*depth, "", string, type, j);
+                if((pci_dev_list[j].is_gpu) == 1) {
+                    printf("%*s%s, %d [:%d.%d] \n", 2*depth, "",
+                    string,  pci_dev_list[j].device_id,
+                    pci_dev_list[j].display.port, pci_dev_list[j].display.device);
+
+                    /* TO BE REMOVED
+                    printf("%*s%s : %s, %s %d, :%d.%d \n", 2*depth, "",
+                    string, type, pci_dev_list[j].name,  pci_dev_list[j].device_id,
+                    pci_dev_list[j].display.port, pci_dev_list[j].display.device); */
                     break;
+
                 }
                 /* Other PCI devices */
                 else {
-                    printf("%*s%s : %s, %s %d, %d.%d\n", 2*depth, "",
-                        string, type, pci_dev_list[j].name,  pci_dev_list[j].device_id,
-                        pci_dev_list[j].display.port, pci_dev_list[j].display.device );
+                    printf("%*s%s \n", 2*depth, "", string);
                     break;
                 }
             }
@@ -235,13 +236,10 @@ static __hwloc_inline int queryDevices(void)
 
     for (int i = 0; i < x_server_max; ++i) {
         for (int j = 0; j < x_screen_max; ++j) {
-            char x_display [10];
-
 
             /*
-             * Set the display name with the format
-             * " [:][x_server][.][x_screen] "
-             */
+             * Set the display name with the format " [:][x_server][.][x_screen] " */
+            char x_display [10];
             snprintf(x_display,sizeof(x_display),":%d.%d",i, j);
 
             // TO BE REMOVED
@@ -289,21 +287,22 @@ static __hwloc_inline pci_dev_info* getPciDeviceInfo(int& device_count)
     /* Get the number of PCi devices in this topology */
     const int pci_dev_count = hwloc_get_nbobjs_by_type(topology, HWLOC_OBJ_PCI_DEVICE);
     device_count = pci_dev_count;
+
+    // TO BE REMOVED
     printf("Number of PCI devices existing in the topology is: %d \n", pci_dev_count);
 
     /* A list of structure holding the needed info about the
      * attached PCI devices */
     device_list = (pci_dev_info*) malloc (sizeof(pci_dev_info) * pci_dev_count);
-    char* _cpuset;
 
-    for (int i = 0; i < pci_dev_count; ++i)
-    {
+    for (int i = 0; i < pci_dev_count; ++i) {
         /* PCI device object */
         const hwloc_obj_t pci_dev_object = hwloc_get_obj_by_type
                                            (topology, HWLOC_OBJ_PCI_DEVICE, i);
         /* PCI device number */
         device_list[i].name = pci_dev_object->name;
 
+        // TO BE REMOVED
         char _type[128];
         hwloc_obj_type_snprintf(_type, sizeof(_type), pci_dev_object, 0);
         printf("*_type %s \n", _type);
@@ -313,7 +312,9 @@ static __hwloc_inline pci_dev_info* getPciDeviceInfo(int& device_count)
 
         /* Getting the display info */
         display_info display = get_gpu_display(pci_dev_object->attr->pcidev.device_id);
-        printf("Display <><><> %d.%d", display.port, display.device);
+
+        // TO BE REMOVED
+        printf("Display <%d.%d \n", display.port, display.device);
 
         if (display.port > -1 && display.device > -1) {
             device_list[i].is_gpu = true;
@@ -325,7 +326,8 @@ static __hwloc_inline pci_dev_info* getPciDeviceInfo(int& device_count)
         }
 
         // TO BE REMOVED
-        printf("*Display info for the PCI ID %d:%d.%d \n", pci_dev_object->attr->pcidev.device_id, display.port, display.device);
+        printf("Display info for the PCI ID %d:%d.%d \n", pci_dev_object->attr->pcidev.device_id,
+                                                           display.port, display.device);
 
         /* Host bridge of the PCI device */
         const hwloc_obj_t host_bridge = hwloc_get_hostbridge_by_pcibus
@@ -340,7 +342,7 @@ static __hwloc_inline pci_dev_info* getPciDeviceInfo(int& device_count)
 
     // TO BE REMOVED
     print_children_extended(topology, hwloc_get_root_obj(topology), 0, device_list, pci_dev_count);
-    print_children(topology, hwloc_get_root_obj(topology), 0);
+    // print_children(topology, hwloc_get_root_obj(topology), 0);
 
     /* Topology object destruction */
     hwloc_topology_destroy(topology);
@@ -349,8 +351,8 @@ static __hwloc_inline pci_dev_info* getPciDeviceInfo(int& device_count)
 }
 
 /*****************************************************************
- * Returns a list of the PCI device existing in this topology,
- * and their relevant info.
+ * Returns a cpuset of the socket attached to the host bridge
+ * where the GPU the is connected in the topology
  ****************************************************************/
 static __hwloc_inline hwloc_bitmap_t get_gpu_cpuset(const int gpu_pci_id)
 {
@@ -360,7 +362,8 @@ static __hwloc_inline hwloc_bitmap_t get_gpu_cpuset(const int gpu_pci_id)
     /* Topology initialization */
     hwloc_topology_init(&topology);
 
-    /* Flags used for loading the I/O devices, bridges and their relevant info */
+    /* Flags used for loading the I/O devices, bridges and their
+     * relevant info to the topology */
     const unsigned long loading_flags =
         0x0000000000000000 ^ HWLOC_TOPOLOGY_FLAG_IO_BRIDGES ^ HWLOC_TOPOLOGY_FLAG_IO_DEVICES;
 
@@ -377,24 +380,19 @@ static __hwloc_inline hwloc_bitmap_t get_gpu_cpuset(const int gpu_pci_id)
     // TO BE REMOVED
     // print_children(topology, hwloc_get_root_obj(topology), 0);
 
-    /* Get the number of PCI devices in this topology */
+    /* The number of PCI devices in the topology */
     const int pci_dev_count = hwloc_get_nbobjs_by_type(topology, HWLOC_OBJ_PCI_DEVICE);
+
+    // TO BE REMOVED
     printf("Number of PCI devices existing in the topology is: %d \n", pci_dev_count);
 
-    /* A list of structure holding the needed info about the
-     * attached PCI devices */
-    char* _cpuset;
-
-    for (int i = 0; i < pci_dev_count; ++i)
-    {
+    for (int i = 0; i < pci_dev_count; ++i) {
         /* PCI device object */
         const hwloc_obj_t pci_dev_object = hwloc_get_obj_by_type
                                            (topology, HWLOC_OBJ_PCI_DEVICE, i);
-        /* PCI device number */
 
         /* PCI device ID */
-         if (gpu_pci_id == pci_dev_object->attr->pcidev.device_id)
-         {
+         if (gpu_pci_id == pci_dev_object->attr->pcidev.device_id) {
             /* Host bridge of the PCI device */
             const hwloc_obj_t host_bridge = hwloc_get_hostbridge_by_pcibus
                                    (topology,
@@ -414,10 +412,10 @@ static __hwloc_inline hwloc_bitmap_t get_gpu_cpuset(const int gpu_pci_id)
 }
 
 /*****************************************************************
- * Returns the cpuset of a socket connected to the host bridge
- * having a GPU attached to the display defined by the input port
- * and device integers and having the format [:][port][.][device]
- * under X systems
+ * Returns the cpuset of the socket connected to the host bridge
+ * connecting the GPU attached to the display defined by the
+ * input port and device integers and having the format
+ * [:][port][.][device] under X systems
  ****************************************************************/
 static __hwloc_inline hwloc_bitmap_t get_display_cpuset(const int port, const int device)
 {
@@ -428,8 +426,9 @@ static __hwloc_inline hwloc_bitmap_t get_display_cpuset(const int port, const in
     printf("DISPLAY= %s \n", x_display);
 
     const int gpu_pci_id = queryDisplay(x_display);
-    hwloc_bitmap_t cpuset = get_gpu_cpuset(gpu_pci_id);
+    const hwloc_bitmap_t cpuset = get_gpu_cpuset(gpu_pci_id);
 
+    // TO BE REMOVED
     char* cpuset_string;
     hwloc_bitmap_asprintf(&cpuset_string, cpuset);
     printf("Selected CPU set is %s: \n", cpuset_string);
@@ -454,15 +453,12 @@ static __hwloc_inline display_info get_gpu_display(const int gpu_pci_id)
     for (int i = 0; i < x_server_max; ++i) {
         for (int j = 0; j < x_screen_max; ++j) {
 
+            /* Set the display name with the format "[:][x_server][.][x_screen]" */
             char x_display [10];
-
-            /*
-             * Set the display name with the format
-             * " [:][x_server][.][x_screen] "
-             */
             snprintf(x_display,sizeof(x_display),":%d.%d",i, j);
 
-            if (gpu_pci_id != queryDisplay(x_display) || j > 0) {
+            /* Connection failure */
+            if (gpu_pci_id != queryDisplay(x_display)) {
                 continue;
             }
             else {
