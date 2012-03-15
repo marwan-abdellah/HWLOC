@@ -1,3 +1,24 @@
+#ifndef HWLOC_AUTO_AFFINITY_H
+#define HWLOC_AUTO_AFFINITY_H
+
+#include <hwloc.h>
+#include <errno.h>
+#include <stdio.h>
+#include <string.h>
+#include "stdlib.h"
+
+#include <X11/Xlib.h>
+#include </usr/include/NVCtrl/NVCtrl.h>
+#include </usr/include/NVCtrl/NVCtrlLib.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+#define __hwloc_inline __inline__
+
+
 struct display_info
 {
     int port;   /* Port or X-server */
