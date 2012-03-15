@@ -18,7 +18,6 @@ extern "C" {
 
 #define __hwloc_inline __inline__
 
-
 struct display_info
 {
     int port;   /* Port or X-server */
@@ -57,8 +56,7 @@ static __hwloc_inline hwloc_bitmap_t get_auto_cpuset();
 static __hwloc_inline hwloc_bitmap_t get_display_cpuset(const int port, const int device);
 static __hwloc_inline hwloc_bitmap_t get_display_cpuset(const int port, const int device);
 static __hwloc_inline display_info get_gpu_display(const int gpu_pci_id);
-static __hwloc_inline void print_children_extended(hwloc_topology_t topology,
-    hwloc_obj_t obj, int depth, const pci_dev_info* pci_dev_list, const int pci_dev_count);
+static __hwloc_inline void print_children_extended(hwloc_topology_t topology, hwloc_obj_t obj, int depth);
 
 /*****************************************************************
  * This function is used for testing this module functionality and
@@ -70,7 +68,8 @@ void print_children(hwloc_topology_t topology, hwloc_obj_t obj, int depth)
     unsigned i;
 
     hwloc_obj_snprintf(string, sizeof(string), topology, obj, "#", 0);
-    printf("%*s%s\n", 2*depth, "", string);
+
+    printf("%*s%s %s \n", 2*depth, "", string, obj->name);
     for (i = 0; i < obj->arity; i++) {
         print_children(topology, obj->children[i], depth + 1);
     }
@@ -80,51 +79,22 @@ void print_children(hwloc_topology_t topology, hwloc_obj_t obj, int depth)
  * To give extra information about the PCI devices existing in
  * this topology.
  *****************************************************************/
-static __hwloc_inline void print_children_extended(hwloc_topology_t topology, hwloc_obj_t obj, int depth,
-                         const pci_dev_info* pci_dev_list, const int pci_dev_count)
+static __hwloc_inline void print_children_extended(hwloc_topology_t topology, hwloc_obj_t obj, int depth)
 {
-    if (pci_dev_list == NULL) {
-        printf("No PCI info will be printed in the topology tree ");
-        return;
-    }
-
     char string[128];
-    char type[128];
     unsigned i;
 
     hwloc_obj_snprintf(string, sizeof(string), topology, obj, "#", 0);
 
-    /* PCI device */
-    if (obj->type == HWLOC_OBJ_PCI_DEVICE ) {
-        for (int j = 0; j < pci_dev_count; j++) {
-            if (obj->attr->pcidev.device_id == pci_dev_list[j].device_id) {
-
-                /* GPU device */
-                if((pci_dev_list[j].is_gpu) == 1) {
-                    printf("%*s%s, %d [:%d.%d] \n", 2*depth, "",
-                    string,  pci_dev_list[j].device_id,
-                    pci_dev_list[j].display.port, pci_dev_list[j].display.device);
-
-                    /* TO BE REMOVED
-                    printf("%*s%s : %s, %s %d, :%d.%d \n", 2*depth, "",
-                    string, type, pci_dev_list[j].name,  pci_dev_list[j].device_id,
-                    pci_dev_list[j].display.port, pci_dev_list[j].display.device); */
-                    break;
-
-                }
-                /* Other PCI devices */
-                else {
-                    printf("%*s%s \n", 2*depth, "", string);
-                    break;
-                }
-            }
-        }
+    hwloc_obj_t parent = obj->parent;
+    if (parent != NULL) {
+        if (parent->type == HWLOC_OBJ_PCI_DEVICE) {
+            printf("%*s%s %s \n", 2*depth, "", string, obj->name); }
+        else {
+            printf("%*s%s \n", 2*depth, "", string); }
     }
-    else {
-        printf("%*s%s \n", 2*depth, "", string); }
-
     for (i = 0; i < obj->arity; i++) {
-        print_children_extended(topology, obj->children[i], depth + 1, pci_dev_list, pci_dev_count);
+    print_children_extended(topology, obj->children[i], depth + 1);
     }
 }
 
@@ -288,6 +258,8 @@ static __hwloc_inline pci_dev_info* getPciDeviceInfo(int& device_count)
     const int pci_dev_count = hwloc_get_nbobjs_by_type(topology, HWLOC_OBJ_PCI_DEVICE);
     device_count = pci_dev_count;
 
+
+
     // TO BE REMOVED
     printf("Number of PCI devices existing in the topology is: %d \n", pci_dev_count);
 
@@ -297,8 +269,9 @@ static __hwloc_inline pci_dev_info* getPciDeviceInfo(int& device_count)
 
     for (int i = 0; i < pci_dev_count; ++i) {
         /* PCI device object */
-        const hwloc_obj_t pci_dev_object = hwloc_get_obj_by_type
+         hwloc_obj_t pci_dev_object = hwloc_get_obj_by_type
                                            (topology, HWLOC_OBJ_PCI_DEVICE, i);
+
         /* PCI device number */
         device_list[i].name = pci_dev_object->name;
 
@@ -316,9 +289,15 @@ static __hwloc_inline pci_dev_info* getPciDeviceInfo(int& device_count)
         // TO BE REMOVED
         printf("Display <%d.%d \n", display.port, display.device);
 
+        /* If GPU */
         if (display.port > -1 && display.device > -1) {
             device_list[i].is_gpu = true;
             device_list[i].display = display;
+
+            /* Appending the display as a children to the GPU object */
+            char x_display[128];
+            snprintf(x_display,sizeof(x_display),"DISPLAY= :%d.%d", (display.port), display.device);
+            hwloc_topology_insert_misc_object_by_parent(topology, pci_dev_object, x_display);
         }
         else {
             device_list[i].is_gpu = false;
@@ -341,7 +320,7 @@ static __hwloc_inline pci_dev_info* getPciDeviceInfo(int& device_count)
     }
 
     // TO BE REMOVED
-    print_children_extended(topology, hwloc_get_root_obj(topology), 0, device_list, pci_dev_count);
+    print_children_extended(topology, hwloc_get_root_obj(topology), 0);
     // print_children(topology, hwloc_get_root_obj(topology), 0);
 
     /* Topology object destruction */
@@ -526,3 +505,21 @@ static __hwloc_inline hwloc_bitmap_t get_auto_cpuset() // port and device
 #endif
 
 #endif /* HWLOC_AUTO_AFFINITY_H */
+
+
+int main()
+{
+    hwloc_bitmap_t _cpuset = hwloc_bitmap_alloc();
+    // _cpuset = get_display_cpuset(0, 0); // get_auto_cpuset();
+
+    char* _cpuset_string;
+    // hwloc_bitmap_asprintf(&_cpuset_string, _cpuset);
+    // printf("get_display_cpuset %s: \n", _cpuset_string);
+
+    hwloc_bitmap_zero(_cpuset);
+    _cpuset = get_auto_cpuset();
+    hwloc_bitmap_asprintf(&_cpuset_string, _cpuset);
+    printf("get_auto_cpuset %s: \n", _cpuset_string);
+
+    return 0;
+}

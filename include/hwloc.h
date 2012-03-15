@@ -240,6 +240,8 @@ typedef enum {
 			  * is enabled with hwloc_topology_set_flags().
 			  */
 
+  HWLOC_OBJ_DISPLAY,
+
   HWLOC_OBJ_TYPE_MAX    /**< \private Sentinel value */
 
     /* ***************************************************************
