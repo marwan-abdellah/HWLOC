@@ -38,6 +38,9 @@ struct pci_dev_info
     /* Name of the PCI device */
     char* name;
 
+    /* Type of the PCI device */
+    char* type;
+
     /* ID of the PCI device */
     int device_id;
 
@@ -45,7 +48,6 @@ struct pci_dev_info
     hwloc_bitmap_t socket_cpuset;
 };
 
-/* Struct holding the */
 struct gpu_info
 {
     /* Name of the PCI device */
@@ -55,7 +57,7 @@ struct gpu_info
     int device_id;
 
     /* [:Port].[Device] */
-    int port;
+    int port;1920
     int device;
 
     /* CPU set of the socket connected to the PCI device */
@@ -399,7 +401,6 @@ static __hwloc_inline hwloc_bitmap_t get_display_cpuset(const int port, const in
     printf("Selected CPU set is %s: \n", cpuset_string);
 
     return hwloc_bitmap_dup(cpuset);
-
 }
 
 #ifdef __cplusplus

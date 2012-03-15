@@ -463,6 +463,7 @@ struct hwloc_obj {
   int symmetric_subtree;		/**< \brief Set if the subtree of objects below this object is symmetric,
 					  * which means all children and their children have identical subtrees.
 					  */
+  int is_gpu;
 };
 /**
  * \brief Convenience typedef; a pointer to a struct hwloc_obj.
