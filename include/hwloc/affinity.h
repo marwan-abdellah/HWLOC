@@ -505,21 +505,3 @@ static __hwloc_inline hwloc_bitmap_t get_auto_cpuset() // port and device
 #endif
 
 #endif /* HWLOC_AUTO_AFFINITY_H */
-
-
-int main()
-{
-    hwloc_bitmap_t _cpuset = hwloc_bitmap_alloc();
-    // _cpuset = get_display_cpuset(0, 0); // get_auto_cpuset();
-
-    char* _cpuset_string;
-    // hwloc_bitmap_asprintf(&_cpuset_string, _cpuset);
-    // printf("get_display_cpuset %s: \n", _cpuset_string);
-
-    hwloc_bitmap_zero(_cpuset);
-    _cpuset = get_auto_cpuset();
-    hwloc_bitmap_asprintf(&_cpuset_string, _cpuset);
-    printf("get_auto_cpuset %s: \n", _cpuset_string);
-
-    return 0;
-}
