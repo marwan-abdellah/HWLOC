@@ -240,8 +240,6 @@ typedef enum {
 			  * is enabled with hwloc_topology_set_flags().
 			  */
 
-  HWLOC_OBJ_DISPLAY,
-
   HWLOC_OBJ_TYPE_MAX    /**< \private Sentinel value */
 
     /* ***************************************************************
@@ -270,8 +268,10 @@ typedef enum hwloc_obj_osdev_type_e {
 				  * For instance the "eth0" interface on Linux. */
   HWLOC_OBJ_OSDEV_OPENFABRICS,	/**< \brief Operating system openfabrics device.
 				  * For instance the "mlx4_0" InfiniBand HCA device on Linux. */
-  HWLOC_OBJ_OSDEV_DMA		/**< \brief Operating system dma engine device.
+  HWLOC_OBJ_OSDEV_DMA,		/**< \brief Operating system dma engine device.
 				  * For instance the "dma0chan0" DMA channel on Linux. */
+  HWLOC_OBJ_OSDEV_DISPLAY       /**< \brief Operating system display device.
+                                  * For instance the DISPLAY :0.0 attached to some GPU. */
 } hwloc_obj_osdev_type_t;
 
 /** \brief Compare the depth of two object types
@@ -465,7 +465,6 @@ struct hwloc_obj {
   int symmetric_subtree;		/**< \brief Set if the subtree of objects below this object is symmetric,
 					  * which means all children and their children have identical subtrees.
 					  */
-  int is_gpu;
 };
 /**
  * \brief Convenience typedef; a pointer to a struct hwloc_obj.

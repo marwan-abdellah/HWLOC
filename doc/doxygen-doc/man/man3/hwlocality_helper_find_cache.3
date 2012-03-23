@@ -1,4 +1,4 @@
-.TH "Cache-specific Finding Helpers" 3 "Thu Jan 26 2012" "Version 1.4" "Hardware Locality (hwloc)" \" -*- nroff -*-
+.TH "Cache-specific Finding Helpers" 3 "Fri Mar 23 2012" "Version 1.4" "Hardware Locality (hwloc)" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,43 +7,35 @@ Cache-specific Finding Helpers \-
 
 .in +1c
 .ti -1c
-.RI "static inline 
-.br
-\fBhwloc_obj_t\fP 
-.br
- \fBhwloc_get_cache_covering_cpuset\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fP set)"
+.RI "static inline \fBhwloc_obj_t\fP  \fBhwloc_get_cache_covering_cpuset\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fP set)"
 .br
 .ti -1c
-.RI "static inline 
-.br
-\fBhwloc_obj_t\fP 
-.br
- \fBhwloc_get_shared_cache_covering_obj\fP (\fBhwloc_topology_t\fP topology , \fBhwloc_obj_t\fP obj)"
+.RI "static inline \fBhwloc_obj_t\fP  \fBhwloc_get_shared_cache_covering_obj\fP (\fBhwloc_topology_t\fP topology , \fBhwloc_obj_t\fP obj)"
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "static inline \fBhwloc_obj_t\fP  \fBhwloc_get_cache_covering_cpuset\fP (\fBhwloc_topology_t\fPtopology, \fBhwloc_const_cpuset_t\fPset)\fC [static]\fP"
+.SS "static inline \fBhwloc_obj_t\fP  hwloc_get_cache_covering_cpuset (\fBhwloc_topology_t\fPtopology, \fBhwloc_const_cpuset_t\fPset)\fC [static]\fP"
 .PP
-Get the first cache covering a cpuset \fCset\fP\&. \fBReturns:\fP
+Get the first cache covering a cpuset \fCset\fP. \fBReturns:\fP
 .RS 4
-\fCNULL\fP if no cache matches\&.
+\fCNULL\fP if no cache matches.
 .RE
 .PP
 \fBNote:\fP
 .RS 4
-This function cannot work if the root object does not have a CPU set, e\&.g\&. if the topology is made of different machines\&. 
+This function cannot work if the root object does not have a CPU set, e.g. if the topology is made of different machines. 
 .RE
 .PP
 
-.SS "static inline \fBhwloc_obj_t\fP  \fBhwloc_get_shared_cache_covering_obj\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_obj_t\fPobj)\fC [static]\fP"
+.SS "static inline \fBhwloc_obj_t\fP  hwloc_get_shared_cache_covering_obj (\fBhwloc_topology_t\fP topology, \fBhwloc_obj_t\fPobj)\fC [static]\fP"
 .PP
-Get the first cache shared between an object and somebody else\&. \fBReturns:\fP
+Get the first cache shared between an object and somebody else. \fBReturns:\fP
 .RS 4
-\fCNULL\fP if no cache matches or if an invalid object is given\&. 
+\fCNULL\fP if no cache matches or if an invalid object is given. 
 .RE
 .PP
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for Hardware Locality (hwloc) from the source code\&.
+Generated automatically by Doxygen for Hardware Locality (hwloc) from the source code.

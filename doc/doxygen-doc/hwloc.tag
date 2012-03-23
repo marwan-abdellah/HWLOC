@@ -1,6 +1,20 @@
 <?xml version='1.0' encoding='ISO-8859-1' standalone='yes' ?>
 <tagfile>
   <compound kind="page">
+    <name>index</name>
+    <title>Hardware Locality</title>
+    <filename>index</filename>
+    <docanchor file="index">cli_examples</docanchor>
+    <docanchor file="index">further_read</docanchor>
+    <docanchor file="index">Introduction</docanchor>
+    <docanchor file="index">installation</docanchor>
+    <docanchor file="index">interface_example</docanchor>
+    <docanchor file="index">interface</docanchor>
+    <docanchor file="index">portability</docanchor>
+    <docanchor file="index">history</docanchor>
+    <docanchor file="index">bugs</docanchor>
+  </compound>
+  <compound kind="page">
     <name>termsanddefs</name>
     <title>Terms and Definitions</title>
     <filename>a00001</filename>
@@ -301,6 +315,12 @@
       <name>HWLOC_OBJ_OSDEV_DMA</name>
       <anchorfile>a00041.html</anchorfile>
       <anchor>gga64f5d539df299c97ae80ce53fc4b56c0a827ad1643360711a8b6c6af671366791</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>HWLOC_OBJ_OSDEV_DISPLAY</name>
+      <anchorfile>a00041.html</anchorfile>
+      <anchor>gga64f5d539df299c97ae80ce53fc4b56c0a5da1cc266d3d288fdc639b0e800e9da4</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumeration">
@@ -2886,19 +2906,5 @@
       <anchor>ac6eb62ae8bc0a68dce679a7107a36194</anchor>
       <arglist></arglist>
     </member>
-  </compound>
-  <compound kind="page">
-    <name>index</name>
-    <title>Hardware Locality</title>
-    <filename>index</filename>
-    <docanchor file="index">cli_examples</docanchor>
-    <docanchor file="index">further_read</docanchor>
-    <docanchor file="index">Introduction</docanchor>
-    <docanchor file="index">installation</docanchor>
-    <docanchor file="index">interface_example</docanchor>
-    <docanchor file="index">interface</docanchor>
-    <docanchor file="index">portability</docanchor>
-    <docanchor file="index">history</docanchor>
-    <docanchor file="index">bugs</docanchor>
   </compound>
 </tagfile>

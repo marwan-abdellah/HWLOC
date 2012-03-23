@@ -409,6 +409,9 @@
 /* Define to 1 if you have the `flsl' function. */
 #undef HWLOC_HAVE_FLSL
 
+/* Define to 1 if you have the GL module components. */
+#undef HWLOC_HAVE_GL
+
 /* Define to 1 if you have the `libpci' library. */
 #undef HWLOC_HAVE_LIBPCI
 

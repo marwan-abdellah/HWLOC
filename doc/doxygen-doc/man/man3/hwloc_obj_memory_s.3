@@ -1,20 +1,23 @@
-.TH "hwloc_obj_memory_s" 3 "Thu Jan 26 2012" "Version 1.4" "Hardware Locality (hwloc)" \" -*- nroff -*-
+.TH "hwloc_obj_memory_s" 3 "Fri Mar 23 2012" "Version 1.4" "Hardware Locality (hwloc)" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 hwloc_obj_memory_s \- 
+.PP
+Object memory.  
+
 .SH SYNOPSIS
 .br
 .PP
 .PP
-\fC#include <hwloc\&.h>\fP
+\fC#include <hwloc.h>\fP
 .SS "Data Structures"
 
 .in +1c
 .ti -1c
 .RI "struct \fBhwloc_obj_memory_page_type_s\fP"
 .br
-.RI "\fIArray of local memory page types, \fCNULL\fP if no local memory and \fCpage_types\fP is 0\&. \fP"
+.RI "\fIArray of local memory page types, \fCNULL\fP if no local memory and \fCpage_types\fP is 0. \fP"
 .in -1c
 .SS "Data Fields"
 
@@ -29,14 +32,12 @@ hwloc_obj_memory_s \-
 .RI "unsigned \fBpage_types_len\fP"
 .br
 .ti -1c
-.RI "struct 
-.br
-\fBhwloc_obj_memory_s::hwloc_obj_memory_page_type_s\fP * \fBpage_types\fP"
+.RI "struct \fBhwloc_obj_memory_s::hwloc_obj_memory_page_type_s\fP * \fBpage_types\fP"
 .br
 .in -1c
 .SH "Detailed Description"
 .PP 
-Object memory\&. 
+Object memory. 
 .SH "Field Documentation"
 .PP 
 .SS "hwloc_uint64_t \fBhwloc_obj_memory_s::local_memory\fP"
@@ -45,11 +46,11 @@ Local memory (in bytes)
 .SS "struct \fBhwloc_obj_memory_s::hwloc_obj_memory_page_type_s\fP *  \fBhwloc_obj_memory_s::page_types\fP"
 .SS "unsigned \fBhwloc_obj_memory_s::page_types_len\fP"
 .PP
-Size of array \fCpage_types\fP\&. 
+Size of array \fCpage_types\fP. 
 .SS "hwloc_uint64_t \fBhwloc_obj_memory_s::total_memory\fP"
 .PP
-Total memory (in bytes) in this object and its children\&. 
+Total memory (in bytes) in this object and its children. 
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for Hardware Locality (hwloc) from the source code\&.
+Generated automatically by Doxygen for Hardware Locality (hwloc) from the source code.

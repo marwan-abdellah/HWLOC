@@ -27,9 +27,13 @@
 #include <sys/types.h>
 #endif
 
+#ifdef HWLOC_HAVE_GL
+#include <hwloc/gl.h>
+#endif
+
 #define CONFIG_SPACE_CACHESIZE 256
 
-static void
+void
 hwloc_pci_traverse_print_cb(struct hwloc_topology *topology __hwloc_attribute_unused, struct hwloc_obj *pcidev, int depth __hwloc_attribute_unused)
 {
   char busid[14];
@@ -163,6 +167,32 @@ hwloc_linux_lookup_drm_class(struct hwloc_topology *topology, struct hwloc_obj *
    * so we could create a OS device for each PCI devices with such a field.
    * boot_vga is actually created when class >> 8 == VGA (it contains 1 for boot vga device), so it's trivial anyway.
    */
+}
+static void
+hwloc_linux_lookup_dpy_class(struct hwloc_topology *topology, struct hwloc_obj *pcidev)
+{
+    // TO BE REMOVED
+    // printf("bus %d \n", pcidev->attr->pcidev.bus);
+    // printf("device_id %d \n", pcidev->attr->pcidev.device_id);
+    // printf("name %s \n", pcidev->name);
+
+    struct gpu_info gpu_ids;
+    gpu_ids.pci_device_id = pcidev->attr->pcidev.device_id;
+    gpu_ids.bus_id = pcidev->attr->pcidev.bus;
+
+    /* Getting the display info */
+    struct display_info display = get_gpu_display(gpu_ids);
+
+    // printf("Display:%d.%d \n", display.port, display.device);
+
+    /* If GPU, Appending the display as a children to the GPU
+     * and add a display object with the display name */
+    if (display.port > -1 && display.device > -1) {
+        char display_name[64];
+        snprintf(display_name, sizeof(display_name), ":%d.%d", (display.port), display.device);
+        hwloc_topology_insert_misc_object_by_parent(topology, pcidev, display_name);
+        hwloc_linux_add_os_device(topology, pcidev, HWLOC_OBJ_OSDEV_DISPLAY, display_name);
+    }
 }
 
 /* block class objects are in
@@ -307,6 +337,7 @@ hwloc_pci_traverse_lookuposdevices_cb(struct hwloc_topology *topology, struct hw
   hwloc_linux_lookup_dma_class(topology, pcidev, pcidevpath);
   hwloc_linux_lookup_drm_class(topology, pcidev, pcidevpath);
   hwloc_linux_lookup_block_class(topology, pcidev, pcidevpath);
+  hwloc_linux_lookup_dpy_class(topology, pcidev);
   }
 #endif /* HWLOC_LINUX_SYS */
 }

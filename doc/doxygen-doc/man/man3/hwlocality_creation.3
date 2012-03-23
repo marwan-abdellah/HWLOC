@@ -1,4 +1,4 @@
-.TH "Create and Destroy Topologies" 3 "Thu Jan 26 2012" "Version 1.4" "Hardware Locality (hwloc)" \" -*- nroff -*-
+.TH "Create and Destroy Topologies" 3 "Fri Mar 23 2012" "Version 1.4" "Hardware Locality (hwloc)" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -21,9 +21,9 @@ Create and Destroy Topologies \-
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS " void \fBhwloc_topology_check\fP (\fBhwloc_topology_t\fPtopology)"
+.SS " void hwloc_topology_check (\fBhwloc_topology_t\fPtopology)"
 .PP
-Run internal checks on a topology structure\&. The program aborts if an inconsistency is detected in the given topology\&.
+Run internal checks on a topology structure. The program aborts if an inconsistency is detected in the given topology.
 .PP
 \fBParameters:\fP
 .RS 4
@@ -32,45 +32,45 @@ Run internal checks on a topology structure\&. The program aborts if an inconsis
 .PP
 \fBNote:\fP
 .RS 4
-This routine is only useful to developers\&.
+This routine is only useful to developers.
 .PP
-The input topology should have been previously loaded with \fBhwloc_topology_load()\fP\&. 
+The input topology should have been previously loaded with \fBhwloc_topology_load()\fP. 
 .RE
 .PP
 
-.SS " void \fBhwloc_topology_destroy\fP (\fBhwloc_topology_t\fPtopology)"
+.SS " void hwloc_topology_destroy (\fBhwloc_topology_t\fPtopology)"
 .PP
-Terminate and free a topology context\&. \fBParameters:\fP
+Terminate and free a topology context. \fBParameters:\fP
 .RS 4
 \fItopology\fP is the topology to be freed 
 .RE
 .PP
 
-.SS " int \fBhwloc_topology_init\fP (\fBhwloc_topology_t\fP *topologyp)"
+.SS " int hwloc_topology_init (\fBhwloc_topology_t\fP *topologyp)"
 .PP
-Allocate a topology context\&. \fBParameters:\fP
+Allocate a topology context. \fBParameters:\fP
 .RS 4
-\fItopologyp\fP is assigned a pointer to the new allocated context\&.
+\fItopologyp\fP is assigned a pointer to the new allocated context.
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-0 on success, -1 on error\&. 
+0 on success, -1 on error. 
 .RE
 .PP
 
-.SS " int \fBhwloc_topology_load\fP (\fBhwloc_topology_t\fPtopology)"
+.SS " int hwloc_topology_load (\fBhwloc_topology_t\fPtopology)"
 .PP
-Build the actual topology\&. Build the actual topology once initialized with \fBhwloc_topology_init()\fP and tuned with \fBConfigure Topology Detection\fP routines\&. No other routine may be called earlier using this topology context\&.
+Build the actual topology. Build the actual topology once initialized with \fBhwloc_topology_init()\fP and tuned with \fBConfigure Topology Detection\fP routines. No other routine may be called earlier using this topology context.
 .PP
 \fBParameters:\fP
 .RS 4
-\fItopology\fP is the topology to be loaded with objects\&.
+\fItopology\fP is the topology to be loaded with objects.
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-0 on success, -1 on error\&.
+0 on success, -1 on error.
 .RE
 .PP
 \fBSee also:\fP
@@ -81,4 +81,4 @@ Build the actual topology\&. Build the actual topology once initialized with \fB
 
 .SH "Author"
 .PP 
-Generated automatically by Doxygen for Hardware Locality (hwloc) from the source code\&.
+Generated automatically by Doxygen for Hardware Locality (hwloc) from the source code.

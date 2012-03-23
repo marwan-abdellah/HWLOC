@@ -7,7 +7,10 @@
 #include <string.h>
 #include "stdlib.h"
 
-#include <X11/Xlib.h>
+
+
+#include <hwloc.h>
+#include </usr/include/X11/Xlib.h>
 #include </usr/include/NVCtrl/NVCtrl.h>
 #include </usr/include/NVCtrl/NVCtrlLib.h>
 
@@ -15,8 +18,8 @@
 extern "C" {
 #endif
 
-
-#define __hwloc_inline __inline__
+static void
+hwloc_linux_lookup_dpy_class(struct hwloc_topology *topology, struct hwloc_obj *pcidev);
 
 struct display_info
 {
@@ -57,9 +60,10 @@ struct pci_dev_info
 };
 
 /* Prototypes */
+
+static __hwloc_inline pci_dev_info* getPciDeviceInfo(int& device_count);
 static __hwloc_inline gpu_info queryDisplay(char* displayName);
 static __hwloc_inline gpu_info queryDevices(void);
-static __hwloc_inline pci_dev_info* getPciDeviceInfo(int& device_count);
 static __hwloc_inline hwloc_bitmap_t get_auto_cpuset();
 static __hwloc_inline hwloc_bitmap_t get_display_cpuset(const int port, const int device);
 static __hwloc_inline display_info get_gpu_display(const gpu_info gpu_ids);
@@ -326,7 +330,11 @@ static __hwloc_inline pci_dev_info* getPciDeviceInfo(int& device_count)
             /* Appending the display as a children to the GPU object */
             char x_display[128];
             snprintf(x_display,sizeof(x_display),"DISPLAY= :%d.%d", (display.port), display.device);
-            hwloc_topology_insert_misc_object_by_parent(topology, pci_dev_object, x_display);
+            hwloc_obj_t disp_obj = hwloc_topology_insert_misc_object_by_parent(topology, pci_dev_object, x_display);
+
+
+
+
         }
         else {
             device_list[i].is_gpu = false;
