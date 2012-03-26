@@ -1,4 +1,4 @@
-.TH "Finding Objects Inside a CPU set" 3 "Fri Mar 23 2012" "Version 1.4" "Hardware Locality (hwloc)" \" -*- nroff -*-
+.TH "Finding Objects Inside a CPU set" 3 "Mon Mar 26 2012" "Version 1.4.1" "Hardware Locality (hwloc)" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -19,19 +19,19 @@ Finding Objects Inside a CPU set \-
 .RI "static inline \fBhwloc_obj_t\fP \fBhwloc_get_next_obj_inside_cpuset_by_type\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fP set, \fBhwloc_obj_type_t\fP type, \fBhwloc_obj_t\fP prev)"
 .br
 .ti -1c
-.RI "static inline \fBhwloc_obj_t\fP  \fBhwloc_get_obj_inside_cpuset_by_depth\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fP set, unsigned depth, unsigned idx)"
+.RI "static inline \fBhwloc_obj_t\fP \fBhwloc_get_obj_inside_cpuset_by_depth\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fP set, unsigned depth, unsigned idx) "
 .br
 .ti -1c
-.RI "static inline \fBhwloc_obj_t\fP  \fBhwloc_get_obj_inside_cpuset_by_type\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fP set, \fBhwloc_obj_type_t\fP type, unsigned idx)"
+.RI "static inline \fBhwloc_obj_t\fP \fBhwloc_get_obj_inside_cpuset_by_type\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fP set, \fBhwloc_obj_type_t\fP type, unsigned idx) "
 .br
 .ti -1c
-.RI "static inline unsigned  \fBhwloc_get_nbobjs_inside_cpuset_by_depth\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fP set, unsigned depth)"
+.RI "static inline unsigned \fBhwloc_get_nbobjs_inside_cpuset_by_depth\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fP set, unsigned depth) "
 .br
 .ti -1c
-.RI "static inline int  \fBhwloc_get_nbobjs_inside_cpuset_by_type\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fP set, \fBhwloc_obj_type_t\fP type)"
+.RI "static inline int \fBhwloc_get_nbobjs_inside_cpuset_by_type\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fP set, \fBhwloc_obj_type_t\fP type) "
 .br
 .ti -1c
-.RI "static inline int  \fBhwloc_get_obj_index_inside_cpuset\fP (\fBhwloc_topology_t\fP topology , \fBhwloc_const_cpuset_t\fP set, \fBhwloc_obj_t\fP obj)"
+.RI "static inline int \fBhwloc_get_obj_index_inside_cpuset\fP (\fBhwloc_topology_t\fP topology , \fBhwloc_const_cpuset_t\fP set, \fBhwloc_obj_t\fP obj) "
 .br
 .in -1c
 .SH "Function Documentation"
@@ -64,7 +64,7 @@ This function cannot work if the root object does not have a CPU set, e.g. if th
 .RE
 .PP
 
-.SS "static inline unsigned  hwloc_get_nbobjs_inside_cpuset_by_depth (\fBhwloc_topology_t\fPtopology, \fBhwloc_const_cpuset_t\fPset, unsigneddepth)\fC [static]\fP"
+.SS "static inline unsigned hwloc_get_nbobjs_inside_cpuset_by_depth (\fBhwloc_topology_t\fPtopology, \fBhwloc_const_cpuset_t\fPset, unsigneddepth)\fC [static]\fP"
 .PP
 Return the number of objects at depth \fCdepth\fP included in CPU set \fCset\fP. \fBNote:\fP
 .RS 4
@@ -72,7 +72,7 @@ This function cannot work if objects at the given depth do not have CPU sets or 
 .RE
 .PP
 
-.SS "static inline int  hwloc_get_nbobjs_inside_cpuset_by_type (\fBhwloc_topology_t\fPtopology, \fBhwloc_const_cpuset_t\fPset, \fBhwloc_obj_type_t\fPtype)\fC [static]\fP"
+.SS "static inline int hwloc_get_nbobjs_inside_cpuset_by_type (\fBhwloc_topology_t\fPtopology, \fBhwloc_const_cpuset_t\fPset, \fBhwloc_obj_type_t\fPtype)\fC [static]\fP"
 .PP
 Return the number of objects of type \fCtype\fP included in CPU set \fCset\fP. If no object for that type exists inside CPU set \fCset\fP, 0 is returned. If there are several levels with objects of that type inside CPU set \fCset\fP, -1 is returned.
 .PP
@@ -102,10 +102,10 @@ This function cannot work if objects of the given type do not have CPU sets or i
 .RE
 .PP
 
-.SS "static inline int  hwloc_get_obj_index_inside_cpuset (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fPset, \fBhwloc_obj_t\fPobj)\fC [static]\fP"
+.SS "static inline int hwloc_get_obj_index_inside_cpuset (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fPset, \fBhwloc_obj_t\fPobj)\fC [static]\fP"
 .PP
 Return the logical index among the objects included in CPU set \fCset\fP. Consult all objects in the same level as \fCobj\fP and inside CPU set \fCset\fP in the logical order, and return the index of \fCobj\fP within them. If \fCset\fP covers the entire topology, this is the logical index of \fCobj\fP. Otherwise, this is similar to a logical index within the part of the topology defined by CPU set \fCset\fP. 
-.SS "static inline \fBhwloc_obj_t\fP  hwloc_get_obj_inside_cpuset_by_depth (\fBhwloc_topology_t\fPtopology, \fBhwloc_const_cpuset_t\fPset, unsigneddepth, unsignedidx)\fC [static]\fP"
+.SS "static inline \fBhwloc_obj_t\fP hwloc_get_obj_inside_cpuset_by_depth (\fBhwloc_topology_t\fPtopology, \fBhwloc_const_cpuset_t\fPset, unsigneddepth, unsignedidx)\fC [static]\fP"
 .PP
 Return the (logically) \fCidx\fP -th object at depth \fCdepth\fP included in CPU set \fCset\fP. \fBNote:\fP
 .RS 4
@@ -113,7 +113,7 @@ This function cannot work if objects at the given depth do not have CPU sets or 
 .RE
 .PP
 
-.SS "static inline \fBhwloc_obj_t\fP  hwloc_get_obj_inside_cpuset_by_type (\fBhwloc_topology_t\fPtopology, \fBhwloc_const_cpuset_t\fPset, \fBhwloc_obj_type_t\fPtype, unsignedidx)\fC [static]\fP"
+.SS "static inline \fBhwloc_obj_t\fP hwloc_get_obj_inside_cpuset_by_type (\fBhwloc_topology_t\fPtopology, \fBhwloc_const_cpuset_t\fPset, \fBhwloc_obj_type_t\fPtype, unsignedidx)\fC [static]\fP"
 .PP
 Return the \fCidx\fP -th object of type \fCtype\fP included in CPU set \fCset\fP. If there are multiple or no depth for given type, return \fCNULL\fP and let the caller fallback to \fBhwloc_get_obj_inside_cpuset_by_depth()\fP.
 .PP

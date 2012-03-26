@@ -14,7 +14,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Hardware Locality (hwloc)&#160;<span id="projectnumber">1.4</span></div>
+   <div id="projectname">Hardware Locality (hwloc)&#160;<span id="projectnumber">1.4.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -44,18 +44,11 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00054.html#gaab04c89623662e63a48ed2cd48eb601c">hwloc_get_largest_objs_inside_cpuset</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00040.html#ga1f784433e9b606261f62d1134f6a3b25">hwloc_const_cpuset_t</a> set, <a class="el" href="a00016.html">hwloc_obj_t</a> *restrict objs, int max)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static inline <a class="el" href="a00016.html">hwloc_obj_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00054.html#ga8af256c2572f16520f95440b884c1bd6">hwloc_get_next_obj_inside_cpuset_by_depth</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00040.html#ga1f784433e9b606261f62d1134f6a3b25">hwloc_const_cpuset_t</a> set, unsigned depth, <a class="el" href="a00016.html">hwloc_obj_t</a> prev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static inline <a class="el" href="a00016.html">hwloc_obj_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00054.html#ga934e7ecd68b33403e0c0be779d9ed1e6">hwloc_get_next_obj_inside_cpuset_by_type</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00040.html#ga1f784433e9b606261f62d1134f6a3b25">hwloc_const_cpuset_t</a> set, <a class="el" href="a00041.html#gacd37bb612667dc437d66bfb175a8dc55">hwloc_obj_type_t</a> type, <a class="el" href="a00016.html">hwloc_obj_t</a> prev)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static inline <br class="typebreak"/>
-<a class="el" href="a00016.html">hwloc_obj_t</a> <br class="typebreak"/>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00054.html#ga20703980008f82379f98f56857611a1a">hwloc_get_obj_inside_cpuset_by_depth</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00040.html#ga1f784433e9b606261f62d1134f6a3b25">hwloc_const_cpuset_t</a> set, unsigned depth, unsigned idx)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static inline <br class="typebreak"/>
-<a class="el" href="a00016.html">hwloc_obj_t</a> <br class="typebreak"/>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00054.html#ga50a80a0021e5843d968c3b97aebaad9b">hwloc_get_obj_inside_cpuset_by_type</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00040.html#ga1f784433e9b606261f62d1134f6a3b25">hwloc_const_cpuset_t</a> set, <a class="el" href="a00041.html#gacd37bb612667dc437d66bfb175a8dc55">hwloc_obj_type_t</a> type, unsigned idx)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static inline unsigned <br class="typebreak"/>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00054.html#ga6807db0012369efe19b8d3dcee235493">hwloc_get_nbobjs_inside_cpuset_by_depth</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00040.html#ga1f784433e9b606261f62d1134f6a3b25">hwloc_const_cpuset_t</a> set, unsigned depth)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static inline int <br class="typebreak"/>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00054.html#ga72c5bc4317a4c3938e32447b769813a0">hwloc_get_nbobjs_inside_cpuset_by_type</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00040.html#ga1f784433e9b606261f62d1134f6a3b25">hwloc_const_cpuset_t</a> set, <a class="el" href="a00041.html#gacd37bb612667dc437d66bfb175a8dc55">hwloc_obj_type_t</a> type)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static inline int <br class="typebreak"/>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00054.html#gace5ff7a134cac9b0ec6330346def5436">hwloc_get_obj_index_inside_cpuset</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology , <a class="el" href="a00040.html#ga1f784433e9b606261f62d1134f6a3b25">hwloc_const_cpuset_t</a> set, <a class="el" href="a00016.html">hwloc_obj_t</a> obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static inline <a class="el" href="a00016.html">hwloc_obj_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00054.html#ga57c8a0e227d1b16a31d19aaf755b42c0">hwloc_get_obj_inside_cpuset_by_depth</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00040.html#ga1f784433e9b606261f62d1134f6a3b25">hwloc_const_cpuset_t</a> set, unsigned depth, unsigned idx) </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static inline <a class="el" href="a00016.html">hwloc_obj_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00054.html#gaa8dcdb85224f7350b90fb0a1ca91e6d6">hwloc_get_obj_inside_cpuset_by_type</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00040.html#ga1f784433e9b606261f62d1134f6a3b25">hwloc_const_cpuset_t</a> set, <a class="el" href="a00041.html#gacd37bb612667dc437d66bfb175a8dc55">hwloc_obj_type_t</a> type, unsigned idx) </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static inline unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00054.html#ga457604a2dedbf70ba3b480558666b56b">hwloc_get_nbobjs_inside_cpuset_by_depth</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00040.html#ga1f784433e9b606261f62d1134f6a3b25">hwloc_const_cpuset_t</a> set, unsigned depth) </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static inline int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00054.html#ga63481874c69ed257b1a0c03e7615ff97">hwloc_get_nbobjs_inside_cpuset_by_type</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00040.html#ga1f784433e9b606261f62d1134f6a3b25">hwloc_const_cpuset_t</a> set, <a class="el" href="a00041.html#gacd37bb612667dc437d66bfb175a8dc55">hwloc_obj_type_t</a> type) </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static inline int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00054.html#ga7cdb6a4645e9b1ec80137e72d1736fdd">hwloc_get_obj_index_inside_cpuset</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology , <a class="el" href="a00040.html#ga1f784433e9b606261f62d1134f6a3b25">hwloc_const_cpuset_t</a> set, <a class="el" href="a00016.html">hwloc_obj_t</a> obj) </td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gabcd5fa81a95fa5335950cae092277d5b"></a><!-- doxytag: member="helper.h::hwloc_get_first_largest_obj_inside_cpuset" ref="gabcd5fa81a95fa5335950cae092277d5b" args="(hwloc_topology_t topology, hwloc_const_cpuset_t set)" -->
@@ -133,12 +126,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga6807db0012369efe19b8d3dcee235493"></a><!-- doxytag: member="helper.h::hwloc_get_nbobjs_inside_cpuset_by_depth" ref="ga6807db0012369efe19b8d3dcee235493" args="(hwloc_topology_t topology, hwloc_const_cpuset_t set, unsigned depth)" -->
+<a class="anchor" id="ga457604a2dedbf70ba3b480558666b56b"></a><!-- doxytag: member="helper.h::hwloc_get_nbobjs_inside_cpuset_by_depth" ref="ga457604a2dedbf70ba3b480558666b56b" args="(hwloc_topology_t topology, hwloc_const_cpuset_t set, unsigned depth) " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static inline unsigned  hwloc_get_nbobjs_inside_cpuset_by_depth </td>
+          <td class="memname">static inline unsigned hwloc_get_nbobjs_inside_cpuset_by_depth </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a>&#160;</td>
           <td class="paramname"><em>topology</em>, </td>
@@ -169,12 +162,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga72c5bc4317a4c3938e32447b769813a0"></a><!-- doxytag: member="helper.h::hwloc_get_nbobjs_inside_cpuset_by_type" ref="ga72c5bc4317a4c3938e32447b769813a0" args="(hwloc_topology_t topology, hwloc_const_cpuset_t set, hwloc_obj_type_t type)" -->
+<a class="anchor" id="ga63481874c69ed257b1a0c03e7615ff97"></a><!-- doxytag: member="helper.h::hwloc_get_nbobjs_inside_cpuset_by_type" ref="ga63481874c69ed257b1a0c03e7615ff97" args="(hwloc_topology_t topology, hwloc_const_cpuset_t set, hwloc_obj_type_t type) " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static inline int  hwloc_get_nbobjs_inside_cpuset_by_type </td>
+          <td class="memname">static inline int hwloc_get_nbobjs_inside_cpuset_by_type </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a>&#160;</td>
           <td class="paramname"><em>topology</em>, </td>
@@ -292,12 +285,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="gace5ff7a134cac9b0ec6330346def5436"></a><!-- doxytag: member="helper.h::hwloc_get_obj_index_inside_cpuset" ref="gace5ff7a134cac9b0ec6330346def5436" args="(hwloc_topology_t topology , hwloc_const_cpuset_t set, hwloc_obj_t obj)" -->
+<a class="anchor" id="ga7cdb6a4645e9b1ec80137e72d1736fdd"></a><!-- doxytag: member="helper.h::hwloc_get_obj_index_inside_cpuset" ref="ga7cdb6a4645e9b1ec80137e72d1736fdd" args="(hwloc_topology_t topology , hwloc_const_cpuset_t set, hwloc_obj_t obj) " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static inline int  hwloc_get_obj_index_inside_cpuset </td>
+          <td class="memname">static inline int hwloc_get_obj_index_inside_cpuset </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology&#160;</td>
           <td class="paramname"><em></em>, </td>
@@ -328,12 +321,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga20703980008f82379f98f56857611a1a"></a><!-- doxytag: member="helper.h::hwloc_get_obj_inside_cpuset_by_depth" ref="ga20703980008f82379f98f56857611a1a" args="(hwloc_topology_t topology, hwloc_const_cpuset_t set, unsigned depth, unsigned idx)" -->
+<a class="anchor" id="ga57c8a0e227d1b16a31d19aaf755b42c0"></a><!-- doxytag: member="helper.h::hwloc_get_obj_inside_cpuset_by_depth" ref="ga57c8a0e227d1b16a31d19aaf755b42c0" args="(hwloc_topology_t topology, hwloc_const_cpuset_t set, unsigned depth, unsigned idx) " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static inline <a class="el" href="a00016.html">hwloc_obj_t</a>  hwloc_get_obj_inside_cpuset_by_depth </td>
+          <td class="memname">static inline <a class="el" href="a00016.html">hwloc_obj_t</a> hwloc_get_obj_inside_cpuset_by_depth </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a>&#160;</td>
           <td class="paramname"><em>topology</em>, </td>
@@ -370,12 +363,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga50a80a0021e5843d968c3b97aebaad9b"></a><!-- doxytag: member="helper.h::hwloc_get_obj_inside_cpuset_by_type" ref="ga50a80a0021e5843d968c3b97aebaad9b" args="(hwloc_topology_t topology, hwloc_const_cpuset_t set, hwloc_obj_type_t type, unsigned idx)" -->
+<a class="anchor" id="gaa8dcdb85224f7350b90fb0a1ca91e6d6"></a><!-- doxytag: member="helper.h::hwloc_get_obj_inside_cpuset_by_type" ref="gaa8dcdb85224f7350b90fb0a1ca91e6d6" args="(hwloc_topology_t topology, hwloc_const_cpuset_t set, hwloc_obj_type_t type, unsigned idx) " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static inline <a class="el" href="a00016.html">hwloc_obj_t</a>  hwloc_get_obj_inside_cpuset_by_type </td>
+          <td class="memname">static inline <a class="el" href="a00016.html">hwloc_obj_t</a> hwloc_get_obj_inside_cpuset_by_type </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a>&#160;</td>
           <td class="paramname"><em>topology</em>, </td>
@@ -408,13 +401,13 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Return the <code>idx</code> -th object of type <code>type</code> included in CPU set <code>set</code>. </p>
-<p>If there are multiple or no depth for given type, return <code>NULL</code> and let the caller fallback to <a class="el" href="a00054.html#ga20703980008f82379f98f56857611a1a" title="Return the (logically) idx -th object at depth depth included in CPU set set.">hwloc_get_obj_inside_cpuset_by_depth()</a>.</p>
+<p>If there are multiple or no depth for given type, return <code>NULL</code> and let the caller fallback to <a class="el" href="a00054.html#ga57c8a0e227d1b16a31d19aaf755b42c0" title="Return the (logically) idx -th object at depth depth included in CPU set set.">hwloc_get_obj_inside_cpuset_by_depth()</a>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function cannot work if objects of the given type do not have CPU sets or if the topology is made of different machines. </dd></dl>
 
 </div>
 </div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Fri Mar 23 2012 15:27:46 for Hardware Locality (hwloc) by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Mar 26 2012 16:32:11 for Hardware Locality (hwloc) by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

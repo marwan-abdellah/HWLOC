@@ -14,7 +14,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Hardware Locality (hwloc)&#160;<span id="projectnumber">1.4</span></div>
+   <div id="projectname">Hardware Locality (hwloc)&#160;<span id="projectnumber">1.4.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -99,25 +99,32 @@ How do I annotate the topology with private notes?</h2>
 <p>Each hwloc object contains a <code>userdata</code> field that may be used by applications to store private pointers. This field is kept intact as long as the object is valid, which means as long as topology objects are not modified by reloading or restricting the topology.</p>
 <p>Each object may also contain some <em>info</em> attributes (key name and value) that are setup by hwloc and may be extended by the user with <code><a class="el" href="a00048.html#gaba3afe636940872772ed6dfaf0b3552e" title="Add the given info name and value pair to the given object.">hwloc_obj_add_info()</a></code>. Contrary to the <code>userdata</code> field which is unique, multiple info attributes may exist for each object, even with the same name. These attributes are also exported to XML together with the topology. However only character strings may be used as key names and values.</p>
 <p>It is also possible to insert Misc objects with custom names anywhere in the topology (<code><a class="el" href="a00045.html#ga017a9ba16d554326c6e3812d545d7230" title="Add a MISC object to the topology.">hwloc_topology_insert_misc_object_by_cpuset()</a></code>) or as a leaf of the topology (<code><a class="el" href="a00045.html#gadacd7a3d21220fbb30c3256d8b22a294" title="Add a MISC object as a leaf of the topology.">hwloc_topology_insert_misc_object_by_parent()</a></code>).</p>
-<h2><a class="anchor" id="faq_upgrade"></a>
+<h2><a class="anchor" id="faq_valgrind"></a>
+Why does Valgrind complain about hwloc memory leaks?</h2>
+<p>If you are debugging your application with Valgrind, you want to avoid memory leak reports that are caused by hwloc and not by your program.</p>
+<p>hwloc itself is often checked with Valgrind to make sure it does not leak memory. However some global variables in hwloc dependencies are never freed. For instance libz allocates its global state once at startup and never frees it so that it may be reused later. Some libxml2 global state is also never freed because hwloc does not know whether it can safely ask libxml2 to free it (the application may also be using libxml2 outside of hwloc).</p>
+<p>These unfreed variables cause leak reports in Valgrind. hwloc installs a Valgrind <em>suppressions</em> file to hide them. You should pass the following command-line option to Valgrind to use it: </p>
+<pre>
+  --suppressions=/path/to/hwloc-valgrind.supp
+</pre><h2><a class="anchor" id="faq_upgrade"></a>
 How do I handle API upgrades?</h2>
 <p>The hwloc interface is extended with every new major release. Any application using the hwloc API should be prepared to check at compile-time whether some features are available in the currently installed hwloc distribution.</p>
 <p>To check whether hwloc is at least 1.2, you should use: </p>
 <div class="fragment"><pre class="fragment">
-#include &lt;hwloc.h&gt;
-#if HWLOC_API_VERSION &gt;= 0x00010200
-...
-#endif
+
+
+
+
 </pre></div><p>One of the major changes in hwloc 1.1 was the addition of the bitmap API. It supersedes the now deprecated cpuset API which will be removed in a future hwloc release. It is strongly recommended to switch existing codes to the bitmap API. Keeping support for older hwloc versions is easy. For instance, if your code uses <code>hwloc_cpuset_alloc</code>, you should use <code>hwloc_bitmap_alloc</code> instead and add the following code to one of your common headers: </p>
 <div class="fragment"><pre class="fragment">
-#include &lt;hwloc.h&gt;
-#if HWLOC_API_VERSION &lt; 0x00010100
-#define hwloc_bitmap_alloc hwloc_cpuset_alloc
-#endif
+
+
+#define hwloc_bitmap_alloc
+
 </pre></div><p>Similarly, the hwloc 1.0 interface may be detected by comparing <code>HWLOC_API_VERSION</code> with <code>0x00010000</code>.</p>
 <p>hwloc 0.9 did not define any <code>HWLOC_API_VERSION</code> but this very old release probably does not deserve support from your application anymore. </p>
 </div></div>
-<hr class="footer"/><address class="footer"><small>Generated on Fri Mar 23 2012 15:27:46 for Hardware Locality (hwloc) by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Mar 26 2012 16:32:11 for Hardware Locality (hwloc) by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

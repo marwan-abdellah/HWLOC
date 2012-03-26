@@ -14,7 +14,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Hardware Locality (hwloc)&#160;<span id="projectnumber">1.4</span></div>
+   <div id="projectname">Hardware Locality (hwloc)&#160;<span id="projectnumber">1.4.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -46,8 +46,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00048.html#ga0db8286d7f3ceda8defd76e3e1e2b284">hwloc_obj_attr_snprintf</a> (char *restrict string, size_t size, <a class="el" href="a00016.html">hwloc_obj_t</a> obj, const char *restrict separator, int verbose)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00048.html#ga5c6a61a83f4790b421e2f62e9088446f">hwloc_obj_snprintf</a> (char *restrict string, size_t size, <a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00016.html">hwloc_obj_t</a> obj, const char *restrict indexprefix, int verbose)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00048.html#gabbfb92224c992c0e2ecef6b6e45260f2">hwloc_obj_cpuset_snprintf</a> (char *restrict str, size_t size, size_t nobj, const <a class="el" href="a00016.html">hwloc_obj_t</a> *restrict objs)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static inline char <br class="typebreak"/>
-*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00048.html#ga1f41387433f4c9e9c14b9f2e522919e4">hwloc_obj_get_info_by_name</a> (<a class="el" href="a00016.html">hwloc_obj_t</a> obj, const char *name)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static inline const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00048.html#ga2a12b2450489675bd5759dc47cbc51ed">hwloc_obj_get_info_by_name</a> (<a class="el" href="a00016.html">hwloc_obj_t</a> obj, const char *name) </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00048.html#gaba3afe636940872772ed6dfaf0b3552e">hwloc_obj_add_info</a> (<a class="el" href="a00016.html">hwloc_obj_t</a> obj, const char *name, const char *value)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
@@ -182,12 +181,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga1f41387433f4c9e9c14b9f2e522919e4"></a><!-- doxytag: member="hwloc.h::hwloc_obj_get_info_by_name" ref="ga1f41387433f4c9e9c14b9f2e522919e4" args="(hwloc_obj_t obj, const char *name)" -->
+<a class="anchor" id="ga2a12b2450489675bd5759dc47cbc51ed"></a><!-- doxytag: member="hwloc.h::hwloc_obj_get_info_by_name" ref="ga2a12b2450489675bd5759dc47cbc51ed" args="(hwloc_obj_t obj, const char *name) " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static inline char*  hwloc_obj_get_info_by_name </td>
+          <td class="memname">static inline const char * hwloc_obj_get_info_by_name </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="a00016.html">hwloc_obj_t</a>&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -356,7 +355,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Fri Mar 23 2012 15:27:46 for Hardware Locality (hwloc) by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Mar 26 2012 16:32:11 for Hardware Locality (hwloc) by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

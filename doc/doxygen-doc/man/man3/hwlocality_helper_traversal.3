@@ -1,4 +1,4 @@
-.TH "Advanced Traversal Helpers" 3 "Fri Mar 23 2012" "Version 1.4" "Hardware Locality (hwloc)" \" -*- nroff -*-
+.TH "Advanced Traversal Helpers" 3 "Mon Mar 26 2012" "Version 1.4.1" "Hardware Locality (hwloc)" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -10,10 +10,10 @@ Advanced Traversal Helpers \-
 .RI " unsigned \fBhwloc_get_closest_objs\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_obj_t\fP src, \fBhwloc_obj_t\fP *restrict objs, unsigned max)"
 .br
 .ti -1c
-.RI "static inline \fBhwloc_obj_t\fP  \fBhwloc_get_obj_below_by_type\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_obj_type_t\fP type1, unsigned idx1, \fBhwloc_obj_type_t\fP type2, unsigned idx2)"
+.RI "static inline \fBhwloc_obj_t\fP \fBhwloc_get_obj_below_by_type\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_obj_type_t\fP type1, unsigned idx1, \fBhwloc_obj_type_t\fP type2, unsigned idx2) "
 .br
 .ti -1c
-.RI "static inline \fBhwloc_obj_t\fP  \fBhwloc_get_obj_below_array_by_type\fP (\fBhwloc_topology_t\fP topology, int nr, \fBhwloc_obj_type_t\fP *typev, unsigned *idxv)"
+.RI "static inline \fBhwloc_obj_t\fP \fBhwloc_get_obj_below_array_by_type\fP (\fBhwloc_topology_t\fP topology, int nr, \fBhwloc_obj_type_t\fP *typev, unsigned *idxv) "
 .br
 .in -1c
 .SH "Detailed Description"
@@ -38,7 +38,7 @@ This function requires the \fCsrc\fP object to have a CPU set.
 .RE
 .PP
 
-.SS "static inline \fBhwloc_obj_t\fP  hwloc_get_obj_below_array_by_type (\fBhwloc_topology_t\fPtopology, intnr, \fBhwloc_obj_type_t\fP *typev, unsigned *idxv)\fC [static]\fP"
+.SS "static inline \fBhwloc_obj_t\fP hwloc_get_obj_below_array_by_type (\fBhwloc_topology_t\fPtopology, intnr, \fBhwloc_obj_type_t\fP *typev, unsigned *idxv)\fC [static]\fP"
 .PP
 Find an object below a chain of objects specified by types and indexes. This is a generalized version of \fBhwloc_get_obj_below_by_type()\fP.
 .PP
@@ -54,7 +54,7 @@ This function requires all these objects and the root object to have a CPU set.
 .RE
 .PP
 
-.SS "static inline \fBhwloc_obj_t\fP  hwloc_get_obj_below_by_type (\fBhwloc_topology_t\fPtopology, \fBhwloc_obj_type_t\fPtype1, unsignedidx1, \fBhwloc_obj_type_t\fPtype2, unsignedidx2)\fC [static]\fP"
+.SS "static inline \fBhwloc_obj_t\fP hwloc_get_obj_below_by_type (\fBhwloc_topology_t\fPtopology, \fBhwloc_obj_type_t\fPtype1, unsignedidx1, \fBhwloc_obj_type_t\fPtype2, unsignedidx2)\fC [static]\fP"
 .PP
 Find an object below another object, both specified by types and indexes. Start from the top system object and find object of type \fCtype1\fP and logical index \fCidx1\fP. Then look below this object and find another object of type \fCtype2\fP and logical index \fCidx2\fP. Indexes are specified within the parent, not withing the entire system.
 .PP

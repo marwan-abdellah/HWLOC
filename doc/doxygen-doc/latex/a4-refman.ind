@@ -1,0 +1,1788 @@
+\begin{theindex}
+
+  \item {Advanced I/O object traversal helpers}, \hyperpage{113}
+  \item {Advanced Traversal Helpers}, \hyperpage{104}
+  \item {alloc\_\discretionary {-}{}{}membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{151}
+  \item {allowed\_\discretionary {-}{}{}cpuset}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{138}
+  \item {allowed\_\discretionary {-}{}{}nodeset}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{138}
+  \item {API version}, \hyperpage{59}
+  \item {arity}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{138}
+  \item {associativity}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}cache\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{135}
+  \item {attr}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{138}
+
+  \indexspace
+
+  \item {Basic Traversal Helpers}, \hyperpage{96}
+  \item {bind\_\discretionary {-}{}{}membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{151}
+  \item {Binding Helpers}, \hyperpage{106}
+  \item {bridge}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u}, 
+		\hyperpage{143}
+  \item {Building Custom Topologies}, \hyperpage{94}
+  \item {bus}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{147}
+
+  \indexspace
+
+  \item {cache}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u}, 
+		\hyperpage{143}
+  \item {Cache-\/specific Finding Helpers}, \hyperpage{103}
+  \item {children}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{139}
+  \item {class\_\discretionary {-}{}{}id}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{147}
+  \item {complete\_\discretionary {-}{}{}cpuset}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{139}
+  \item {complete\_\discretionary {-}{}{}nodeset}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{139}
+  \item {Configure Topology Detection}, \hyperpage{66}
+  \item {Conversion between cpuset and nodeset}, \hyperpage{110}
+  \item {count}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}memory\_\discretionary {-}{}{}s::hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}memory\_\discretionary {-}{}{}page\_\discretionary {-}{}{}type\_\discretionary {-}{}{}s}, 
+		\hyperpage{145}
+  \item {CPU binding}, \hyperpage{80}
+  \item {cpubind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}support}, 
+		\hyperpage{153}
+  \item {cpuset}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{139}
+  \item {Cpuset Helpers}, \hyperpage{107}
+  \item {Create and Destroy Topologies}, \hyperpage{65}
+  \item {CUDA Driver API Specific Functions}, \hyperpage{129}
+  \item {CUDA Runtime API Specific Functions}, \hyperpage{130}
+
+  \indexspace
+
+  \item {depth}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{140}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{134}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}cache\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{135}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}group\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{137}
+  \item {dev}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{147}
+  \item {device\_\discretionary {-}{}{}id}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{147}
+  \item {discovery}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}support}, 
+		\hyperpage{153}
+  \item {Distances}, \hyperpage{111}
+  \item {distances}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{140}
+  \item {distances\_\discretionary {-}{}{}count}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{140}
+  \item {domain}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{134}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{147}
+  \item {downstream}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{134}
+  \item {downstream\_\discretionary {-}{}{}type}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{134}
+
+  \indexspace
+
+  \item {Finding a set of similar Objects covering at least a CPU set}, 
+		\hyperpage{102}
+  \item {Finding a single Object covering at least CPU set}, 
+		\hyperpage{102}
+  \item {Finding Objects Inside a CPU set}, \hyperpage{99}
+  \item {first\_\discretionary {-}{}{}child}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{140}
+  \item {firsttouch\_\discretionary {-}{}{}membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{151}
+  \item {func}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{147}
+
+  \indexspace
+
+  \item {Get Some Topology Information}, \hyperpage{75}
+  \item {get\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{151}
+  \item {get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}cpubind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}support}, 
+		\hyperpage{148}
+  \item {get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}last\_\discretionary {-}{}{}cpu\_\discretionary {-}{}{}location}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}support}, 
+		\hyperpage{148}
+  \item {get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{151}
+  \item {get\_\discretionary {-}{}{}thisproc\_\discretionary {-}{}{}cpubind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}support}, 
+		\hyperpage{148}
+  \item {get\_\discretionary {-}{}{}thisproc\_\discretionary {-}{}{}last\_\discretionary {-}{}{}cpu\_\discretionary {-}{}{}location}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}support}, 
+		\hyperpage{148}
+  \item {get\_\discretionary {-}{}{}thisproc\_\discretionary {-}{}{}membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{151}
+  \item {get\_\discretionary {-}{}{}thisthread\_\discretionary {-}{}{}cpubind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}support}, 
+		\hyperpage{148}
+  \item {get\_\discretionary {-}{}{}thisthread\_\discretionary {-}{}{}last\_\discretionary {-}{}{}cpu\_\discretionary {-}{}{}location}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}support}, 
+		\hyperpage{149}
+  \item {get\_\discretionary {-}{}{}thisthread\_\discretionary {-}{}{}membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{151}
+  \item {get\_\discretionary {-}{}{}thread\_\discretionary {-}{}{}cpubind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}support}, 
+		\hyperpage{149}
+  \item {group}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u}, 
+		\hyperpage{143}
+
+  \indexspace
+
+  \item {Helpers for manipulating glibc sched affinity}, 
+		\hyperpage{124}
+  \item {Helpers for manipulating Linux libnuma bitmask}, 
+		\hyperpage{127}
+  \item {Helpers for manipulating Linux libnuma nodemask\_\discretionary {-}{}{}t}, 
+		\hyperpage{128}
+  \item {Helpers for manipulating Linux libnuma unsigned long masks}, 
+		\hyperpage{125}
+  \item {HWLOC\_\-CPUBIND\_\-NOMEMBIND}
+    \subitem {hwlocality\_\-cpubinding}, \hyperpage{82}
+  \item {HWLOC\_\-CPUBIND\_\-PROCESS}
+    \subitem {hwlocality\_\-cpubinding}, \hyperpage{82}
+  \item {HWLOC\_\-CPUBIND\_\-STRICT}
+    \subitem {hwlocality\_\-cpubinding}, \hyperpage{82}
+  \item {HWLOC\_\-CPUBIND\_\-THREAD}
+    \subitem {hwlocality\_\-cpubinding}, \hyperpage{82}
+  \item {HWLOC\_\-MEMBIND\_\-BIND}
+    \subitem {hwlocality\_\-membinding}, \hyperpage{87}
+  \item {HWLOC\_\-MEMBIND\_\-DEFAULT}
+    \subitem {hwlocality\_\-membinding}, \hyperpage{87}
+  \item {HWLOC\_\-MEMBIND\_\-FIRSTTOUCH}
+    \subitem {hwlocality\_\-membinding}, \hyperpage{87}
+  \item {HWLOC\_\-MEMBIND\_\-INTERLEAVE}
+    \subitem {hwlocality\_\-membinding}, \hyperpage{87}
+  \item {HWLOC\_\-MEMBIND\_\-MIGRATE}
+    \subitem {hwlocality\_\-membinding}, \hyperpage{87}
+  \item {HWLOC\_\-MEMBIND\_\-MIXED}
+    \subitem {hwlocality\_\-membinding}, \hyperpage{88}
+  \item {HWLOC\_\-MEMBIND\_\-NEXTTOUCH}
+    \subitem {hwlocality\_\-membinding}, \hyperpage{88}
+  \item {HWLOC\_\-MEMBIND\_\-NOCPUBIND}
+    \subitem {hwlocality\_\-membinding}, \hyperpage{87}
+  \item {HWLOC\_\-MEMBIND\_\-PROCESS}
+    \subitem {hwlocality\_\-membinding}, \hyperpage{86}
+  \item {HWLOC\_\-MEMBIND\_\-REPLICATE}
+    \subitem {hwlocality\_\-membinding}, \hyperpage{88}
+  \item {HWLOC\_\-MEMBIND\_\-STRICT}
+    \subitem {hwlocality\_\-membinding}, \hyperpage{87}
+  \item {HWLOC\_\-MEMBIND\_\-THREAD}
+    \subitem {hwlocality\_\-membinding}, \hyperpage{87}
+  \item {HWLOC\_\-OBJ\_\-BRIDGE}
+    \subitem {hwlocality\_\-types}, \hyperpage{63}
+  \item {HWLOC\_\-OBJ\_\-BRIDGE\_\-HOST}
+    \subitem {hwlocality\_\-types}, \hyperpage{62}
+  \item {HWLOC\_\-OBJ\_\-BRIDGE\_\-PCI}
+    \subitem {hwlocality\_\-types}, \hyperpage{62}
+  \item {HWLOC\_\-OBJ\_\-CACHE}
+    \subitem {hwlocality\_\-types}, \hyperpage{63}
+  \item {HWLOC\_\-OBJ\_\-CORE}
+    \subitem {hwlocality\_\-types}, \hyperpage{63}
+  \item {HWLOC\_\-OBJ\_\-GROUP}
+    \subitem {hwlocality\_\-types}, \hyperpage{63}
+  \item {HWLOC\_\-OBJ\_\-MACHINE}
+    \subitem {hwlocality\_\-types}, \hyperpage{63}
+  \item {HWLOC\_\-OBJ\_\-MISC}
+    \subitem {hwlocality\_\-types}, \hyperpage{63}
+  \item {HWLOC\_\-OBJ\_\-NODE}
+    \subitem {hwlocality\_\-types}, \hyperpage{63}
+  \item {HWLOC\_\-OBJ\_\-OS\_\-DEVICE}
+    \subitem {hwlocality\_\-types}, \hyperpage{63}
+  \item {HWLOC\_\-OBJ\_\-OSDEV\_\-BLOCK}
+    \subitem {hwlocality\_\-types}, \hyperpage{62}
+  \item {HWLOC\_\-OBJ\_\-OSDEV\_\-DISPLAY}
+    \subitem {hwlocality\_\-types}, \hyperpage{62}
+  \item {HWLOC\_\-OBJ\_\-OSDEV\_\-DMA}
+    \subitem {hwlocality\_\-types}, \hyperpage{62}
+  \item {HWLOC\_\-OBJ\_\-OSDEV\_\-GPU}
+    \subitem {hwlocality\_\-types}, \hyperpage{62}
+  \item {HWLOC\_\-OBJ\_\-OSDEV\_\-NETWORK}
+    \subitem {hwlocality\_\-types}, \hyperpage{62}
+  \item {HWLOC\_\-OBJ\_\-OSDEV\_\-OPENFABRICS}
+    \subitem {hwlocality\_\-types}, \hyperpage{62}
+  \item {HWLOC\_\-OBJ\_\-PCI\_\-DEVICE}
+    \subitem {hwlocality\_\-types}, \hyperpage{63}
+  \item {HWLOC\_\-OBJ\_\-PU}
+    \subitem {hwlocality\_\-types}, \hyperpage{63}
+  \item {HWLOC\_\-OBJ\_\-SOCKET}
+    \subitem {hwlocality\_\-types}, \hyperpage{63}
+  \item {HWLOC\_\-OBJ\_\-SYSTEM}
+    \subitem {hwlocality\_\-types}, \hyperpage{63}
+  \item {HWLOC\_\-OBJ\_\-TYPE\_\-MAX}
+    \subitem {hwlocality\_\-types}, \hyperpage{63}
+  \item {HWLOC\_\-RESTRICT\_\-FLAG\_\-ADAPT\_\-DISTANCES}
+    \subitem {hwlocality\_\-tinker}, \hyperpage{73}
+  \item {HWLOC\_\-RESTRICT\_\-FLAG\_\-ADAPT\_\-IO}
+    \subitem {hwlocality\_\-tinker}, \hyperpage{73}
+  \item {HWLOC\_\-RESTRICT\_\-FLAG\_\-ADAPT\_\-MISC}
+    \subitem {hwlocality\_\-tinker}, \hyperpage{73}
+  \item {HWLOC\_\-TOPOLOGY\_\-FLAG\_\-IO\_\-BRIDGES}
+    \subitem {hwlocality\_\-configuration}, \hyperpage{68}
+  \item {HWLOC\_\-TOPOLOGY\_\-FLAG\_\-IO\_\-DEVICES}
+    \subitem {hwlocality\_\-configuration}, \hyperpage{68}
+  \item {HWLOC\_\-TOPOLOGY\_\-FLAG\_\-IS\_\-THISSYSTEM}
+    \subitem {hwlocality\_\-configuration}, \hyperpage{68}
+  \item {HWLOC\_\-TOPOLOGY\_\-FLAG\_\-WHOLE\_\-IO}
+    \subitem {hwlocality\_\-configuration}, \hyperpage{68}
+  \item {HWLOC\_\-TOPOLOGY\_\-FLAG\_\-WHOLE\_\-SYSTEM}
+    \subitem {hwlocality\_\-configuration}, \hyperpage{68}
+  \item {HWLOC\_\-TYPE\_\-DEPTH\_\-BRIDGE}
+    \subitem {hwlocality\_\-information}, \hyperpage{75}
+  \item {HWLOC\_\-TYPE\_\-DEPTH\_\-MULTIPLE}
+    \subitem {hwlocality\_\-information}, \hyperpage{75}
+  \item {HWLOC\_\-TYPE\_\-DEPTH\_\-OS\_\-DEVICE}
+    \subitem {hwlocality\_\-information}, \hyperpage{75}
+  \item {HWLOC\_\-TYPE\_\-DEPTH\_\-PCI\_\-DEVICE}
+    \subitem {hwlocality\_\-information}, \hyperpage{75}
+  \item {HWLOC\_\-TYPE\_\-DEPTH\_\-UNKNOWN}
+    \subitem {hwlocality\_\-information}, \hyperpage{75}
+  \item {HWLOC\_\-TYPE\_\-UNORDERED}
+    \subitem {hwlocality\_\-types}, \hyperpage{62}
+  \item {hwloc\_\discretionary {-}{}{}alloc}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{88}
+  \item {hwloc\_\discretionary {-}{}{}alloc\_\discretionary {-}{}{}membind}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{88}
+  \item {hwloc\_\discretionary {-}{}{}alloc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{88}
+  \item {hwloc\_\discretionary {-}{}{}alloc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}policy}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}binding}, 
+		\hyperpage{106}
+  \item {hwloc\_\discretionary {-}{}{}alloc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}policy\_\discretionary {-}{}{}nodeset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}binding}, 
+		\hyperpage{106}
+  \item {HWLOC\_\discretionary {-}{}{}API\_\discretionary {-}{}{}VERSION}
+    \subitem {hwlocality\_\discretionary {-}{}{}api\_\discretionary {-}{}{}version}, 
+		\hyperpage{59}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}allbut}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{118}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}alloc}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{118}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}alloc\_\discretionary {-}{}{}full}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{118}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}and}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{118}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}andnot}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{118}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}asprintf}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{118}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}clr}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{118}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}clr\_\discretionary {-}{}{}range}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{118}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}compare}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{119}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}compare\_\discretionary {-}{}{}first}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{119}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}copy}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{119}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}dup}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{119}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}fill}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{119}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}first}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{119}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}foreach\_\discretionary {-}{}{}begin}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{117}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}foreach\_\discretionary {-}{}{}end}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{117}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}free}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{119}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}from\_\discretionary {-}{}{}ith\_\discretionary {-}{}{}ulong}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{120}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}from\_\discretionary {-}{}{}ulong}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{120}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}intersects}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{120}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}isequal}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{120}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}isfull}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{120}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}isincluded}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{120}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}isset}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{120}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}iszero}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{120}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}last}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{120}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}list\_\discretionary {-}{}{}asprintf}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{121}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}list\_\discretionary {-}{}{}snprintf}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{121}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}list\_\discretionary {-}{}{}sscanf}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{121}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}next}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{121}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}not}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{121}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}only}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{121}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}or}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{122}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}set}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{122}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}set\_\discretionary {-}{}{}ith\_\discretionary {-}{}{}ulong}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{122}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}set\_\discretionary {-}{}{}range}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{122}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}singlify}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{122}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}snprintf}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{122}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}sscanf}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{122}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}t}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{117}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}taskset\_\discretionary {-}{}{}asprintf}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{123}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}taskset\_\discretionary {-}{}{}snprintf}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{123}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}taskset\_\discretionary {-}{}{}sscanf}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{123}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}to\_\discretionary {-}{}{}ith\_\discretionary {-}{}{}ulong}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{123}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}to\_\discretionary {-}{}{}ulong}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{123}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}weight}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{123}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}xor}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{123}
+  \item {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}zero}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{124}
+  \item {hwloc\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}covers\_\discretionary {-}{}{}pcibus}
+    \subitem {hwlocality\_\discretionary {-}{}{}advanced\_\discretionary {-}{}{}io}, 
+		\hyperpage{114}
+  \item {hwloc\_\discretionary {-}{}{}compare\_\discretionary {-}{}{}types}
+    \subitem {hwlocality\_\discretionary {-}{}{}types}, \hyperpage{64}
+  \item {hwloc\_\discretionary {-}{}{}compare\_\discretionary {-}{}{}types\_\discretionary {-}{}{}e}
+    \subitem {hwlocality\_\discretionary {-}{}{}types}, \hyperpage{62}
+  \item {hwloc\_\discretionary {-}{}{}const\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}t}
+    \subitem {hwlocality\_\discretionary {-}{}{}bitmap}, 
+		\hyperpage{117}
+  \item {hwloc\_\discretionary {-}{}{}const\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}t}
+    \subitem {hwlocality\_\discretionary {-}{}{}sets}, \hyperpage{60}
+  \item {hwloc\_\discretionary {-}{}{}const\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}t}
+    \subitem {hwlocality\_\discretionary {-}{}{}sets}, \hyperpage{60}
+  \item {hwloc\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}flags\_\discretionary {-}{}{}t}
+    \subitem {hwlocality\_\discretionary {-}{}{}cpubinding}, 
+		\hyperpage{81}
+  \item {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}glibc\_\discretionary {-}{}{}sched\_\discretionary {-}{}{}affinity}
+    \subitem {hwlocality\_\discretionary {-}{}{}glibc\_\discretionary {-}{}{}sched}, 
+		\hyperpage{124}
+  \item {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}
+    \subitem {hwlocality\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}, 
+		\hyperpage{127}
+  \item {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}nodemask}
+    \subitem {hwlocality\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}nodemask}, 
+		\hyperpage{129}
+  \item {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}
+    \subitem {hwlocality\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}, 
+		\hyperpage{126}
+  \item {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}nodeset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}convert}, 
+		\hyperpage{110}
+  \item {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}strict}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}convert}, 
+		\hyperpage{110}
+  \item {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}t}
+    \subitem {hwlocality\_\discretionary {-}{}{}sets}, \hyperpage{60}
+  \item {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}glibc\_\discretionary {-}{}{}sched\_\discretionary {-}{}{}affinity}
+    \subitem {hwlocality\_\discretionary {-}{}{}glibc\_\discretionary {-}{}{}sched}, 
+		\hyperpage{124}
+  \item {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}
+    \subitem {hwlocality\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}, 
+		\hyperpage{127}
+  \item {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}nodemask}
+    \subitem {hwlocality\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}nodemask}, 
+		\hyperpage{129}
+  \item {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}
+    \subitem {hwlocality\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}, 
+		\hyperpage{126}
+  \item {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}nodeset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}convert}, 
+		\hyperpage{111}
+  \item {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}strict}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}convert}, 
+		\hyperpage{111}
+  \item {hwloc\_\discretionary {-}{}{}cuda\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}cuda}, \hyperpage{130}
+  \item {hwloc\_\discretionary {-}{}{}cuda\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}pci\_\discretionary {-}{}{}ids}
+    \subitem {hwlocality\_\discretionary {-}{}{}cuda}, \hyperpage{130}
+  \item {hwloc\_\discretionary {-}{}{}cuda\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}pcidev}
+    \subitem {hwlocality\_\discretionary {-}{}{}cuda}, \hyperpage{130}
+  \item {hwloc\_\discretionary {-}{}{}cudart\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}cudart}, 
+		\hyperpage{130}
+  \item {hwloc\_\discretionary {-}{}{}cudart\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}pci\_\discretionary {-}{}{}ids}
+    \subitem {hwlocality\_\discretionary {-}{}{}cudart}, 
+		\hyperpage{130}
+  \item {hwloc\_\discretionary {-}{}{}cudart\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}pcidev}
+    \subitem {hwlocality\_\discretionary {-}{}{}cudart}, 
+		\hyperpage{131}
+  \item {hwloc\_\discretionary {-}{}{}custom\_\discretionary {-}{}{}insert\_\discretionary {-}{}{}group\_\discretionary {-}{}{}object\_\discretionary {-}{}{}by\_\discretionary {-}{}{}parent}
+    \subitem {hwlocality\_\discretionary {-}{}{}custom}, \hyperpage{95}
+  \item {hwloc\_\discretionary {-}{}{}custom\_\discretionary {-}{}{}insert\_\discretionary {-}{}{}topology}
+    \subitem {hwlocality\_\discretionary {-}{}{}custom}, \hyperpage{95}
+  \item {hwloc\_\discretionary {-}{}{}distances\_\discretionary {-}{}{}s}, 
+		\hyperpage{135}
+    \subitem {latency}, \hyperpage{136}
+    \subitem {latency\_\discretionary {-}{}{}base}, \hyperpage{136}
+    \subitem {latency\_\discretionary {-}{}{}max}, \hyperpage{136}
+    \subitem {nbobjs}, \hyperpage{136}
+    \subitem {relative\_\discretionary {-}{}{}depth}, \hyperpage{136}
+  \item {hwloc\_\discretionary {-}{}{}distribute}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}binding}, 
+		\hyperpage{106}
+  \item {hwloc\_\discretionary {-}{}{}distributev}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}binding}, 
+		\hyperpage{106}
+  \item {hwloc\_\discretionary {-}{}{}free}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{89}
+  \item {hwloc\_\discretionary {-}{}{}free\_\discretionary {-}{}{}xmlbuffer}
+    \subitem {hwlocality\_\discretionary {-}{}{}tinker}, \hyperpage{73}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}ancestor\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}basic}, 
+		\hyperpage{97}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}ancestor\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}basic}, 
+		\hyperpage{97}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}api\_\discretionary {-}{}{}version}
+    \subitem {hwlocality\_\discretionary {-}{}{}api\_\discretionary {-}{}{}version}, 
+		\hyperpage{59}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{89}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{89}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}cache\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}cache}, 
+		\hyperpage{104}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}child\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}covering}, 
+		\hyperpage{102}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}closest\_\discretionary {-}{}{}objs}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}traversal}, 
+		\hyperpage{105}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}common\_\discretionary {-}{}{}ancestor\_\discretionary {-}{}{}obj}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}basic}, 
+		\hyperpage{97}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}cpubind}
+    \subitem {hwlocality\_\discretionary {-}{}{}cpubinding}, 
+		\hyperpage{82}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}depth\_\discretionary {-}{}{}type}
+    \subitem {hwlocality\_\discretionary {-}{}{}information}, 
+		\hyperpage{76}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}distance\_\discretionary {-}{}{}matrix\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}
+    \subitem {hwlocality\_\discretionary {-}{}{}distances}, 
+		\hyperpage{112}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}first\_\discretionary {-}{}{}largest\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}inside}, 
+		\hyperpage{99}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}hostbridge\_\discretionary {-}{}{}by\_\discretionary {-}{}{}pcibus}
+    \subitem {hwlocality\_\discretionary {-}{}{}advanced\_\discretionary {-}{}{}io}, 
+		\hyperpage{114}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}largest\_\discretionary {-}{}{}objs\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}inside}, 
+		\hyperpage{99}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}last\_\discretionary {-}{}{}cpu\_\discretionary {-}{}{}location}
+    \subitem {hwlocality\_\discretionary {-}{}{}cpubinding}, 
+		\hyperpage{83}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}latency}
+    \subitem {hwlocality\_\discretionary {-}{}{}distances}, 
+		\hyperpage{112}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}membind}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{90}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{90}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}nbobjs\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}
+    \subitem {hwlocality\_\discretionary {-}{}{}information}, 
+		\hyperpage{76}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}nbobjs\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}
+    \subitem {hwlocality\_\discretionary {-}{}{}information}, 
+		\hyperpage{76}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}nbobjs\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}inside}, 
+		\hyperpage{100}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}nbobjs\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}inside}, 
+		\hyperpage{100}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}bridge}
+    \subitem {hwlocality\_\discretionary {-}{}{}advanced\_\discretionary {-}{}{}io}, 
+		\hyperpage{114}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}child}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}basic}, 
+		\hyperpage{97}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}basic}, 
+		\hyperpage{97}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}basic}, 
+		\hyperpage{98}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}coverings}, 
+		\hyperpage{103}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}coverings}, 
+		\hyperpage{103}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}inside}, 
+		\hyperpage{100}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}inside}, 
+		\hyperpage{100}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}osdev}
+    \subitem {hwlocality\_\discretionary {-}{}{}advanced\_\discretionary {-}{}{}io}, 
+		\hyperpage{114}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}pcidev}
+    \subitem {hwlocality\_\discretionary {-}{}{}advanced\_\discretionary {-}{}{}io}, 
+		\hyperpage{114}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}non\_\discretionary {-}{}{}io\_\discretionary {-}{}{}ancestor\_\discretionary {-}{}{}obj}
+    \subitem {hwlocality\_\discretionary {-}{}{}advanced\_\discretionary {-}{}{}io}, 
+		\hyperpage{114}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}below\_\discretionary {-}{}{}array\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}traversal}, 
+		\hyperpage{105}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}below\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}traversal}, 
+		\hyperpage{105}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}
+    \subitem {hwlocality\_\discretionary {-}{}{}traversal}, 
+		\hyperpage{77}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}
+    \subitem {hwlocality\_\discretionary {-}{}{}traversal}, 
+		\hyperpage{77}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}covering}, 
+		\hyperpage{102}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}index\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}inside}, 
+		\hyperpage{101}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}inside}, 
+		\hyperpage{101}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}inside}, 
+		\hyperpage{101}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}by\_\discretionary {-}{}{}busid}
+    \subitem {hwlocality\_\discretionary {-}{}{}advanced\_\discretionary {-}{}{}io}, 
+		\hyperpage{115}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}by\_\discretionary {-}{}{}busidstring}
+    \subitem {hwlocality\_\discretionary {-}{}{}advanced\_\discretionary {-}{}{}io}, 
+		\hyperpage{115}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}cpubind}
+    \subitem {hwlocality\_\discretionary {-}{}{}cpubinding}, 
+		\hyperpage{83}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}last\_\discretionary {-}{}{}cpu\_\discretionary {-}{}{}location}
+    \subitem {hwlocality\_\discretionary {-}{}{}cpubinding}, 
+		\hyperpage{83}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{91}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{92}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}pu\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}os\_\discretionary {-}{}{}index}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}basic}, 
+		\hyperpage{98}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}root\_\discretionary {-}{}{}obj}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}basic}, 
+		\hyperpage{98}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}shared\_\discretionary {-}{}{}cache\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}obj}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}cache}, 
+		\hyperpage{104}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}thread\_\discretionary {-}{}{}cpubind}
+    \subitem {hwlocality\_\discretionary {-}{}{}cpubinding}, 
+		\hyperpage{83}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}type\_\discretionary {-}{}{}depth}
+    \subitem {hwlocality\_\discretionary {-}{}{}information}, 
+		\hyperpage{76}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}type\_\discretionary {-}{}{}depth\_\discretionary {-}{}{}e}
+    \subitem {hwlocality\_\discretionary {-}{}{}information}, 
+		\hyperpage{75}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}type\_\discretionary {-}{}{}or\_\discretionary {-}{}{}above\_\discretionary {-}{}{}depth}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}types}, 
+		\hyperpage{96}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}type\_\discretionary {-}{}{}or\_\discretionary {-}{}{}below\_\discretionary {-}{}{}depth}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}types}, 
+		\hyperpage{96}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}whole\_\discretionary {-}{}{}distance\_\discretionary {-}{}{}matrix\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}
+    \subitem {hwlocality\_\discretionary {-}{}{}distances}, 
+		\hyperpage{112}
+  \item {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}whole\_\discretionary {-}{}{}distance\_\discretionary {-}{}{}matrix\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}
+    \subitem {hwlocality\_\discretionary {-}{}{}distances}, 
+		\hyperpage{113}
+  \item {hwloc\_\discretionary {-}{}{}ibv\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}openfabrics}, 
+		\hyperpage{131}
+  \item {hwloc\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}get\_\discretionary {-}{}{}tid\_\discretionary {-}{}{}cpubind}
+    \subitem {hwlocality\_\discretionary {-}{}{}linux}, \hyperpage{125}
+  \item {hwloc\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}parse\_\discretionary {-}{}{}cpumap\_\discretionary {-}{}{}file}
+    \subitem {hwlocality\_\discretionary {-}{}{}linux}, \hyperpage{125}
+  \item {hwloc\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}set\_\discretionary {-}{}{}tid\_\discretionary {-}{}{}cpubind}
+    \subitem {hwlocality\_\discretionary {-}{}{}linux}, \hyperpage{125}
+  \item {hwloc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}flags\_\discretionary {-}{}{}t}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{86}
+  \item {hwloc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}policy\_\discretionary {-}{}{}t}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{87}
+  \item {hwloc\_\discretionary {-}{}{}mx\_\discretionary {-}{}{}board\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}myriexpress}, 
+		\hyperpage{132}
+  \item {hwloc\_\discretionary {-}{}{}mx\_\discretionary {-}{}{}endpoint\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}myriexpress}, 
+		\hyperpage{132}
+  \item {hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}
+    \subitem {hwlocality\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}, 
+		\hyperpage{128}
+  \item {hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}nodemask}
+    \subitem {hwlocality\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}nodemask}, 
+		\hyperpage{129}
+  \item {hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}
+    \subitem {hwlocality\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}, 
+		\hyperpage{126}
+  \item {hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}t}
+    \subitem {hwlocality\_\discretionary {-}{}{}sets}, \hyperpage{60}
+  \item {hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}
+    \subitem {hwlocality\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}, 
+		\hyperpage{128}
+  \item {hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}nodemask}
+    \subitem {hwlocality\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}nodemask}, 
+		\hyperpage{129}
+  \item {hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}
+    \subitem {hwlocality\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}, 
+		\hyperpage{126}
+  \item {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{137}
+    \subitem {allowed\_\discretionary {-}{}{}cpuset}, \hyperpage{138}
+    \subitem {allowed\_\discretionary {-}{}{}nodeset}, \hyperpage{138}
+    \subitem {arity}, \hyperpage{138}
+    \subitem {attr}, \hyperpage{138}
+    \subitem {children}, \hyperpage{139}
+    \subitem {complete\_\discretionary {-}{}{}cpuset}, \hyperpage{139}
+    \subitem {complete\_\discretionary {-}{}{}nodeset}, \hyperpage{139}
+    \subitem {cpuset}, \hyperpage{139}
+    \subitem {depth}, \hyperpage{140}
+    \subitem {distances}, \hyperpage{140}
+    \subitem {distances\_\discretionary {-}{}{}count}, \hyperpage{140}
+    \subitem {first\_\discretionary {-}{}{}child}, \hyperpage{140}
+    \subitem {infos}, \hyperpage{140}
+    \subitem {infos\_\discretionary {-}{}{}count}, \hyperpage{140}
+    \subitem {last\_\discretionary {-}{}{}child}, \hyperpage{140}
+    \subitem {logical\_\discretionary {-}{}{}index}, \hyperpage{140}
+    \subitem {memory}, \hyperpage{140}
+    \subitem {name}, \hyperpage{140}
+    \subitem {next\_\discretionary {-}{}{}cousin}, \hyperpage{140}
+    \subitem {next\_\discretionary {-}{}{}sibling}, \hyperpage{141}
+    \subitem {nodeset}, \hyperpage{141}
+    \subitem {online\_\discretionary {-}{}{}cpuset}, \hyperpage{141}
+    \subitem {os\_\discretionary {-}{}{}index}, \hyperpage{141}
+    \subitem {os\_\discretionary {-}{}{}level}, \hyperpage{141}
+    \subitem {parent}, \hyperpage{141}
+    \subitem {prev\_\discretionary {-}{}{}cousin}, \hyperpage{142}
+    \subitem {prev\_\discretionary {-}{}{}sibling}, \hyperpage{142}
+    \subitem {sibling\_\discretionary {-}{}{}rank}, \hyperpage{142}
+    \subitem {symmetric\_\discretionary {-}{}{}subtree}, 
+		\hyperpage{142}
+    \subitem {type}, \hyperpage{142}
+    \subitem {userdata}, \hyperpage{142}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}add\_\discretionary {-}{}{}info}
+    \subitem {hwlocality\_\discretionary {-}{}{}conversion}, 
+		\hyperpage{78}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}snprintf}
+    \subitem {hwlocality\_\discretionary {-}{}{}conversion}, 
+		\hyperpage{78}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u}, 
+		\hyperpage{142}
+    \subitem {bridge}, \hyperpage{143}
+    \subitem {cache}, \hyperpage{143}
+    \subitem {group}, \hyperpage{143}
+    \subitem {osdev}, \hyperpage{143}
+    \subitem {pcidev}, \hyperpage{143}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{133}
+    \subitem {depth}, \hyperpage{134}
+    \subitem {domain}, \hyperpage{134}
+    \subitem {downstream}, \hyperpage{134}
+    \subitem {downstream\_\discretionary {-}{}{}type}, \hyperpage{134}
+    \subitem {pci}, \hyperpage{134}
+    \subitem {secondary\_\discretionary {-}{}{}bus}, \hyperpage{134}
+    \subitem {subordinate\_\discretionary {-}{}{}bus}, \hyperpage{134}
+    \subitem {upstream}, \hyperpage{134}
+    \subitem {upstream\_\discretionary {-}{}{}type}, \hyperpage{134}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}cache\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{134}
+    \subitem {associativity}, \hyperpage{135}
+    \subitem {depth}, \hyperpage{135}
+    \subitem {linesize}, \hyperpage{135}
+    \subitem {size}, \hyperpage{135}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}group\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{136}
+    \subitem {depth}, \hyperpage{137}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}osdev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{146}
+    \subitem {type}, \hyperpage{146}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{146}
+    \subitem {bus}, \hyperpage{147}
+    \subitem {class\_\discretionary {-}{}{}id}, \hyperpage{147}
+    \subitem {dev}, \hyperpage{147}
+    \subitem {device\_\discretionary {-}{}{}id}, \hyperpage{147}
+    \subitem {domain}, \hyperpage{147}
+    \subitem {func}, \hyperpage{147}
+    \subitem {linkspeed}, \hyperpage{147}
+    \subitem {revision}, \hyperpage{147}
+    \subitem {subdevice\_\discretionary {-}{}{}id}, \hyperpage{147}
+    \subitem {subvendor\_\discretionary {-}{}{}id}, \hyperpage{147}
+    \subitem {vendor\_\discretionary {-}{}{}id}, \hyperpage{147}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}type\_\discretionary {-}{}{}e}
+    \subitem {hwlocality\_\discretionary {-}{}{}types}, \hyperpage{62}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}type\_\discretionary {-}{}{}t}
+    \subitem {hwlocality\_\discretionary {-}{}{}types}, \hyperpage{62}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}snprintf}
+    \subitem {hwlocality\_\discretionary {-}{}{}conversion}, 
+		\hyperpage{78}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}get\_\discretionary {-}{}{}info\_\discretionary {-}{}{}by\_\discretionary {-}{}{}name}
+    \subitem {hwlocality\_\discretionary {-}{}{}conversion}, 
+		\hyperpage{79}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}info\_\discretionary {-}{}{}s}, 
+		\hyperpage{143}
+    \subitem {name}, \hyperpage{144}
+    \subitem {value}, \hyperpage{144}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}is\_\discretionary {-}{}{}in\_\discretionary {-}{}{}subtree}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}basic}, 
+		\hyperpage{98}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}memory\_\discretionary {-}{}{}s}, 
+		\hyperpage{145}
+    \subitem {local\_\discretionary {-}{}{}memory}, \hyperpage{145}
+    \subitem {page\_\discretionary {-}{}{}types}, \hyperpage{145}
+    \subitem {page\_\discretionary {-}{}{}types\_\discretionary {-}{}{}len}, 
+		\hyperpage{146}
+    \subitem {total\_\discretionary {-}{}{}memory}, \hyperpage{146}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}memory\_\discretionary {-}{}{}s::hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}memory\_\discretionary {-}{}{}page\_\discretionary {-}{}{}type\_\discretionary {-}{}{}s}, 
+		\hyperpage{144}
+    \subitem {count}, \hyperpage{145}
+    \subitem {size}, \hyperpage{145}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}osdev\_\discretionary {-}{}{}type\_\discretionary {-}{}{}e}
+    \subitem {hwlocality\_\discretionary {-}{}{}types}, \hyperpage{62}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}osdev\_\discretionary {-}{}{}type\_\discretionary {-}{}{}t}
+    \subitem {hwlocality\_\discretionary {-}{}{}types}, \hyperpage{62}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}snprintf}
+    \subitem {hwlocality\_\discretionary {-}{}{}conversion}, 
+		\hyperpage{79}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}t}
+    \subitem {hwlocality\_\discretionary {-}{}{}objects}, 
+		\hyperpage{65}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}type\_\discretionary {-}{}{}of\_\discretionary {-}{}{}string}
+    \subitem {hwlocality\_\discretionary {-}{}{}conversion}, 
+		\hyperpage{79}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}type\_\discretionary {-}{}{}snprintf}
+    \subitem {hwlocality\_\discretionary {-}{}{}conversion}, 
+		\hyperpage{80}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}type\_\discretionary {-}{}{}string}
+    \subitem {hwlocality\_\discretionary {-}{}{}conversion}, 
+		\hyperpage{80}
+  \item {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}type\_\discretionary {-}{}{}t}
+    \subitem {hwlocality\_\discretionary {-}{}{}types}, \hyperpage{62}
+  \item {hwloc\_\discretionary {-}{}{}restrict\_\discretionary {-}{}{}flags\_\discretionary {-}{}{}e}
+    \subitem {hwlocality\_\discretionary {-}{}{}tinker}, \hyperpage{73}
+  \item {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{92}
+  \item {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{93}
+  \item {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cpubind}
+    \subitem {hwlocality\_\discretionary {-}{}{}cpubinding}, 
+		\hyperpage{84}
+  \item {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}membind}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{93}
+  \item {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{93}
+  \item {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}cpubind}
+    \subitem {hwlocality\_\discretionary {-}{}{}cpubinding}, 
+		\hyperpage{84}
+  \item {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{94}
+  \item {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}
+    \subitem {hwlocality\_\discretionary {-}{}{}membinding}, 
+		\hyperpage{94}
+  \item {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}thread\_\discretionary {-}{}{}cpubind}
+    \subitem {hwlocality\_\discretionary {-}{}{}cpubinding}, 
+		\hyperpage{84}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}check}
+    \subitem {hwlocality\_\discretionary {-}{}{}creation}, 
+		\hyperpage{65}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}support}, 
+		\hyperpage{148}
+    \subitem {get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{148}
+    \subitem {get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}last\_\discretionary {-}{}{}cpu\_\discretionary {-}{}{}location}, 
+		\hyperpage{148}
+    \subitem {get\_\discretionary {-}{}{}thisproc\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{148}
+    \subitem {get\_\discretionary {-}{}{}thisproc\_\discretionary {-}{}{}last\_\discretionary {-}{}{}cpu\_\discretionary {-}{}{}location}, 
+		\hyperpage{148}
+    \subitem {get\_\discretionary {-}{}{}thisthread\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{148}
+    \subitem {get\_\discretionary {-}{}{}thisthread\_\discretionary {-}{}{}last\_\discretionary {-}{}{}cpu\_\discretionary {-}{}{}location}, 
+		\hyperpage{149}
+    \subitem {get\_\discretionary {-}{}{}thread\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{149}
+    \subitem {set\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{149}
+    \subitem {set\_\discretionary {-}{}{}thisproc\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{149}
+    \subitem {set\_\discretionary {-}{}{}thisthread\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{149}
+    \subitem {set\_\discretionary {-}{}{}thread\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{149}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}destroy}
+    \subitem {hwlocality\_\discretionary {-}{}{}creation}, 
+		\hyperpage{65}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}discovery\_\discretionary {-}{}{}support}, 
+		\hyperpage{149}
+    \subitem {pu}, \hyperpage{150}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}export\_\discretionary {-}{}{}xml}
+    \subitem {hwlocality\_\discretionary {-}{}{}tinker}, \hyperpage{73}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}export\_\discretionary {-}{}{}xmlbuffer}
+    \subitem {hwlocality\_\discretionary {-}{}{}tinker}, \hyperpage{73}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}flags\_\discretionary {-}{}{}e}
+    \subitem {hwlocality\_\discretionary {-}{}{}configuration}, 
+		\hyperpage{68}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}allowed\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{107}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}allowed\_\discretionary {-}{}{}nodeset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{109}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}complete\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{107}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}complete\_\discretionary {-}{}{}nodeset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{109}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}depth}
+    \subitem {hwlocality\_\discretionary {-}{}{}information}, 
+		\hyperpage{76}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}online\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{108}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}support}
+    \subitem {hwlocality\_\discretionary {-}{}{}configuration}, 
+		\hyperpage{68}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{108}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}nodeset}
+    \subitem {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{109}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}ignore\_\discretionary {-}{}{}all\_\discretionary {-}{}{}keep\_\discretionary {-}{}{}structure}
+    \subitem {hwlocality\_\discretionary {-}{}{}configuration}, 
+		\hyperpage{68}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}ignore\_\discretionary {-}{}{}type}
+    \subitem {hwlocality\_\discretionary {-}{}{}configuration}, 
+		\hyperpage{68}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}ignore\_\discretionary {-}{}{}type\_\discretionary {-}{}{}keep\_\discretionary {-}{}{}structure}
+    \subitem {hwlocality\_\discretionary {-}{}{}configuration}, 
+		\hyperpage{69}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}init}
+    \subitem {hwlocality\_\discretionary {-}{}{}creation}, 
+		\hyperpage{65}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}insert\_\discretionary {-}{}{}misc\_\discretionary {-}{}{}object\_\discretionary {-}{}{}by\_\discretionary {-}{}{}cpuset}
+    \subitem {hwlocality\_\discretionary {-}{}{}tinker}, \hyperpage{73}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}insert\_\discretionary {-}{}{}misc\_\discretionary {-}{}{}object\_\discretionary {-}{}{}by\_\discretionary {-}{}{}parent}
+    \subitem {hwlocality\_\discretionary {-}{}{}tinker}, \hyperpage{74}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}is\_\discretionary {-}{}{}thissystem}
+    \subitem {hwlocality\_\discretionary {-}{}{}information}, 
+		\hyperpage{76}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}load}
+    \subitem {hwlocality\_\discretionary {-}{}{}creation}, 
+		\hyperpage{66}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{150}
+    \subitem {alloc\_\discretionary {-}{}{}membind}, \hyperpage{151}
+    \subitem {bind\_\discretionary {-}{}{}membind}, \hyperpage{151}
+    \subitem {firsttouch\_\discretionary {-}{}{}membind}, 
+		\hyperpage{151}
+    \subitem {get\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind}, 
+		\hyperpage{151}
+    \subitem {get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind}, 
+		\hyperpage{151}
+    \subitem {get\_\discretionary {-}{}{}thisproc\_\discretionary {-}{}{}membind}, 
+		\hyperpage{151}
+    \subitem {get\_\discretionary {-}{}{}thisthread\_\discretionary {-}{}{}membind}, 
+		\hyperpage{151}
+    \subitem {interleave\_\discretionary {-}{}{}membind}, 
+		\hyperpage{151}
+    \subitem {migrate\_\discretionary {-}{}{}membind}, \hyperpage{151}
+    \subitem {nexttouch\_\discretionary {-}{}{}membind}, 
+		\hyperpage{151}
+    \subitem {replicate\_\discretionary {-}{}{}membind}, 
+		\hyperpage{151}
+    \subitem {set\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind}, 
+		\hyperpage{152}
+    \subitem {set\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind}, 
+		\hyperpage{152}
+    \subitem {set\_\discretionary {-}{}{}thisproc\_\discretionary {-}{}{}membind}, 
+		\hyperpage{152}
+    \subitem {set\_\discretionary {-}{}{}thisthread\_\discretionary {-}{}{}membind}, 
+		\hyperpage{152}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}restrict}
+    \subitem {hwlocality\_\discretionary {-}{}{}tinker}, \hyperpage{74}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}custom}
+    \subitem {hwlocality\_\discretionary {-}{}{}configuration}, 
+		\hyperpage{69}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}distance\_\discretionary {-}{}{}matrix}
+    \subitem {hwlocality\_\discretionary {-}{}{}configuration}, 
+		\hyperpage{69}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}flags}
+    \subitem {hwlocality\_\discretionary {-}{}{}configuration}, 
+		\hyperpage{69}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}fsroot}
+    \subitem {hwlocality\_\discretionary {-}{}{}configuration}, 
+		\hyperpage{70}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}pid}
+    \subitem {hwlocality\_\discretionary {-}{}{}configuration}, 
+		\hyperpage{70}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}synthetic}
+    \subitem {hwlocality\_\discretionary {-}{}{}configuration}, 
+		\hyperpage{70}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}xml}
+    \subitem {hwlocality\_\discretionary {-}{}{}configuration}, 
+		\hyperpage{71}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}xmlbuffer}
+    \subitem {hwlocality\_\discretionary {-}{}{}configuration}, 
+		\hyperpage{71}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}support}, 
+		\hyperpage{152}
+    \subitem {cpubind}, \hyperpage{153}
+    \subitem {discovery}, \hyperpage{153}
+    \subitem {membind}, \hyperpage{153}
+  \item {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}t}
+    \subitem {hwlocality\_\discretionary {-}{}{}topology}, 
+		\hyperpage{60}
+  \item {hwlocality\_\-configuration}
+    \subitem {HWLOC\_\-TOPOLOGY\_\-FLAG\_\-IO\_\-BRIDGES}, 
+		\hyperpage{68}
+    \subitem {HWLOC\_\-TOPOLOGY\_\-FLAG\_\-IO\_\-DEVICES}, 
+		\hyperpage{68}
+    \subitem {HWLOC\_\-TOPOLOGY\_\-FLAG\_\-IS\_\-THISSYSTEM}, 
+		\hyperpage{68}
+    \subitem {HWLOC\_\-TOPOLOGY\_\-FLAG\_\-WHOLE\_\-IO}, \hyperpage{68}
+    \subitem {HWLOC\_\-TOPOLOGY\_\-FLAG\_\-WHOLE\_\-SYSTEM}, 
+		\hyperpage{68}
+  \item {hwlocality\_\-cpubinding}
+    \subitem {HWLOC\_\-CPUBIND\_\-NOMEMBIND}, \hyperpage{82}
+    \subitem {HWLOC\_\-CPUBIND\_\-PROCESS}, \hyperpage{82}
+    \subitem {HWLOC\_\-CPUBIND\_\-STRICT}, \hyperpage{82}
+    \subitem {HWLOC\_\-CPUBIND\_\-THREAD}, \hyperpage{82}
+  \item {hwlocality\_\-information}
+    \subitem {HWLOC\_\-TYPE\_\-DEPTH\_\-BRIDGE}, \hyperpage{75}
+    \subitem {HWLOC\_\-TYPE\_\-DEPTH\_\-MULTIPLE}, \hyperpage{75}
+    \subitem {HWLOC\_\-TYPE\_\-DEPTH\_\-OS\_\-DEVICE}, \hyperpage{75}
+    \subitem {HWLOC\_\-TYPE\_\-DEPTH\_\-PCI\_\-DEVICE}, \hyperpage{75}
+    \subitem {HWLOC\_\-TYPE\_\-DEPTH\_\-UNKNOWN}, \hyperpage{75}
+  \item {hwlocality\_\-membinding}
+    \subitem {HWLOC\_\-MEMBIND\_\-BIND}, \hyperpage{87}
+    \subitem {HWLOC\_\-MEMBIND\_\-DEFAULT}, \hyperpage{87}
+    \subitem {HWLOC\_\-MEMBIND\_\-FIRSTTOUCH}, \hyperpage{87}
+    \subitem {HWLOC\_\-MEMBIND\_\-INTERLEAVE}, \hyperpage{87}
+    \subitem {HWLOC\_\-MEMBIND\_\-MIGRATE}, \hyperpage{87}
+    \subitem {HWLOC\_\-MEMBIND\_\-MIXED}, \hyperpage{88}
+    \subitem {HWLOC\_\-MEMBIND\_\-NEXTTOUCH}, \hyperpage{88}
+    \subitem {HWLOC\_\-MEMBIND\_\-NOCPUBIND}, \hyperpage{87}
+    \subitem {HWLOC\_\-MEMBIND\_\-PROCESS}, \hyperpage{86}
+    \subitem {HWLOC\_\-MEMBIND\_\-REPLICATE}, \hyperpage{88}
+    \subitem {HWLOC\_\-MEMBIND\_\-STRICT}, \hyperpage{87}
+    \subitem {HWLOC\_\-MEMBIND\_\-THREAD}, \hyperpage{87}
+  \item {hwlocality\_\-tinker}
+    \subitem {HWLOC\_\-RESTRICT\_\-FLAG\_\-ADAPT\_\-DISTANCES}, 
+		\hyperpage{73}
+    \subitem {HWLOC\_\-RESTRICT\_\-FLAG\_\-ADAPT\_\-IO}, \hyperpage{73}
+    \subitem {HWLOC\_\-RESTRICT\_\-FLAG\_\-ADAPT\_\-MISC}, 
+		\hyperpage{73}
+  \item {hwlocality\_\-types}
+    \subitem {HWLOC\_\-OBJ\_\-BRIDGE}, \hyperpage{63}
+    \subitem {HWLOC\_\-OBJ\_\-BRIDGE\_\-HOST}, \hyperpage{62}
+    \subitem {HWLOC\_\-OBJ\_\-BRIDGE\_\-PCI}, \hyperpage{62}
+    \subitem {HWLOC\_\-OBJ\_\-CACHE}, \hyperpage{63}
+    \subitem {HWLOC\_\-OBJ\_\-CORE}, \hyperpage{63}
+    \subitem {HWLOC\_\-OBJ\_\-GROUP}, \hyperpage{63}
+    \subitem {HWLOC\_\-OBJ\_\-MACHINE}, \hyperpage{63}
+    \subitem {HWLOC\_\-OBJ\_\-MISC}, \hyperpage{63}
+    \subitem {HWLOC\_\-OBJ\_\-NODE}, \hyperpage{63}
+    \subitem {HWLOC\_\-OBJ\_\-OS\_\-DEVICE}, \hyperpage{63}
+    \subitem {HWLOC\_\-OBJ\_\-OSDEV\_\-BLOCK}, \hyperpage{62}
+    \subitem {HWLOC\_\-OBJ\_\-OSDEV\_\-DISPLAY}, \hyperpage{62}
+    \subitem {HWLOC\_\-OBJ\_\-OSDEV\_\-DMA}, \hyperpage{62}
+    \subitem {HWLOC\_\-OBJ\_\-OSDEV\_\-GPU}, \hyperpage{62}
+    \subitem {HWLOC\_\-OBJ\_\-OSDEV\_\-NETWORK}, \hyperpage{62}
+    \subitem {HWLOC\_\-OBJ\_\-OSDEV\_\-OPENFABRICS}, \hyperpage{62}
+    \subitem {HWLOC\_\-OBJ\_\-PCI\_\-DEVICE}, \hyperpage{63}
+    \subitem {HWLOC\_\-OBJ\_\-PU}, \hyperpage{63}
+    \subitem {HWLOC\_\-OBJ\_\-SOCKET}, \hyperpage{63}
+    \subitem {HWLOC\_\-OBJ\_\-SYSTEM}, \hyperpage{63}
+    \subitem {HWLOC\_\-OBJ\_\-TYPE\_\-MAX}, \hyperpage{63}
+    \subitem {HWLOC\_\-TYPE\_\-UNORDERED}, \hyperpage{62}
+  \item {hwlocality\_\discretionary {-}{}{}advanced\_\discretionary {-}{}{}io}
+    \subitem {hwloc\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}covers\_\discretionary {-}{}{}pcibus}, 
+		\hyperpage{114}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}hostbridge\_\discretionary {-}{}{}by\_\discretionary {-}{}{}pcibus}, 
+		\hyperpage{114}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}bridge}, 
+		\hyperpage{114}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}osdev}, 
+		\hyperpage{114}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}pcidev}, 
+		\hyperpage{114}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}non\_\discretionary {-}{}{}io\_\discretionary {-}{}{}ancestor\_\discretionary {-}{}{}obj}, 
+		\hyperpage{114}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}by\_\discretionary {-}{}{}busid}, 
+		\hyperpage{115}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}by\_\discretionary {-}{}{}busidstring}, 
+		\hyperpage{115}
+  \item {hwlocality\_\discretionary {-}{}{}api\_\discretionary {-}{}{}version}
+    \subitem {HWLOC\_\discretionary {-}{}{}API\_\discretionary {-}{}{}VERSION}, 
+		\hyperpage{59}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}api\_\discretionary {-}{}{}version}, 
+		\hyperpage{59}
+  \item {hwlocality\_\discretionary {-}{}{}bitmap}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}allbut}, 
+		\hyperpage{118}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}alloc}, 
+		\hyperpage{118}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}alloc\_\discretionary {-}{}{}full}, 
+		\hyperpage{118}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}and}, 
+		\hyperpage{118}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}andnot}, 
+		\hyperpage{118}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}asprintf}, 
+		\hyperpage{118}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}clr}, 
+		\hyperpage{118}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}clr\_\discretionary {-}{}{}range}, 
+		\hyperpage{118}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}compare}, 
+		\hyperpage{119}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}compare\_\discretionary {-}{}{}first}, 
+		\hyperpage{119}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}copy}, 
+		\hyperpage{119}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}dup}, 
+		\hyperpage{119}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}fill}, 
+		\hyperpage{119}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}first}, 
+		\hyperpage{119}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}foreach\_\discretionary {-}{}{}begin}, 
+		\hyperpage{117}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}foreach\_\discretionary {-}{}{}end}, 
+		\hyperpage{117}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}free}, 
+		\hyperpage{119}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}from\_\discretionary {-}{}{}ith\_\discretionary {-}{}{}ulong}, 
+		\hyperpage{120}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}from\_\discretionary {-}{}{}ulong}, 
+		\hyperpage{120}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}intersects}, 
+		\hyperpage{120}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}isequal}, 
+		\hyperpage{120}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}isfull}, 
+		\hyperpage{120}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}isincluded}, 
+		\hyperpage{120}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}isset}, 
+		\hyperpage{120}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}iszero}, 
+		\hyperpage{120}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}last}, 
+		\hyperpage{120}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}list\_\discretionary {-}{}{}asprintf}, 
+		\hyperpage{121}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}list\_\discretionary {-}{}{}snprintf}, 
+		\hyperpage{121}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}list\_\discretionary {-}{}{}sscanf}, 
+		\hyperpage{121}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}next}, 
+		\hyperpage{121}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}not}, 
+		\hyperpage{121}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}only}, 
+		\hyperpage{121}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}or}, 
+		\hyperpage{122}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}set}, 
+		\hyperpage{122}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}set\_\discretionary {-}{}{}ith\_\discretionary {-}{}{}ulong}, 
+		\hyperpage{122}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}set\_\discretionary {-}{}{}range}, 
+		\hyperpage{122}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}singlify}, 
+		\hyperpage{122}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}snprintf}, 
+		\hyperpage{122}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}sscanf}, 
+		\hyperpage{122}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}t}, 
+		\hyperpage{117}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}taskset\_\discretionary {-}{}{}asprintf}, 
+		\hyperpage{123}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}taskset\_\discretionary {-}{}{}snprintf}, 
+		\hyperpage{123}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}taskset\_\discretionary {-}{}{}sscanf}, 
+		\hyperpage{123}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}to\_\discretionary {-}{}{}ith\_\discretionary {-}{}{}ulong}, 
+		\hyperpage{123}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}to\_\discretionary {-}{}{}ulong}, 
+		\hyperpage{123}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}weight}, 
+		\hyperpage{123}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}xor}, 
+		\hyperpage{123}
+    \subitem {hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}zero}, 
+		\hyperpage{124}
+    \subitem {hwloc\_\discretionary {-}{}{}const\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}t}, 
+		\hyperpage{117}
+  \item {hwlocality\_\discretionary {-}{}{}configuration}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}flags\_\discretionary {-}{}{}e}, 
+		\hyperpage{68}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}support}, 
+		\hyperpage{68}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}ignore\_\discretionary {-}{}{}all\_\discretionary {-}{}{}keep\_\discretionary {-}{}{}structure}, 
+		\hyperpage{68}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}ignore\_\discretionary {-}{}{}type}, 
+		\hyperpage{68}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}ignore\_\discretionary {-}{}{}type\_\discretionary {-}{}{}keep\_\discretionary {-}{}{}structure}, 
+		\hyperpage{69}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}custom}, 
+		\hyperpage{69}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}distance\_\discretionary {-}{}{}matrix}, 
+		\hyperpage{69}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}flags}, 
+		\hyperpage{69}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}fsroot}, 
+		\hyperpage{70}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}pid}, 
+		\hyperpage{70}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}synthetic}, 
+		\hyperpage{70}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}xml}, 
+		\hyperpage{71}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}xmlbuffer}, 
+		\hyperpage{71}
+  \item {hwlocality\_\discretionary {-}{}{}conversion}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}add\_\discretionary {-}{}{}info}, 
+		\hyperpage{78}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}snprintf}, 
+		\hyperpage{78}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}snprintf}, 
+		\hyperpage{78}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}get\_\discretionary {-}{}{}info\_\discretionary {-}{}{}by\_\discretionary {-}{}{}name}, 
+		\hyperpage{79}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}snprintf}, 
+		\hyperpage{79}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}type\_\discretionary {-}{}{}of\_\discretionary {-}{}{}string}, 
+		\hyperpage{79}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}type\_\discretionary {-}{}{}snprintf}, 
+		\hyperpage{80}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}type\_\discretionary {-}{}{}string}, 
+		\hyperpage{80}
+  \item {hwlocality\_\discretionary {-}{}{}cpubinding}
+    \subitem {hwloc\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}flags\_\discretionary {-}{}{}t}, 
+		\hyperpage{81}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{82}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}last\_\discretionary {-}{}{}cpu\_\discretionary {-}{}{}location}, 
+		\hyperpage{83}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{83}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}last\_\discretionary {-}{}{}cpu\_\discretionary {-}{}{}location}, 
+		\hyperpage{83}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}thread\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{83}
+    \subitem {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{84}
+    \subitem {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{84}
+    \subitem {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}thread\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{84}
+  \item {hwlocality\_\discretionary {-}{}{}creation}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}check}, 
+		\hyperpage{65}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}destroy}, 
+		\hyperpage{65}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}init}, 
+		\hyperpage{65}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}load}, 
+		\hyperpage{66}
+  \item {hwlocality\_\discretionary {-}{}{}cuda}
+    \subitem {hwloc\_\discretionary {-}{}{}cuda\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{130}
+    \subitem {hwloc\_\discretionary {-}{}{}cuda\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}pci\_\discretionary {-}{}{}ids}, 
+		\hyperpage{130}
+    \subitem {hwloc\_\discretionary {-}{}{}cuda\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}pcidev}, 
+		\hyperpage{130}
+  \item {hwlocality\_\discretionary {-}{}{}cudart}
+    \subitem {hwloc\_\discretionary {-}{}{}cudart\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{130}
+    \subitem {hwloc\_\discretionary {-}{}{}cudart\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}pci\_\discretionary {-}{}{}ids}, 
+		\hyperpage{130}
+    \subitem {hwloc\_\discretionary {-}{}{}cudart\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}pcidev}, 
+		\hyperpage{131}
+  \item {hwlocality\_\discretionary {-}{}{}custom}
+    \subitem {hwloc\_\discretionary {-}{}{}custom\_\discretionary {-}{}{}insert\_\discretionary {-}{}{}group\_\discretionary {-}{}{}object\_\discretionary {-}{}{}by\_\discretionary {-}{}{}parent}, 
+		\hyperpage{95}
+    \subitem {hwloc\_\discretionary {-}{}{}custom\_\discretionary {-}{}{}insert\_\discretionary {-}{}{}topology}, 
+		\hyperpage{95}
+  \item {hwlocality\_\discretionary {-}{}{}distances}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}distance\_\discretionary {-}{}{}matrix\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}, 
+		\hyperpage{112}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}latency}, 
+		\hyperpage{112}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}whole\_\discretionary {-}{}{}distance\_\discretionary {-}{}{}matrix\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}, 
+		\hyperpage{112}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}whole\_\discretionary {-}{}{}distance\_\discretionary {-}{}{}matrix\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}, 
+		\hyperpage{113}
+  \item {hwlocality\_\discretionary {-}{}{}glibc\_\discretionary {-}{}{}sched}
+    \subitem {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}glibc\_\discretionary {-}{}{}sched\_\discretionary {-}{}{}affinity}, 
+		\hyperpage{124}
+    \subitem {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}glibc\_\discretionary {-}{}{}sched\_\discretionary {-}{}{}affinity}, 
+		\hyperpage{124}
+  \item {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}binding}
+    \subitem {hwloc\_\discretionary {-}{}{}alloc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}policy}, 
+		\hyperpage{106}
+    \subitem {hwloc\_\discretionary {-}{}{}alloc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}policy\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{106}
+    \subitem {hwloc\_\discretionary {-}{}{}distribute}, \hyperpage{106}
+    \subitem {hwloc\_\discretionary {-}{}{}distributev}, 
+		\hyperpage{106}
+  \item {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}cpuset}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}allowed\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{107}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}complete\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{107}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}online\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{108}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{108}
+  \item {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}cache}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}cache\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{104}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}shared\_\discretionary {-}{}{}cache\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}obj}, 
+		\hyperpage{104}
+  \item {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}covering}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}child\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{102}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{102}
+  \item {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}coverings}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}, 
+		\hyperpage{103}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}, 
+		\hyperpage{103}
+  \item {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}find\_\discretionary {-}{}{}inside}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}first\_\discretionary {-}{}{}largest\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{99}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}largest\_\discretionary {-}{}{}objs\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{99}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}nbobjs\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}, 
+		\hyperpage{100}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}nbobjs\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}, 
+		\hyperpage{100}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}, 
+		\hyperpage{100}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}, 
+		\hyperpage{100}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}index\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{101}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}, 
+		\hyperpage{101}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}, 
+		\hyperpage{101}
+  \item {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}nodeset}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}allowed\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{109}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}complete\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{109}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{109}
+  \item {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}convert}
+    \subitem {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{110}
+    \subitem {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}strict}, 
+		\hyperpage{110}
+    \subitem {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{111}
+    \subitem {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}strict}, 
+		\hyperpage{111}
+  \item {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}traversal}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}closest\_\discretionary {-}{}{}objs}, 
+		\hyperpage{105}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}below\_\discretionary {-}{}{}array\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}, 
+		\hyperpage{105}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}below\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}, 
+		\hyperpage{105}
+  \item {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}traversal\_\discretionary {-}{}{}basic}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}ancestor\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}, 
+		\hyperpage{97}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}ancestor\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}, 
+		\hyperpage{97}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}common\_\discretionary {-}{}{}ancestor\_\discretionary {-}{}{}obj}, 
+		\hyperpage{97}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}child}, 
+		\hyperpage{97}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}, 
+		\hyperpage{97}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}, 
+		\hyperpage{98}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}pu\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}os\_\discretionary {-}{}{}index}, 
+		\hyperpage{98}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}root\_\discretionary {-}{}{}obj}, 
+		\hyperpage{98}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}is\_\discretionary {-}{}{}in\_\discretionary {-}{}{}subtree}, 
+		\hyperpage{98}
+  \item {hwlocality\_\discretionary {-}{}{}helper\_\discretionary {-}{}{}types}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}type\_\discretionary {-}{}{}or\_\discretionary {-}{}{}above\_\discretionary {-}{}{}depth}, 
+		\hyperpage{96}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}type\_\discretionary {-}{}{}or\_\discretionary {-}{}{}below\_\discretionary {-}{}{}depth}, 
+		\hyperpage{96}
+  \item {hwlocality\_\discretionary {-}{}{}information}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}depth\_\discretionary {-}{}{}type}, 
+		\hyperpage{76}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}nbobjs\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}, 
+		\hyperpage{76}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}nbobjs\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}, 
+		\hyperpage{76}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}type\_\discretionary {-}{}{}depth}, 
+		\hyperpage{76}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}type\_\discretionary {-}{}{}depth\_\discretionary {-}{}{}e}, 
+		\hyperpage{75}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}depth}, 
+		\hyperpage{76}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}is\_\discretionary {-}{}{}thissystem}, 
+		\hyperpage{76}
+  \item {hwlocality\_\discretionary {-}{}{}linux}
+    \subitem {hwloc\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}get\_\discretionary {-}{}{}tid\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{125}
+    \subitem {hwloc\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}parse\_\discretionary {-}{}{}cpumap\_\discretionary {-}{}{}file}, 
+		\hyperpage{125}
+    \subitem {hwloc\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}set\_\discretionary {-}{}{}tid\_\discretionary {-}{}{}cpubind}, 
+		\hyperpage{125}
+  \item {hwlocality\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}
+    \subitem {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}, 
+		\hyperpage{127}
+    \subitem {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}, 
+		\hyperpage{127}
+    \subitem {hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}, 
+		\hyperpage{128}
+    \subitem {hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}, 
+		\hyperpage{128}
+  \item {hwlocality\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}nodemask}
+    \subitem {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}nodemask}, 
+		\hyperpage{129}
+    \subitem {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}nodemask}, 
+		\hyperpage{129}
+    \subitem {hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}nodemask}, 
+		\hyperpage{129}
+    \subitem {hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}nodemask}, 
+		\hyperpage{129}
+  \item {hwlocality\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}
+    \subitem {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}, 
+		\hyperpage{126}
+    \subitem {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}, 
+		\hyperpage{126}
+    \subitem {hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}, 
+		\hyperpage{126}
+    \subitem {hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}, 
+		\hyperpage{126}
+  \item {hwlocality\_\discretionary {-}{}{}membinding}
+    \subitem {hwloc\_\discretionary {-}{}{}alloc}, \hyperpage{88}
+    \subitem {hwloc\_\discretionary {-}{}{}alloc\_\discretionary {-}{}{}membind}, 
+		\hyperpage{88}
+    \subitem {hwloc\_\discretionary {-}{}{}alloc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{88}
+    \subitem {hwloc\_\discretionary {-}{}{}free}, \hyperpage{89}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind}, 
+		\hyperpage{89}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{89}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}membind}, 
+		\hyperpage{90}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{90}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind}, 
+		\hyperpage{91}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{92}
+    \subitem {hwloc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}flags\_\discretionary {-}{}{}t}, 
+		\hyperpage{86}
+    \subitem {hwloc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}policy\_\discretionary {-}{}{}t}, 
+		\hyperpage{87}
+    \subitem {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind}, 
+		\hyperpage{92}
+    \subitem {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{93}
+    \subitem {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}membind}, 
+		\hyperpage{93}
+    \subitem {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{93}
+    \subitem {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind}, 
+		\hyperpage{94}
+    \subitem {hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}, 
+		\hyperpage{94}
+  \item {hwlocality\_\discretionary {-}{}{}myriexpress}
+    \subitem {hwloc\_\discretionary {-}{}{}mx\_\discretionary {-}{}{}board\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{132}
+    \subitem {hwloc\_\discretionary {-}{}{}mx\_\discretionary {-}{}{}endpoint\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{132}
+  \item {hwlocality\_\discretionary {-}{}{}objects}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}t}, 
+		\hyperpage{65}
+  \item {hwlocality\_\discretionary {-}{}{}openfabrics}
+    \subitem {hwloc\_\discretionary {-}{}{}ibv\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{131}
+  \item {hwlocality\_\discretionary {-}{}{}sets}
+    \subitem {hwloc\_\discretionary {-}{}{}const\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}t}, 
+		\hyperpage{60}
+    \subitem {hwloc\_\discretionary {-}{}{}const\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}t}, 
+		\hyperpage{60}
+    \subitem {hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}t}, 
+		\hyperpage{60}
+    \subitem {hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}t}, 
+		\hyperpage{60}
+  \item {hwlocality\_\discretionary {-}{}{}tinker}
+    \subitem {hwloc\_\discretionary {-}{}{}free\_\discretionary {-}{}{}xmlbuffer}, 
+		\hyperpage{73}
+    \subitem {hwloc\_\discretionary {-}{}{}restrict\_\discretionary {-}{}{}flags\_\discretionary {-}{}{}e}, 
+		\hyperpage{73}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}export\_\discretionary {-}{}{}xml}, 
+		\hyperpage{73}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}export\_\discretionary {-}{}{}xmlbuffer}, 
+		\hyperpage{73}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}insert\_\discretionary {-}{}{}misc\_\discretionary {-}{}{}object\_\discretionary {-}{}{}by\_\discretionary {-}{}{}cpuset}, 
+		\hyperpage{73}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}insert\_\discretionary {-}{}{}misc\_\discretionary {-}{}{}object\_\discretionary {-}{}{}by\_\discretionary {-}{}{}parent}, 
+		\hyperpage{74}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}restrict}, 
+		\hyperpage{74}
+  \item {hwlocality\_\discretionary {-}{}{}topology}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}t}, 
+		\hyperpage{60}
+  \item {hwlocality\_\discretionary {-}{}{}traversal}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}, 
+		\hyperpage{77}
+    \subitem {hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}, 
+		\hyperpage{77}
+  \item {hwlocality\_\discretionary {-}{}{}types}
+    \subitem {hwloc\_\discretionary {-}{}{}compare\_\discretionary {-}{}{}types}, 
+		\hyperpage{64}
+    \subitem {hwloc\_\discretionary {-}{}{}compare\_\discretionary {-}{}{}types\_\discretionary {-}{}{}e}, 
+		\hyperpage{62}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}type\_\discretionary {-}{}{}e}, 
+		\hyperpage{62}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}type\_\discretionary {-}{}{}t}, 
+		\hyperpage{62}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}osdev\_\discretionary {-}{}{}type\_\discretionary {-}{}{}e}, 
+		\hyperpage{62}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}osdev\_\discretionary {-}{}{}type\_\discretionary {-}{}{}t}, 
+		\hyperpage{62}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}type\_\discretionary {-}{}{}t}, 
+		\hyperpage{62}
+
+  \indexspace
+
+  \item {infos}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{140}
+  \item {infos\_\discretionary {-}{}{}count}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{140}
+  \item {interleave\_\discretionary {-}{}{}membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{151}
+
+  \indexspace
+
+  \item {last\_\discretionary {-}{}{}child}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{140}
+  \item {latency}
+    \subitem {hwloc\_\discretionary {-}{}{}distances\_\discretionary {-}{}{}s}, 
+		\hyperpage{136}
+  \item {latency\_\discretionary {-}{}{}base}
+    \subitem {hwloc\_\discretionary {-}{}{}distances\_\discretionary {-}{}{}s}, 
+		\hyperpage{136}
+  \item {latency\_\discretionary {-}{}{}max}
+    \subitem {hwloc\_\discretionary {-}{}{}distances\_\discretionary {-}{}{}s}, 
+		\hyperpage{136}
+  \item {linesize}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}cache\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{135}
+  \item {linkspeed}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{147}
+  \item {Linux-\/only helpers}, \hyperpage{125}
+  \item {local\_\discretionary {-}{}{}memory}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}memory\_\discretionary {-}{}{}s}, 
+		\hyperpage{145}
+  \item {logical\_\discretionary {-}{}{}index}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{140}
+
+  \indexspace
+
+  \item {membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}support}, 
+		\hyperpage{153}
+  \item {memory}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{140}
+  \item {Memory binding}, \hyperpage{84}
+  \item {migrate\_\discretionary {-}{}{}membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{151}
+  \item {Myrinet Express-\/Specific Functions}, \hyperpage{131}
+
+  \indexspace
+
+  \item {name}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{140}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}info\_\discretionary {-}{}{}s}, 
+		\hyperpage{144}
+  \item {nbobjs}
+    \subitem {hwloc\_\discretionary {-}{}{}distances\_\discretionary {-}{}{}s}, 
+		\hyperpage{136}
+  \item {next\_\discretionary {-}{}{}cousin}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{140}
+  \item {next\_\discretionary {-}{}{}sibling}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{141}
+  \item {nexttouch\_\discretionary {-}{}{}membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{151}
+  \item {nodeset}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{141}
+  \item {Nodeset Helpers}, \hyperpage{109}
+
+  \indexspace
+
+  \item {Object sets (hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}t and hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}t)}, 
+		\hyperpage{60}
+  \item {Object Type Helpers}, \hyperpage{96}
+  \item {Object/String Conversion}, \hyperpage{78}
+  \item {online\_\discretionary {-}{}{}cpuset}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{141}
+  \item {OpenFabrics-\/Specific Functions}, \hyperpage{131}
+  \item {os\_\discretionary {-}{}{}index}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{141}
+  \item {os\_\discretionary {-}{}{}level}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{141}
+  \item {osdev}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u}, 
+		\hyperpage{143}
+
+  \indexspace
+
+  \item {page\_\discretionary {-}{}{}types}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}memory\_\discretionary {-}{}{}s}, 
+		\hyperpage{145}
+  \item {page\_\discretionary {-}{}{}types\_\discretionary {-}{}{}len}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}memory\_\discretionary {-}{}{}s}, 
+		\hyperpage{146}
+  \item {parent}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{141}
+  \item {pci}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{134}
+  \item {pcidev}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u}, 
+		\hyperpage{143}
+  \item {prev\_\discretionary {-}{}{}cousin}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{142}
+  \item {prev\_\discretionary {-}{}{}sibling}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{142}
+  \item {pu}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}discovery\_\discretionary {-}{}{}support}, 
+		\hyperpage{150}
+
+  \indexspace
+
+  \item {relative\_\discretionary {-}{}{}depth}
+    \subitem {hwloc\_\discretionary {-}{}{}distances\_\discretionary {-}{}{}s}, 
+		\hyperpage{136}
+  \item {replicate\_\discretionary {-}{}{}membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{151}
+  \item {Retrieve Objects}, \hyperpage{77}
+  \item {revision}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{147}
+
+  \indexspace
+
+  \item {secondary\_\discretionary {-}{}{}bus}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{134}
+  \item {set\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{152}
+  \item {set\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}cpubind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}support}, 
+		\hyperpage{149}
+  \item {set\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{152}
+  \item {set\_\discretionary {-}{}{}thisproc\_\discretionary {-}{}{}cpubind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}support}, 
+		\hyperpage{149}
+  \item {set\_\discretionary {-}{}{}thisproc\_\discretionary {-}{}{}membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{152}
+  \item {set\_\discretionary {-}{}{}thisthread\_\discretionary {-}{}{}cpubind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}support}, 
+		\hyperpage{149}
+  \item {set\_\discretionary {-}{}{}thisthread\_\discretionary {-}{}{}membind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support}, 
+		\hyperpage{152}
+  \item {set\_\discretionary {-}{}{}thread\_\discretionary {-}{}{}cpubind}
+    \subitem {hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}support}, 
+		\hyperpage{149}
+  \item {sibling\_\discretionary {-}{}{}rank}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{142}
+  \item {size}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}cache\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{135}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}memory\_\discretionary {-}{}{}s::hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}memory\_\discretionary {-}{}{}page\_\discretionary {-}{}{}type\_\discretionary {-}{}{}s}, 
+		\hyperpage{145}
+  \item {subdevice\_\discretionary {-}{}{}id}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{147}
+  \item {subordinate\_\discretionary {-}{}{}bus}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{134}
+  \item {subvendor\_\discretionary {-}{}{}id}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{147}
+  \item {symmetric\_\discretionary {-}{}{}subtree}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{142}
+
+  \indexspace
+
+  \item {The bitmap API}, \hyperpage{115}
+  \item {Tinker With Topologies.}, \hyperpage{72}
+  \item {Topology context}, \hyperpage{59}
+  \item {Topology Object Types}, \hyperpage{61}
+  \item {Topology Objects}, \hyperpage{64}
+  \item {total\_\discretionary {-}{}{}memory}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}memory\_\discretionary {-}{}{}s}, 
+		\hyperpage{146}
+  \item {type}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{142}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}osdev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{146}
+
+  \indexspace
+
+  \item {upstream}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{134}
+  \item {upstream\_\discretionary {-}{}{}type}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{134}
+  \item {userdata}
+    \subitem {hwloc\_\discretionary {-}{}{}obj}, \hyperpage{142}
+
+  \indexspace
+
+  \item {value}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}info\_\discretionary {-}{}{}s}, 
+		\hyperpage{144}
+  \item {vendor\_\discretionary {-}{}{}id}
+    \subitem {hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s}, 
+		\hyperpage{147}
+
+\end{theindex}

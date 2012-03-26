@@ -1,0 +1,85 @@
+\hypertarget{a00070}{
+\section{Helpers for manipulating Linux libnuma nodemask\_\-t}
+\label{a00070}\index{Helpers for manipulating Linux libnuma nodemask\_\-t@{Helpers for manipulating Linux libnuma nodemask\_\-t}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static inline int \hyperlink{a00070_ga36feb81315de87ce11d9a5aa2b4c6e6d}{hwloc\_\-cpuset\_\-to\_\-linux\_\-libnuma\_\-nodemask} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc\_\-const\_\-cpuset\_\-t} cpuset, nodemask\_\-t $\ast$nodemask)
+\item 
+static inline int \hyperlink{a00070_gafa4e7cc68f0f99724f8d99541d9ab3de}{hwloc\_\-nodeset\_\-to\_\-linux\_\-libnuma\_\-nodemask} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00040_ga2f5276235841ad66a79bedad16a5a10c}{hwloc\_\-const\_\-nodeset\_\-t} nodeset, nodemask\_\-t $\ast$nodemask)
+\item 
+static inline int \hyperlink{a00070_gac24c9e4bb2eab3e23b2039559adc9df8}{hwloc\_\-cpuset\_\-from\_\-linux\_\-libnuma\_\-nodemask} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc\_\-cpuset\_\-t} cpuset, const nodemask\_\-t $\ast$nodemask)
+\item 
+static inline int \hyperlink{a00070_ga22862f485346ae3b2ab7d052f538fc5f}{hwloc\_\-nodeset\_\-from\_\-linux\_\-libnuma\_\-nodemask} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{hwloc\_\-nodeset\_\-t} nodeset, const nodemask\_\-t $\ast$nodemask)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyNote}{Note}
+The Linux libnuma nodemask\_\-t interface is deprecated and its implementation is at least incorrect with respect to sparse NUMA node ids. It is strongly advised to use struct bitmask instead of nodemask\_\-t, or even to use hwloc directly. 
+\end{DoxyNote}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00070_gac24c9e4bb2eab3e23b2039559adc9df8}{
+\index{hwlocality\_\-linux\_\-libnuma\_\-nodemask@{hwlocality\_\-linux\_\-libnuma\_\-nodemask}!hwloc\_\-cpuset\_\-from\_\-linux\_\-libnuma\_\-nodemask@{hwloc\_\-cpuset\_\-from\_\-linux\_\-libnuma\_\-nodemask}}
+\index{hwloc\_\-cpuset\_\-from\_\-linux\_\-libnuma\_\-nodemask@{hwloc\_\-cpuset\_\-from\_\-linux\_\-libnuma\_\-nodemask}!hwlocality_linux_libnuma_nodemask@{hwlocality\_\-linux\_\-libnuma\_\-nodemask}}
+\subsubsection[{hwloc\_\-cpuset\_\-from\_\-linux\_\-libnuma\_\-nodemask}]{\setlength{\rightskip}{0pt plus 5cm}static inline int hwloc\_\-cpuset\_\-from\_\-linux\_\-libnuma\_\-nodemask (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-cpuset\_\-t}}]{cpuset, }
+\item[{const nodemask\_\-t $\ast$}]{nodemask}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00070_gac24c9e4bb2eab3e23b2039559adc9df8}
+
+
+Convert libnuma nodemask {\ttfamily nodemask} into hwloc CPU set {\ttfamily cpuset}. 
+
+This function may be used before calling some old libnuma functions that use a nodemask\_\-t as an output parameter. \hypertarget{a00070_ga36feb81315de87ce11d9a5aa2b4c6e6d}{
+\index{hwlocality\_\-linux\_\-libnuma\_\-nodemask@{hwlocality\_\-linux\_\-libnuma\_\-nodemask}!hwloc\_\-cpuset\_\-to\_\-linux\_\-libnuma\_\-nodemask@{hwloc\_\-cpuset\_\-to\_\-linux\_\-libnuma\_\-nodemask}}
+\index{hwloc\_\-cpuset\_\-to\_\-linux\_\-libnuma\_\-nodemask@{hwloc\_\-cpuset\_\-to\_\-linux\_\-libnuma\_\-nodemask}!hwlocality_linux_libnuma_nodemask@{hwlocality\_\-linux\_\-libnuma\_\-nodemask}}
+\subsubsection[{hwloc\_\-cpuset\_\-to\_\-linux\_\-libnuma\_\-nodemask}]{\setlength{\rightskip}{0pt plus 5cm}static inline int hwloc\_\-cpuset\_\-to\_\-linux\_\-libnuma\_\-nodemask (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-const\_\-cpuset\_\-t}}]{cpuset, }
+\item[{nodemask\_\-t $\ast$}]{nodemask}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00070_ga36feb81315de87ce11d9a5aa2b4c6e6d}
+
+
+Convert hwloc CPU set {\ttfamily cpuset} into libnuma nodemask {\ttfamily nodemask}. 
+
+This function may be used before calling some old libnuma functions that use a nodemask\_\-t as an input parameter. \hypertarget{a00070_ga22862f485346ae3b2ab7d052f538fc5f}{
+\index{hwlocality\_\-linux\_\-libnuma\_\-nodemask@{hwlocality\_\-linux\_\-libnuma\_\-nodemask}!hwloc\_\-nodeset\_\-from\_\-linux\_\-libnuma\_\-nodemask@{hwloc\_\-nodeset\_\-from\_\-linux\_\-libnuma\_\-nodemask}}
+\index{hwloc\_\-nodeset\_\-from\_\-linux\_\-libnuma\_\-nodemask@{hwloc\_\-nodeset\_\-from\_\-linux\_\-libnuma\_\-nodemask}!hwlocality_linux_libnuma_nodemask@{hwlocality\_\-linux\_\-libnuma\_\-nodemask}}
+\subsubsection[{hwloc\_\-nodeset\_\-from\_\-linux\_\-libnuma\_\-nodemask}]{\setlength{\rightskip}{0pt plus 5cm}static inline int hwloc\_\-nodeset\_\-from\_\-linux\_\-libnuma\_\-nodemask (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-nodeset\_\-t}}]{nodeset, }
+\item[{const nodemask\_\-t $\ast$}]{nodemask}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00070_ga22862f485346ae3b2ab7d052f538fc5f}
+
+
+Convert libnuma nodemask {\ttfamily nodemask} into hwloc NUMA node set {\ttfamily nodeset}. 
+
+This function may be used before calling some old libnuma functions that use a nodemask\_\-t as an output parameter. \hypertarget{a00070_gafa4e7cc68f0f99724f8d99541d9ab3de}{
+\index{hwlocality\_\-linux\_\-libnuma\_\-nodemask@{hwlocality\_\-linux\_\-libnuma\_\-nodemask}!hwloc\_\-nodeset\_\-to\_\-linux\_\-libnuma\_\-nodemask@{hwloc\_\-nodeset\_\-to\_\-linux\_\-libnuma\_\-nodemask}}
+\index{hwloc\_\-nodeset\_\-to\_\-linux\_\-libnuma\_\-nodemask@{hwloc\_\-nodeset\_\-to\_\-linux\_\-libnuma\_\-nodemask}!hwlocality_linux_libnuma_nodemask@{hwlocality\_\-linux\_\-libnuma\_\-nodemask}}
+\subsubsection[{hwloc\_\-nodeset\_\-to\_\-linux\_\-libnuma\_\-nodemask}]{\setlength{\rightskip}{0pt plus 5cm}static inline int hwloc\_\-nodeset\_\-to\_\-linux\_\-libnuma\_\-nodemask (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-const\_\-nodeset\_\-t}}]{nodeset, }
+\item[{nodemask\_\-t $\ast$}]{nodemask}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00070_gafa4e7cc68f0f99724f8d99541d9ab3de}
+
+
+Convert hwloc NUMA node set {\ttfamily nodeset} into libnuma nodemask {\ttfamily nodemask}. 
+
+This function may be used before calling some old libnuma functions that use a nodemask\_\-t as an input parameter. 

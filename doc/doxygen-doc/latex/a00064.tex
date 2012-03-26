@@ -1,0 +1,148 @@
+\hypertarget{a00064}{
+\section{Advanced I/O object traversal helpers}
+\label{a00064}\index{Advanced I/O object traversal helpers@{Advanced I/O object traversal helpers}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static inline \hyperlink{a00016}{hwloc\_\-obj\_\-t} \hyperlink{a00064_ga3603275746a8792e54415d79763aa9e9}{hwloc\_\-get\_\-non\_\-io\_\-ancestor\_\-obj} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology , \hyperlink{a00016}{hwloc\_\-obj\_\-t} ioobj)
+\item 
+static inline \hyperlink{a00016}{hwloc\_\-obj\_\-t} \hyperlink{a00064_gad6e1ed122ef3b6e098538d75acd5e3f6}{hwloc\_\-get\_\-next\_\-pcidev} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00016}{hwloc\_\-obj\_\-t} prev)
+\item 
+static inline \hyperlink{a00016}{hwloc\_\-obj\_\-t} \hyperlink{a00064_ga546e1d690c63fb24177f3013ed78ceb1}{hwloc\_\-get\_\-pcidev\_\-by\_\-busid} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, unsigned domain, unsigned bus, unsigned dev, unsigned func)
+\item 
+static inline \hyperlink{a00016}{hwloc\_\-obj\_\-t} \hyperlink{a00064_ga9d5643f2e337fe1b98e7cce5c1ecb74e}{hwloc\_\-get\_\-pcidev\_\-by\_\-busidstring} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, const char $\ast$busid)
+\item 
+static inline \hyperlink{a00016}{hwloc\_\-obj\_\-t} \hyperlink{a00064_ga73a5bc6265642e6001f7a10812ab886d}{hwloc\_\-get\_\-next\_\-osdev} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00016}{hwloc\_\-obj\_\-t} prev)
+\item 
+static inline \hyperlink{a00016}{hwloc\_\-obj\_\-t} \hyperlink{a00064_ga2bd3f856d0fc3c6c02642c17d763b823}{hwloc\_\-get\_\-next\_\-bridge} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00016}{hwloc\_\-obj\_\-t} prev)
+\item 
+static inline int \hyperlink{a00064_gaef22d6bf5cb0b7f13a863780126a8cb7}{hwloc\_\-bridge\_\-covers\_\-pcibus} (\hyperlink{a00016}{hwloc\_\-obj\_\-t} bridge, unsigned domain, unsigned bus)
+\item 
+static inline \hyperlink{a00016}{hwloc\_\-obj\_\-t} \hyperlink{a00064_ga81d4f68afbd68d94eb70d4f5c603eff5}{hwloc\_\-get\_\-hostbridge\_\-by\_\-pcibus} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, unsigned domain, unsigned bus)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00064_gaef22d6bf5cb0b7f13a863780126a8cb7}{
+\index{hwlocality\_\-advanced\_\-io@{hwlocality\_\-advanced\_\-io}!hwloc\_\-bridge\_\-covers\_\-pcibus@{hwloc\_\-bridge\_\-covers\_\-pcibus}}
+\index{hwloc\_\-bridge\_\-covers\_\-pcibus@{hwloc\_\-bridge\_\-covers\_\-pcibus}!hwlocality_advanced_io@{hwlocality\_\-advanced\_\-io}}
+\subsubsection[{hwloc\_\-bridge\_\-covers\_\-pcibus}]{\setlength{\rightskip}{0pt plus 5cm}static inline int hwloc\_\-bridge\_\-covers\_\-pcibus (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-obj\_\-t}}]{bridge, }
+\item[{unsigned}]{domain, }
+\item[{unsigned}]{bus}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00064_gaef22d6bf5cb0b7f13a863780126a8cb7}
+\hypertarget{a00064_ga81d4f68afbd68d94eb70d4f5c603eff5}{
+\index{hwlocality\_\-advanced\_\-io@{hwlocality\_\-advanced\_\-io}!hwloc\_\-get\_\-hostbridge\_\-by\_\-pcibus@{hwloc\_\-get\_\-hostbridge\_\-by\_\-pcibus}}
+\index{hwloc\_\-get\_\-hostbridge\_\-by\_\-pcibus@{hwloc\_\-get\_\-hostbridge\_\-by\_\-pcibus}!hwlocality_advanced_io@{hwlocality\_\-advanced\_\-io}}
+\subsubsection[{hwloc\_\-get\_\-hostbridge\_\-by\_\-pcibus}]{\setlength{\rightskip}{0pt plus 5cm}static inline {\bf hwloc\_\-obj\_\-t} hwloc\_\-get\_\-hostbridge\_\-by\_\-pcibus (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{unsigned}]{domain, }
+\item[{unsigned}]{bus}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00064_ga81d4f68afbd68d94eb70d4f5c603eff5}
+
+
+Find the hostbridge that covers the given PCI bus. 
+
+This is useful for finding the locality of a bus because it is the hostbridge parent cpuset. \hypertarget{a00064_ga2bd3f856d0fc3c6c02642c17d763b823}{
+\index{hwlocality\_\-advanced\_\-io@{hwlocality\_\-advanced\_\-io}!hwloc\_\-get\_\-next\_\-bridge@{hwloc\_\-get\_\-next\_\-bridge}}
+\index{hwloc\_\-get\_\-next\_\-bridge@{hwloc\_\-get\_\-next\_\-bridge}!hwlocality_advanced_io@{hwlocality\_\-advanced\_\-io}}
+\subsubsection[{hwloc\_\-get\_\-next\_\-bridge}]{\setlength{\rightskip}{0pt plus 5cm}static inline {\bf hwloc\_\-obj\_\-t} hwloc\_\-get\_\-next\_\-bridge (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-obj\_\-t}}]{prev}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00064_ga2bd3f856d0fc3c6c02642c17d763b823}
+
+
+Get the next bridge in the system. 
+
+\begin{DoxyReturn}{Returns}
+the first bridge if {\ttfamily prev} is {\ttfamily NULL}. 
+\end{DoxyReturn}
+\hypertarget{a00064_ga73a5bc6265642e6001f7a10812ab886d}{
+\index{hwlocality\_\-advanced\_\-io@{hwlocality\_\-advanced\_\-io}!hwloc\_\-get\_\-next\_\-osdev@{hwloc\_\-get\_\-next\_\-osdev}}
+\index{hwloc\_\-get\_\-next\_\-osdev@{hwloc\_\-get\_\-next\_\-osdev}!hwlocality_advanced_io@{hwlocality\_\-advanced\_\-io}}
+\subsubsection[{hwloc\_\-get\_\-next\_\-osdev}]{\setlength{\rightskip}{0pt plus 5cm}static inline {\bf hwloc\_\-obj\_\-t} hwloc\_\-get\_\-next\_\-osdev (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-obj\_\-t}}]{prev}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00064_ga73a5bc6265642e6001f7a10812ab886d}
+
+
+Get the next OS device in the system. 
+
+\begin{DoxyReturn}{Returns}
+the first OS device if {\ttfamily prev} is {\ttfamily NULL}. 
+\end{DoxyReturn}
+\hypertarget{a00064_gad6e1ed122ef3b6e098538d75acd5e3f6}{
+\index{hwlocality\_\-advanced\_\-io@{hwlocality\_\-advanced\_\-io}!hwloc\_\-get\_\-next\_\-pcidev@{hwloc\_\-get\_\-next\_\-pcidev}}
+\index{hwloc\_\-get\_\-next\_\-pcidev@{hwloc\_\-get\_\-next\_\-pcidev}!hwlocality_advanced_io@{hwlocality\_\-advanced\_\-io}}
+\subsubsection[{hwloc\_\-get\_\-next\_\-pcidev}]{\setlength{\rightskip}{0pt plus 5cm}static inline {\bf hwloc\_\-obj\_\-t} hwloc\_\-get\_\-next\_\-pcidev (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-obj\_\-t}}]{prev}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00064_gad6e1ed122ef3b6e098538d75acd5e3f6}
+
+
+Get the next PCI device in the system. 
+
+\begin{DoxyReturn}{Returns}
+the first PCI device if {\ttfamily prev} is {\ttfamily NULL}. 
+\end{DoxyReturn}
+\hypertarget{a00064_ga3603275746a8792e54415d79763aa9e9}{
+\index{hwlocality\_\-advanced\_\-io@{hwlocality\_\-advanced\_\-io}!hwloc\_\-get\_\-non\_\-io\_\-ancestor\_\-obj@{hwloc\_\-get\_\-non\_\-io\_\-ancestor\_\-obj}}
+\index{hwloc\_\-get\_\-non\_\-io\_\-ancestor\_\-obj@{hwloc\_\-get\_\-non\_\-io\_\-ancestor\_\-obj}!hwlocality_advanced_io@{hwlocality\_\-advanced\_\-io}}
+\subsubsection[{hwloc\_\-get\_\-non\_\-io\_\-ancestor\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}static inline {\bf hwloc\_\-obj\_\-t} hwloc\_\-get\_\-non\_\-io\_\-ancestor\_\-obj (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t} topology}]{, }
+\item[{{\bf hwloc\_\-obj\_\-t}}]{ioobj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00064_ga3603275746a8792e54415d79763aa9e9}
+
+
+Get the first non-\/I/O ancestor object. 
+
+Given the I/O object {\ttfamily ioobj}, find the smallest non-\/I/O ancestor object. This regular object may then be used for binding because its locality is the same as {\ttfamily ioobj}. \hypertarget{a00064_ga546e1d690c63fb24177f3013ed78ceb1}{
+\index{hwlocality\_\-advanced\_\-io@{hwlocality\_\-advanced\_\-io}!hwloc\_\-get\_\-pcidev\_\-by\_\-busid@{hwloc\_\-get\_\-pcidev\_\-by\_\-busid}}
+\index{hwloc\_\-get\_\-pcidev\_\-by\_\-busid@{hwloc\_\-get\_\-pcidev\_\-by\_\-busid}!hwlocality_advanced_io@{hwlocality\_\-advanced\_\-io}}
+\subsubsection[{hwloc\_\-get\_\-pcidev\_\-by\_\-busid}]{\setlength{\rightskip}{0pt plus 5cm}static inline {\bf hwloc\_\-obj\_\-t} hwloc\_\-get\_\-pcidev\_\-by\_\-busid (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{unsigned}]{domain, }
+\item[{unsigned}]{bus, }
+\item[{unsigned}]{dev, }
+\item[{unsigned}]{func}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00064_ga546e1d690c63fb24177f3013ed78ceb1}
+
+
+Find the PCI device object matching the PCI bus id given domain, bus device and function PCI bus id. 
+
+\hypertarget{a00064_ga9d5643f2e337fe1b98e7cce5c1ecb74e}{
+\index{hwlocality\_\-advanced\_\-io@{hwlocality\_\-advanced\_\-io}!hwloc\_\-get\_\-pcidev\_\-by\_\-busidstring@{hwloc\_\-get\_\-pcidev\_\-by\_\-busidstring}}
+\index{hwloc\_\-get\_\-pcidev\_\-by\_\-busidstring@{hwloc\_\-get\_\-pcidev\_\-by\_\-busidstring}!hwlocality_advanced_io@{hwlocality\_\-advanced\_\-io}}
+\subsubsection[{hwloc\_\-get\_\-pcidev\_\-by\_\-busidstring}]{\setlength{\rightskip}{0pt plus 5cm}static inline {\bf hwloc\_\-obj\_\-t} hwloc\_\-get\_\-pcidev\_\-by\_\-busidstring (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{const char $\ast$}]{busid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00064_ga9d5643f2e337fe1b98e7cce5c1ecb74e}
+
+
+Find the PCI device object matching the PCI bus id given as a string xxxx:yy:zz.t or yy:zz.t. 
+

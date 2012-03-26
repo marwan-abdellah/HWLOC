@@ -5,7 +5,7 @@ dnl Copyright (c) 2009-2012 Université Bordeaux 1
 dnl Copyright (c) 2004-2005 The Trustees of Indiana University and Indiana
 dnl                         University Research and Technology
 dnl                         Corporation.  All rights reserved.
-dnl Copyright (c) 2004-2005 The Regents of the University of California.
+dnl Copyright (c) 2004-2012 The Regents of the University of California.
 dnl                         All rights reserved.
 dnl Copyright (c) 2004-2008 High Performance Computing Center Stuttgart, 
 dnl                         University of Stuttgart.  All rights reserved.
@@ -272,6 +272,46 @@ EOF])
     AS_IF([test "$HWLOC_VISIBILITY_CFLAGS" != ""],
           [AC_MSG_WARN(["$HWLOC_VISIBILITY_CFLAGS" has been added to the hwloc CFLAGS])])
 
+    # Make sure the compiler returns an error code when function arg
+    # count is wrong, otherwise sched_setaffinity checks may fail.
+    HWLOC_STRICT_ARGS_CFLAGS=
+    hwloc_args_check=0
+    AC_MSG_CHECKING([whether the C compiler rejects function calls with too many arguments])
+    AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
+        extern int one_arg(int x);
+        int foo(void) { return one_arg(1, 2); }
+      ]])],
+      [AC_MSG_RESULT([no])],
+      [hwloc_args_check=1
+       AC_MSG_RESULT([yes])])
+    AC_MSG_CHECKING([whether the C compiler rejects function calls with too few arguments])
+    AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
+        extern int two_arg(int x, int y);
+        int foo(void) { return two_arg(3); }
+      ]])],
+      [AC_MSG_RESULT([no])],
+      [hwloc_args_check=`expr $hwloc_args_check + 1`
+       AC_MSG_RESULT([yes])])
+    AS_IF([test "$hwloc_args_check" != "2"],[
+         AC_MSG_WARN([Your C compiler does not consider incorrect argument counts to be a fatal error.])
+        case "$hwloc_c_vendor" in
+        ibm)
+            HWLOC_STRICT_ARGS_CFLAGS="-qhalt=e"
+            ;;
+        intel)
+            HWLOC_STRICT_ARGS_CFLAGS="-we140"
+            ;;
+        *)
+            HWLOC_STRICT_ARGS_CFLAGS=FAIL
+            AC_MSG_WARN([Please report this warning and configure using a different C compiler if possible.])
+            ;;
+        esac
+        AS_IF([test "$HWLOC_STRICT_ARGS_CFLAGS" != "FAIL"],[
+            AC_MSG_WARN([Configure will append '$HWLOC_STRICT_ARGS_CFLAGS' to the value of CFLAGS when needed.])
+             AC_MSG_WARN([Alternatively you may configure with a different compiler.])
+        ])
+    ])
+
     #
     # Now detect support
     #
@@ -329,7 +369,9 @@ EOF])
                    [HWLOC_LIBS="-lkstat $HWLOC_LIBS"
                     AC_DEFINE([HAVE_LIBKSTAT], 1, [Define to 1 if we have -lkstat])])
     ])
-    
+    AC_CHECK_LIB([m], [fabsf],
+                 [HWLOC_LIBS="-lm $HWLOC_LIBS"])
+
     AC_CHECK_HEADERS([picl.h])
 
     AC_CHECK_DECLS([_SC_NPROCESSORS_ONLN,
@@ -376,16 +418,24 @@ EOF])
     
     _HWLOC_CHECK_DECL([sched_setaffinity], [
       AC_DEFINE([HWLOC_HAVE_SCHED_SETAFFINITY], [1], [Define to 1 if glibc provides a prototype of sched_setaffinity()])
+      AS_IF([test "$HWLOC_STRICT_ARGS_CFLAGS" = "FAIL"],[
+        AC_MSG_WARN([Support for sched_setaffinity() requires a C compiler which])
+        AC_MSG_WARN([considers incorrect argument counts to be a fatal error.])
+        AC_MSG_ERROR([Cannot continue.])
+      ])
       AC_MSG_CHECKING([for old prototype of sched_setaffinity])
+      hwloc_save_CFLAGS=$CFLAGS
+      CFLAGS="$CFLAGS $HWLOC_STRICT_ARGS_CFLAGS"
       AC_COMPILE_IFELSE([
-        AC_LANG_PROGRAM([[
-          #define _GNU_SOURCE
-          #include <sched.h>
-          static unsigned long mask;
-          ]], [[ sched_setaffinity(0, (void*) &mask); ]])],
-        [AC_DEFINE([HWLOC_HAVE_OLD_SCHED_SETAFFINITY], [1], [Define to 1 if glibc provides the old prototype (without length) of sched_setaffinity()])
-         AC_MSG_RESULT([yes])],
-        [AC_MSG_RESULT([no])])
+          AC_LANG_PROGRAM([[
+              #define _GNU_SOURCE
+              #include <sched.h>
+              static unsigned long mask;
+              ]], [[ sched_setaffinity(0, (void*) &mask); ]])],
+          [AC_DEFINE([HWLOC_HAVE_OLD_SCHED_SETAFFINITY], [1], [Define to 1 if glibc provides the old prototype (without length) of sched_setaffinity()])
+           AC_MSG_RESULT([yes])],
+          [AC_MSG_RESULT([no])])
+      CFLAGS=$hwloc_save_CFLAGS
     ], , [[
 #define _GNU_SOURCE
 #include <sched.h>
@@ -444,6 +494,19 @@ EOF])
         AC_DEFINE([HWLOC_HAVE_DECL_FFS], [1], [Define to 1 if function `ffs' is declared by system headers])
       ])
       AC_DEFINE([HWLOC_HAVE_FFS], [1], [Define to 1 if you have the `ffs' function.])
+      if ( $CC --version | grep gccfss ) >/dev/null 2>&1 ; then
+        dnl May be broken due to
+        dnl    https://forums.oracle.com/forums/thread.jspa?threadID=1997328
+        dnl TODO: a more selective test, since bug may be version dependent.
+        dnl We can't use AC_TRY_LINK because the failure does not appear until
+        dnl run/load time and there is currently no precedent for AC_TRY_RUN
+        dnl use in hwloc.  --PHH
+	dnl For now, we're going with "all gccfss compilers are broken". 
+	dnl Better to be safe and correct; it's not like this is
+	dnl performance-critical code, after all.
+        AC_DEFINE([HWLOC_HAVE_BROKEN_FFS], [1], 
+                  [Define to 1 if your `ffs' function is known to be broken.])
+      fi
     ])
     AC_CHECK_FUNCS([ffsl], [
       _HWLOC_CHECK_DECL([ffsl],[
@@ -630,35 +693,10 @@ EOF])
     fi
     HWLOC_CFLAGS="$HWLOC_CFLAGS $HWLOC_PCI_CFLAGS"
     
-    #GL Support 
+    # GL Support 
     hwloc_gl_happy=no 									
 	if test "x$enable_gl" != "xno"; then				 
        hwloc_gl_happy=yes								
-       
-       # NVCTRL PATHs
-       NVCTRL_INC_DIR=/usr/include/NVCtrl
-       NVCTRL_LIB_DIR=/usr/lib       			
-      
-       AC_CHECK_FILE("$NVCTRL_LIB_DIR/libXNVCtrl.a", 
-       		[NVCTRL_LIBS=$NVCTRL_LIB_DIR/libXNVCtrl.a
-       		AC_CHECK_FILE("$NVCTRL_INC_DIR/NVCtrl.h",
-       			[AC_CHECK_FILE("$NVCTRL_INC_DIR/NVCtrlLib.h", 
-       				[nvctrl_found=yes], 
-       					[AC_MSG_WARN([NVCTRL NVCtrlLib.h not found.]) 
-       					nvctrl_found=no])],
-       				[AC_MSG_WARN([NVCTRL NVCtrl.h not found.]) 
-       				nvctrl_found=no])], 
-       			[AC_MSG_WARN([NVCTRL library libXNVCtrl.a not found.]) 
-       			nvctrl_found=no])
-       
-       if test "x$nvctrl_found" = "xyes"; then
-			HWLOC_NVCTRL_LIBS="$LIBS $NVCTRL_LIBS"			
-			HWLOC_NVCTRL_CFLAGS="$CFLAGS -I$NVCTRL_INC_DIR"
-			AC_SUBST(NVCTRL_LIBS) 
-		else
-		 	AC_MSG_WARN([NVCtrl files not found, GL back-end disabled])
-          	hwloc_gl_happy=no
-        fi
       
        # X11 support. Cairo is checking for this module. 
        # Check if found for not in order not to DUBLICATE the search.    
@@ -680,7 +718,7 @@ EOF])
           AC_MSG_WARN([X11 headers not found, GL back-end disabled])
           hwloc_gl_happy=no
         fi
-         
+	  
         # Xext support.  
         AC_CHECK_LIB([Xext], [XextFindDisplay], 
         	[enable_Xext=yes LIBS="$LIBS -lXext"
@@ -695,8 +733,8 @@ EOF])
   		if test "x$hwloc_gl_happy" = "xyes"; then
   		  AC_DEFINE([HWLOC_HAVE_GL], [1], [Define to 1 if you have the GL module components.])
   		  AC_SUBST([HWLOC_HAVE_GL], [1])
-  		  CFLAGS="$HWLOC_CFLAGS $HWLOC_X11_CFLAGS $HWLOC_NVCTRL_CFLAGS"    
-  		  LIBS="$HWLOC_LIBS $HWLOC_X11_LIBS $HWLOC_XEXT_LIBS $HWLOC_NVCTRL_LIBS"
+  		  CFLAGS="$HWLOC_CFLAGS $HWLOC_X11_CFLAGS -I../include/hwloc/NVCtrl"    
+  		  LIBS="$HWLOC_LIBS $HWLOC_X11_LIBS $HWLOC_XEXT_LIBS"
   		else
   		  AS_IF([test "$enable_gl" = "yes"],
               [AC_MSG_WARN([--enable-gl requested, but GL/X11 support was not found due to a missing component])
@@ -728,7 +766,7 @@ EOF])
     # Setup HWLOC's C, CPP, and LD flags, and LIBS
     AC_SUBST(HWLOC_REQUIRES)
     AC_SUBST(HWLOC_CFLAGS)
-    HWLOC_CPPFLAGS='-I$(HWLOC_top_srcdir)/include -I$(HWLOC_top_builddir)/include'
+    HWLOC_CPPFLAGS='-I$(HWLOC_top_builddir)/include -I$(HWLOC_top_srcdir)/include'
     AC_SUBST(HWLOC_CPPFLAGS)
     HWLOC_LDFLAGS='-L$(HWLOC_top_builddir)/src'
     AC_SUBST(HWLOC_LDFLAGS)
@@ -756,7 +794,7 @@ EOF])
     # Try to compile the cpuid inlines
     AC_MSG_CHECKING([for cpuid])
     old_CPPFLAGS="$CPPFLAGS"
-    CFLAGS="$CFLAGS -I$HWLOC_top_srcdir/include"
+    CPPFLAGS="$CPPFLAGS -I$HWLOC_top_srcdir/include"
     AC_LINK_IFELSE([AC_LANG_PROGRAM([[
         #include <stdio.h>
         #define __hwloc_inline

@@ -14,7 +14,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Hardware Locality (hwloc)&#160;<span id="projectnumber">1.4</span></div>
+   <div id="projectname">Hardware Locality (hwloc)&#160;<span id="projectnumber">1.4.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -85,7 +85,7 @@ Functions</h2></td></tr>
 <p>The most portable form that should be preferred over the others whenever possible is as follows:</p>
 <div class="fragment"><pre class="fragment"> <a class="code" href="a00059.html#ga6178c6a9ec1dd88ec9f6a9fcdcc7d634" title="Allocate some memory on the memory nodes near given cpuset cpuset.">hwloc_alloc_membind_policy</a>(topology, size, <span class="keyword">set</span>, 
                             <a class="code" href="a00050.html#ggac9764f79505775d06407b40f5e4661e8a18675bb80ebc1bce5b652e9de8f3998c" title="Reset the memory allocation policy to the system default.">HWLOC_MEMBIND_DEFAULT</a>, 0);
-</pre></div><p>This will allocate some memory hopefully bound to the specified set. To do so, hwloc will possibly have to change the current memory binding policy in order to actually get the memory bound, if the OS does not provide any other way to simply allocate bound memory without changing the policy for all allocations. That is the difference with <a class="el" href="a00050.html#ga221a7edc5d436300374fa16463f607e5" title="Allocate some memory on memory nodes near the given cpuset cpuset.">hwloc_alloc_membind()</a>, which will never change the current memory binding policy. Note that since HWLOC_MEMBIND_STRICT was not specified, failures to bind will not be reported -- generally, only memory allocation failures will be reported (e.g., even a plain malloc() would have failed with ENOMEM).</p>
+</pre></div><p>This will allocate some memory hopefully bound to the specified set. To do so, hwloc will possibly have to change the current memory binding policy in order to actually get the memory bound, if the OS does not provide any other way to simply allocate bound memory without changing the policy for all allocations. That is the difference with <a class="el" href="a00050.html#ga221a7edc5d436300374fa16463f607e5" title="Allocate some memory on memory nodes near the given physical cpuset cpuset.">hwloc_alloc_membind()</a>, which will never change the current memory binding policy. Note that since HWLOC_MEMBIND_STRICT was not specified, failures to bind will not be reported -- generally, only memory allocation failures will be reported (e.g., even a plain malloc() would have failed with ENOMEM).</p>
 <p>Each hwloc memory binding function is available in two forms: one that takes a CPU set argument and another that takes a NUMA memory node set argument (see <a class="el" href="a00040.html">Object sets (hwloc_cpuset_t and hwloc_nodeset_t)</a> and <a class="el" href="a00065.html">The bitmap API</a> for a discussion of CPU sets and NUMA memory node sets). The names of the latter form end with _nodeset. It is also possible to convert between CPU set and node set using <a class="el" href="a00062.html#ga60ecc4ae480c28b5fbd34aca4fc37daa" title="Convert a CPU set into a NUMA node set and handle non-NUMA cases.">hwloc_cpuset_to_nodeset()</a> or <a class="el" href="a00062.html#gaa677fd588304b5615de4ea78104adfb5" title="Convert a NUMA node set into a CPU set and handle non-NUMA cases.">hwloc_cpuset_from_nodeset()</a>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>On some operating systems, memory binding affects the CPU binding; see <a class="el" href="a00050.html#ggab00475fd98815bf4fb9aaf752030e7d2aad6b9eaf2ee324ca58dc8f58094b9997" title="Avoid any effect on CPU binding.">HWLOC_MEMBIND_NOCPUBIND</a> </dd></dl>
 <hr/><h2>Enumeration Type Documentation</h2>
@@ -146,7 +146,7 @@ Functions</h2></td></tr>
 <p>Reset the memory allocation policy to the system default. </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggac9764f79505775d06407b40f5e4661e8a979c7aa78dd32780858f30f47a72cca0"></a><!-- doxytag: member="HWLOC_MEMBIND_FIRSTTOUCH" ref="ggac9764f79505775d06407b40f5e4661e8a979c7aa78dd32780858f30f47a72cca0" args="" -->HWLOC_MEMBIND_FIRSTTOUCH</em>&nbsp;</td><td>
-<p>Allocate memory but do not immediately bind it to a specific locality. Instead, each page in the allocation is bound only when it is first touched. Pages are individually bound to the local NUMA node of the first thread that touches it. </p>
+<p>Allocate memory but do not immediately bind it to a specific locality. Instead, each page in the allocation is bound only when it is first touched. Pages are individually bound to the local NUMA node of the first thread that touches it. If there is not enough memory on the node, allocation may be done in the specified cpuset before allocating on other nodes. </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggac9764f79505775d06407b40f5e4661e8ad811fa4b2a6002c4d63695a408ffde2c"></a><!-- doxytag: member="HWLOC_MEMBIND_BIND" ref="ggac9764f79505775d06407b40f5e4661e8ad811fa4b2a6002c4d63695a408ffde2c" args="" -->HWLOC_MEMBIND_BIND</em>&nbsp;</td><td>
 <p>Allocate memory on the specified nodes. </p>
@@ -245,10 +245,10 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Allocate some memory on memory nodes near the given cpuset <code>cpuset</code>. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>-1 with errno set to ENOSYS if the action is not supported and HWLOC_MEMBIND_STRICT is given </dd>
+<p>Allocate some memory on memory nodes near the given physical cpuset <code>cpuset</code>. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>NULL with errno set to ENOSYS if the action is not supported and HWLOC_MEMBIND_STRICT is given </dd>
 <dd>
--1 with errno set to EXDEV if the binding cannot be enforced and HWLOC_MEMBIND_STRICT is given</dd></dl>
+NULL with errno set to EXDEV if the binding cannot be enforced and HWLOC_MEMBIND_STRICT is given</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The allocated memory should be freed with <a class="el" href="a00050.html#ga986d9b4cc76da592c4b937c6cb7d9d56" title="Free memory that was previously allocated by hwloc_alloc() or hwloc_alloc_membind().">hwloc_free()</a>. </dd></dl>
 
 </div>
@@ -296,10 +296,10 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Allocate some memory on the given nodeset <code>nodeset</code>. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>-1 with errno set to ENOSYS if the action is not supported and HWLOC_MEMBIND_STRICT is given </dd>
+<p>Allocate some memory on the given physical nodeset <code>nodeset</code>. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>NULL with errno set to ENOSYS if the action is not supported and HWLOC_MEMBIND_STRICT is given </dd>
 <dd>
--1 with errno set to EXDEV if the binding cannot be enforced and HWLOC_MEMBIND_STRICT is given</dd></dl>
+NULL with errno set to EXDEV if the binding cannot be enforced and HWLOC_MEMBIND_STRICT is given</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The allocated memory should be freed with <a class="el" href="a00050.html#ga986d9b4cc76da592c4b937c6cb7d9d56" title="Free memory that was previously allocated by hwloc_alloc() or hwloc_alloc_membind().">hwloc_free()</a>. </dd></dl>
 
 </div>
@@ -335,7 +335,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Free memory that was previously allocated by <a class="el" href="a00050.html#gac5586e58cf25c3596b7d4aa31ce13259" title="Allocate some memory.">hwloc_alloc()</a> or <a class="el" href="a00050.html#ga221a7edc5d436300374fa16463f607e5" title="Allocate some memory on memory nodes near the given cpuset cpuset.">hwloc_alloc_membind()</a>. </p>
+<p>Free memory that was previously allocated by <a class="el" href="a00050.html#gac5586e58cf25c3596b7d4aa31ce13259" title="Allocate some memory.">hwloc_alloc()</a> or <a class="el" href="a00050.html#ga221a7edc5d436300374fa16463f607e5" title="Allocate some memory on memory nodes near the given physical cpuset cpuset.">hwloc_alloc_membind()</a>. </p>
 
 </div>
 </div>
@@ -388,7 +388,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Query the CPUs near the NUMA node(s) and binding policy of the memory identified by (<code>addr</code>, <code>len</code> ). </p>
+<p>Query the CPUs near the physical NUMA node(s) and binding policy of the memory identified by (<code>addr</code>, <code>len</code> ). </p>
 <p>This function has two output parameters: <code>cpuset</code> and <code>policy</code>. The values returned in these parameters depend on both the <code>flags</code> passed in and the memory binding policies and nodesets of the pages in the address range.</p>
 <p>If HWLOC_MEMBIND_STRICT is specified, the target pages are first checked to see if they all have the same memory binding policy and nodeset. If they do not, -1 is returned and errno is set to EXDEV. If they are identical across all pages, the policy is returned in <code>policy</code>. <code>cpuset</code> is set to the union of CPUs near the NUMA node(s) in the nodeset.</p>
 <p>If HWLOC_MEMBIND_STRICT is not specified, the union of all NUMA node(s) containing pages in the address range is calculated. <code>cpuset</code> is then set to the CPUs near the NUMA node(s) in this union. If all pages in the target have the same policy, it is returned in <code>policy</code>. Otherwise, <code>policy</code> is set to HWLOC_MEMBIND_MIXED.</p>
@@ -445,7 +445,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Query the NUMA node(s) and binding policy of the memory identified by (<code>addr</code>, <code>len</code> ). </p>
+<p>Query the physical NUMA node(s) and binding policy of the memory identified by (<code>addr</code>, <code>len</code> ). </p>
 <p>This function has two output parameters: <code>nodeset</code> and <code>policy</code>. The values returned in these parameters depend on both the <code>flags</code> passed in and the memory binding policies and nodesets of the pages in the address range.</p>
 <p>If HWLOC_MEMBIND_STRICT is specified, the target pages are first checked to see if they all have the same memory binding policy and nodeset. If they do not, -1 is returned and errno is set to EXDEV. If they are identical across all pages, the nodeset and policy are returned in <code>nodeset</code> and <code>policy</code>, respectively.</p>
 <p>If HWLOC_MEMBIND_STRICT is not specified, <code>nodeset</code> is set to the union of all NUMA node(s) containing pages in the address range. If all pages in the target have the same policy, it is returned in <code>policy</code>. Otherwise, <code>policy</code> is set to HWLOC_MEMBIND_MIXED.</p>
@@ -490,7 +490,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Query the default memory binding policy and locality of the current process or thread (the locality is returned in <code>cpuset</code> as CPUs near the locality's actual NUMA node(s)). </p>
+<p>Query the default memory binding policy and physical locality of the current process or thread (the locality is returned in <code>cpuset</code> as CPUs near the locality's actual NUMA node(s)). </p>
 <p>This function has two output parameters: <code>cpuset</code> and <code>policy</code>. The values returned in these parameters depend on both the <code>flags</code> passed in and the current memory binding policies and nodesets in the queried target.</p>
 <p>Passing the HWLOC_MEMBIND_PROCESS flag specifies that the query target is the current policies and nodesets for all the threads in the current process. Passing HWLOC_MEMBIND_THREAD specifies that the query target is the current policy and nodeset for only the thread invoking this function.</p>
 <p>If neither of these flags are passed (which is the most portable method), the process is assumed to be single threaded. This allows hwloc to use either process-based OS functions or thread-based OS functions, depending on which are available.</p>
@@ -538,7 +538,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Query the default memory binding policy and locality of the current process or thread. </p>
+<p>Query the default memory binding policy and physical locality of the current process or thread. </p>
 <p>This function has two output parameters: <code>nodeset</code> and <code>policy</code>. The values returned in these parameters depend on both the <code>flags</code> passed in and the current memory binding policies and nodesets in the queried target.</p>
 <p>Passing the HWLOC_MEMBIND_PROCESS flag specifies that the query target is the current policies and nodesets for all the threads in the current process. Passing HWLOC_MEMBIND_THREAD specifies that the query target is the current policy and nodeset for only the thread invoking this function.</p>
 <p>If neither of these flags are passed (which is the most portable method), the process is assumed to be single threaded. This allows hwloc to use either process-based OS functions or thread-based OS functions, depending on which are available.</p>
@@ -592,7 +592,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Query the default memory binding policy and locality of the specified process (the locality is returned in <code>cpuset</code> as CPUs near the locality's actual NUMA node(s)). </p>
+<p>Query the default memory binding policy and physical locality of the specified process (the locality is returned in <code>cpuset</code> as CPUs near the locality's actual NUMA node(s)). </p>
 <p>This function has two output parameters: <code>cpuset</code> and <code>policy</code>. The values returned in these parameters depend on both the <code>flags</code> passed in and the current memory binding policies and nodesets in the queried target.</p>
 <p>Passing the HWLOC_MEMBIND_PROCESS flag specifies that the query target is the current policies and nodesets for all the threads in the specified process. If HWLOC_MEMBIND_PROCESS is not specified (which is the most portable method), the process is assumed to be single threaded. This allows hwloc to use either process-based OS functions or thread-based OS functions, depending on which are available.</p>
 <p>Note that it does not make sense to pass HWLOC_MEMBIND_THREAD to this function.</p>
@@ -646,7 +646,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Query the default memory binding policy and locality of the specified process. </p>
+<p>Query the default memory binding policy and physical locality of the specified process. </p>
 <p>This function has two output parameters: <code>nodeset</code> and <code>policy</code>. The values returned in these parameters depend on both the <code>flags</code> passed in and the current memory binding policies and nodesets in the queried target.</p>
 <p>Passing the HWLOC_MEMBIND_PROCESS flag specifies that the query target is the current policies and nodesets for all the threads in the specified process. If HWLOC_MEMBIND_PROCESS is not specified (which is the most portable method), the process is assumed to be single threaded. This allows hwloc to use either process-based OS functions or thread-based OS functions, depending on which are available.</p>
 <p>Note that it does not make sense to pass HWLOC_MEMBIND_THREAD to this function.</p>
@@ -706,7 +706,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Bind the already-allocated memory identified by (addr, len) to the NUMA node(s) near <code>cpuset</code>. </p>
+<p>Bind the already-allocated memory identified by (addr, len) to the NUMA node(s) near physical <code>cpuset</code>. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>-1 with errno set to ENOSYS if the action is not supported </dd>
 <dd>
 -1 with errno set to EXDEV if the binding cannot be enforced </dd></dl>
@@ -762,7 +762,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Bind the already-allocated memory identified by (addr, len) to the NUMA node(s) in <code>nodeset</code>. </p>
+<p>Bind the already-allocated memory identified by (addr, len) to the NUMA node(s) in physical <code>nodeset</code>. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>-1 with errno set to ENOSYS if the action is not supported </dd>
 <dd>
 -1 with errno set to EXDEV if the binding cannot be enforced </dd></dl>
@@ -806,7 +806,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set the default memory binding policy of the current process or thread to prefer the NUMA node(s) near the specified <code>cpuset</code>. </p>
+<p>Set the default memory binding policy of the current process or thread to prefer the NUMA node(s) near the specified physical <code>cpuset</code>. </p>
 <p>If neither HWLOC_MEMBIND_PROCESS nor HWLOC_MEMBIND_THREAD is specified, the current process is assumed to be single-threaded. This is the most portable form as it permits hwloc to use either process-based OS functions or thread-based OS functions, depending on which are available.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>-1 with errno set to ENOSYS if the action is not supported </dd>
 <dd>
@@ -851,7 +851,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set the default memory binding policy of the current process or thread to prefer the NUMA node(s) specified by <code>nodeset</code>. </p>
+<p>Set the default memory binding policy of the current process or thread to prefer the NUMA node(s) specified by physical <code>nodeset</code>. </p>
 <p>If neither HWLOC_MEMBIND_PROCESS nor HWLOC_MEMBIND_THREAD is specified, the current process is assumed to be single-threaded. This is the most portable form as it permits hwloc to use either process-based OS functions or thread-based OS functions, depending on which are available.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>-1 with errno set to ENOSYS if the action is not supported </dd>
 <dd>
@@ -902,7 +902,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set the default memory binding policy of the specified process to prefer the NUMA node(s) near the specified <code>cpuset</code>. </p>
+<p>Set the default memory binding policy of the specified process to prefer the NUMA node(s) near the specified physical <code>cpuset</code>. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>-1 with errno set to ENOSYS if the action is not supported </dd>
 <dd>
 -1 with errno set to EXDEV if the binding cannot be enforced</dd></dl>
@@ -953,7 +953,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set the default memory binding policy of the specified process to prefer the NUMA node(s) specified by <code>nodeset</code>. </p>
+<p>Set the default memory binding policy of the specified process to prefer the NUMA node(s) specified by physical <code>nodeset</code>. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>-1 with errno set to ENOSYS if the action is not supported </dd>
 <dd>
 -1 with errno set to EXDEV if the binding cannot be enforced</dd></dl>
@@ -962,7 +962,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Fri Mar 23 2012 15:27:46 for Hardware Locality (hwloc) by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Mar 26 2012 16:32:11 for Hardware Locality (hwloc) by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

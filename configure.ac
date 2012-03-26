@@ -145,7 +145,6 @@ CFLAGS="$HWLOC_EMBEDDED_CFLAGS $CFLAGS"
 CPPFLAGS="$HWLOC_EMBEDDED_CPPFLAGS $CPPFLAGS"
 LIBS="$HWLOC_EMBEDDED_LIBS $LIBS"
 
-
 # Setup libtool, but disable C++, F77, Java and Windows Resource
 # Compiler support -- we don't need that stuff.
 AM_ENABLE_SHARED

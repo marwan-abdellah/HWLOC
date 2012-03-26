@@ -1,0 +1,363 @@
+\hypertarget{a00034_source}{
+\section{linux-\/libnuma.h}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * Copyright © 2009 CNRS}
+00003 \textcolor{comment}{ * Copyright © 2009-2010 inria.  All rights reserved.}
+00004 \textcolor{comment}{ * Copyright © 2009-2010, 2012 Université Bordeaux 1}
+00005 \textcolor{comment}{ * See COPYING in top-level directory.}
+00006 \textcolor{comment}{ */}
+00007 
+00024 \textcolor{preprocessor}{#ifndef HWLOC\_LINUX\_LIBNUMA\_H}
+00025 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define HWLOC\_LINUX\_LIBNUMA\_H}
+00026 \textcolor{preprocessor}{}
+00027 \textcolor{preprocessor}{#include <hwloc.h>}
+00028 \textcolor{preprocessor}{#include <numa.h>}
+00029 
+00030 
+00031 \textcolor{preprocessor}{#ifdef \_\_cplusplus}
+00032 \textcolor{preprocessor}{}\textcolor{keyword}{extern} \textcolor{stringliteral}{"C"} \{
+00033 \textcolor{preprocessor}{#endif}
+00034 \textcolor{preprocessor}{}
+00035 
+00051 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00034_source_l00052}{}\hyperlink{a00068_ga018e57a42a780ce2ba2e35ef975d8888}{00052} \hyperlink{a00068_ga018e57a42a780ce2ba2e35ef975d8888}{hwloc_cpuset_to_linux_libnuma_ulongs}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology, 
+      \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc_const_cpuset_t} cpuset,
+00053                                     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *mask, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *maxnode)
+00054 \{
+00055   \textcolor{keywordtype}{int} depth = \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc_get_type_depth}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE});
+00056   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} outmaxnode = -1;
+00057 
+00058   \textcolor{comment}{/* round-up to the next ulong and clear all bytes */}
+00059   *maxnode = (*maxnode + 8*\textcolor{keyword}{sizeof}(*mask) - 1) & ~(8*\textcolor{keyword}{sizeof}(*mask) - 1);
+00060   memset(mask, 0, *maxnode/8);
+00061 
+00062   \textcolor{keywordflow}{if} (depth != \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{HWLOC_TYPE_DEPTH_UNKNOWN}) \{
+00063     \hyperlink{a00016}{hwloc_obj_t} node = NULL;
+00064     \textcolor{keywordflow}{while} ((node = \hyperlink{a00056_ga5915ea30f326676b3a4cfff371ce04d1}{hwloc_get_next_obj_covering_cpuset_by_type}(topology, cpuset, 
+      \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE}, node)) != NULL) \{
+00065       \textcolor{keywordflow}{if} (node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index} >= *maxnode)
+00066         \textcolor{keywordflow}{continue};
+00067       mask[node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index}/\textcolor{keyword}{sizeof}(*mask)/8] |= 1UL << (node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index} % (\textcolor{keyword}{sizeof}(*m
+      ask)*8));
+00068       \textcolor{keywordflow}{if} (outmaxnode == (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long}) -1 || outmaxnode < node->os\_index)
+00069         outmaxnode = node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index};
+00070     \}
+00071 
+00072   \} \textcolor{keywordflow}{else} \{
+00073     \textcolor{comment}{/* if no numa, libnuma assumes we have a single node */}
+00074     \textcolor{keywordflow}{if} (!\hyperlink{a00065_gaa94fed35d2a598bc4a8657b6955b7bf5}{hwloc_bitmap_iszero}(cpuset)) \{
+00075       mask[0] = 1;
+00076       outmaxnode = 0;
+00077     \}
+00078   \}
+00079 
+00080   *maxnode = outmaxnode+1;
+00081   \textcolor{keywordflow}{return} 0;
+00082 \}
+00083 
+00094 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00034_source_l00095}{}\hyperlink{a00068_gaf213df50d229c5d17a5a56b5d8f10b74}{00095} \hyperlink{a00068_gaf213df50d229c5d17a5a56b5d8f10b74}{hwloc_nodeset_to_linux_libnuma_ulongs}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology, 
+      \hyperlink{a00040_ga2f5276235841ad66a79bedad16a5a10c}{hwloc_const_nodeset_t} nodeset,
+00096                                       \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *mask, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *maxnode
+      )
+00097 \{
+00098   \textcolor{keywordtype}{int} depth = \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc_get_type_depth}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE});
+00099   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} outmaxnode = -1;
+00100 
+00101   \textcolor{comment}{/* round-up to the next ulong and clear all bytes */}
+00102   *maxnode = (*maxnode + 8*\textcolor{keyword}{sizeof}(*mask) - 1) & ~(8*\textcolor{keyword}{sizeof}(*mask) - 1);
+00103   memset(mask, 0, *maxnode/8);
+00104 
+00105   \textcolor{keywordflow}{if} (depth != \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{HWLOC_TYPE_DEPTH_UNKNOWN}) \{
+00106     \hyperlink{a00016}{hwloc_obj_t} node = NULL;
+00107     \textcolor{keywordflow}{while} ((node = \hyperlink{a00053_ga5f08ceb69375341e73563cfe2e77534e}{hwloc_get_next_obj_by_type}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE}, node)) !=
+       NULL) \{
+00108       \textcolor{keywordflow}{if} (node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index} >= *maxnode)
+00109         \textcolor{keywordflow}{continue};
+00110       \textcolor{keywordflow}{if} (!\hyperlink{a00065_ga2583f44cbdb5fff2ea40efdcf3975d3f}{hwloc_bitmap_isset}(nodeset, node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index}))
+00111         \textcolor{keywordflow}{continue};
+00112       mask[node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index}/\textcolor{keyword}{sizeof}(*mask)/8] |= 1UL << (node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index} % (\textcolor{keyword}{sizeof}(*m
+      ask)*8));
+00113       \textcolor{keywordflow}{if} (outmaxnode == (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long}) -1 || outmaxnode < node->os\_index)
+00114         outmaxnode = node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index};
+00115     \}
+00116 
+00117   \} \textcolor{keywordflow}{else} \{
+00118     \textcolor{comment}{/* if no numa, libnuma assumes we have a single node */}
+00119     \textcolor{keywordflow}{if} (!\hyperlink{a00065_gaa94fed35d2a598bc4a8657b6955b7bf5}{hwloc_bitmap_iszero}(nodeset)) \{
+00120       mask[0] = 1;
+00121       outmaxnode = 0;
+00122     \}
+00123   \}
+00124 
+00125   *maxnode = outmaxnode+1;
+00126   \textcolor{keywordflow}{return} 0;
+00127 \}
+00128 
+00138 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00034_source_l00139}{}\hyperlink{a00068_gafa60816dde33d69149497bcf6c7818e0}{00139} \hyperlink{a00068_gafa60816dde33d69149497bcf6c7818e0}{hwloc_cpuset_from_linux_libnuma_ulongs}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology, \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc_cpuset_t} 
+      cpuset,
+00140                                       \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *mask, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ma
+      xnode)
+00141 \{
+00142   \textcolor{keywordtype}{int} depth = \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc_get_type_depth}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE});
+00143 
+00144   \textcolor{keywordflow}{if} (depth != \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{HWLOC_TYPE_DEPTH_UNKNOWN}) \{
+00145     \hyperlink{a00016}{hwloc_obj_t} node = NULL;
+00146     \hyperlink{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}{hwloc_bitmap_zero}(cpuset);
+00147     \textcolor{keywordflow}{while} ((node = \hyperlink{a00053_gab7c1dce3f42ece5bfa621e87cf332418}{hwloc_get_next_obj_by_depth}(topology, depth, node)) != NULL)
+00148       \textcolor{keywordflow}{if} (node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index} < maxnode
+00149           && (mask[node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index}/\textcolor{keyword}{sizeof}(*mask)/8] & (1UL << (node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index} % (\textcolor{keyword}{s
+      izeof}(*mask)*8)))))
+00150         \hyperlink{a00065_ga1ba1de709ee9a7cf5cc8ad2d9a1a81d4}{hwloc_bitmap_or}(cpuset, cpuset, node->\hyperlink{a00016_a67925e0f2c47f50408fbdb9bddd0790f}{cpuset});
+00151   \} \textcolor{keywordflow}{else} \{
+00152     \textcolor{comment}{/* if no numa, libnuma assumes we have a single node */}
+00153     \textcolor{keywordflow}{if} (mask[0] & 1)
+00154       \hyperlink{a00065_gab14743355fa03b36cef521cbcd2fbf64}{hwloc_bitmap_copy}(cpuset, \hyperlink{a00060_ga418ebb39eaf1eac8f9cf4047cf59a534}{hwloc_topology_get_complete_cpuset}(topology));
+00155     \textcolor{keywordflow}{else}
+00156       \hyperlink{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}{hwloc_bitmap_zero}(cpuset);
+00157   \}
+00158 
+00159   \textcolor{keywordflow}{return} 0;
+00160 \}
+00161 
+00171 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00034_source_l00172}{}\hyperlink{a00068_ga5b51a4a96a0c3ad9f4c0da308bbf4d8f}{00172} \hyperlink{a00068_ga5b51a4a96a0c3ad9f4c0da308bbf4d8f}{hwloc_nodeset_from_linux_libnuma_ulongs}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology, 
+      \hyperlink{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{hwloc_nodeset_t} nodeset,
+00173                                         \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *mask, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} 
+      maxnode)
+00174 \{
+00175   \textcolor{keywordtype}{int} depth = \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc_get_type_depth}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE});
+00176 
+00177   \textcolor{keywordflow}{if} (depth != \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{HWLOC_TYPE_DEPTH_UNKNOWN}) \{
+00178     \hyperlink{a00016}{hwloc_obj_t} node = NULL;
+00179     \hyperlink{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}{hwloc_bitmap_zero}(nodeset);
+00180     \textcolor{keywordflow}{while} ((node = \hyperlink{a00053_gab7c1dce3f42ece5bfa621e87cf332418}{hwloc_get_next_obj_by_depth}(topology, depth, node)) != NULL)
+00181       \textcolor{keywordflow}{if} (node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index} < maxnode
+00182           && (mask[node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index}/\textcolor{keyword}{sizeof}(*mask)/8] & (1UL << (node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index} % (\textcolor{keyword}{s
+      izeof}(*mask)*8)))))
+00183         \hyperlink{a00065_ga497556af0cc34f109ae0277999c074d3}{hwloc_bitmap_set}(nodeset, node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index});
+00184   \} \textcolor{keywordflow}{else} \{
+00185     \textcolor{comment}{/* if no numa, libnuma assumes we have a single node */}
+00186     \textcolor{keywordflow}{if} (mask[0] & 1)
+00187       \hyperlink{a00065_ga52456f7ef79d68e610cb65e3f7ffafad}{hwloc_bitmap_fill}(nodeset);
+00188     \textcolor{keywordflow}{else}
+00189       \hyperlink{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}{hwloc_bitmap_zero}(nodeset);
+00190   \}
+00191 
+00192   \textcolor{keywordflow}{return} 0;
+00193 \}
+00194 
+00213 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keyword}{struct }bitmask *
+00214 \hyperlink{a00069_ga1a2ad777b9b4cf4aac0123f61c3ab8bd}{hwloc_cpuset_to_linux_libnuma_bitmask}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology, 
+      \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc_const_cpuset_t} cpuset) \_\_hwloc\_attribute\_malloc;
+00215 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keyword}{struct }bitmask *
+\hypertarget{a00034_source_l00216}{}\hyperlink{a00069_ga1a2ad777b9b4cf4aac0123f61c3ab8bd}{00216} \hyperlink{a00069_ga1a2ad777b9b4cf4aac0123f61c3ab8bd}{hwloc_cpuset_to_linux_libnuma_bitmask}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology, 
+      \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc_const_cpuset_t} cpuset)
+00217 \{
+00218   \textcolor{keywordtype}{int} depth = \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc_get_type_depth}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE});
+00219   \textcolor{keyword}{struct }bitmask *bitmask = numa\_allocate\_cpumask();
+00220   \textcolor{keywordflow}{if} (!bitmask)
+00221     \textcolor{keywordflow}{return} NULL;
+00222 
+00223   \textcolor{keywordflow}{if} (depth != \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{HWLOC_TYPE_DEPTH_UNKNOWN}) \{
+00224     \hyperlink{a00016}{hwloc_obj_t} node = NULL;
+00225     \textcolor{keywordflow}{while} ((node = \hyperlink{a00056_ga5915ea30f326676b3a4cfff371ce04d1}{hwloc_get_next_obj_covering_cpuset_by_type}(topology, cpuset, 
+      \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE}, node)) != NULL)
+00226       \textcolor{keywordflow}{if} (node->\hyperlink{a00016_a1dc830816716213b5f797e4052487864}{memory}.\hyperlink{a00020_aace044c7f3fd9dffe50202296bf1dc5a}{local_memory})
+00227         numa\_bitmask\_setbit(bitmask, node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index});
+00228   \} \textcolor{keywordflow}{else} \{
+00229     \textcolor{comment}{/* if no numa, libnuma assumes we have a single node */}
+00230     \textcolor{keywordflow}{if} (!\hyperlink{a00065_gaa94fed35d2a598bc4a8657b6955b7bf5}{hwloc_bitmap_iszero}(cpuset))
+00231       numa\_bitmask\_setbit(bitmask, 0);
+00232   \}
+00233 
+00234   \textcolor{keywordflow}{return} bitmask;
+00235 \}
+00236 
+00246 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keyword}{struct }bitmask *
+00247 \hyperlink{a00069_gab67a395c48ddb56307b1465fab9bb9e6}{hwloc_nodeset_to_linux_libnuma_bitmask}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology, 
+      \hyperlink{a00040_ga2f5276235841ad66a79bedad16a5a10c}{hwloc_const_nodeset_t} nodeset) \_\_hwloc\_attribute\_malloc;
+00248 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keyword}{struct }bitmask *
+\hypertarget{a00034_source_l00249}{}\hyperlink{a00069_gab67a395c48ddb56307b1465fab9bb9e6}{00249} \hyperlink{a00069_gab67a395c48ddb56307b1465fab9bb9e6}{hwloc_nodeset_to_linux_libnuma_bitmask}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology, 
+      \hyperlink{a00040_ga2f5276235841ad66a79bedad16a5a10c}{hwloc_const_nodeset_t} nodeset)
+00250 \{
+00251   \textcolor{keywordtype}{int} depth = \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc_get_type_depth}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE});
+00252   \textcolor{keyword}{struct }bitmask *bitmask = numa\_allocate\_cpumask();
+00253   \textcolor{keywordflow}{if} (!bitmask)
+00254     \textcolor{keywordflow}{return} NULL;
+00255 
+00256   \textcolor{keywordflow}{if} (depth != \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{HWLOC_TYPE_DEPTH_UNKNOWN}) \{
+00257     \hyperlink{a00016}{hwloc_obj_t} node = NULL;
+00258     \textcolor{keywordflow}{while} ((node = \hyperlink{a00053_ga5f08ceb69375341e73563cfe2e77534e}{hwloc_get_next_obj_by_type}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE}, node)) !=
+       NULL)
+00259       \textcolor{keywordflow}{if} (\hyperlink{a00065_ga2583f44cbdb5fff2ea40efdcf3975d3f}{hwloc_bitmap_isset}(nodeset, node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index}) && node->\hyperlink{a00016_a1dc830816716213b5f797e4052487864}{memory}.
+      \hyperlink{a00020_aace044c7f3fd9dffe50202296bf1dc5a}{local_memory})
+00260         numa\_bitmask\_setbit(bitmask, node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index});
+00261   \} \textcolor{keywordflow}{else} \{
+00262     \textcolor{comment}{/* if no numa, libnuma assumes we have a single node */}
+00263     \textcolor{keywordflow}{if} (!\hyperlink{a00065_gaa94fed35d2a598bc4a8657b6955b7bf5}{hwloc_bitmap_iszero}(nodeset))
+00264       numa\_bitmask\_setbit(bitmask, 0);
+00265   \}
+00266 
+00267   \textcolor{keywordflow}{return} bitmask;
+00268 \}
+00269 
+00275 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00034_source_l00276}{}\hyperlink{a00069_ga47747968f12c2674d2840dfbacce4940}{00276} \hyperlink{a00069_ga47747968f12c2674d2840dfbacce4940}{hwloc_cpuset_from_linux_libnuma_bitmask}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology, 
+      \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc_cpuset_t} cpuset,
+00277                                         \textcolor{keyword}{const} \textcolor{keyword}{struct} bitmask *bitmask)
+00278 \{
+00279   \textcolor{keywordtype}{int} depth = \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc_get_type_depth}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE});
+00280 
+00281   \textcolor{keywordflow}{if} (depth != \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{HWLOC_TYPE_DEPTH_UNKNOWN}) \{
+00282     \hyperlink{a00016}{hwloc_obj_t} node = NULL;
+00283     \hyperlink{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}{hwloc_bitmap_zero}(cpuset);
+00284     \textcolor{keywordflow}{while} ((node = \hyperlink{a00053_gab7c1dce3f42ece5bfa621e87cf332418}{hwloc_get_next_obj_by_depth}(topology, depth, node)) != NULL)
+00285       \textcolor{keywordflow}{if} (numa\_bitmask\_isbitset(bitmask, node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index}))
+00286         \hyperlink{a00065_ga1ba1de709ee9a7cf5cc8ad2d9a1a81d4}{hwloc_bitmap_or}(cpuset, cpuset, node->\hyperlink{a00016_a67925e0f2c47f50408fbdb9bddd0790f}{cpuset});
+00287   \} \textcolor{keywordflow}{else} \{
+00288     \textcolor{comment}{/* if no numa, libnuma assumes we have a single node */}
+00289     \textcolor{keywordflow}{if} (numa\_bitmask\_isbitset(bitmask, 0))
+00290       \hyperlink{a00065_gab14743355fa03b36cef521cbcd2fbf64}{hwloc_bitmap_copy}(cpuset, \hyperlink{a00060_ga418ebb39eaf1eac8f9cf4047cf59a534}{hwloc_topology_get_complete_cpuset}(topology));
+00291     \textcolor{keywordflow}{else}
+00292       \hyperlink{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}{hwloc_bitmap_zero}(cpuset);
+00293   \}
+00294 
+00295   \textcolor{keywordflow}{return} 0;
+00296 \}
+00297 
+00303 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00034_source_l00304}{}\hyperlink{a00069_ga5a1d17375cc7b65cd155330008cbdb6a}{00304} \hyperlink{a00069_ga5a1d17375cc7b65cd155330008cbdb6a}{hwloc_nodeset_from_linux_libnuma_bitmask}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology, 
+      \hyperlink{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{hwloc_nodeset_t} nodeset,
+00305                                          \textcolor{keyword}{const} \textcolor{keyword}{struct} bitmask *bitmask)
+00306 \{
+00307   \textcolor{keywordtype}{int} depth = \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc_get_type_depth}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE});
+00308 
+00309   \textcolor{keywordflow}{if} (depth != \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{HWLOC_TYPE_DEPTH_UNKNOWN}) \{
+00310     \hyperlink{a00016}{hwloc_obj_t} node = NULL;
+00311     \hyperlink{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}{hwloc_bitmap_zero}(nodeset);
+00312     \textcolor{keywordflow}{while} ((node = \hyperlink{a00053_gab7c1dce3f42ece5bfa621e87cf332418}{hwloc_get_next_obj_by_depth}(topology, depth, node)) != NULL)
+00313       \textcolor{keywordflow}{if} (numa\_bitmask\_isbitset(bitmask, node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index}))
+00314         \hyperlink{a00065_ga497556af0cc34f109ae0277999c074d3}{hwloc_bitmap_set}(nodeset, node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index});
+00315   \} \textcolor{keywordflow}{else} \{
+00316     \textcolor{comment}{/* if no numa, libnuma assumes we have a single node */}
+00317     \textcolor{keywordflow}{if} (numa\_bitmask\_isbitset(bitmask, 0))
+00318       \hyperlink{a00065_ga52456f7ef79d68e610cb65e3f7ffafad}{hwloc_bitmap_fill}(nodeset);
+00319     \textcolor{keywordflow}{else}
+00320       \hyperlink{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}{hwloc_bitmap_zero}(nodeset);
+00321   \}
+00322 
+00323   \textcolor{keywordflow}{return} 0;
+00324 \}
+00325 
+00330 \textcolor{preprocessor}{#ifdef NUMA\_VERSION1\_COMPATIBILITY}
+00331 \textcolor{preprocessor}{}
+00347 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00034_source_l00348}{}\hyperlink{a00070_ga36feb81315de87ce11d9a5aa2b4c6e6d}{00348} \hyperlink{a00070_ga36feb81315de87ce11d9a5aa2b4c6e6d}{hwloc_cpuset_to_linux_libnuma_nodemask}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology, 
+      \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc_const_cpuset_t} cpuset,
+00349                                       nodemask\_t *nodemask)
+00350 \{
+00351   \textcolor{keywordtype}{int} depth = \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc_get_type_depth}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE});
+00352 
+00353   nodemask\_zero(nodemask);
+00354 
+00355   \textcolor{keywordflow}{if} (depth != \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{HWLOC_TYPE_DEPTH_UNKNOWN}) \{
+00356     \hyperlink{a00016}{hwloc_obj_t} node = NULL;
+00357     \textcolor{keywordflow}{while} ((node = \hyperlink{a00056_ga5915ea30f326676b3a4cfff371ce04d1}{hwloc_get_next_obj_covering_cpuset_by_type}(topology, cpuset, 
+      \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE}, node)) != NULL)
+00358       nodemask\_set(nodemask, node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index});
+00359   \} \textcolor{keywordflow}{else} \{
+00360     \textcolor{comment}{/* if no numa, libnuma assumes we have a single node */}
+00361     \textcolor{keywordflow}{if} (!\hyperlink{a00065_gaa94fed35d2a598bc4a8657b6955b7bf5}{hwloc_bitmap_iszero}(cpuset))
+00362       nodemask\_set(nodemask, 0);
+00363   \}
+00364 
+00365   \textcolor{keywordflow}{return} 0;
+00366 \}
+00367 
+00373 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00034_source_l00374}{}\hyperlink{a00070_gafa4e7cc68f0f99724f8d99541d9ab3de}{00374} \hyperlink{a00070_gafa4e7cc68f0f99724f8d99541d9ab3de}{hwloc_nodeset_to_linux_libnuma_nodemask}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology, 
+      \hyperlink{a00040_ga2f5276235841ad66a79bedad16a5a10c}{hwloc_const_nodeset_t} nodeset,
+00375                                         nodemask\_t *nodemask)
+00376 \{
+00377   \textcolor{keywordtype}{int} depth = \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc_get_type_depth}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE});
+00378 
+00379   nodemask\_zero(nodemask);
+00380 
+00381   \textcolor{keywordflow}{if} (depth != \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{HWLOC_TYPE_DEPTH_UNKNOWN}) \{
+00382     \hyperlink{a00016}{hwloc_obj_t} node = NULL;
+00383     \textcolor{keywordflow}{while} ((node = \hyperlink{a00053_ga5f08ceb69375341e73563cfe2e77534e}{hwloc_get_next_obj_by_type}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE}, node)) !=
+       NULL)
+00384       \textcolor{keywordflow}{if} (\hyperlink{a00065_ga2583f44cbdb5fff2ea40efdcf3975d3f}{hwloc_bitmap_isset}(nodeset, node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index}))
+00385         nodemask\_set(nodemask, node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index});
+00386   \} \textcolor{keywordflow}{else} \{
+00387     \textcolor{comment}{/* if no numa, libnuma assumes we have a single node */}
+00388     \textcolor{keywordflow}{if} (!\hyperlink{a00065_gaa94fed35d2a598bc4a8657b6955b7bf5}{hwloc_bitmap_iszero}(nodeset))
+00389       nodemask\_set(nodemask, 0);
+00390   \}
+00391 
+00392   \textcolor{keywordflow}{return} 0;
+00393 \}
+00394 
+00400 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00034_source_l00401}{}\hyperlink{a00070_gac24c9e4bb2eab3e23b2039559adc9df8}{00401} \hyperlink{a00070_gac24c9e4bb2eab3e23b2039559adc9df8}{hwloc_cpuset_from_linux_libnuma_nodemask}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology, 
+      \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc_cpuset_t} cpuset,
+00402                                         \textcolor{keyword}{const} nodemask\_t *nodemask)
+00403 \{
+00404   \textcolor{keywordtype}{int} depth = \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc_get_type_depth}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE});
+00405 
+00406   \textcolor{keywordflow}{if} (depth != \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{HWLOC_TYPE_DEPTH_UNKNOWN}) \{
+00407     \hyperlink{a00016}{hwloc_obj_t} node = NULL;
+00408     \hyperlink{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}{hwloc_bitmap_zero}(cpuset);
+00409     \textcolor{keywordflow}{while} ((node = \hyperlink{a00053_gab7c1dce3f42ece5bfa621e87cf332418}{hwloc_get_next_obj_by_depth}(topology, depth, node)) != NULL)
+00410       \textcolor{keywordflow}{if} (nodemask\_isset(nodemask, node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index}))
+00411         \hyperlink{a00065_ga1ba1de709ee9a7cf5cc8ad2d9a1a81d4}{hwloc_bitmap_or}(cpuset, cpuset, node->\hyperlink{a00016_a67925e0f2c47f50408fbdb9bddd0790f}{cpuset});
+00412   \} \textcolor{keywordflow}{else} \{
+00413     \textcolor{comment}{/* if no numa, libnuma assumes we have a single node */}
+00414     \textcolor{keywordflow}{if} (nodemask\_isset(nodemask, 0))
+00415       \hyperlink{a00065_gab14743355fa03b36cef521cbcd2fbf64}{hwloc_bitmap_copy}(cpuset, \hyperlink{a00060_ga418ebb39eaf1eac8f9cf4047cf59a534}{hwloc_topology_get_complete_cpuset}(topology));
+00416     \textcolor{keywordflow}{else}
+00417       \hyperlink{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}{hwloc_bitmap_zero}(cpuset);
+00418   \}
+00419 
+00420   \textcolor{keywordflow}{return} 0;
+00421 \}
+00422 
+00428 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00034_source_l00429}{}\hyperlink{a00070_ga22862f485346ae3b2ab7d052f538fc5f}{00429} \hyperlink{a00070_ga22862f485346ae3b2ab7d052f538fc5f}{hwloc_nodeset_from_linux_libnuma_nodemask}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology, 
+      \hyperlink{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{hwloc_nodeset_t} nodeset,
+00430                                           \textcolor{keyword}{const} nodemask\_t *nodemask)
+00431 \{
+00432   \textcolor{keywordtype}{int} depth = \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc_get_type_depth}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE});
+00433 
+00434   \textcolor{keywordflow}{if} (depth != \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{HWLOC_TYPE_DEPTH_UNKNOWN}) \{
+00435     \hyperlink{a00016}{hwloc_obj_t} node = NULL;
+00436     \hyperlink{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}{hwloc_bitmap_zero}(nodeset);
+00437     \textcolor{keywordflow}{while} ((node = \hyperlink{a00053_gab7c1dce3f42ece5bfa621e87cf332418}{hwloc_get_next_obj_by_depth}(topology, depth, node)) != NULL)
+00438       \textcolor{keywordflow}{if} (nodemask\_isset(nodemask, node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index}))
+00439         \hyperlink{a00065_ga497556af0cc34f109ae0277999c074d3}{hwloc_bitmap_set}(nodeset, node->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index});
+00440   \} \textcolor{keywordflow}{else} \{
+00441     \textcolor{comment}{/* if no numa, libnuma assumes we have a single node */}
+00442     \textcolor{keywordflow}{if} (nodemask\_isset(nodemask, 0))
+00443       \hyperlink{a00065_ga52456f7ef79d68e610cb65e3f7ffafad}{hwloc_bitmap_fill}(nodeset);
+00444     \textcolor{keywordflow}{else}
+00445       \hyperlink{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}{hwloc_bitmap_zero}(nodeset);
+00446   \}
+00447 
+00448   \textcolor{keywordflow}{return} 0;
+00449 \}
+00450 
+00452 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* NUMA\_VERSION1\_COMPATIBILITY */}
+00453 
+00454 
+00455 \textcolor{preprocessor}{#ifdef \_\_cplusplus}
+00456 \textcolor{preprocessor}{}\} \textcolor{comment}{/* extern "C" */}
+00457 \textcolor{preprocessor}{#endif}
+00458 \textcolor{preprocessor}{}
+00459 
+00460 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* HWLOC\_LINUX\_NUMA\_H */}
+\end{DoxyCode}

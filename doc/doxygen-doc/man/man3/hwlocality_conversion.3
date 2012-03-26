@@ -1,4 +1,4 @@
-.TH "Object/String Conversion" 3 "Fri Mar 23 2012" "Version 1.4" "Hardware Locality (hwloc)" \" -*- nroff -*-
+.TH "Object/String Conversion" 3 "Mon Mar 26 2012" "Version 1.4.1" "Hardware Locality (hwloc)" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -25,7 +25,7 @@ Object/String Conversion \-
 .RI " int \fBhwloc_obj_cpuset_snprintf\fP (char *restrict str, size_t size, size_t nobj, const \fBhwloc_obj_t\fP *restrict objs)"
 .br
 .ti -1c
-.RI "static inline char * \fBhwloc_obj_get_info_by_name\fP (\fBhwloc_obj_t\fP obj, const char *name)"
+.RI "static inline const char * \fBhwloc_obj_get_info_by_name\fP (\fBhwloc_obj_t\fP obj, const char *name) "
 .br
 .ti -1c
 .RI " void \fBhwloc_obj_add_info\fP (\fBhwloc_obj_t\fP obj, const char *name, const char *value)"
@@ -62,7 +62,7 @@ the number of character that were actually written if not truncating, or that wo
 .RE
 .PP
 
-.SS "static inline char*  hwloc_obj_get_info_by_name (\fBhwloc_obj_t\fPobj, const char *name)\fC [static]\fP"
+.SS "static inline const char * hwloc_obj_get_info_by_name (\fBhwloc_obj_t\fPobj, const char *name)\fC [static]\fP"
 .PP
 Search the given key name in object infos and return the corresponding value. If multiple keys match the given name, only the first one is returned.
 .PP

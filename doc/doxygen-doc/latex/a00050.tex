@@ -1,0 +1,574 @@
+\hypertarget{a00050}{
+\section{Memory binding}
+\label{a00050}\index{Memory binding@{Memory binding}}
+}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc\_\-membind\_\-policy\_\-t} \{ \par
+\hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8a18675bb80ebc1bce5b652e9de8f3998c}{HWLOC\_\-MEMBIND\_\-DEFAULT}, 
+\hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8a979c7aa78dd32780858f30f47a72cca0}{HWLOC\_\-MEMBIND\_\-FIRSTTOUCH}, 
+\hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8ad811fa4b2a6002c4d63695a408ffde2c}{HWLOC\_\-MEMBIND\_\-BIND}, 
+\hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8ae370075e5af016d42310f87ea5af236b}{HWLOC\_\-MEMBIND\_\-INTERLEAVE}, 
+\par
+\hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8afb37480fe5f4236eb7dd4aef26f691e9}{HWLOC\_\-MEMBIND\_\-REPLICATE}, 
+\hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8aecdd4164d647708fbb51a00d98dbb138}{HWLOC\_\-MEMBIND\_\-NEXTTOUCH}, 
+\hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8a3185bd869b67817fb2bd5164bf360402}{HWLOC\_\-MEMBIND\_\-MIXED}
+ \}
+\item 
+enum \hyperlink{a00050_gab00475fd98815bf4fb9aaf752030e7d2}{hwloc\_\-membind\_\-flags\_\-t} \{ \par
+\hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2a1b1b74aef138f64aff214a8cbdfe8eb4}{HWLOC\_\-MEMBIND\_\-PROCESS}, 
+\hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2a1dc7dd5cdcd5796893a325a524555298}{HWLOC\_\-MEMBIND\_\-THREAD}, 
+\hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2a0335311a0ee04166df2888d52b4a42c6}{HWLOC\_\-MEMBIND\_\-STRICT}, 
+\hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2aa6e49e54f52827cb143cc869cfd748af}{HWLOC\_\-MEMBIND\_\-MIGRATE}, 
+\par
+\hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2aad6b9eaf2ee324ca58dc8f58094b9997}{HWLOC\_\-MEMBIND\_\-NOCPUBIND}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ int \hyperlink{a00050_ga747962cbb16fd12ad6d126011c734a27}{hwloc\_\-set\_\-membind\_\-nodeset} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00040_ga2f5276235841ad66a79bedad16a5a10c}{hwloc\_\-const\_\-nodeset\_\-t} nodeset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc\_\-membind\_\-policy\_\-t} policy, int flags)
+\item 
+ int \hyperlink{a00050_ga8b6d1d90227aff8e44ef26bc1f8a8f95}{hwloc\_\-set\_\-membind} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc\_\-const\_\-cpuset\_\-t} cpuset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc\_\-membind\_\-policy\_\-t} policy, int flags)
+\item 
+ int \hyperlink{a00050_ga7b46a4ca0b2db9723ca73b0c148ccd93}{hwloc\_\-get\_\-membind\_\-nodeset} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{hwloc\_\-nodeset\_\-t} nodeset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc\_\-membind\_\-policy\_\-t} $\ast$policy, int flags)
+\item 
+ int \hyperlink{a00050_gab07aedba1119f99130e5f0b796b7d8a5}{hwloc\_\-get\_\-membind} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc\_\-cpuset\_\-t} cpuset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc\_\-membind\_\-policy\_\-t} $\ast$policy, int flags)
+\item 
+ int \hyperlink{a00050_gaf10d18cd4703ec980d7440a1c23fa07f}{hwloc\_\-set\_\-proc\_\-membind\_\-nodeset} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, hwloc\_\-pid\_\-t pid, \hyperlink{a00040_ga2f5276235841ad66a79bedad16a5a10c}{hwloc\_\-const\_\-nodeset\_\-t} nodeset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc\_\-membind\_\-policy\_\-t} policy, int flags)
+\item 
+ int \hyperlink{a00050_gac63c4517e71b3f0d41b3dee3e83dc55c}{hwloc\_\-set\_\-proc\_\-membind} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, hwloc\_\-pid\_\-t pid, \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc\_\-const\_\-cpuset\_\-t} cpuset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc\_\-membind\_\-policy\_\-t} policy, int flags)
+\item 
+ int \hyperlink{a00050_ga22074ed072e1039f74f17f7b16e9e39d}{hwloc\_\-get\_\-proc\_\-membind\_\-nodeset} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, hwloc\_\-pid\_\-t pid, \hyperlink{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{hwloc\_\-nodeset\_\-t} nodeset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc\_\-membind\_\-policy\_\-t} $\ast$policy, int flags)
+\item 
+ int \hyperlink{a00050_gabaf9c13f1fa301d6895594cec52226e2}{hwloc\_\-get\_\-proc\_\-membind} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, hwloc\_\-pid\_\-t pid, \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc\_\-cpuset\_\-t} cpuset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc\_\-membind\_\-policy\_\-t} $\ast$policy, int flags)
+\item 
+ int \hyperlink{a00050_gade5e2c28ea8475a479bf2b1df36c6ccd}{hwloc\_\-set\_\-area\_\-membind\_\-nodeset} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, const void $\ast$addr, size\_\-t len, \hyperlink{a00040_ga2f5276235841ad66a79bedad16a5a10c}{hwloc\_\-const\_\-nodeset\_\-t} nodeset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc\_\-membind\_\-policy\_\-t} policy, int flags)
+\item 
+ int \hyperlink{a00050_ga06594edeb4728cb9e014aed924d1e74a}{hwloc\_\-set\_\-area\_\-membind} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, const void $\ast$addr, size\_\-t len, \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc\_\-const\_\-cpuset\_\-t} cpuset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc\_\-membind\_\-policy\_\-t} policy, int flags)
+\item 
+ int \hyperlink{a00050_ga106e6fcd764d17be682faf7a5bc95720}{hwloc\_\-get\_\-area\_\-membind\_\-nodeset} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, const void $\ast$addr, size\_\-t len, \hyperlink{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{hwloc\_\-nodeset\_\-t} nodeset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc\_\-membind\_\-policy\_\-t} $\ast$policy, int flags)
+\item 
+ int \hyperlink{a00050_gac02ee8f7606382ea7855ae4e1656ed0f}{hwloc\_\-get\_\-area\_\-membind} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, const void $\ast$addr, size\_\-t len, \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc\_\-cpuset\_\-t} cpuset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc\_\-membind\_\-policy\_\-t} $\ast$policy, int flags)
+\item 
+ void $\ast$ \hyperlink{a00050_gac5586e58cf25c3596b7d4aa31ce13259}{hwloc\_\-alloc} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, size\_\-t len)
+\item 
+ void $\ast$ \hyperlink{a00050_gaeaa00714a9c4319bda0a74ca6f8720e8}{hwloc\_\-alloc\_\-membind\_\-nodeset} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, size\_\-t len, \hyperlink{a00040_ga2f5276235841ad66a79bedad16a5a10c}{hwloc\_\-const\_\-nodeset\_\-t} nodeset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc\_\-membind\_\-policy\_\-t} policy, int flags) 
+\item 
+ void $\ast$ \hyperlink{a00050_ga221a7edc5d436300374fa16463f607e5}{hwloc\_\-alloc\_\-membind} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, size\_\-t len, \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc\_\-const\_\-cpuset\_\-t} cpuset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc\_\-membind\_\-policy\_\-t} policy, int flags) 
+\item 
+ int \hyperlink{a00050_ga986d9b4cc76da592c4b937c6cb7d9d56}{hwloc\_\-free} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, void $\ast$addr, size\_\-t len)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyNote}{Note}
+Not all operating systems support all ways to bind existing allocated memory (e.g., migration), future memory allocation, explicit memory allocation, etc. Using a binding flag or policy that is not supported by the underlying OS will cause hwloc's binding functions to fail and return -\/1. errno will be set to ENOSYS when the system does support the specified action or policy (e.g., some systems only allow binding memory on a per-\/thread basis, whereas other systems only allow binding memory for all threads in a process). errno will be set to EXDEV when the requested cpuset can not be enforced (e.g., some systems only allow binding memory to a single NUMA node).
+\end{DoxyNote}
+The most portable form that should be preferred over the others whenever possible is as follows:
+
+
+\begin{DoxyCode}
+ \hyperlink{a00059_ga6178c6a9ec1dd88ec9f6a9fcdcc7d634}{hwloc_alloc_membind_policy}(topology, size, \textcolor{keyword}{set}, 
+                            \hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8a18675bb80ebc1bce5b652e9de8f3998c}{HWLOC_MEMBIND_DEFAULT}, 0);
+\end{DoxyCode}
+
+
+This will allocate some memory hopefully bound to the specified set. To do so, hwloc will possibly have to change the current memory binding policy in order to actually get the memory bound, if the OS does not provide any other way to simply allocate bound memory without changing the policy for all allocations. That is the difference with \hyperlink{a00050_ga221a7edc5d436300374fa16463f607e5}{hwloc\_\-alloc\_\-membind()}, which will never change the current memory binding policy. Note that since HWLOC\_\-MEMBIND\_\-STRICT was not specified, failures to bind will not be reported -\/-\/ generally, only memory allocation failures will be reported (e.g., even a plain malloc() would have failed with ENOMEM).
+
+Each hwloc memory binding function is available in two forms: one that takes a CPU set argument and another that takes a NUMA memory node set argument (see \hyperlink{a00040}{Object sets (hwloc\_\-cpuset\_\-t and hwloc\_\-nodeset\_\-t)} and \hyperlink{a00065}{The bitmap API} for a discussion of CPU sets and NUMA memory node sets). The names of the latter form end with \_\-nodeset. It is also possible to convert between CPU set and node set using \hyperlink{a00062_ga60ecc4ae480c28b5fbd34aca4fc37daa}{hwloc\_\-cpuset\_\-to\_\-nodeset()} or \hyperlink{a00062_gaa677fd588304b5615de4ea78104adfb5}{hwloc\_\-cpuset\_\-from\_\-nodeset()}.
+
+\begin{DoxyNote}{Note}
+On some operating systems, memory binding affects the CPU binding; see \hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2aad6b9eaf2ee324ca58dc8f58094b9997}{HWLOC\_\-MEMBIND\_\-NOCPUBIND} 
+\end{DoxyNote}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{a00050_gab00475fd98815bf4fb9aaf752030e7d2}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-membind\_\-flags\_\-t@{hwloc\_\-membind\_\-flags\_\-t}}
+\index{hwloc\_\-membind\_\-flags\_\-t@{hwloc\_\-membind\_\-flags\_\-t}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-membind\_\-flags\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf hwloc\_\-membind\_\-flags\_\-t}}}
+\label{a00050_gab00475fd98815bf4fb9aaf752030e7d2}
+
+
+Memory binding flags. 
+
+These flags can be used to refine the binding policy. All flags can be logically OR'ed together with the exception of HWLOC\_\-MEMBIND\_\-PROCESS and HWLOC\_\-MEMBIND\_\-THREAD; these two flags are mutually exclusive.
+
+\begin{DoxyNote}{Note}
+Not all systems support all kinds of binding. See the \char`\"{}Detailed Description\char`\"{} section of \hyperlink{a00050}{Memory binding} for a description of errors that can occur. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{HWLOC\_\-MEMBIND\_\-PROCESS@{HWLOC\_\-MEMBIND\_\-PROCESS}!hwlocality\_\-membinding@{hwlocality\_\-membinding}}\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!HWLOC\_\-MEMBIND\_\-PROCESS@{HWLOC\_\-MEMBIND\_\-PROCESS}}\item[{\em 
+\hypertarget{a00050_ggab00475fd98815bf4fb9aaf752030e7d2a1b1b74aef138f64aff214a8cbdfe8eb4}{
+HWLOC\_\-MEMBIND\_\-PROCESS}
+\label{a00050_ggab00475fd98815bf4fb9aaf752030e7d2a1b1b74aef138f64aff214a8cbdfe8eb4}
+}]Set policy for all threads of the specified (possibly multithreaded) process. This flag is mutually exclusive with HWLOC\_\-MEMBIND\_\-THREAD. \index{HWLOC\_\-MEMBIND\_\-THREAD@{HWLOC\_\-MEMBIND\_\-THREAD}!hwlocality\_\-membinding@{hwlocality\_\-membinding}}\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!HWLOC\_\-MEMBIND\_\-THREAD@{HWLOC\_\-MEMBIND\_\-THREAD}}\item[{\em 
+\hypertarget{a00050_ggab00475fd98815bf4fb9aaf752030e7d2a1dc7dd5cdcd5796893a325a524555298}{
+HWLOC\_\-MEMBIND\_\-THREAD}
+\label{a00050_ggab00475fd98815bf4fb9aaf752030e7d2a1dc7dd5cdcd5796893a325a524555298}
+}]Set policy for a specific thread of the current process. This flag is mutually exclusive with HWLOC\_\-MEMBIND\_\-PROCESS. \index{HWLOC\_\-MEMBIND\_\-STRICT@{HWLOC\_\-MEMBIND\_\-STRICT}!hwlocality\_\-membinding@{hwlocality\_\-membinding}}\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!HWLOC\_\-MEMBIND\_\-STRICT@{HWLOC\_\-MEMBIND\_\-STRICT}}\item[{\em 
+\hypertarget{a00050_ggab00475fd98815bf4fb9aaf752030e7d2a0335311a0ee04166df2888d52b4a42c6}{
+HWLOC\_\-MEMBIND\_\-STRICT}
+\label{a00050_ggab00475fd98815bf4fb9aaf752030e7d2a0335311a0ee04166df2888d52b4a42c6}
+}]Request strict binding from the OS. The function will fail if the binding can not be guaranteed / completely enforced.
+
+This flag has slightly different meanings depending on which function it is used with. \index{HWLOC\_\-MEMBIND\_\-MIGRATE@{HWLOC\_\-MEMBIND\_\-MIGRATE}!hwlocality\_\-membinding@{hwlocality\_\-membinding}}\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!HWLOC\_\-MEMBIND\_\-MIGRATE@{HWLOC\_\-MEMBIND\_\-MIGRATE}}\item[{\em 
+\hypertarget{a00050_ggab00475fd98815bf4fb9aaf752030e7d2aa6e49e54f52827cb143cc869cfd748af}{
+HWLOC\_\-MEMBIND\_\-MIGRATE}
+\label{a00050_ggab00475fd98815bf4fb9aaf752030e7d2aa6e49e54f52827cb143cc869cfd748af}
+}]Migrate existing allocated memory. If the memory cannot be migrated and the HWLOC\_\-MEMBIND\_\-STRICT flag is passed, an error will be returned. \index{HWLOC\_\-MEMBIND\_\-NOCPUBIND@{HWLOC\_\-MEMBIND\_\-NOCPUBIND}!hwlocality\_\-membinding@{hwlocality\_\-membinding}}\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!HWLOC\_\-MEMBIND\_\-NOCPUBIND@{HWLOC\_\-MEMBIND\_\-NOCPUBIND}}\item[{\em 
+\hypertarget{a00050_ggab00475fd98815bf4fb9aaf752030e7d2aad6b9eaf2ee324ca58dc8f58094b9997}{
+HWLOC\_\-MEMBIND\_\-NOCPUBIND}
+\label{a00050_ggab00475fd98815bf4fb9aaf752030e7d2aad6b9eaf2ee324ca58dc8f58094b9997}
+}]Avoid any effect on CPU binding. On some operating systems, some underlying memory binding functions also bind the application to the corresponding CPU(s). Using this flag will cause hwloc to avoid using OS functions that could potentially affect CPU bindings. Note, however, that using NOCPUBIND may reduce hwloc's overall memory binding support. Specifically: some of hwloc's memory binding functions may fail with errno set to ENOSYS when used with NOCPUBIND. \end{description}
+\end{Desc}
+
+\hypertarget{a00050_gac9764f79505775d06407b40f5e4661e8}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-membind\_\-policy\_\-t@{hwloc\_\-membind\_\-policy\_\-t}}
+\index{hwloc\_\-membind\_\-policy\_\-t@{hwloc\_\-membind\_\-policy\_\-t}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-membind\_\-policy\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf hwloc\_\-membind\_\-policy\_\-t}}}
+\label{a00050_gac9764f79505775d06407b40f5e4661e8}
+
+
+Memory binding policy. 
+
+These constants can be used to choose the binding policy. Only one policy can be used at a time (i.e., the values cannot be OR'ed together).
+
+\begin{DoxyNote}{Note}
+Not all systems support all kinds of binding. See the \char`\"{}Detailed Description\char`\"{} section of \hyperlink{a00050}{Memory binding} for a description of errors that can occur. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{HWLOC\_\-MEMBIND\_\-DEFAULT@{HWLOC\_\-MEMBIND\_\-DEFAULT}!hwlocality\_\-membinding@{hwlocality\_\-membinding}}\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!HWLOC\_\-MEMBIND\_\-DEFAULT@{HWLOC\_\-MEMBIND\_\-DEFAULT}}\item[{\em 
+\hypertarget{a00050_ggac9764f79505775d06407b40f5e4661e8a18675bb80ebc1bce5b652e9de8f3998c}{
+HWLOC\_\-MEMBIND\_\-DEFAULT}
+\label{a00050_ggac9764f79505775d06407b40f5e4661e8a18675bb80ebc1bce5b652e9de8f3998c}
+}]Reset the memory allocation policy to the system default. \index{HWLOC\_\-MEMBIND\_\-FIRSTTOUCH@{HWLOC\_\-MEMBIND\_\-FIRSTTOUCH}!hwlocality\_\-membinding@{hwlocality\_\-membinding}}\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!HWLOC\_\-MEMBIND\_\-FIRSTTOUCH@{HWLOC\_\-MEMBIND\_\-FIRSTTOUCH}}\item[{\em 
+\hypertarget{a00050_ggac9764f79505775d06407b40f5e4661e8a979c7aa78dd32780858f30f47a72cca0}{
+HWLOC\_\-MEMBIND\_\-FIRSTTOUCH}
+\label{a00050_ggac9764f79505775d06407b40f5e4661e8a979c7aa78dd32780858f30f47a72cca0}
+}]Allocate memory but do not immediately bind it to a specific locality. Instead, each page in the allocation is bound only when it is first touched. Pages are individually bound to the local NUMA node of the first thread that touches it. If there is not enough memory on the node, allocation may be done in the specified cpuset before allocating on other nodes. \index{HWLOC\_\-MEMBIND\_\-BIND@{HWLOC\_\-MEMBIND\_\-BIND}!hwlocality\_\-membinding@{hwlocality\_\-membinding}}\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!HWLOC\_\-MEMBIND\_\-BIND@{HWLOC\_\-MEMBIND\_\-BIND}}\item[{\em 
+\hypertarget{a00050_ggac9764f79505775d06407b40f5e4661e8ad811fa4b2a6002c4d63695a408ffde2c}{
+HWLOC\_\-MEMBIND\_\-BIND}
+\label{a00050_ggac9764f79505775d06407b40f5e4661e8ad811fa4b2a6002c4d63695a408ffde2c}
+}]Allocate memory on the specified nodes. \index{HWLOC\_\-MEMBIND\_\-INTERLEAVE@{HWLOC\_\-MEMBIND\_\-INTERLEAVE}!hwlocality\_\-membinding@{hwlocality\_\-membinding}}\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!HWLOC\_\-MEMBIND\_\-INTERLEAVE@{HWLOC\_\-MEMBIND\_\-INTERLEAVE}}\item[{\em 
+\hypertarget{a00050_ggac9764f79505775d06407b40f5e4661e8ae370075e5af016d42310f87ea5af236b}{
+HWLOC\_\-MEMBIND\_\-INTERLEAVE}
+\label{a00050_ggac9764f79505775d06407b40f5e4661e8ae370075e5af016d42310f87ea5af236b}
+}]Allocate memory on the given nodes in an interleaved / round-\/robin manner. The precise layout of the memory across multiple NUMA nodes is OS/system specific. Interleaving can be useful when threads distributed across the specified NUMA nodes will all be accessing the whole memory range concurrently, since the interleave will then balance the memory references. \index{HWLOC\_\-MEMBIND\_\-REPLICATE@{HWLOC\_\-MEMBIND\_\-REPLICATE}!hwlocality\_\-membinding@{hwlocality\_\-membinding}}\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!HWLOC\_\-MEMBIND\_\-REPLICATE@{HWLOC\_\-MEMBIND\_\-REPLICATE}}\item[{\em 
+\hypertarget{a00050_ggac9764f79505775d06407b40f5e4661e8afb37480fe5f4236eb7dd4aef26f691e9}{
+HWLOC\_\-MEMBIND\_\-REPLICATE}
+\label{a00050_ggac9764f79505775d06407b40f5e4661e8afb37480fe5f4236eb7dd4aef26f691e9}
+}]Replicate memory on the given nodes; reads from this memory will attempt to be serviced from the NUMA node local to the reading thread. Replicating can be useful when multiple threads from the specified NUMA nodes will be sharing the same read-\/only data. This policy can only be used with existing memory allocations (i.e., the hwloc\_\-set\_\-$\ast$membind$\ast$() functions); it cannot be used with functions that allocate new memory (i.e., the hwloc\_\-alloc$\ast$() functions). \index{HWLOC\_\-MEMBIND\_\-NEXTTOUCH@{HWLOC\_\-MEMBIND\_\-NEXTTOUCH}!hwlocality\_\-membinding@{hwlocality\_\-membinding}}\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!HWLOC\_\-MEMBIND\_\-NEXTTOUCH@{HWLOC\_\-MEMBIND\_\-NEXTTOUCH}}\item[{\em 
+\hypertarget{a00050_ggac9764f79505775d06407b40f5e4661e8aecdd4164d647708fbb51a00d98dbb138}{
+HWLOC\_\-MEMBIND\_\-NEXTTOUCH}
+\label{a00050_ggac9764f79505775d06407b40f5e4661e8aecdd4164d647708fbb51a00d98dbb138}
+}]For each page bound with this policy, by next time it is touched (and next time only), it is moved from its current location to the local NUMA node of the thread where the memory reference occurred (if it needs to be moved at all). \index{HWLOC\_\-MEMBIND\_\-MIXED@{HWLOC\_\-MEMBIND\_\-MIXED}!hwlocality\_\-membinding@{hwlocality\_\-membinding}}\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!HWLOC\_\-MEMBIND\_\-MIXED@{HWLOC\_\-MEMBIND\_\-MIXED}}\item[{\em 
+\hypertarget{a00050_ggac9764f79505775d06407b40f5e4661e8a3185bd869b67817fb2bd5164bf360402}{
+HWLOC\_\-MEMBIND\_\-MIXED}
+\label{a00050_ggac9764f79505775d06407b40f5e4661e8a3185bd869b67817fb2bd5164bf360402}
+}]Returned by hwloc\_\-get\_\-membind$\ast$() functions when multiple threads or parts of a memory area have differing memory binding policies. \end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{a00050_gac5586e58cf25c3596b7d4aa31ce13259}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-alloc@{hwloc\_\-alloc}}
+\index{hwloc\_\-alloc@{hwloc\_\-alloc}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-alloc}]{\setlength{\rightskip}{0pt plus 5cm} void$\ast$ hwloc\_\-alloc (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{size\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_gac5586e58cf25c3596b7d4aa31ce13259}
+
+
+Allocate some memory. 
+
+This is equivalent to malloc(), except that it tries to allocate page-\/aligned memory from the OS.
+
+\begin{DoxyNote}{Note}
+The allocated memory should be freed with \hyperlink{a00050_ga986d9b4cc76da592c4b937c6cb7d9d56}{hwloc\_\-free()}. 
+\end{DoxyNote}
+\hypertarget{a00050_ga221a7edc5d436300374fa16463f607e5}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-alloc\_\-membind@{hwloc\_\-alloc\_\-membind}}
+\index{hwloc\_\-alloc\_\-membind@{hwloc\_\-alloc\_\-membind}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-alloc\_\-membind}]{\setlength{\rightskip}{0pt plus 5cm} void$\ast$ hwloc\_\-alloc\_\-membind (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{size\_\-t}]{len, }
+\item[{{\bf hwloc\_\-const\_\-cpuset\_\-t}}]{cpuset, }
+\item[{{\bf hwloc\_\-membind\_\-policy\_\-t}}]{policy, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_ga221a7edc5d436300374fa16463f607e5}
+
+
+Allocate some memory on memory nodes near the given physical cpuset {\ttfamily cpuset}. 
+
+\begin{DoxyReturn}{Returns}
+NULL with errno set to ENOSYS if the action is not supported and HWLOC\_\-MEMBIND\_\-STRICT is given 
+
+NULL with errno set to EXDEV if the binding cannot be enforced and HWLOC\_\-MEMBIND\_\-STRICT is given
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The allocated memory should be freed with \hyperlink{a00050_ga986d9b4cc76da592c4b937c6cb7d9d56}{hwloc\_\-free()}. 
+\end{DoxyNote}
+\hypertarget{a00050_gaeaa00714a9c4319bda0a74ca6f8720e8}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-alloc\_\-membind\_\-nodeset@{hwloc\_\-alloc\_\-membind\_\-nodeset}}
+\index{hwloc\_\-alloc\_\-membind\_\-nodeset@{hwloc\_\-alloc\_\-membind\_\-nodeset}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-alloc\_\-membind\_\-nodeset}]{\setlength{\rightskip}{0pt plus 5cm} void$\ast$ hwloc\_\-alloc\_\-membind\_\-nodeset (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{size\_\-t}]{len, }
+\item[{{\bf hwloc\_\-const\_\-nodeset\_\-t}}]{nodeset, }
+\item[{{\bf hwloc\_\-membind\_\-policy\_\-t}}]{policy, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_gaeaa00714a9c4319bda0a74ca6f8720e8}
+
+
+Allocate some memory on the given physical nodeset {\ttfamily nodeset}. 
+
+\begin{DoxyReturn}{Returns}
+NULL with errno set to ENOSYS if the action is not supported and HWLOC\_\-MEMBIND\_\-STRICT is given 
+
+NULL with errno set to EXDEV if the binding cannot be enforced and HWLOC\_\-MEMBIND\_\-STRICT is given
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The allocated memory should be freed with \hyperlink{a00050_ga986d9b4cc76da592c4b937c6cb7d9d56}{hwloc\_\-free()}. 
+\end{DoxyNote}
+\hypertarget{a00050_ga986d9b4cc76da592c4b937c6cb7d9d56}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-free@{hwloc\_\-free}}
+\index{hwloc\_\-free@{hwloc\_\-free}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-free}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{void $\ast$}]{addr, }
+\item[{size\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_ga986d9b4cc76da592c4b937c6cb7d9d56}
+
+
+Free memory that was previously allocated by \hyperlink{a00050_gac5586e58cf25c3596b7d4aa31ce13259}{hwloc\_\-alloc()} or \hyperlink{a00050_ga221a7edc5d436300374fa16463f607e5}{hwloc\_\-alloc\_\-membind()}. 
+
+\hypertarget{a00050_gac02ee8f7606382ea7855ae4e1656ed0f}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-get\_\-area\_\-membind@{hwloc\_\-get\_\-area\_\-membind}}
+\index{hwloc\_\-get\_\-area\_\-membind@{hwloc\_\-get\_\-area\_\-membind}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-get\_\-area\_\-membind}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-get\_\-area\_\-membind (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{const void $\ast$}]{addr, }
+\item[{size\_\-t}]{len, }
+\item[{{\bf hwloc\_\-cpuset\_\-t}}]{cpuset, }
+\item[{{\bf hwloc\_\-membind\_\-policy\_\-t} $\ast$}]{policy, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_gac02ee8f7606382ea7855ae4e1656ed0f}
+
+
+Query the CPUs near the physical NUMA node(s) and binding policy of the memory identified by ({\ttfamily addr}, {\ttfamily len} ). 
+
+This function has two output parameters: {\ttfamily cpuset} and {\ttfamily policy}. The values returned in these parameters depend on both the {\ttfamily flags} passed in and the memory binding policies and nodesets of the pages in the address range.
+
+If HWLOC\_\-MEMBIND\_\-STRICT is specified, the target pages are first checked to see if they all have the same memory binding policy and nodeset. If they do not, -\/1 is returned and errno is set to EXDEV. If they are identical across all pages, the policy is returned in {\ttfamily policy}. {\ttfamily cpuset} is set to the union of CPUs near the NUMA node(s) in the nodeset.
+
+If HWLOC\_\-MEMBIND\_\-STRICT is not specified, the union of all NUMA node(s) containing pages in the address range is calculated. {\ttfamily cpuset} is then set to the CPUs near the NUMA node(s) in this union. If all pages in the target have the same policy, it is returned in {\ttfamily policy}. Otherwise, {\ttfamily policy} is set to HWLOC\_\-MEMBIND\_\-MIXED.
+
+If any other flags are specified, -\/1 is returned and errno is set to EINVAL. \hypertarget{a00050_ga106e6fcd764d17be682faf7a5bc95720}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-get\_\-area\_\-membind\_\-nodeset@{hwloc\_\-get\_\-area\_\-membind\_\-nodeset}}
+\index{hwloc\_\-get\_\-area\_\-membind\_\-nodeset@{hwloc\_\-get\_\-area\_\-membind\_\-nodeset}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-get\_\-area\_\-membind\_\-nodeset}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-get\_\-area\_\-membind\_\-nodeset (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{const void $\ast$}]{addr, }
+\item[{size\_\-t}]{len, }
+\item[{{\bf hwloc\_\-nodeset\_\-t}}]{nodeset, }
+\item[{{\bf hwloc\_\-membind\_\-policy\_\-t} $\ast$}]{policy, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_ga106e6fcd764d17be682faf7a5bc95720}
+
+
+Query the physical NUMA node(s) and binding policy of the memory identified by ({\ttfamily addr}, {\ttfamily len} ). 
+
+This function has two output parameters: {\ttfamily nodeset} and {\ttfamily policy}. The values returned in these parameters depend on both the {\ttfamily flags} passed in and the memory binding policies and nodesets of the pages in the address range.
+
+If HWLOC\_\-MEMBIND\_\-STRICT is specified, the target pages are first checked to see if they all have the same memory binding policy and nodeset. If they do not, -\/1 is returned and errno is set to EXDEV. If they are identical across all pages, the nodeset and policy are returned in {\ttfamily nodeset} and {\ttfamily policy}, respectively.
+
+If HWLOC\_\-MEMBIND\_\-STRICT is not specified, {\ttfamily nodeset} is set to the union of all NUMA node(s) containing pages in the address range. If all pages in the target have the same policy, it is returned in {\ttfamily policy}. Otherwise, {\ttfamily policy} is set to HWLOC\_\-MEMBIND\_\-MIXED.
+
+If any other flags are specified, -\/1 is returned and errno is set to EINVAL. \hypertarget{a00050_gab07aedba1119f99130e5f0b796b7d8a5}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-get\_\-membind@{hwloc\_\-get\_\-membind}}
+\index{hwloc\_\-get\_\-membind@{hwloc\_\-get\_\-membind}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-get\_\-membind}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-get\_\-membind (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-cpuset\_\-t}}]{cpuset, }
+\item[{{\bf hwloc\_\-membind\_\-policy\_\-t} $\ast$}]{policy, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_gab07aedba1119f99130e5f0b796b7d8a5}
+
+
+Query the default memory binding policy and physical locality of the current process or thread (the locality is returned in {\ttfamily cpuset} as CPUs near the locality's actual NUMA node(s)). 
+
+This function has two output parameters: {\ttfamily cpuset} and {\ttfamily policy}. The values returned in these parameters depend on both the {\ttfamily flags} passed in and the current memory binding policies and nodesets in the queried target.
+
+Passing the HWLOC\_\-MEMBIND\_\-PROCESS flag specifies that the query target is the current policies and nodesets for all the threads in the current process. Passing HWLOC\_\-MEMBIND\_\-THREAD specifies that the query target is the current policy and nodeset for only the thread invoking this function.
+
+If neither of these flags are passed (which is the most portable method), the process is assumed to be single threaded. This allows hwloc to use either process-\/based OS functions or thread-\/based OS functions, depending on which are available.
+
+HWLOC\_\-MEMBIND\_\-STRICT is only meaningful when HWLOC\_\-MEMBIND\_\-PROCESS is also specified. In this case, hwloc will check the default memory policies and nodesets for all threads in the process. If they are not identical, -\/1 is returned and errno is set to EXDEV. If they are identical, the policy is returned in {\ttfamily policy}. {\ttfamily cpuset} is set to the union of CPUs near the NUMA node(s) in the nodeset.
+
+Otherwise, if HWLOC\_\-MEMBIND\_\-PROCESS is specified (and HWLOC\_\-MEMBIND\_\-STRICT is {\itshape not\/} specified), the default nodeset from each thread is logically OR'ed together. {\ttfamily cpuset} is set to the union of CPUs near the NUMA node(s) in the resulting nodeset. If all threads' default policies are the same, {\ttfamily policy} is set to that policy. If they are different, {\ttfamily policy} is set to HWLOC\_\-MEMBIND\_\-MIXED.
+
+In the HWLOC\_\-MEMBIND\_\-THREAD case (or when neither HWLOC\_\-MEMBIND\_\-PROCESS or HWLOC\_\-MEMBIND\_\-THREAD is specified), there is only one nodeset and policy. The policy is returned in {\ttfamily policy}; {\ttfamily cpuset} is set to the union of CPUs near the NUMA node(s) in the {\ttfamily nodeset}.
+
+If any other flags are specified, -\/1 is returned and errno is set to EINVAL. \hypertarget{a00050_ga7b46a4ca0b2db9723ca73b0c148ccd93}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-get\_\-membind\_\-nodeset@{hwloc\_\-get\_\-membind\_\-nodeset}}
+\index{hwloc\_\-get\_\-membind\_\-nodeset@{hwloc\_\-get\_\-membind\_\-nodeset}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-get\_\-membind\_\-nodeset}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-get\_\-membind\_\-nodeset (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-nodeset\_\-t}}]{nodeset, }
+\item[{{\bf hwloc\_\-membind\_\-policy\_\-t} $\ast$}]{policy, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_ga7b46a4ca0b2db9723ca73b0c148ccd93}
+
+
+Query the default memory binding policy and physical locality of the current process or thread. 
+
+This function has two output parameters: {\ttfamily nodeset} and {\ttfamily policy}. The values returned in these parameters depend on both the {\ttfamily flags} passed in and the current memory binding policies and nodesets in the queried target.
+
+Passing the HWLOC\_\-MEMBIND\_\-PROCESS flag specifies that the query target is the current policies and nodesets for all the threads in the current process. Passing HWLOC\_\-MEMBIND\_\-THREAD specifies that the query target is the current policy and nodeset for only the thread invoking this function.
+
+If neither of these flags are passed (which is the most portable method), the process is assumed to be single threaded. This allows hwloc to use either process-\/based OS functions or thread-\/based OS functions, depending on which are available.
+
+HWLOC\_\-MEMBIND\_\-STRICT is only meaningful when HWLOC\_\-MEMBIND\_\-PROCESS is also specified. In this case, hwloc will check the default memory policies and nodesets for all threads in the process. If they are not identical, -\/1 is returned and errno is set to EXDEV. If they are identical, the values are returned in {\ttfamily nodeset} and {\ttfamily policy}.
+
+Otherwise, if HWLOC\_\-MEMBIND\_\-PROCESS is specified (and HWLOC\_\-MEMBIND\_\-STRICT is {\itshape not\/} specified), {\ttfamily nodeset} is set to the logical OR of all threads' default nodeset. If all threads' default policies are the same, {\ttfamily policy} is set to that policy. If they are different, {\ttfamily policy} is set to HWLOC\_\-MEMBIND\_\-MIXED.
+
+In the HWLOC\_\-MEMBIND\_\-THREAD case (or when neither HWLOC\_\-MEMBIND\_\-PROCESS or HWLOC\_\-MEMBIND\_\-THREAD is specified), there is only one nodeset and policy; they are returned in {\ttfamily nodeset} and {\ttfamily policy}, respectively.
+
+If any other flags are specified, -\/1 is returned and errno is set to EINVAL. \hypertarget{a00050_gabaf9c13f1fa301d6895594cec52226e2}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-get\_\-proc\_\-membind@{hwloc\_\-get\_\-proc\_\-membind}}
+\index{hwloc\_\-get\_\-proc\_\-membind@{hwloc\_\-get\_\-proc\_\-membind}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-get\_\-proc\_\-membind}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-get\_\-proc\_\-membind (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{hwloc\_\-pid\_\-t}]{pid, }
+\item[{{\bf hwloc\_\-cpuset\_\-t}}]{cpuset, }
+\item[{{\bf hwloc\_\-membind\_\-policy\_\-t} $\ast$}]{policy, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_gabaf9c13f1fa301d6895594cec52226e2}
+
+
+Query the default memory binding policy and physical locality of the specified process (the locality is returned in {\ttfamily cpuset} as CPUs near the locality's actual NUMA node(s)). 
+
+This function has two output parameters: {\ttfamily cpuset} and {\ttfamily policy}. The values returned in these parameters depend on both the {\ttfamily flags} passed in and the current memory binding policies and nodesets in the queried target.
+
+Passing the HWLOC\_\-MEMBIND\_\-PROCESS flag specifies that the query target is the current policies and nodesets for all the threads in the specified process. If HWLOC\_\-MEMBIND\_\-PROCESS is not specified (which is the most portable method), the process is assumed to be single threaded. This allows hwloc to use either process-\/based OS functions or thread-\/based OS functions, depending on which are available.
+
+Note that it does not make sense to pass HWLOC\_\-MEMBIND\_\-THREAD to this function.
+
+If HWLOC\_\-MEMBIND\_\-STRICT is specified, hwloc will check the default memory policies and nodesets for all threads in the specified process. If they are not identical, -\/1 is returned and errno is set to EXDEV. If they are identical, the policy is returned in {\ttfamily policy}. {\ttfamily cpuset} is set to the union of CPUs near the NUMA node(s) in the nodeset.
+
+Otherwise, the default nodeset from each thread is logically OR'ed together. {\ttfamily cpuset} is set to the union of CPUs near the NUMA node(s) in the resulting nodeset. If all threads' default policies are the same, {\ttfamily policy} is set to that policy. If they are different, {\ttfamily policy} is set to HWLOC\_\-MEMBIND\_\-MIXED.
+
+If any other flags are specified, -\/1 is returned and errno is set to EINVAL.
+
+\begin{DoxyNote}{Note}
+{\ttfamily hwloc\_\-pid\_\-t} is {\ttfamily pid\_\-t} on Unix platforms, and {\ttfamily HANDLE} on native Windows platforms. 
+\end{DoxyNote}
+\hypertarget{a00050_ga22074ed072e1039f74f17f7b16e9e39d}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-get\_\-proc\_\-membind\_\-nodeset@{hwloc\_\-get\_\-proc\_\-membind\_\-nodeset}}
+\index{hwloc\_\-get\_\-proc\_\-membind\_\-nodeset@{hwloc\_\-get\_\-proc\_\-membind\_\-nodeset}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-get\_\-proc\_\-membind\_\-nodeset}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-get\_\-proc\_\-membind\_\-nodeset (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{hwloc\_\-pid\_\-t}]{pid, }
+\item[{{\bf hwloc\_\-nodeset\_\-t}}]{nodeset, }
+\item[{{\bf hwloc\_\-membind\_\-policy\_\-t} $\ast$}]{policy, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_ga22074ed072e1039f74f17f7b16e9e39d}
+
+
+Query the default memory binding policy and physical locality of the specified process. 
+
+This function has two output parameters: {\ttfamily nodeset} and {\ttfamily policy}. The values returned in these parameters depend on both the {\ttfamily flags} passed in and the current memory binding policies and nodesets in the queried target.
+
+Passing the HWLOC\_\-MEMBIND\_\-PROCESS flag specifies that the query target is the current policies and nodesets for all the threads in the specified process. If HWLOC\_\-MEMBIND\_\-PROCESS is not specified (which is the most portable method), the process is assumed to be single threaded. This allows hwloc to use either process-\/based OS functions or thread-\/based OS functions, depending on which are available.
+
+Note that it does not make sense to pass HWLOC\_\-MEMBIND\_\-THREAD to this function.
+
+If HWLOC\_\-MEMBIND\_\-STRICT is specified, hwloc will check the default memory policies and nodesets for all threads in the specified process. If they are not identical, -\/1 is returned and errno is set to EXDEV. If they are identical, the values are returned in {\ttfamily nodeset} and {\ttfamily policy}.
+
+Otherwise, {\ttfamily nodeset} is set to the logical OR of all threads' default nodeset. If all threads' default policies are the same, {\ttfamily policy} is set to that policy. If they are different, {\ttfamily policy} is set to HWLOC\_\-MEMBIND\_\-MIXED.
+
+If any other flags are specified, -\/1 is returned and errno is set to EINVAL.
+
+\begin{DoxyNote}{Note}
+{\ttfamily hwloc\_\-pid\_\-t} is {\ttfamily pid\_\-t} on Unix platforms, and {\ttfamily HANDLE} on native Windows platforms. 
+\end{DoxyNote}
+\hypertarget{a00050_ga06594edeb4728cb9e014aed924d1e74a}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-set\_\-area\_\-membind@{hwloc\_\-set\_\-area\_\-membind}}
+\index{hwloc\_\-set\_\-area\_\-membind@{hwloc\_\-set\_\-area\_\-membind}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-set\_\-area\_\-membind}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-set\_\-area\_\-membind (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{const void $\ast$}]{addr, }
+\item[{size\_\-t}]{len, }
+\item[{{\bf hwloc\_\-const\_\-cpuset\_\-t}}]{cpuset, }
+\item[{{\bf hwloc\_\-membind\_\-policy\_\-t}}]{policy, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_ga06594edeb4728cb9e014aed924d1e74a}
+
+
+Bind the already-\/allocated memory identified by (addr, len) to the NUMA node(s) near physical {\ttfamily cpuset}. 
+
+\begin{DoxyReturn}{Returns}
+-\/1 with errno set to ENOSYS if the action is not supported 
+
+-\/1 with errno set to EXDEV if the binding cannot be enforced 
+\end{DoxyReturn}
+\hypertarget{a00050_gade5e2c28ea8475a479bf2b1df36c6ccd}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-set\_\-area\_\-membind\_\-nodeset@{hwloc\_\-set\_\-area\_\-membind\_\-nodeset}}
+\index{hwloc\_\-set\_\-area\_\-membind\_\-nodeset@{hwloc\_\-set\_\-area\_\-membind\_\-nodeset}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-set\_\-area\_\-membind\_\-nodeset}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-set\_\-area\_\-membind\_\-nodeset (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{const void $\ast$}]{addr, }
+\item[{size\_\-t}]{len, }
+\item[{{\bf hwloc\_\-const\_\-nodeset\_\-t}}]{nodeset, }
+\item[{{\bf hwloc\_\-membind\_\-policy\_\-t}}]{policy, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_gade5e2c28ea8475a479bf2b1df36c6ccd}
+
+
+Bind the already-\/allocated memory identified by (addr, len) to the NUMA node(s) in physical {\ttfamily nodeset}. 
+
+\begin{DoxyReturn}{Returns}
+-\/1 with errno set to ENOSYS if the action is not supported 
+
+-\/1 with errno set to EXDEV if the binding cannot be enforced 
+\end{DoxyReturn}
+\hypertarget{a00050_ga8b6d1d90227aff8e44ef26bc1f8a8f95}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-set\_\-membind@{hwloc\_\-set\_\-membind}}
+\index{hwloc\_\-set\_\-membind@{hwloc\_\-set\_\-membind}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-set\_\-membind}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-set\_\-membind (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-const\_\-cpuset\_\-t}}]{cpuset, }
+\item[{{\bf hwloc\_\-membind\_\-policy\_\-t}}]{policy, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_ga8b6d1d90227aff8e44ef26bc1f8a8f95}
+
+
+Set the default memory binding policy of the current process or thread to prefer the NUMA node(s) near the specified physical {\ttfamily cpuset}. 
+
+If neither HWLOC\_\-MEMBIND\_\-PROCESS nor HWLOC\_\-MEMBIND\_\-THREAD is specified, the current process is assumed to be single-\/threaded. This is the most portable form as it permits hwloc to use either process-\/based OS functions or thread-\/based OS functions, depending on which are available.
+
+\begin{DoxyReturn}{Returns}
+-\/1 with errno set to ENOSYS if the action is not supported 
+
+-\/1 with errno set to EXDEV if the binding cannot be enforced 
+\end{DoxyReturn}
+\hypertarget{a00050_ga747962cbb16fd12ad6d126011c734a27}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-set\_\-membind\_\-nodeset@{hwloc\_\-set\_\-membind\_\-nodeset}}
+\index{hwloc\_\-set\_\-membind\_\-nodeset@{hwloc\_\-set\_\-membind\_\-nodeset}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-set\_\-membind\_\-nodeset}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-set\_\-membind\_\-nodeset (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-const\_\-nodeset\_\-t}}]{nodeset, }
+\item[{{\bf hwloc\_\-membind\_\-policy\_\-t}}]{policy, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_ga747962cbb16fd12ad6d126011c734a27}
+
+
+Set the default memory binding policy of the current process or thread to prefer the NUMA node(s) specified by physical {\ttfamily nodeset}. 
+
+If neither HWLOC\_\-MEMBIND\_\-PROCESS nor HWLOC\_\-MEMBIND\_\-THREAD is specified, the current process is assumed to be single-\/threaded. This is the most portable form as it permits hwloc to use either process-\/based OS functions or thread-\/based OS functions, depending on which are available.
+
+\begin{DoxyReturn}{Returns}
+-\/1 with errno set to ENOSYS if the action is not supported 
+
+-\/1 with errno set to EXDEV if the binding cannot be enforced 
+\end{DoxyReturn}
+\hypertarget{a00050_gac63c4517e71b3f0d41b3dee3e83dc55c}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-set\_\-proc\_\-membind@{hwloc\_\-set\_\-proc\_\-membind}}
+\index{hwloc\_\-set\_\-proc\_\-membind@{hwloc\_\-set\_\-proc\_\-membind}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-set\_\-proc\_\-membind}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-set\_\-proc\_\-membind (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{hwloc\_\-pid\_\-t}]{pid, }
+\item[{{\bf hwloc\_\-const\_\-cpuset\_\-t}}]{cpuset, }
+\item[{{\bf hwloc\_\-membind\_\-policy\_\-t}}]{policy, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_gac63c4517e71b3f0d41b3dee3e83dc55c}
+
+
+Set the default memory binding policy of the specified process to prefer the NUMA node(s) near the specified physical {\ttfamily cpuset}. 
+
+\begin{DoxyReturn}{Returns}
+-\/1 with errno set to ENOSYS if the action is not supported 
+
+-\/1 with errno set to EXDEV if the binding cannot be enforced
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+{\ttfamily hwloc\_\-pid\_\-t} is {\ttfamily pid\_\-t} on Unix platforms, and {\ttfamily HANDLE} on native Windows platforms. 
+\end{DoxyNote}
+\hypertarget{a00050_gaf10d18cd4703ec980d7440a1c23fa07f}{
+\index{hwlocality\_\-membinding@{hwlocality\_\-membinding}!hwloc\_\-set\_\-proc\_\-membind\_\-nodeset@{hwloc\_\-set\_\-proc\_\-membind\_\-nodeset}}
+\index{hwloc\_\-set\_\-proc\_\-membind\_\-nodeset@{hwloc\_\-set\_\-proc\_\-membind\_\-nodeset}!hwlocality_membinding@{hwlocality\_\-membinding}}
+\subsubsection[{hwloc\_\-set\_\-proc\_\-membind\_\-nodeset}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-set\_\-proc\_\-membind\_\-nodeset (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{hwloc\_\-pid\_\-t}]{pid, }
+\item[{{\bf hwloc\_\-const\_\-nodeset\_\-t}}]{nodeset, }
+\item[{{\bf hwloc\_\-membind\_\-policy\_\-t}}]{policy, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{a00050_gaf10d18cd4703ec980d7440a1c23fa07f}
+
+
+Set the default memory binding policy of the specified process to prefer the NUMA node(s) specified by physical {\ttfamily nodeset}. 
+
+\begin{DoxyReturn}{Returns}
+-\/1 with errno set to ENOSYS if the action is not supported 
+
+-\/1 with errno set to EXDEV if the binding cannot be enforced
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+{\ttfamily hwloc\_\-pid\_\-t} is {\ttfamily pid\_\-t} on Unix platforms, and {\ttfamily HANDLE} on native Windows platforms. 
+\end{DoxyNote}

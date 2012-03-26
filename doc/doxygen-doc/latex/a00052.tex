@@ -1,0 +1,50 @@
+\hypertarget{a00052}{
+\section{Object Type Helpers}
+\label{a00052}\index{Object Type Helpers@{Object Type Helpers}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static inline int \hyperlink{a00052_ga081be77905201e9f42318e9974456b45}{hwloc\_\-get\_\-type\_\-or\_\-below\_\-depth} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc\_\-obj\_\-type\_\-t} type) 
+\item 
+static inline int \hyperlink{a00052_ga62a3f401854c209605c90079700f4bc5}{hwloc\_\-get\_\-type\_\-or\_\-above\_\-depth} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc\_\-obj\_\-type\_\-t} type) 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Be sure to see the figure in \hyperlink{a00001}{Terms and Definitions} that shows a complete topology tree, including depths, child/sibling/cousin relationships, and an example of an asymmetric topology where one socket has fewer caches than its peers. 
+
+\subsection{Function Documentation}
+\hypertarget{a00052_ga62a3f401854c209605c90079700f4bc5}{
+\index{hwlocality\_\-helper\_\-types@{hwlocality\_\-helper\_\-types}!hwloc\_\-get\_\-type\_\-or\_\-above\_\-depth@{hwloc\_\-get\_\-type\_\-or\_\-above\_\-depth}}
+\index{hwloc\_\-get\_\-type\_\-or\_\-above\_\-depth@{hwloc\_\-get\_\-type\_\-or\_\-above\_\-depth}!hwlocality_helper_types@{hwlocality\_\-helper\_\-types}}
+\subsubsection[{hwloc\_\-get\_\-type\_\-or\_\-above\_\-depth}]{\setlength{\rightskip}{0pt plus 5cm}static inline int hwloc\_\-get\_\-type\_\-or\_\-above\_\-depth (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-obj\_\-type\_\-t}}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00052_ga62a3f401854c209605c90079700f4bc5}
+
+
+Returns the depth of objects of type {\ttfamily type} or above. 
+
+If no object of this type is present on the underlying architecture, the function returns the depth of the first \char`\"{}present\char`\"{} object typically containing {\ttfamily type}.
+
+If some objects of the given type exist in different levels, for instance L1 and L2 caches, the function returns HWLOC\_\-TYPE\_\-DEPTH\_\-MULTIPLE. \hypertarget{a00052_ga081be77905201e9f42318e9974456b45}{
+\index{hwlocality\_\-helper\_\-types@{hwlocality\_\-helper\_\-types}!hwloc\_\-get\_\-type\_\-or\_\-below\_\-depth@{hwloc\_\-get\_\-type\_\-or\_\-below\_\-depth}}
+\index{hwloc\_\-get\_\-type\_\-or\_\-below\_\-depth@{hwloc\_\-get\_\-type\_\-or\_\-below\_\-depth}!hwlocality_helper_types@{hwlocality\_\-helper\_\-types}}
+\subsubsection[{hwloc\_\-get\_\-type\_\-or\_\-below\_\-depth}]{\setlength{\rightskip}{0pt plus 5cm}static inline int hwloc\_\-get\_\-type\_\-or\_\-below\_\-depth (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-obj\_\-type\_\-t}}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00052_ga081be77905201e9f42318e9974456b45}
+
+
+Returns the depth of objects of type {\ttfamily type} or below. 
+
+If no object of this type is present on the underlying architecture, the function returns the depth of the first \char`\"{}present\char`\"{} object typically found inside {\ttfamily type}.
+
+If some objects of the given type exist in different levels, for instance L1 and L2 caches, the function returns HWLOC\_\-TYPE\_\-DEPTH\_\-MULTIPLE. 

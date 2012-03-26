@@ -114,7 +114,7 @@ LTLIBRARIES = $(lib_LTLIBRARIES) $(noinst_LTLIBRARIES)
 libhwloc_la_LIBADD =
 am__libhwloc_la_SOURCES_DIST = topology.c traversal.c distances.c \
 	topology-synthetic.c topology-xml.c bind.c cpuset.c misc.c \
-	topology-libpci.c topology-solaris.c \
+	NVCtrl.c gl.c topology-libpci.c topology-solaris.c \
 	topology-solaris-chiptype.c topology-linux.c topology-aix.c \
 	topology-osf.c topology-hpux.c topology-windows.c \
 	topology-darwin.c topology-freebsd.c topology-x86.c
@@ -130,10 +130,10 @@ am__libhwloc_la_SOURCES_DIST = topology.c traversal.c distances.c \
 @HWLOC_HAVE_FREEBSD_TRUE@am__objects_9 = topology-freebsd.lo
 am__objects_10 = topology.lo traversal.lo distances.lo \
 	topology-synthetic.lo topology-xml.lo bind.lo cpuset.lo \
-	misc.lo $(am__objects_1) $(am__objects_2) $(am__objects_3) \
-	$(am__objects_4) $(am__objects_5) $(am__objects_6) \
-	$(am__objects_7) $(am__objects_8) $(am__objects_9) \
-	topology-x86.lo
+	misc.lo NVCtrl.lo gl.lo $(am__objects_1) $(am__objects_2) \
+	$(am__objects_3) $(am__objects_4) $(am__objects_5) \
+	$(am__objects_6) $(am__objects_7) $(am__objects_8) \
+	$(am__objects_9) topology-x86.lo
 am_libhwloc_la_OBJECTS = $(am__objects_10)
 libhwloc_la_OBJECTS = $(am_libhwloc_la_OBJECTS)
 AM_V_lt = $(am__v_lt_$(V))
@@ -146,10 +146,11 @@ libhwloc_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
 libhwloc_embedded_la_LIBADD =
 am__libhwloc_embedded_la_SOURCES_DIST = topology.c traversal.c \
 	distances.c topology-synthetic.c topology-xml.c bind.c \
-	cpuset.c misc.c topology-libpci.c topology-solaris.c \
-	topology-solaris-chiptype.c topology-linux.c topology-aix.c \
-	topology-osf.c topology-hpux.c topology-windows.c \
-	topology-darwin.c topology-freebsd.c topology-x86.c
+	cpuset.c misc.c NVCtrl.c gl.c topology-libpci.c \
+	topology-solaris.c topology-solaris-chiptype.c \
+	topology-linux.c topology-aix.c topology-osf.c topology-hpux.c \
+	topology-windows.c topology-darwin.c topology-freebsd.c \
+	topology-x86.c
 am_libhwloc_embedded_la_OBJECTS = $(am__objects_10)
 libhwloc_embedded_la_OBJECTS = $(am_libhwloc_embedded_la_OBJECTS)
 @HWLOC_BUILD_STANDALONE_FALSE@am_libhwloc_embedded_la_rpath =
@@ -274,7 +275,6 @@ MANIFEST_TOOL = @MANIFEST_TOOL@
 MKDIR_P = @MKDIR_P@
 NM = @NM@
 NMEDIT = @NMEDIT@
-NVCTRL_LIBS = @NVCTRL_LIBS@
 OBJDUMP = @OBJDUMP@
 OBJEXT = @OBJEXT@
 OTOOL = @OTOOL@
@@ -372,17 +372,18 @@ EXTRA_DIST = dolib.c $(am__append_16)
 
 # Sources and ldflags
 sources = topology.c traversal.c distances.c topology-synthetic.c \
-	topology-xml.c bind.c cpuset.c misc.c $(am__append_1) \
-	$(am__append_2) $(am__append_4) $(am__append_5) \
-	$(am__append_7) $(am__append_9) $(am__append_11) \
-	$(am__append_12) $(am__append_13) topology-x86.c
+	topology-xml.c bind.c cpuset.c misc.c NVCtrl.c gl.c \
+	$(am__append_1) $(am__append_2) $(am__append_4) \
+	$(am__append_5) $(am__append_7) $(am__append_9) \
+	$(am__append_11) $(am__append_12) $(am__append_13) \
+	topology-x86.c
 ldflags = $(am__append_3) $(am__append_6) $(am__append_8) \
 	$(am__append_10) $(am__append_14) $(am__append_15)
 @HWLOC_HAVE_WINDOWS_TRUE@LC_MESSAGES = C
 
 # Installable library
 libhwloc_la_SOURCES = $(sources)
-libhwloc_la_LDFLAGS = $(ldflags) -version-number $(libhwloc_so_version) $(HWLOC_LIBS) 
+libhwloc_la_LDFLAGS = $(ldflags) -version-info $(libhwloc_so_version) $(HWLOC_LIBS)
 
 # Embedded library (note the lack of a .so version number -- that
 # intentionally only appears in the installable library).  Also note
@@ -478,9 +479,11 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/NVCtrl.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/bind.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpuset.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/distances.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gl.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/misc.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/topology-aix.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/topology-darwin.Plo@am__quote@

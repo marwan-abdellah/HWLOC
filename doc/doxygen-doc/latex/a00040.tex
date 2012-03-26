@@ -1,0 +1,64 @@
+\hypertarget{a00040}{
+\section{Object sets (hwloc\_\-cpuset\_\-t and hwloc\_\-nodeset\_\-t)}
+\label{a00040}\index{Object sets (hwloc\_\-cpuset\_\-t and hwloc\_\-nodeset\_\-t)@{Object sets (hwloc\_\-cpuset\_\-t and hwloc\_\-nodeset\_\-t)}}
+}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc\_\-cpuset\_\-t}
+\item 
+typedef \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc\_\-const\_\-cpuset\_\-t}
+\item 
+typedef \hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} \hyperlink{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{hwloc\_\-nodeset\_\-t}
+\item 
+typedef \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} \hyperlink{a00040_ga2f5276235841ad66a79bedad16a5a10c}{hwloc\_\-const\_\-nodeset\_\-t}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Hwloc uses bitmaps to represent two distinct kinds of object sets: CPU sets (\hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc\_\-cpuset\_\-t}) and NUMA node sets (\hyperlink{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{hwloc\_\-nodeset\_\-t}). These types are both typedefs to a common back end type (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t}), and therefore all the hwloc bitmap functions are applicable to both \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc\_\-cpuset\_\-t} and \hyperlink{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{hwloc\_\-nodeset\_\-t} (see \hyperlink{a00065}{The bitmap API}).
+
+The rationale for having two different types is that even though the actions one wants to perform on these types are the same (e.g., enable and disable individual items in the set/mask), they're used in very different contexts: one for specifying which processors to use and one for specifying which NUMA nodes to use. Hence, the name difference is really just to reflect the intent of where the type is used. 
+
+\subsection{Typedef Documentation}
+\hypertarget{a00040_ga1f784433e9b606261f62d1134f6a3b25}{
+\index{hwlocality\_\-sets@{hwlocality\_\-sets}!hwloc\_\-const\_\-cpuset\_\-t@{hwloc\_\-const\_\-cpuset\_\-t}}
+\index{hwloc\_\-const\_\-cpuset\_\-t@{hwloc\_\-const\_\-cpuset\_\-t}!hwlocality_sets@{hwlocality\_\-sets}}
+\subsubsection[{hwloc\_\-const\_\-cpuset\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf hwloc\_\-const\_\-bitmap\_\-t} {\bf hwloc\_\-const\_\-cpuset\_\-t}}}
+\label{a00040_ga1f784433e9b606261f62d1134f6a3b25}
+
+
+A non-\/modifiable \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc\_\-cpuset\_\-t}. 
+
+\hypertarget{a00040_ga2f5276235841ad66a79bedad16a5a10c}{
+\index{hwlocality\_\-sets@{hwlocality\_\-sets}!hwloc\_\-const\_\-nodeset\_\-t@{hwloc\_\-const\_\-nodeset\_\-t}}
+\index{hwloc\_\-const\_\-nodeset\_\-t@{hwloc\_\-const\_\-nodeset\_\-t}!hwlocality_sets@{hwlocality\_\-sets}}
+\subsubsection[{hwloc\_\-const\_\-nodeset\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf hwloc\_\-const\_\-bitmap\_\-t} {\bf hwloc\_\-const\_\-nodeset\_\-t}}}
+\label{a00040_ga2f5276235841ad66a79bedad16a5a10c}
+
+
+A non-\/modifiable \hyperlink{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{hwloc\_\-nodeset\_\-t}. 
+
+\hypertarget{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{
+\index{hwlocality\_\-sets@{hwlocality\_\-sets}!hwloc\_\-cpuset\_\-t@{hwloc\_\-cpuset\_\-t}}
+\index{hwloc\_\-cpuset\_\-t@{hwloc\_\-cpuset\_\-t}!hwlocality_sets@{hwlocality\_\-sets}}
+\subsubsection[{hwloc\_\-cpuset\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf hwloc\_\-bitmap\_\-t} {\bf hwloc\_\-cpuset\_\-t}}}
+\label{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}
+
+
+A CPU set is a bitmap whose bits are set according to CPU physical OS indexes. 
+
+It may be consulted and modified with the bitmap API as any \hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} (see \hyperlink{a00027_source}{hwloc/bitmap.h}). \hypertarget{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{
+\index{hwlocality\_\-sets@{hwlocality\_\-sets}!hwloc\_\-nodeset\_\-t@{hwloc\_\-nodeset\_\-t}}
+\index{hwloc\_\-nodeset\_\-t@{hwloc\_\-nodeset\_\-t}!hwlocality_sets@{hwlocality\_\-sets}}
+\subsubsection[{hwloc\_\-nodeset\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf hwloc\_\-bitmap\_\-t} {\bf hwloc\_\-nodeset\_\-t}}}
+\label{a00040_ga37e35730fa7e775b5bb0afe893d6d508}
+
+
+A node set is a bitmap whose bits are set according to NUMA memory node physical OS indexes. 
+
+It may be consulted and modified with the bitmap API as any \hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} (see \hyperlink{a00027_source}{hwloc/bitmap.h}).
+
+When binding memory on a system without any NUMA node (when the whole memory is considered as a single memory bank), the nodeset may be either empty (no memory selected) or full (whole system memory selected).
+
+See also \hyperlink{a00062}{Conversion between cpuset and nodeset}. 

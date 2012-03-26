@@ -1,0 +1,88 @@
+\hypertarget{a00036_source}{
+\section{myriexpress.h}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * Copyright © 2010 inria.  All rights reserved.}
+00003 \textcolor{comment}{ * Copyright © 2011 Cisco Systems, Inc.  All rights reserved.}
+00004 \textcolor{comment}{ * See COPYING in top-level directory.}
+00005 \textcolor{comment}{ */}
+00006 
+00015 \textcolor{preprocessor}{#ifndef HWLOC\_MYRIEXPRESS\_H}
+00016 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define HWLOC\_MYRIEXPRESS\_H}
+00017 \textcolor{preprocessor}{}
+00018 \textcolor{preprocessor}{#include <hwloc.h>}
+00019 \textcolor{preprocessor}{#include <hwloc/autogen/config.h>}
+00020 \textcolor{preprocessor}{#include <hwloc/linux.h>}
+00021 
+00022 \textcolor{preprocessor}{#include <myriexpress.h>}
+00023 
+00024 
+00025 \textcolor{preprocessor}{#ifdef \_\_cplusplus}
+00026 \textcolor{preprocessor}{}\textcolor{keyword}{extern} \textcolor{stringliteral}{"C"} \{
+00027 \textcolor{preprocessor}{#endif}
+00028 \textcolor{preprocessor}{}
+00029 
+00040 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00036_source_l00041}{}\hyperlink{a00074_ga87f4746d0cad579ce4e86b98088f22a1}{00041} \hyperlink{a00074_ga87f4746d0cad579ce4e86b98088f22a1}{hwloc_mx_board_get_device_cpuset}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology,
+00042                                  \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{id}, \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc_cpuset_t} \textcolor{keyword}{set})
+00043 \{
+00044   uint32\_t in, out;
+00045 
+00046   in = id;
+00047   \textcolor{keywordflow}{if} (mx\_get\_info(NULL, MX\_NUMA\_NODE, &in, \textcolor{keyword}{sizeof}(in), &out, \textcolor{keyword}{sizeof}(out)) != MX\_S
+      UCCESS) \{
+00048     errno = EINVAL;
+00049     \textcolor{keywordflow}{return} -1;
+00050   \}
+00051 
+00052   \textcolor{keywordflow}{if} (out != (uint32\_t) -1) \{
+00053     \hyperlink{a00016}{hwloc_obj_t} obj = NULL;
+00054     \textcolor{keywordflow}{while} ((obj = \hyperlink{a00053_ga5f08ceb69375341e73563cfe2e77534e}{hwloc_get_next_obj_by_type}(topology, \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE}, obj)) != N
+      ULL)
+00055       \textcolor{keywordflow}{if} (obj->\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index} == out) \{
+00056         \hyperlink{a00065_gab14743355fa03b36cef521cbcd2fbf64}{hwloc_bitmap_copy}(\textcolor{keyword}{set}, obj->\hyperlink{a00016_a67925e0f2c47f50408fbdb9bddd0790f}{cpuset});
+00057         \textcolor{keywordflow}{goto} out;
+00058       \}
+00059   \}
+00060   \textcolor{comment}{/* fallback to the full topology cpuset */}
+00061   \hyperlink{a00065_gab14743355fa03b36cef521cbcd2fbf64}{hwloc_bitmap_copy}(\textcolor{keyword}{set}, \hyperlink{a00060_ga418ebb39eaf1eac8f9cf4047cf59a534}{hwloc_topology_get_complete_cpuset}(topology));
+00062 
+00063  out:
+00064   \textcolor{keywordflow}{return} 0;
+00065 \}
+00066 
+00073 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00036_source_l00074}{}\hyperlink{a00074_ga2ff7763b9c2c5975f9a2e3d638351535}{00074} \hyperlink{a00074_ga2ff7763b9c2c5975f9a2e3d638351535}{hwloc_mx_endpoint_get_device_cpuset}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology,
+00075                                     mx\_endpoint\_t endpoint, \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc_cpuset_t} \textcolor{keyword}{set})
+00076 \{
+00077   uint64\_t nid;
+00078   uint32\_t nindex, eid;
+00079   mx\_endpoint\_addr\_t eaddr;
+00080 
+00081   \textcolor{keywordflow}{if} (mx\_get\_endpoint\_addr(endpoint, &eaddr) != MX\_SUCCESS) \{
+00082     errno = EINVAL;
+00083     \textcolor{keywordflow}{return} -1;
+00084   \}
+00085 
+00086   \textcolor{keywordflow}{if} (mx\_decompose\_endpoint\_addr(eaddr, &nid, &eid) != MX\_SUCCESS) \{
+00087     errno = EINVAL;
+00088     \textcolor{keywordflow}{return} -1;
+00089   \}
+00090 
+00091   \textcolor{keywordflow}{if} (mx\_nic\_id\_to\_board\_number(nid, &nindex) != MX\_SUCCESS) \{
+00092     errno = EINVAL;
+00093     \textcolor{keywordflow}{return} -1;
+00094   \}
+00095 
+00096   \textcolor{keywordflow}{return} \hyperlink{a00074_ga87f4746d0cad579ce4e86b98088f22a1}{hwloc_mx_board_get_device_cpuset}(topology, nindex, \textcolor{keyword}{set});
+00097 \}
+00098 
+00102 \textcolor{preprocessor}{#ifdef \_\_cplusplus}
+00103 \textcolor{preprocessor}{}\} \textcolor{comment}{/* extern "C" */}
+00104 \textcolor{preprocessor}{#endif}
+00105 \textcolor{preprocessor}{}
+00106 
+00107 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* HWLOC\_MYRIEXPRESS\_H */}
+\end{DoxyCode}

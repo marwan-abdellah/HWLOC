@@ -14,7 +14,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Hardware Locality (hwloc)&#160;<span id="projectnumber">1.4</span></div>
+   <div id="projectname">Hardware Locality (hwloc)&#160;<span id="projectnumber">1.4.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -43,14 +43,14 @@
 <li>
 functions that set/get the current memory binding policies (if supported): hwloc_set/get_membind_*() and hwloc_set/get_proc_membind() </li>
 <li>
-functions that allocate memory bound to specific node set without changing the current memory binding policy (if supported): <a class="el" href="a00050.html#ga221a7edc5d436300374fa16463f607e5" title="Allocate some memory on memory nodes near the given cpuset cpuset.">hwloc_alloc_membind()</a> and <a class="el" href="a00050.html#gaeaa00714a9c4319bda0a74ca6f8720e8" title="Allocate some memory on the given nodeset nodeset.">hwloc_alloc_membind_nodeset()</a>. </li>
+functions that allocate memory bound to specific node set without changing the current memory binding policy (if supported): <a class="el" href="a00050.html#ga221a7edc5d436300374fa16463f607e5" title="Allocate some memory on memory nodes near the given physical cpuset cpuset.">hwloc_alloc_membind()</a> and <a class="el" href="a00050.html#gaeaa00714a9c4319bda0a74ca6f8720e8" title="Allocate some memory on the given physical nodeset nodeset.">hwloc_alloc_membind_nodeset()</a>. </li>
 <li>
 helpers which, if needed, change the current memory binding policy of the process in order to obtain memory binding: <a class="el" href="a00059.html#ga6178c6a9ec1dd88ec9f6a9fcdcc7d634" title="Allocate some memory on the memory nodes near given cpuset cpuset.">hwloc_alloc_membind_policy()</a> and <a class="el" href="a00059.html#ga3e772fbc4de626ed80f13d332b7d4d03" title="Allocate some memory on the given nodeset nodeset.">hwloc_alloc_membind_policy_nodeset()</a> </li>
 </ul>
 <p>An application can thus use the two first sets of functions if it wants to manage separately the global process binding policy and directed allocation, or use the third set of functions if it does not care about the process memory binding policy.</p>
 <p>See <a class="el" href="a00049.html">CPU binding</a> and <a class="el" href="a00050.html">Memory binding</a> for hwloc's API functions regarding CPU and memory binding, respectively. </p>
 </div></div>
-<hr class="footer"/><address class="footer"><small>Generated on Fri Mar 23 2012 15:27:46 for Hardware Locality (hwloc) by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Mar 26 2012 16:32:11 for Hardware Locality (hwloc) by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

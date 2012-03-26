@@ -172,7 +172,7 @@ EOF
     # specifically disabled by the user.
     AC_MSG_CHECKING([whether to enable "picky" compiler mode])
     hwloc_want_picky=0
-    AS_IF([test "$GCC" = "yes"],
+    AS_IF([test "$hwloc_c_vendor" = "gnu"],
           [AS_IF([test -d "$srcdir/.svn" -o -d "$srcdir/.hg" -o -d "$srcdir/.git"],
                  [hwloc_want_picky=1])])
     if test "$enable_picky" = "yes"; then
@@ -220,6 +220,7 @@ AC_DEFUN([HWLOC_SETUP_UTILS],[
 EOF
 
     hwloc_build_utils=yes
+
     # Cairo support
     hwloc_cairo_happy=
     if test "x$enable_cairo" != "xno"; then
@@ -232,21 +233,17 @@ EOF
 	LIBS_save=$LIBS
 
 	CFLAGS="$CFLAGS $X_CFLAGS"
-	LIBS="$LIBS $X_PRE_LIBS $X_LIBS $X_EXTRA_LIBS " 
-              
-        if test "x$found_X11" != "xyes"; then 
-          AC_CHECK_HEADERS([X11/Xlib.h], [
-            AC_CHECK_HEADERS([X11/Xutil.h X11/keysym.h], [
-              AC_CHECK_LIB([X11], [XOpenDisplay], [
-                enable_X11=yes found_X11=yes
-                AC_SUBST([HWLOC_X11_LIBS], ["-lX11"])
-                AC_DEFINE([HWLOC_HAVE_X11], [1], [Define to 1 if X11 libraries are available.])
-              ])]
-            )],,
-            [[#include <X11/Xlib.h>]]
-          )
-        fi 
-          
+	LIBS="$LIBS $X_PRE_LIBS $X_LIBS $X_EXTRA_LIBS"
+        AC_CHECK_HEADERS([X11/Xlib.h], [
+          AC_CHECK_HEADERS([X11/Xutil.h X11/keysym.h], [
+            AC_CHECK_LIB([X11], [XOpenDisplay], [
+              enable_X11=yes
+              AC_SUBST([HWLOC_X11_LIBS], ["-lX11"])
+              AC_DEFINE([HWLOC_HAVE_X11], [1], [Define to 1 if X11 libraries are available.])
+            ])]
+          )],,
+          [[#include <X11/Xlib.h>]]
+        )
         if test "x$enable_X11" != "xyes"; then
           AC_MSG_WARN([X11 headers not found, Cairo/X11 back-end disabled])
           hwloc_cairo_happy=no
@@ -264,7 +261,7 @@ EOF
               [AC_MSG_WARN([--enable-cairo requested, but Cairo/X11 support was not found])
                AC_MSG_ERROR([Cannot continue])])
     fi
-    
+
     AC_CHECK_TYPES([wchar_t], [
       AC_CHECK_FUNCS([putwc])
     ], [], [[#include <wchar.h>]])

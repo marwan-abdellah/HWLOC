@@ -361,6 +361,9 @@
 /* Whether your compiler has __attribute__ weak alias or not */
 #undef HWLOC_HAVE_ATTRIBUTE_WEAK_ALIAS
 
+/* Define to 1 if your `ffs' function is known to be broken. */
+#undef HWLOC_HAVE_BROKEN_FFS
+
 /* Define to 1 if you have the `cairo' library. */
 #undef HWLOC_HAVE_CAIRO
 

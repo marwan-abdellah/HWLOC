@@ -1,4 +1,4 @@
-.TH "Finding a single Object covering at least CPU set" 3 "Fri Mar 23 2012" "Version 1.4" "Hardware Locality (hwloc)" \" -*- nroff -*-
+.TH "Finding a single Object covering at least CPU set" 3 "Mon Mar 26 2012" "Version 1.4.1" "Hardware Locality (hwloc)" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,15 +7,15 @@ Finding a single Object covering at least CPU set \-
 
 .in +1c
 .ti -1c
-.RI "static inline \fBhwloc_obj_t\fP  \fBhwloc_get_child_covering_cpuset\fP (\fBhwloc_topology_t\fP topology , \fBhwloc_const_cpuset_t\fP set, \fBhwloc_obj_t\fP parent)"
+.RI "static inline \fBhwloc_obj_t\fP \fBhwloc_get_child_covering_cpuset\fP (\fBhwloc_topology_t\fP topology , \fBhwloc_const_cpuset_t\fP set, \fBhwloc_obj_t\fP parent) "
 .br
 .ti -1c
-.RI "static inline \fBhwloc_obj_t\fP  \fBhwloc_get_obj_covering_cpuset\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fP set)"
+.RI "static inline \fBhwloc_obj_t\fP \fBhwloc_get_obj_covering_cpuset\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fP set) "
 .br
 .in -1c
 .SH "Function Documentation"
 .PP 
-.SS "static inline \fBhwloc_obj_t\fP  hwloc_get_child_covering_cpuset (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fPset, \fBhwloc_obj_t\fPparent)\fC [static]\fP"
+.SS "static inline \fBhwloc_obj_t\fP hwloc_get_child_covering_cpuset (\fBhwloc_topology_t\fP topology, \fBhwloc_const_cpuset_t\fPset, \fBhwloc_obj_t\fPparent)\fC [static]\fP"
 .PP
 Get the child covering at least CPU set \fCset\fP. \fBReturns:\fP
 .RS 4
@@ -28,7 +28,7 @@ This function cannot work if parent does not have a CPU set.
 .RE
 .PP
 
-.SS "static inline \fBhwloc_obj_t\fP  hwloc_get_obj_covering_cpuset (\fBhwloc_topology_t\fPtopology, \fBhwloc_const_cpuset_t\fPset)\fC [static]\fP"
+.SS "static inline \fBhwloc_obj_t\fP hwloc_get_obj_covering_cpuset (\fBhwloc_topology_t\fPtopology, \fBhwloc_const_cpuset_t\fPset)\fC [static]\fP"
 .PP
 Get the lowest object covering at least CPU set \fCset\fP. \fBReturns:\fP
 .RS 4

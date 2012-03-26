@@ -1,0 +1,611 @@
+\hypertarget{a00033_source}{
+\section{hwloc.h}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * Copyright © 2009 CNRS}
+00003 \textcolor{comment}{ * Copyright © 2009-2011 inria.  All rights reserved.}
+00004 \textcolor{comment}{ * Copyright © 2009-2012 Université Bordeaux 1}
+00005 \textcolor{comment}{ * Copyright © 2009-2011 Cisco Systems, Inc.  All rights reserved.}
+00006 \textcolor{comment}{ * See COPYING in top-level directory.}
+00007 \textcolor{comment}{ */}
+00008 
+00009 \textcolor{comment}{/*=====================================================================}
+00010 \textcolor{comment}{ *                 PLEASE GO READ THE DOCUMENTATION!}
+00011 \textcolor{comment}{ *         ------------------------------------------------}
+00012 \textcolor{comment}{ *               $tarball\_directory/doc/doxygen-doc/}
+00013 \textcolor{comment}{ *                                or                            }
+00014 \textcolor{comment}{ *           http://www.open-mpi.org/projects/hwloc/doc/}
+00015 \textcolor{comment}{ *=====================================================================}
+00016 \textcolor{comment}{ *}
+00017 \textcolor{comment}{ * FAIR WARNING: Do NOT expect to be able to figure out all the}
+00018 \textcolor{comment}{ * subtleties of hwloc by simply reading function prototypes and}
+00019 \textcolor{comment}{ * constant descrptions here in this file.}
+00020 \textcolor{comment}{ *}
+00021 \textcolor{comment}{ * Hwloc has wonderful documentation in both PDF and HTML formats for}
+00022 \textcolor{comment}{ * your reading pleasure.  The formal documentation explains a LOT of}
+00023 \textcolor{comment}{ * hwloc-specific concepts, provides definitions, and discusses the}
+00024 \textcolor{comment}{ * "big picture" for many of the things that you'll find here in this}
+00025 \textcolor{comment}{ * header file.}
+00026 \textcolor{comment}{ *}
+00027 \textcolor{comment}{ * The PDF/HTML documentation was generated via Doxygen; much of what}
+00028 \textcolor{comment}{ * you'll see in there is also here in this file.  BUT THERE IS A LOT}
+00029 \textcolor{comment}{ * THAT IS IN THE PDF/HTML THAT IS ***NOT*** IN hwloc.h!}
+00030 \textcolor{comment}{ *}
+00031 \textcolor{comment}{ * There are entire paragraph-length descriptions, discussions, and}
+00032 \textcolor{comment}{ * pretty prictures to explain subtle corner cases, provide concrete}
+00033 \textcolor{comment}{ * examples, etc.}
+00034 \textcolor{comment}{ *}
+00035 \textcolor{comment}{ * Please, go read the documentation.  :-)}
+00036 \textcolor{comment}{ *}
+00037 \textcolor{comment}{ *=====================================================================*/}
+00038 
+00046 \textcolor{preprocessor}{#ifndef HWLOC\_H}
+00047 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define HWLOC\_H}
+00048 \textcolor{preprocessor}{}
+00049 \textcolor{preprocessor}{#include <hwloc/autogen/config.h>}
+00050 \textcolor{preprocessor}{#include <sys/types.h>}
+00051 \textcolor{preprocessor}{#include <stdio.h>}
+00052 \textcolor{preprocessor}{#include <string.h>}
+00053 \textcolor{preprocessor}{#include <limits.h>}
+00054 
+00055 \textcolor{comment}{/*}
+00056 \textcolor{comment}{ * Symbol transforms}
+00057 \textcolor{comment}{ */}
+00058 \textcolor{preprocessor}{#include <hwloc/rename.h>}
+00059 
+00060 \textcolor{comment}{/*}
+00061 \textcolor{comment}{ * Bitmap definitions}
+00062 \textcolor{comment}{ */}
+00063 
+00064 \textcolor{preprocessor}{#include <hwloc/bitmap.h>}
+00065 \textcolor{preprocessor}{#include <hwloc/cpuset.h>}
+00066 
+00067 
+00068 \textcolor{preprocessor}{#ifdef \_\_cplusplus}
+00069 \textcolor{preprocessor}{}\textcolor{keyword}{extern} \textcolor{stringliteral}{"C"} \{
+00070 \textcolor{preprocessor}{#endif}
+00071 \textcolor{preprocessor}{}
+00072 
+\hypertarget{a00033_source_l00078}{}\hyperlink{a00038_ga8f4dfb8eef138af55dd1a0fa802e5476}{00078} \textcolor{preprocessor}{#define HWLOC\_API\_VERSION 0x00010400}
+00079 \textcolor{preprocessor}{}
+00081 HWLOC\_DECLSPEC \textcolor{keywordtype}{unsigned} \hyperlink{a00038_ga61ef7566efe550d314b0ce4f3421ec5d}{hwloc_get_api_version}(\textcolor{keywordtype}{void});
+00082 
+00091 \textcolor{keyword}{struct }hwloc\_topology;
+\hypertarget{a00033_source_l00096}{}\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{00096} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }hwloc\_topology * \hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t};
+00097 
+\hypertarget{a00033_source_l00128}{}\hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{00128} \textcolor{keyword}{typedef} \hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc_bitmap_t} \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc_cpuset_t};
+\hypertarget{a00033_source_l00130}{}\hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{00130} \textcolor{keyword}{typedef} \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc_const_bitmap_t} \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc_const_cpuset_t};
+00131 
+\hypertarget{a00033_source_l00145}{}\hyperlink{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{00145} \textcolor{keyword}{typedef} \hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc_bitmap_t} \hyperlink{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{hwloc_nodeset_t};
+\hypertarget{a00033_source_l00148}{}\hyperlink{a00040_ga2f5276235841ad66a79bedad16a5a10c}{00148} \textcolor{keyword}{typedef} \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc_const_bitmap_t} \hyperlink{a00040_ga2f5276235841ad66a79bedad16a5a10c}{hwloc_const_nodeset_t};
+00149 
+\hypertarget{a00033_source_l00164}{}\hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{00164} \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{
+00165     \textcolor{comment}{/* ***************************************************************}
+00166 \textcolor{comment}{       WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING}
+00167 \textcolor{comment}{}
+00168 \textcolor{comment}{       If new enum values are added here, you MUST also go update the}
+00169 \textcolor{comment}{       obj\_type\_order[] and obj\_order\_type[] arrays in src/topology.c.}
+00170 \textcolor{comment}{}
+00171 \textcolor{comment}{       WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING}
+00172 \textcolor{comment}{       *************************************************************** */}
+00173 
+\hypertarget{a00033_source_l00174}{}\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a3aa1b842d1fd4207ebce171f95a244ec}{00174}   \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a3aa1b842d1fd4207ebce171f95a244ec}{HWLOC_OBJ_SYSTEM},     
+\hypertarget{a00033_source_l00179}{}\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a3f4e83ffc4a259354959ae8a9eaa2a80}{00179}   \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a3f4e83ffc4a259354959ae8a9eaa2a80}{HWLOC_OBJ_MACHINE},    
+\hypertarget{a00033_source_l00184}{}\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{00184}   \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC_OBJ_NODE},       
+\hypertarget{a00033_source_l00188}{}\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a1ac6e07775ae4324b3fe9dbd72c785ec}{00188}   \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a1ac6e07775ae4324b3fe9dbd72c785ec}{HWLOC_OBJ_SOCKET},     
+\hypertarget{a00033_source_l00192}{}\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a56ee0b7eca88f363b75b34fdde8c9ddc}{00192}   \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a56ee0b7eca88f363b75b34fdde8c9ddc}{HWLOC_OBJ_CACHE},      
+\hypertarget{a00033_source_l00195}{}\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55ac793958f330bca371aa1535de8aff45f}{00195}   \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55ac793958f330bca371aa1535de8aff45f}{HWLOC_OBJ_CORE},       
+\hypertarget{a00033_source_l00199}{}\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55abca6887e80cb291353b0a0c1da83f661}{00199}   \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55abca6887e80cb291353b0a0c1da83f661}{HWLOC_OBJ_PU},         
+\hypertarget{a00033_source_l00208}{}\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a5269ef95be72f88465559d35c9b7ad56}{00208}   \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a5269ef95be72f88465559d35c9b7ad56}{HWLOC_OBJ_GROUP},      
+\hypertarget{a00033_source_l00220}{}\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a19f8a6953fa91efc76bcbcdf2d22de4d}{00220}   \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a19f8a6953fa91efc76bcbcdf2d22de4d}{HWLOC_OBJ_MISC},       
+\hypertarget{a00033_source_l00225}{}\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a6825f10895fea60aca7a6ba9fe273db0}{00225}   \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a6825f10895fea60aca7a6ba9fe273db0}{HWLOC_OBJ_BRIDGE},     
+\hypertarget{a00033_source_l00232}{}\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a5d8117a54df1fbd3606ab19e42cb0ea9}{00232}   \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a5d8117a54df1fbd3606ab19e42cb0ea9}{HWLOC_OBJ_PCI_DEVICE}, 
+\hypertarget{a00033_source_l00237}{}\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a51e7280240fd9f25589cbbe538bdb075}{00237}   \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a51e7280240fd9f25589cbbe538bdb075}{HWLOC_OBJ_OS_DEVICE},  
+\hypertarget{a00033_source_l00243}{}\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55addb5f843e1812445a84e6b2a844b1ebc}{00243}   \hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55addb5f843e1812445a84e6b2a844b1ebc}{HWLOC_OBJ_TYPE_MAX}    
+00245     \textcolor{comment}{/* ***************************************************************}
+00246 \textcolor{comment}{       WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING}
+00247 \textcolor{comment}{}
+00248 \textcolor{comment}{       If new enum values are added here, you MUST also go update the}
+00249 \textcolor{comment}{       obj\_type\_order[] and obj\_order\_type[] arrays in src/topology.c.}
+00250 \textcolor{comment}{}
+00251 \textcolor{comment}{       WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING}
+00252 \textcolor{comment}{       *************************************************************** */}
+00253 \} \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc_obj_type_t};
+00254 
+\hypertarget{a00033_source_l00256}{}\hyperlink{a00041_ga48a4803c72574191d7ead1c62aaf9860}{00256} \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \hyperlink{a00041_ga48a4803c72574191d7ead1c62aaf9860}{hwloc_obj_bridge_type_e} \{
+\hypertarget{a00033_source_l00257}{}\hyperlink{a00041_gga48a4803c72574191d7ead1c62aaf9860a2c7660f3864ad2810c1e72aad285e574}{00257}   \hyperlink{a00041_gga48a4803c72574191d7ead1c62aaf9860a2c7660f3864ad2810c1e72aad285e574}{HWLOC_OBJ_BRIDGE_HOST},        
+\hypertarget{a00033_source_l00258}{}\hyperlink{a00041_gga48a4803c72574191d7ead1c62aaf9860a8f3b4cecf3dab6073d74696d10863c60}{00258}   \hyperlink{a00041_gga48a4803c72574191d7ead1c62aaf9860a8f3b4cecf3dab6073d74696d10863c60}{HWLOC_OBJ_BRIDGE_PCI}          
+00259 \} \hyperlink{a00041_ga0a947e8c5adcc729b126bd09c01a0153}{hwloc_obj_bridge_type_t};
+00260 
+\hypertarget{a00033_source_l00262}{}\hyperlink{a00041_ga64f5d539df299c97ae80ce53fc4b56c0}{00262} \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \hyperlink{a00041_ga64f5d539df299c97ae80ce53fc4b56c0}{hwloc_obj_osdev_type_e} \{
+\hypertarget{a00033_source_l00263}{}\hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a689b0488c3c0d08d116751c6b9cb8871}{00263}   \hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a689b0488c3c0d08d116751c6b9cb8871}{HWLOC_OBJ_OSDEV_BLOCK},        
+\hypertarget{a00033_source_l00265}{}\hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0aa3a09798ef2836abb236dc3a645ffc90}{00265}   \hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0aa3a09798ef2836abb236dc3a645ffc90}{HWLOC_OBJ_OSDEV_GPU},          
+\hypertarget{a00033_source_l00267}{}\hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0ab715d81155f771573c8682dffc65021b}{00267}   \hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0ab715d81155f771573c8682dffc65021b}{HWLOC_OBJ_OSDEV_NETWORK},      
+\hypertarget{a00033_source_l00269}{}\hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a52157d03694fdae82dddd57ca8c973b6}{00269}   \hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a52157d03694fdae82dddd57ca8c973b6}{HWLOC_OBJ_OSDEV_OPENFABRICS},  
+\hypertarget{a00033_source_l00271}{}\hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a827ad1643360711a8b6c6af671366791}{00271}   \hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a827ad1643360711a8b6c6af671366791}{HWLOC_OBJ_OSDEV_DMA},          
+\hypertarget{a00033_source_l00273}{}\hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a5da1cc266d3d288fdc639b0e800e9da4}{00273}   \hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a5da1cc266d3d288fdc639b0e800e9da4}{HWLOC_OBJ_OSDEV_DISPLAY}       
+00275 \} \hyperlink{a00041_ga90c1e82a60ba5871d07645169e636987}{hwloc_obj_osdev_type_t};
+00276 
+00294 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00041_gabd7da4f4ea12b420b8ecbde458b27805}{hwloc_compare_types} (\hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc_obj_type_t} type1, \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc_obj_type_t} 
+      type2) \_\_hwloc\_attribute\_const;
+00295 
+\hypertarget{a00033_source_l00296}{}\hyperlink{a00041_ga46323568968005137c32f6a1cd405b74}{00296} \textcolor{keyword}{enum} \hyperlink{a00041_ga46323568968005137c32f6a1cd405b74}{hwloc_compare_types_e} \{
+\hypertarget{a00033_source_l00297}{}\hyperlink{a00041_gga46323568968005137c32f6a1cd405b74a2f8297ea36eba46e7596e810a67298fb}{00297}     \hyperlink{a00041_gga46323568968005137c32f6a1cd405b74a2f8297ea36eba46e7596e810a67298fb}{HWLOC_TYPE_UNORDERED} = INT\_MAX      
+00298 \};
+00299 
+00308 \textcolor{keyword}{union }\hyperlink{a00017}{hwloc_obj_attr_u};
+00309 
+\hypertarget{a00033_source_l00311}{}\hyperlink{a00020}{00311} \textcolor{keyword}{struct }\hyperlink{a00020}{hwloc_obj_memory_s} \{
+\hypertarget{a00033_source_l00312}{}\hyperlink{a00020_a8befd0b3f4f8b695cafed04b31f36a44}{00312}   hwloc\_uint64\_t \hyperlink{a00020_a8befd0b3f4f8b695cafed04b31f36a44}{total_memory}; 
+\hypertarget{a00033_source_l00313}{}\hyperlink{a00020_aace044c7f3fd9dffe50202296bf1dc5a}{00313}   hwloc\_uint64\_t \hyperlink{a00020_aace044c7f3fd9dffe50202296bf1dc5a}{local_memory}; 
+\hypertarget{a00033_source_l00315}{}\hyperlink{a00020_a208c27f4491077d7fb9ba5db8b29cb57}{00315}   \textcolor{keywordtype}{unsigned} \hyperlink{a00020_a208c27f4491077d7fb9ba5db8b29cb57}{page_types_len}; 
+\hypertarget{a00033_source_l00321}{}\hyperlink{a00019}{00321}   \textcolor{keyword}{struct }\hyperlink{a00019}{hwloc_obj_memory_page_type_s} \{
+\hypertarget{a00033_source_l00322}{}\hyperlink{a00019_a3f1d261766352288791512974665ce01}{00322}     hwloc\_uint64\_t \hyperlink{a00019_a3f1d261766352288791512974665ce01}{size};        
+\hypertarget{a00033_source_l00323}{}\hyperlink{a00019_aa5b9fa36f1dc47ff3c345fe4dd06b260}{00323}     hwloc\_uint64\_t \hyperlink{a00019_aa5b9fa36f1dc47ff3c345fe4dd06b260}{count};       
+00324   \} * \hyperlink{a00020_a865eba7b12b986d72dbe7a2cfd97c50d}{page_types};
+00325 \};
+00326 
+\hypertarget{a00033_source_l00331}{}\hyperlink{a00016}{00331} \textcolor{keyword}{struct }\hyperlink{a00016}{hwloc_obj} \{
+00332   \textcolor{comment}{/* physical information */}
+\hypertarget{a00033_source_l00333}{}\hyperlink{a00016_acc4f0803f244867e68fe0036800be5de}{00333}   \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc_obj_type_t} \hyperlink{a00016_acc4f0803f244867e68fe0036800be5de}{type};                
+\hypertarget{a00033_source_l00334}{}\hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{00334}   \textcolor{keywordtype}{unsigned} \hyperlink{a00016_a61a7a80a68eaccbaaa28269e678c81a9}{os_index};                    
+\hypertarget{a00033_source_l00335}{}\hyperlink{a00016_abb709ec38f2970677e4e57d1d30be96d}{00335}   \textcolor{keywordtype}{char} *\hyperlink{a00016_abb709ec38f2970677e4e57d1d30be96d}{name};                           
+\hypertarget{a00033_source_l00337}{}\hyperlink{a00016_a1dc830816716213b5f797e4052487864}{00337}   \textcolor{keyword}{struct }\hyperlink{a00020}{hwloc_obj_memory_s} \hyperlink{a00016_a1dc830816716213b5f797e4052487864}{memory};     
+\hypertarget{a00033_source_l00339}{}\hyperlink{a00016_accd40e29f71f19e88db62ea3df02adc8}{00339}   \textcolor{keyword}{union }\hyperlink{a00017}{hwloc_obj_attr_u} *\hyperlink{a00016_accd40e29f71f19e88db62ea3df02adc8}{attr};         
+00342   \textcolor{comment}{/* global position */}
+\hypertarget{a00033_source_l00343}{}\hyperlink{a00016_a9d82690370275d42d652eccdea5d3ee5}{00343}   \textcolor{keywordtype}{unsigned} \hyperlink{a00016_a9d82690370275d42d652eccdea5d3ee5}{depth};                       
+\hypertarget{a00033_source_l00348}{}\hyperlink{a00016_a0d07fb7b8935e137c94d75a3eb492ae9}{00348}   \textcolor{keywordtype}{unsigned} \hyperlink{a00016_a0d07fb7b8935e137c94d75a3eb492ae9}{logical_index};               
+\hypertarget{a00033_source_l00350}{}\hyperlink{a00016_a68766f0b1c4d61b5bad87e3b81dacfde}{00350}   \textcolor{keywordtype}{signed} \hyperlink{a00016_a68766f0b1c4d61b5bad87e3b81dacfde}{os_level};                      
+00352   \textcolor{comment}{/* cousins are all objects of the same type (and depth) across the entire topol
+      ogy */}
+\hypertarget{a00033_source_l00353}{}\hyperlink{a00016_a85a788017457129589318b6c39451acf}{00353}   \textcolor{keyword}{struct }\hyperlink{a00016}{hwloc_obj} *\hyperlink{a00016_a85a788017457129589318b6c39451acf}{next_cousin};        
+\hypertarget{a00033_source_l00354}{}\hyperlink{a00016_ac715989f55ff5a0eb6be2969ee477ec0}{00354}   \textcolor{keyword}{struct }\hyperlink{a00016}{hwloc_obj} *\hyperlink{a00016_ac715989f55ff5a0eb6be2969ee477ec0}{prev_cousin};        
+00356   \textcolor{comment}{/* children of the same parent are siblings, even if they may have different ty
+      pe and depth */}
+\hypertarget{a00033_source_l00357}{}\hyperlink{a00016_adc494f6aed939992be1c55cca5822900}{00357}   \textcolor{keyword}{struct }\hyperlink{a00016}{hwloc_obj} *\hyperlink{a00016_adc494f6aed939992be1c55cca5822900}{parent};             
+\hypertarget{a00033_source_l00358}{}\hyperlink{a00016_aaa6043eee6f55869933c1d974efd9acd}{00358}   \textcolor{keywordtype}{unsigned} \hyperlink{a00016_aaa6043eee6f55869933c1d974efd9acd}{sibling_rank};                
+\hypertarget{a00033_source_l00359}{}\hyperlink{a00016_a7f2343ed476fe4942e6fffd4cade1b40}{00359}   \textcolor{keyword}{struct }\hyperlink{a00016}{hwloc_obj} *\hyperlink{a00016_a7f2343ed476fe4942e6fffd4cade1b40}{next_sibling};       
+\hypertarget{a00033_source_l00360}{}\hyperlink{a00016_a7b89e8c189876c0158a9282aaaf17f50}{00360}   \textcolor{keyword}{struct }\hyperlink{a00016}{hwloc_obj} *\hyperlink{a00016_a7b89e8c189876c0158a9282aaaf17f50}{prev_sibling};       
+00362   \textcolor{comment}{/* children array below this object */}
+\hypertarget{a00033_source_l00363}{}\hyperlink{a00016_aac3f6da35c9b57599909a44ce2b716c1}{00363}   \textcolor{keywordtype}{unsigned} \hyperlink{a00016_aac3f6da35c9b57599909a44ce2b716c1}{arity};                       
+\hypertarget{a00033_source_l00364}{}\hyperlink{a00016_a04d05403da37bfe17cd63b7c7dd07b1f}{00364}   \textcolor{keyword}{struct }\hyperlink{a00016}{hwloc_obj} **\hyperlink{a00016_a04d05403da37bfe17cd63b7c7dd07b1f}{children};          
+\hypertarget{a00033_source_l00365}{}\hyperlink{a00016_af51d08a0a79dba517c06c5afedc8d2dc}{00365}   \textcolor{keyword}{struct }\hyperlink{a00016}{hwloc_obj} *\hyperlink{a00016_af51d08a0a79dba517c06c5afedc8d2dc}{first_child};        
+\hypertarget{a00033_source_l00366}{}\hyperlink{a00016_a84bd65634dbc55f4158b74443a9bd04f}{00366}   \textcolor{keyword}{struct }\hyperlink{a00016}{hwloc_obj} *\hyperlink{a00016_a84bd65634dbc55f4158b74443a9bd04f}{last_child};         
+00368   \textcolor{comment}{/* misc */}
+\hypertarget{a00033_source_l00369}{}\hyperlink{a00016_a76fd3ac94401cf32dfccc3a3a8de68a5}{00369}   \textcolor{keywordtype}{void} *\hyperlink{a00016_a76fd3ac94401cf32dfccc3a3a8de68a5}{userdata};                       
+00371   \textcolor{comment}{/* cpusets and nodesets */}
+\hypertarget{a00033_source_l00372}{}\hyperlink{a00016_a67925e0f2c47f50408fbdb9bddd0790f}{00372}   hwloc\_cpuset\_t \hyperlink{a00016_a67925e0f2c47f50408fbdb9bddd0790f}{cpuset};                
+\hypertarget{a00033_source_l00385}{}\hyperlink{a00016_a91788a9da687beb7224cc1fd7b75208c}{00385}   hwloc\_cpuset\_t \hyperlink{a00016_a91788a9da687beb7224cc1fd7b75208c}{complete_cpuset};       
+\hypertarget{a00033_source_l00396}{}\hyperlink{a00016_a8842d56c2975380f327ea401c5f53564}{00396}   hwloc\_cpuset\_t \hyperlink{a00016_a8842d56c2975380f327ea401c5f53564}{online_cpuset};         
+\hypertarget{a00033_source_l00404}{}\hyperlink{a00016_afa3c59a6dd3da8ffa48710780a1bfb34}{00404}   hwloc\_cpuset\_t \hyperlink{a00016_afa3c59a6dd3da8ffa48710780a1bfb34}{allowed_cpuset};        
+\hypertarget{a00033_source_l00415}{}\hyperlink{a00016_a08f0d0e16c619a6e653526cbee4ffea3}{00415}   hwloc\_nodeset\_t \hyperlink{a00016_a08f0d0e16c619a6e653526cbee4ffea3}{nodeset};              
+\hypertarget{a00033_source_l00432}{}\hyperlink{a00016_ac38c4012127525ef74c5615c526f4c2e}{00432}   hwloc\_nodeset\_t \hyperlink{a00016_ac38c4012127525ef74c5615c526f4c2e}{complete_nodeset};     
+\hypertarget{a00033_source_l00446}{}\hyperlink{a00016_a19e3d0a5951a7510fc4fc4722a9bf531}{00446}   hwloc\_nodeset\_t \hyperlink{a00016_a19e3d0a5951a7510fc4fc4722a9bf531}{allowed_nodeset};      
+\hypertarget{a00033_source_l00459}{}\hyperlink{a00016_a9a5dd75596edc48fe834f81988cdc0d6}{00459}   \textcolor{keyword}{struct }\hyperlink{a00014}{hwloc_distances_s} **\hyperlink{a00016_a9a5dd75596edc48fe834f81988cdc0d6}{distances}; 
+\hypertarget{a00033_source_l00460}{}\hyperlink{a00016_a8be6f63eca4da91000c832280db927b7}{00460}   \textcolor{keywordtype}{unsigned} \hyperlink{a00016_a8be6f63eca4da91000c832280db927b7}{distances_count};
+00461 
+\hypertarget{a00033_source_l00462}{}\hyperlink{a00016_ad59bcd73a10260a0e239be5c4b5888bb}{00462}   \textcolor{keyword}{struct }\hyperlink{a00018}{hwloc_obj_info_s} *\hyperlink{a00016_ad59bcd73a10260a0e239be5c4b5888bb}{infos};       
+\hypertarget{a00033_source_l00463}{}\hyperlink{a00016_a9843acc28cfbba903b63ea14b137ff70}{00463}   \textcolor{keywordtype}{unsigned} \hyperlink{a00016_a9843acc28cfbba903b63ea14b137ff70}{infos_count};                 
+\hypertarget{a00033_source_l00465}{}\hyperlink{a00016_a0f41a1d67dc6b661906f2217563637f3}{00465}   \textcolor{keywordtype}{int} \hyperlink{a00016_a0f41a1d67dc6b661906f2217563637f3}{symmetric_subtree};                
+00468 \};
+\hypertarget{a00033_source_l00472}{}\hyperlink{a00042_ga79b8ab56877ef99ac59b833203391c7d}{00472} \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\hyperlink{a00016}{hwloc_obj} * \hyperlink{a00042_ga79b8ab56877ef99ac59b833203391c7d}{hwloc_obj_t};
+00473 
+\hypertarget{a00033_source_l00475}{}\hyperlink{a00017}{00475} \textcolor{keyword}{union }\hyperlink{a00017}{hwloc_obj_attr_u} \{
+\hypertarget{a00033_source_l00477}{}\hyperlink{a00013}{00477}   \textcolor{keyword}{struct }\hyperlink{a00013}{hwloc_cache_attr_s} \{
+\hypertarget{a00033_source_l00478}{}\hyperlink{a00013_abe5e788943ed04302976740c829674c0}{00478}     hwloc\_uint64\_t \hyperlink{a00013_abe5e788943ed04302976740c829674c0}{size};                          
+\hypertarget{a00033_source_l00479}{}\hyperlink{a00013_a5c8f7f39193736c2187ed626940835d5}{00479}     \textcolor{keywordtype}{unsigned} \hyperlink{a00013_a5c8f7f39193736c2187ed626940835d5}{depth};                       
+\hypertarget{a00033_source_l00480}{}\hyperlink{a00013_a801e8a668e28caf06c8b88e9ae5c10db}{00480}     \textcolor{keywordtype}{unsigned} \hyperlink{a00013_a801e8a668e28caf06c8b88e9ae5c10db}{linesize};                    
+\hypertarget{a00033_source_l00481}{}\hyperlink{a00013_ad06525e474d1e2d1423ed71bb998592d}{00481}     \textcolor{keywordtype}{int} \hyperlink{a00013_ad06525e474d1e2d1423ed71bb998592d}{associativity};                    
+00483   \} \hyperlink{a00017_ab5a8ae3bf490e6b1071fea53f7382836}{cache};
+\hypertarget{a00033_source_l00485}{}\hyperlink{a00015}{00485}   \textcolor{keyword}{struct }\hyperlink{a00015}{hwloc_group_attr_s} \{
+\hypertarget{a00033_source_l00486}{}\hyperlink{a00015_ad914eac61c77481e1b7037877bcc5579}{00486}     \textcolor{keywordtype}{unsigned} \hyperlink{a00015_ad914eac61c77481e1b7037877bcc5579}{depth};                       
+00487   \} \hyperlink{a00017_ae4ba157cc313e2cdd9a82f1c1df7aaa6}{group};
+\hypertarget{a00033_source_l00489}{}\hyperlink{a00022}{00489}   \textcolor{keyword}{struct }\hyperlink{a00022}{hwloc_pcidev_attr_s} \{
+\hypertarget{a00033_source_l00490}{}\hyperlink{a00022_a8fba44988deb98613c1505a4019a34dc}{00490}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \hyperlink{a00022_a8fba44988deb98613c1505a4019a34dc}{domain};
+\hypertarget{a00033_source_l00491}{}\hyperlink{a00022_a695f32df53f4ef728670bfcf31b74e0f}{00491}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00022_aae99e035e8d1387d7b8768aaa8eceb0a}{bus}, \hyperlink{a00022_a3d70c84a12f7e93d14c8d47bf4fd9dc5}{dev}, \hyperlink{a00022_a695f32df53f4ef728670bfcf31b74e0f}{func};
+\hypertarget{a00033_source_l00492}{}\hyperlink{a00022_aee735352d9f1686fd290fc6d6397c334}{00492}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \hyperlink{a00022_aee735352d9f1686fd290fc6d6397c334}{class_id};
+\hypertarget{a00033_source_l00493}{}\hyperlink{a00022_aad970ad19b62eb2d5df30e4802da4f4c}{00493}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \hyperlink{a00022_aad970ad19b62eb2d5df30e4802da4f4c}{vendor_id}, \hyperlink{a00022_a35b66064ab7d768caf7154e410caf0fa}{device_id}, \hyperlink{a00022_a499db3d8cc89eaba04fcaef3df1cba97}{subvendor_id}, \hyperlink{a00022_acac741aecd7a6db64f33409427e3971f}{subdevice_id};
+\hypertarget{a00033_source_l00494}{}\hyperlink{a00022_a13ad54c93d08d8ac808e4de9674c5ee7}{00494}     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00022_a13ad54c93d08d8ac808e4de9674c5ee7}{revision};
+\hypertarget{a00033_source_l00495}{}\hyperlink{a00022_a59b2fce35f7cbde86c4fd305d0ccda5f}{00495}     \textcolor{keywordtype}{float} \hyperlink{a00022_a59b2fce35f7cbde86c4fd305d0ccda5f}{linkspeed}; \textcolor{comment}{/* in GB/s */}
+00496   \} \hyperlink{a00017_a4203d713ce0f5beaa6ee0e9bdac70828}{pcidev};
+\hypertarget{a00033_source_l00498}{}\hyperlink{a00012}{00498}   \textcolor{keyword}{struct }\hyperlink{a00012}{hwloc_bridge_attr_s} \{
+00499     \textcolor{keyword}{union }\{
+\hypertarget{a00033_source_l00500}{}\hyperlink{a00012_ab5c564e7c95b747dae9eb84ec0a2c31e}{00500}       \textcolor{keyword}{struct }\hyperlink{a00022}{hwloc_pcidev_attr_s} \hyperlink{a00012_ab5c564e7c95b747dae9eb84ec0a2c31e}{pci};
+00501     \} \hyperlink{a00012_a00ce9d99fc8792d1044fe25dc58605fe}{upstream};
+\hypertarget{a00033_source_l00502}{}\hyperlink{a00012_a265dd2164aa2df4972e25a029da72125}{00502}     \hyperlink{a00041_ga0a947e8c5adcc729b126bd09c01a0153}{hwloc_obj_bridge_type_t} \hyperlink{a00012_a265dd2164aa2df4972e25a029da72125}{upstream_type};
+00503     \textcolor{keyword}{union }\{
+00504       \textcolor{keyword}{struct }\{
+\hypertarget{a00033_source_l00505}{}\hyperlink{a00012_a2c31e565a5f0d23d0a0a3dd3ec8f4b17}{00505}         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \hyperlink{a00012_a2c31e565a5f0d23d0a0a3dd3ec8f4b17}{domain};
+\hypertarget{a00033_source_l00506}{}\hyperlink{a00012_af3f3f7d76bf03e8d2afa721c2b8d6771}{00506}         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00012_ae2d9dd73ef1d32045c584a8e66d2f83f}{secondary_bus}, \hyperlink{a00012_af3f3f7d76bf03e8d2afa721c2b8d6771}{subordinate_bus};
+00507       \} \hyperlink{a00012_ab5c564e7c95b747dae9eb84ec0a2c31e}{pci};
+00508     \} \hyperlink{a00012_acaf1ae02e37182bbb6966f8c4f35e499}{downstream};
+\hypertarget{a00033_source_l00509}{}\hyperlink{a00012_ac6a169b672d0e9f75756fd5665828b93}{00509}     \hyperlink{a00041_ga0a947e8c5adcc729b126bd09c01a0153}{hwloc_obj_bridge_type_t} \hyperlink{a00012_ac6a169b672d0e9f75756fd5665828b93}{downstream_type};
+\hypertarget{a00033_source_l00510}{}\hyperlink{a00012_a336c8b22893d5d734d8c9dfca4066b46}{00510}     \textcolor{keywordtype}{unsigned} \hyperlink{a00012_a336c8b22893d5d734d8c9dfca4066b46}{depth};
+00511   \} \hyperlink{a00017_adbdf280699dd84c7619cd8d9edc0d958}{bridge};
+\hypertarget{a00033_source_l00513}{}\hyperlink{a00021}{00513}   \textcolor{keyword}{struct }\hyperlink{a00021}{hwloc_osdev_attr_s} \{
+\hypertarget{a00033_source_l00514}{}\hyperlink{a00021_a31e019e27e54ac6138d04be639bb96f9}{00514}     \hyperlink{a00041_ga90c1e82a60ba5871d07645169e636987}{hwloc_obj_osdev_type_t} \hyperlink{a00021_a31e019e27e54ac6138d04be639bb96f9}{type};
+00515   \} \hyperlink{a00017_a22904c25fe44b323bab5c9bc52660fca}{osdev};
+00516 \};
+00517 
+\hypertarget{a00033_source_l00532}{}\hyperlink{a00014}{00532} \textcolor{keyword}{struct }\hyperlink{a00014}{hwloc_distances_s} \{
+\hypertarget{a00033_source_l00533}{}\hyperlink{a00014_a6fe066eaf62ee448aa05bab8e7217ff7}{00533}   \textcolor{keywordtype}{unsigned} \hyperlink{a00014_a6fe066eaf62ee448aa05bab8e7217ff7}{relative_depth};      
+\hypertarget{a00033_source_l00535}{}\hyperlink{a00014_a4ca2af858cebbce7324ec49903d09474}{00535}   \textcolor{keywordtype}{unsigned} \hyperlink{a00014_a4ca2af858cebbce7324ec49903d09474}{nbobjs};              
+\hypertarget{a00033_source_l00540}{}\hyperlink{a00014_a0f70f48d1bfb18e5e2008825da2967c9}{00540}   \textcolor{keywordtype}{float} *\hyperlink{a00014_a0f70f48d1bfb18e5e2008825da2967c9}{latency};               
+\hypertarget{a00033_source_l00545}{}\hyperlink{a00014_aab61bd1d1ae2e121bfe793c973ec829e}{00545}   \textcolor{keywordtype}{float} \hyperlink{a00014_aab61bd1d1ae2e121bfe793c973ec829e}{latency_max};            
+\hypertarget{a00033_source_l00546}{}\hyperlink{a00014_a204416418049a272bfb51602fc676342}{00546}   \textcolor{keywordtype}{float} \hyperlink{a00014_a204416418049a272bfb51602fc676342}{latency_base};           
+00550 \};
+00551 
+\hypertarget{a00033_source_l00553}{}\hyperlink{a00018}{00553} \textcolor{keyword}{struct }\hyperlink{a00018}{hwloc_obj_info_s} \{
+\hypertarget{a00033_source_l00554}{}\hyperlink{a00018_a115dde58f40338a2d3276d59c099857d}{00554}   \textcolor{keywordtype}{char} *\hyperlink{a00018_a115dde58f40338a2d3276d59c099857d}{name};   
+\hypertarget{a00033_source_l00555}{}\hyperlink{a00018_a522efd7f5262a4493a73fa3476a041ce}{00555}   \textcolor{keywordtype}{char} *\hyperlink{a00018_a522efd7f5262a4493a73fa3476a041ce}{value};  
+00556 \};
+00557 
+00572 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00043_ga5c2d6f476af87005c7bd0811d4548b9f}{hwloc_topology_init} (hwloc\_topology\_t *topologyp);
+00573 
+00586 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00043_ga91e2e6427b95fb7339c99dbbef996e71}{hwloc_topology_load}(hwloc\_topology\_t topology);
+00587 
+00592 HWLOC\_DECLSPEC \textcolor{keywordtype}{void} \hyperlink{a00043_ga6040925d3ee4bbb2647f2a321aca5f4b}{hwloc_topology_destroy} (hwloc\_topology\_t topology);
+00593 
+00605 HWLOC\_DECLSPEC \textcolor{keywordtype}{void} \hyperlink{a00043_gab3628b2a540a5a08e8cf724ef829e70a}{hwloc_topology_check}(hwloc\_topology\_t topology);
+00606 
+00641 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00044_gaf2071c8621fddc53649c245d87835b47}{hwloc_topology_ignore_type}(hwloc\_topology\_t topology, 
+      \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc_obj_type_t} type);
+00642 
+00651 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00044_ga6ddd4213d95bd1c30555b294a60efa6b}{hwloc_topology_ignore_type_keep_structure}(hwloc\_topology\_t top
+      ology, \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc_obj_type_t} type);
+00652 
+00660 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00044_gaec6fb00050f50cd41007f1ae580d2106}{hwloc_topology_ignore_all_keep_structure}(hwloc\_topology\_t topo
+      logy);
+00661 
+\hypertarget{a00033_source_l00666}{}\hyperlink{a00044_gada025d3ec20b4b420f8038d23d6e7bde}{00666} \textcolor{keyword}{enum} \hyperlink{a00044_gada025d3ec20b4b420f8038d23d6e7bde}{hwloc_topology_flags_e} \{
+\hypertarget{a00033_source_l00667}{}\hyperlink{a00044_ggada025d3ec20b4b420f8038d23d6e7bdea129b4fea1300be22bbaf0bb0958994c8}{00667}   \hyperlink{a00044_ggada025d3ec20b4b420f8038d23d6e7bdea129b4fea1300be22bbaf0bb0958994c8}{HWLOC_TOPOLOGY_FLAG_WHOLE_SYSTEM} = (1<<0),
+\hypertarget{a00033_source_l00676}{}\hyperlink{a00044_ggada025d3ec20b4b420f8038d23d6e7bdea6ecb6abc6a0bb75e81564f8bca85783b}{00676}   \hyperlink{a00044_ggada025d3ec20b4b420f8038d23d6e7bdea6ecb6abc6a0bb75e81564f8bca85783b}{HWLOC_TOPOLOGY_FLAG_IS_THISSYSTEM} = (1<<1),
+00696   \textcolor{comment}{/* \(\backslash\)brief Detect PCI devices.}
+00697 \textcolor{comment}{   *}
+00698 \textcolor{comment}{   * By default, I/O devices are ignored. This flag enables I/O device}
+00699 \textcolor{comment}{   * detection using the libpci backend. Only the common PCI devices (GPUs,}
+00700 \textcolor{comment}{   * NICs, block devices, ...) and host bridges (objects that connect the host}
+00701 \textcolor{comment}{   * objects to an I/O subsystem) will be added to the topology.}
+00702 \textcolor{comment}{   * Uncommon devices and other bridges (such as PCI-to-PCI bridges) will be}
+00703 \textcolor{comment}{   * ignored.}
+00704 \textcolor{comment}{   */}
+\hypertarget{a00033_source_l00705}{}\hyperlink{a00044_ggada025d3ec20b4b420f8038d23d6e7bdea46ae25e8896278840b1800ae9ce4de41}{00705}   \hyperlink{a00044_ggada025d3ec20b4b420f8038d23d6e7bdea46ae25e8896278840b1800ae9ce4de41}{HWLOC_TOPOLOGY_FLAG_IO_DEVICES} = (1<<2),
+00706 
+00707   \textcolor{comment}{/* \(\backslash\)brief Detect PCI bridges.}
+00708 \textcolor{comment}{   *}
+00709 \textcolor{comment}{   * This flag should be combined with HWLOC\_TOPOLOGY\_FLAG\_IO\_DEVICES to enable}
+00710 \textcolor{comment}{   * the detection of both common devices and of all useful bridges (bridges that
+      }
+00711 \textcolor{comment}{   * have at least one device behind them).}
+00712 \textcolor{comment}{   */}
+\hypertarget{a00033_source_l00713}{}\hyperlink{a00044_ggada025d3ec20b4b420f8038d23d6e7bdea426b18c349f15d7046bb391d96fa947c}{00713}   \hyperlink{a00044_ggada025d3ec20b4b420f8038d23d6e7bdea426b18c349f15d7046bb391d96fa947c}{HWLOC_TOPOLOGY_FLAG_IO_BRIDGES} = (1<<3),
+00714 
+00715   \textcolor{comment}{/* \(\backslash\)brief Detect the whole PCI hierarchy.}
+00716 \textcolor{comment}{   *}
+00717 \textcolor{comment}{   * This flag enables detection of all I/O devices (even the uncommon ones)}
+00718 \textcolor{comment}{   * and bridges (even those that have no device behind them) using the libpci}
+00719 \textcolor{comment}{   * backend.}
+00720 \textcolor{comment}{   */}
+\hypertarget{a00033_source_l00721}{}\hyperlink{a00044_ggada025d3ec20b4b420f8038d23d6e7bdea4a41dc181649ef81c2dcd44a54e271b9}{00721}   \hyperlink{a00044_ggada025d3ec20b4b420f8038d23d6e7bdea4a41dc181649ef81c2dcd44a54e271b9}{HWLOC_TOPOLOGY_FLAG_WHOLE_IO} = (1<<4)
+00722 \};
+00723 
+00728 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00044_ga6d11e53db143ac39c32cdb3912b71f99}{hwloc_topology_set_flags} (hwloc\_topology\_t topology, \textcolor{keywordtype}{unsigned} 
+      \textcolor{keywordtype}{long} flags);
+00729 
+00744 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00044_gae1100de0162b3c6a9db750ac14629c05}{hwloc_topology_set_pid}(hwloc\_topology\_t \_\_hwloc\_restrict topol
+      ogy, hwloc\_pid\_t pid);
+00745 
+00770 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00044_ga2f6bfb6958d8b508ea1d7d5bb266432c}{hwloc_topology_set_fsroot}(hwloc\_topology\_t \_\_hwloc\_restrict to
+      pology, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_\_hwloc\_restrict fsroot\_path);
+00771 
+00796 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00044_ga2fcb52181b586c20f001b7a999550324}{hwloc_topology_set_synthetic}(hwloc\_topology\_t \_\_hwloc\_restrict
+       topology, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_\_hwloc\_restrict description);
+00797 
+00819 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00044_ga93efcc8a962afe1ed23393700682173f}{hwloc_topology_set_xml}(hwloc\_topology\_t \_\_hwloc\_restrict topol
+      ogy, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_\_hwloc\_restrict xmlpath);
+00820 
+00842 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00044_gae7e4bade144652a2b48f5eaf0309b4ec}{hwloc_topology_set_xmlbuffer}(hwloc\_topology\_t \_\_hwloc\_restrict
+       topology, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_\_hwloc\_restrict buffer, \textcolor{keywordtype}{int} size);
+00843 
+00853 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00044_ga12024fec46f9368fb8fc5c624089c5ec}{hwloc_topology_set_custom}(hwloc\_topology\_t topology);
+00854 
+00872 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00044_gabda6afa67a495cd652f064ad51d3fe47}{hwloc_topology_set_distance_matrix}(hwloc\_topology\_t \_\_hwloc\_re
+      strict topology,
+00873                                                       \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc_obj_type_t} type, \textcolor{keywordtype}{unsi
+      gned} nbobjs,
+00874                                                       \textcolor{keywordtype}{unsigned} *os\_index, \textcolor{keywordtype}{float} *
+      distances);
+00875 
+\hypertarget{a00033_source_l00877}{}\hyperlink{a00024}{00877} \textcolor{keyword}{struct }\hyperlink{a00024}{hwloc_topology_discovery_support} \{
+\hypertarget{a00033_source_l00879}{}\hyperlink{a00024_ad7bb4ecf7a82f5a04fc632e9592ad3ab}{00879}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00024_ad7bb4ecf7a82f5a04fc632e9592ad3ab}{pu};
+00880 \};
+00881 
+\hypertarget{a00033_source_l00883}{}\hyperlink{a00023}{00883} \textcolor{keyword}{struct }\hyperlink{a00023}{hwloc_topology_cpubind_support} \{
+\hypertarget{a00033_source_l00885}{}\hyperlink{a00023_a9403d51657a4d546b3ea9553a2973a27}{00885}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00023_a9403d51657a4d546b3ea9553a2973a27}{set_thisproc_cpubind};
+\hypertarget{a00033_source_l00887}{}\hyperlink{a00023_a77a09ddd78ee3e9ff5f532a6ac74f7eb}{00887}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00023_a77a09ddd78ee3e9ff5f532a6ac74f7eb}{get_thisproc_cpubind};
+\hypertarget{a00033_source_l00889}{}\hyperlink{a00023_aa166223d1c2a6de7256ab2d8b675a87e}{00889}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00023_aa166223d1c2a6de7256ab2d8b675a87e}{set_proc_cpubind};
+\hypertarget{a00033_source_l00891}{}\hyperlink{a00023_aae705bc447adc163ead377362c4dfe9f}{00891}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00023_aae705bc447adc163ead377362c4dfe9f}{get_proc_cpubind};
+\hypertarget{a00033_source_l00893}{}\hyperlink{a00023_a57a89a4b5f1f74fa6cfe176f1e8b0798}{00893}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00023_a57a89a4b5f1f74fa6cfe176f1e8b0798}{set_thisthread_cpubind};
+\hypertarget{a00033_source_l00895}{}\hyperlink{a00023_a80d762e532d677dff262d83cc7bb1c60}{00895}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00023_a80d762e532d677dff262d83cc7bb1c60}{get_thisthread_cpubind};
+\hypertarget{a00033_source_l00897}{}\hyperlink{a00023_a46fba33e307909ce256624687799dd6d}{00897}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00023_a46fba33e307909ce256624687799dd6d}{set_thread_cpubind};
+\hypertarget{a00033_source_l00899}{}\hyperlink{a00023_a8dd4d8531ed2eebdce1507e7d104154e}{00899}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00023_a8dd4d8531ed2eebdce1507e7d104154e}{get_thread_cpubind};
+\hypertarget{a00033_source_l00901}{}\hyperlink{a00023_ad2d5c94b738d92b7d2ede87e4e96321d}{00901}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00023_ad2d5c94b738d92b7d2ede87e4e96321d}{get_thisproc_last_cpu_location};
+\hypertarget{a00033_source_l00903}{}\hyperlink{a00023_a2554620148b7992a5093f338f5ae254f}{00903}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00023_a2554620148b7992a5093f338f5ae254f}{get_proc_last_cpu_location};
+\hypertarget{a00033_source_l00905}{}\hyperlink{a00023_a6be1f042fdce6bf41b4ea39f6f193808}{00905}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00023_a6be1f042fdce6bf41b4ea39f6f193808}{get_thisthread_last_cpu_location};
+00906 \};
+00907 
+\hypertarget{a00033_source_l00909}{}\hyperlink{a00025}{00909} \textcolor{keyword}{struct }\hyperlink{a00025}{hwloc_topology_membind_support} \{
+\hypertarget{a00033_source_l00911}{}\hyperlink{a00025_a36b3e388df9c6a249427cab7e3724749}{00911}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00025_a36b3e388df9c6a249427cab7e3724749}{set_thisproc_membind};
+\hypertarget{a00033_source_l00913}{}\hyperlink{a00025_a3fd51e6fa5f0dd800322301b46b08559}{00913}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00025_a3fd51e6fa5f0dd800322301b46b08559}{get_thisproc_membind};
+\hypertarget{a00033_source_l00915}{}\hyperlink{a00025_a756f44912894b176bf979a1b65f12aac}{00915}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00025_a756f44912894b176bf979a1b65f12aac}{set_proc_membind};
+\hypertarget{a00033_source_l00917}{}\hyperlink{a00025_a9880cd2d605e316fc020167c49ca69ad}{00917}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00025_a9880cd2d605e316fc020167c49ca69ad}{get_proc_membind};
+\hypertarget{a00033_source_l00919}{}\hyperlink{a00025_a0697af2e41f2e82b8ce71e3cc13f7eac}{00919}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00025_a0697af2e41f2e82b8ce71e3cc13f7eac}{set_thisthread_membind};
+\hypertarget{a00033_source_l00921}{}\hyperlink{a00025_a63b0b2e26157b472f5717ee93cc7c535}{00921}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00025_a63b0b2e26157b472f5717ee93cc7c535}{get_thisthread_membind};
+\hypertarget{a00033_source_l00923}{}\hyperlink{a00025_a476c06f96b65c08b287cf2369966123b}{00923}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00025_a476c06f96b65c08b287cf2369966123b}{set_area_membind};
+\hypertarget{a00033_source_l00925}{}\hyperlink{a00025_a0a84e24a06f2fa487fe8c9605c6f68b3}{00925}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00025_a0a84e24a06f2fa487fe8c9605c6f68b3}{get_area_membind};
+\hypertarget{a00033_source_l00927}{}\hyperlink{a00025_ae551abb27d2aa9ce008583488b845b98}{00927}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00025_ae551abb27d2aa9ce008583488b845b98}{alloc_membind};
+\hypertarget{a00033_source_l00929}{}\hyperlink{a00025_a221098c339dbfab27bd2c9f5d32f123b}{00929}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00025_a221098c339dbfab27bd2c9f5d32f123b}{firsttouch_membind};
+\hypertarget{a00033_source_l00931}{}\hyperlink{a00025_ae7cdb1f1b5f0242a69f85b5a5538c764}{00931}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00025_ae7cdb1f1b5f0242a69f85b5a5538c764}{bind_membind};
+\hypertarget{a00033_source_l00933}{}\hyperlink{a00025_a3c44c6012860bbeba8a0f4c19710858d}{00933}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00025_a3c44c6012860bbeba8a0f4c19710858d}{interleave_membind};
+\hypertarget{a00033_source_l00935}{}\hyperlink{a00025_afe608fb85eb2aa9706221ccb5fc4d415}{00935}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00025_afe608fb85eb2aa9706221ccb5fc4d415}{replicate_membind};
+\hypertarget{a00033_source_l00937}{}\hyperlink{a00025_ab0921af6e0cd6975812a80b8e5c7435c}{00937}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00025_ab0921af6e0cd6975812a80b8e5c7435c}{nexttouch_membind};
+00938 
+\hypertarget{a00033_source_l00940}{}\hyperlink{a00025_aafa7683871a6a760246f9b35209caec5}{00940}   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00025_aafa7683871a6a760246f9b35209caec5}{migrate_membind};
+00941 \};
+00942 
+\hypertarget{a00033_source_l00949}{}\hyperlink{a00026}{00949} \textcolor{keyword}{struct }\hyperlink{a00026}{hwloc_topology_support} \{
+\hypertarget{a00033_source_l00950}{}\hyperlink{a00026_aea3fbd7653d987d81f848636c420504d}{00950}   \textcolor{keyword}{struct }\hyperlink{a00024}{hwloc_topology_discovery_support} *\hyperlink{a00026_aea3fbd7653d987d81f848636c420504d}{discovery};
+\hypertarget{a00033_source_l00951}{}\hyperlink{a00026_adef2bb91f74c3e70a2a071393caf5f56}{00951}   \textcolor{keyword}{struct }\hyperlink{a00023}{hwloc_topology_cpubind_support} *\hyperlink{a00026_adef2bb91f74c3e70a2a071393caf5f56}{cpubind};
+\hypertarget{a00033_source_l00952}{}\hyperlink{a00026_ac6eb62ae8bc0a68dce679a7107a36194}{00952}   \textcolor{keyword}{struct }\hyperlink{a00025}{hwloc_topology_membind_support} *\hyperlink{a00026_ac6eb62ae8bc0a68dce679a7107a36194}{membind};
+00953 \};
+00954 
+00956 HWLOC\_DECLSPEC \textcolor{keyword}{const} \textcolor{keyword}{struct }\hyperlink{a00026}{hwloc_topology_support} *\hyperlink{a00044_gac2126e105f3ae708efca2e90d612625a}{hwloc_topology_get_support}(hw
+      loc\_topology\_t \_\_hwloc\_restrict topology);
+00957 
+00972 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00045_ga45578d725c66865cfef31d0585dcff70}{hwloc_topology_export_xml}(hwloc\_topology\_t topology, \textcolor{keyword}{const} \textcolor{keywordtype}{cha
+      r} *xmlpath);
+00973 
+00983 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00045_ga739330e9402425315e44e5012631fb91}{hwloc_topology_export_xmlbuffer}(hwloc\_topology\_t topology, \textcolor{keywordtype}{cha
+      r} **xmlbuffer, \textcolor{keywordtype}{int} *buflen);
+00984 
+00986 HWLOC\_DECLSPEC \textcolor{keywordtype}{void} \hyperlink{a00045_ga5e375acef034bebc1f20ead884697301}{hwloc_free_xmlbuffer}(hwloc\_topology\_t topology, \textcolor{keywordtype}{char} *xmlbuff
+      er);
+00987 
+00999 HWLOC\_DECLSPEC hwloc\_obj\_t \hyperlink{a00045_ga017a9ba16d554326c6e3812d545d7230}{hwloc_topology_insert_misc_object_by_cpuset}(hwloc\_topo
+      logy\_t topology, hwloc\_const\_cpuset\_t cpuset, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name);
+01000 
+01013 HWLOC\_DECLSPEC hwloc\_obj\_t \hyperlink{a00045_gadacd7a3d21220fbb30c3256d8b22a294}{hwloc_topology_insert_misc_object_by_parent}(hwloc\_topo
+      logy\_t topology, hwloc\_obj\_t parent, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name);
+01014 
+\hypertarget{a00033_source_l01016}{}\hyperlink{a00045_ga9d80f08eb25b7ac22f1b998dc8bf521f}{01016} \textcolor{keyword}{enum} \hyperlink{a00045_ga9d80f08eb25b7ac22f1b998dc8bf521f}{hwloc_restrict_flags_e} \{
+\hypertarget{a00033_source_l01017}{}\hyperlink{a00045_gga9d80f08eb25b7ac22f1b998dc8bf521fa4d18407f5520793b50b9e892f5bb55d1}{01017}   \hyperlink{a00045_gga9d80f08eb25b7ac22f1b998dc8bf521fa4d18407f5520793b50b9e892f5bb55d1}{HWLOC_RESTRICT_FLAG_ADAPT_DISTANCES} = (1<<0),
+\hypertarget{a00033_source_l01022}{}\hyperlink{a00045_gga9d80f08eb25b7ac22f1b998dc8bf521fa699969227a09bbc1a7de51dc9fb7be4b}{01022}   \hyperlink{a00045_gga9d80f08eb25b7ac22f1b998dc8bf521fa699969227a09bbc1a7de51dc9fb7be4b}{HWLOC_RESTRICT_FLAG_ADAPT_MISC} = (1<<1),
+\hypertarget{a00033_source_l01027}{}\hyperlink{a00045_gga9d80f08eb25b7ac22f1b998dc8bf521faa95d6985e36ec1e55f68b210297a85cb}{01027}   \hyperlink{a00045_gga9d80f08eb25b7ac22f1b998dc8bf521faa95d6985e36ec1e55f68b210297a85cb}{HWLOC_RESTRICT_FLAG_ADAPT_IO} = (1<<2)
+01032 \};
+01033 
+01046 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00045_gad75fa918e3eb54663bdeab25ed89b648}{hwloc_topology_restrict}(hwloc\_topology\_t \_\_hwloc\_restrict topo
+      logy, hwloc\_const\_cpuset\_t cpuset, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} flags);
+01047 
+01065 HWLOC\_DECLSPEC \textcolor{keywordtype}{unsigned} \hyperlink{a00046_ga8c30b0cec55074eb3ed34e4f2a1a9937}{hwloc_topology_get_depth}(hwloc\_topology\_t \_\_hwloc\_restric
+      t topology) \_\_hwloc\_attribute\_pure;
+01066 
+01086 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc_get_type_depth} (hwloc\_topology\_t topology, 
+      \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc_obj_type_t} type);
+01087 
+\hypertarget{a00033_source_l01088}{}\hyperlink{a00046_gaf4e663cf42bbe20756b849c6293ef575}{01088} \textcolor{keyword}{enum} \hyperlink{a00046_gaf4e663cf42bbe20756b849c6293ef575}{hwloc_get_type_depth_e} \{
+\hypertarget{a00033_source_l01089}{}\hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{01089}     \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{HWLOC_TYPE_DEPTH_UNKNOWN} = -1,    
+\hypertarget{a00033_source_l01090}{}\hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575ae99465995cacde6c210d5fc2e409798c}{01090}     \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575ae99465995cacde6c210d5fc2e409798c}{HWLOC_TYPE_DEPTH_MULTIPLE} = -2,   
+\hypertarget{a00033_source_l01091}{}\hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575af93b50182973e4a718d9d4db9e253a90}{01091}     \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575af93b50182973e4a718d9d4db9e253a90}{HWLOC_TYPE_DEPTH_BRIDGE} = -3,     
+\hypertarget{a00033_source_l01092}{}\hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575ad8b1516e699b57ce1c8d107fbd2f674c}{01092}     \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575ad8b1516e699b57ce1c8d107fbd2f674c}{HWLOC_TYPE_DEPTH_PCI_DEVICE} = -4, 
+\hypertarget{a00033_source_l01093}{}\hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575afe9a2131073eebbe129d4aa2928d3f46}{01093}     \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575afe9a2131073eebbe129d4aa2928d3f46}{HWLOC_TYPE_DEPTH_OS_DEVICE} = -5   
+01094 \};
+01095 
+01100 HWLOC\_DECLSPEC \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc_obj_type_t} \hyperlink{a00046_gadd4964764ae7e49231065d58a553fd31}{hwloc_get_depth_type} (hwloc\_topology\_t topology, 
+      \textcolor{keywordtype}{unsigned} depth) \_\_hwloc\_attribute\_pure;
+01101 
+01104 HWLOC\_DECLSPEC \textcolor{keywordtype}{unsigned} \hyperlink{a00046_ga20cfe2456f4cfdd789c9aca6d2fdd69f}{hwloc_get_nbobjs_by_depth} (hwloc\_topology\_t topology, \textcolor{keywordtype}{uns
+      igned} depth) \_\_hwloc\_attribute\_pure;
+01105 
+01111 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+01112 \hyperlink{a00046_gaba821f84ef64282d14577066e6d6547e}{hwloc_get_nbobjs_by_type} (hwloc\_topology\_t topology, \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc_obj_type_t} type) \_\_hwl
+      oc\_attribute\_pure;
+01113 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00033_source_l01114}{}\hyperlink{a00046_gaba821f84ef64282d14577066e6d6547e}{01114} \hyperlink{a00046_gaba821f84ef64282d14577066e6d6547e}{hwloc_get_nbobjs_by_type} (hwloc\_topology\_t topology, \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc_obj_type_t} type)
+01115 \{
+01116         \textcolor{keywordtype}{int} depth = \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc_get_type_depth}(topology, type);
+01117         \textcolor{keywordflow}{if} (depth == \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{HWLOC_TYPE_DEPTH_UNKNOWN})
+01118                 \textcolor{keywordflow}{return} 0;
+01119         \textcolor{keywordflow}{if} (depth == \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575ae99465995cacde6c210d5fc2e409798c}{HWLOC_TYPE_DEPTH_MULTIPLE})
+01120                 \textcolor{keywordflow}{return} -1; \textcolor{comment}{/* FIXME: agregate nbobjs from different levels? */}
+01121         \textcolor{keywordflow}{return} \hyperlink{a00046_ga20cfe2456f4cfdd789c9aca6d2fdd69f}{hwloc_get_nbobjs_by_depth}(topology, depth);
+01122 \}
+01123 
+01131 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00046_ga0d109e33fc7990f62f665d336e5e5111}{hwloc_topology_is_thissystem}(hwloc\_topology\_t  \_\_hwloc\_restric
+      t topology) \_\_hwloc\_attribute\_pure;
+01132 
+01147 HWLOC\_DECLSPEC hwloc\_obj\_t \hyperlink{a00047_gaedd78240b0c1108355586a268ec5a697}{hwloc_get_obj_by_depth} (hwloc\_topology\_t topology, \textcolor{keywordtype}{uns
+      igned} depth, \textcolor{keywordtype}{unsigned} idx) \_\_hwloc\_attribute\_pure;
+01148 
+01155 \textcolor{keyword}{static} \_\_hwloc\_inline hwloc\_obj\_t
+01156 \hyperlink{a00047_ga9be4a03488cdd0fb431e4aa1cbdea895}{hwloc_get_obj_by_type} (hwloc\_topology\_t topology, \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc_obj_type_t} type, \textcolor{keywordtype}{unsigned
+      } idx) \_\_hwloc\_attribute\_pure;
+01157 \textcolor{keyword}{static} \_\_hwloc\_inline hwloc\_obj\_t
+\hypertarget{a00033_source_l01158}{}\hyperlink{a00047_ga9be4a03488cdd0fb431e4aa1cbdea895}{01158} \hyperlink{a00047_ga9be4a03488cdd0fb431e4aa1cbdea895}{hwloc_get_obj_by_type} (hwloc\_topology\_t topology, \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc_obj_type_t} type, \textcolor{keywordtype}{unsigned
+      } idx)
+01159 \{
+01160   \textcolor{keywordtype}{int} depth = \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc_get_type_depth}(topology, type);
+01161   \textcolor{keywordflow}{if} (depth == \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575a0565ab92ab72cb0cec91e23003294aad}{HWLOC_TYPE_DEPTH_UNKNOWN})
+01162     \textcolor{keywordflow}{return} NULL;
+01163   \textcolor{keywordflow}{if} (depth == \hyperlink{a00046_ggaf4e663cf42bbe20756b849c6293ef575ae99465995cacde6c210d5fc2e409798c}{HWLOC_TYPE_DEPTH_MULTIPLE})
+01164     \textcolor{keywordflow}{return} NULL;
+01165   \textcolor{keywordflow}{return} \hyperlink{a00047_gaedd78240b0c1108355586a268ec5a697}{hwloc_get_obj_by_depth}(topology, depth, idx);
+01166 \}
+01167 
+01177 HWLOC\_DECLSPEC \textcolor{keyword}{const} \textcolor{keywordtype}{char} * \hyperlink{a00048_ga7c61920feca6fd9006d930dabfc09058}{hwloc_obj_type_string} (\hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc_obj_type_t} type) \_\_hwloc
+      \_attribute\_const;
+01178 
+01183 HWLOC\_DECLSPEC \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc_obj_type_t} \hyperlink{a00048_gade722091ae392fdc79557e797a16c370}{hwloc_obj_type_of_string} (\textcolor{keyword}{const} \textcolor{keywordtype}{char} * \textcolor{keywordtype}{string}) \_\_
+      hwloc\_attribute\_pure;
+01184 
+01195 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00048_ga3ad856e8f3487d340c82a23b8a2a0351}{hwloc_obj_type_snprintf}(\textcolor{keywordtype}{char} * \_\_hwloc\_restrict \textcolor{keywordtype}{string}, \textcolor{keywordtype}{size\_t
+      } size, hwloc\_obj\_t obj,
+01196                                    \textcolor{keywordtype}{int} verbose);
+01197 
+01209 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00048_ga0db8286d7f3ceda8defd76e3e1e2b284}{hwloc_obj_attr_snprintf}(\textcolor{keywordtype}{char} * \_\_hwloc\_restrict \textcolor{keywordtype}{string}, \textcolor{keywordtype}{size\_t
+      } size, hwloc\_obj\_t obj, \textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_\_hwloc\_restrict separator,
+01210                                    \textcolor{keywordtype}{int} verbose);
+01211 
+01232 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00048_ga5c6a61a83f4790b421e2f62e9088446f}{hwloc_obj_snprintf}(\textcolor{keywordtype}{char} * \_\_hwloc\_restrict \textcolor{keywordtype}{string}, \textcolor{keywordtype}{size\_t} size
+      ,
+01233                              hwloc\_topology\_t topology, hwloc\_obj\_t obj,
+01234                              \textcolor{keyword}{const} \textcolor{keywordtype}{char} * \_\_hwloc\_restrict indexprefix, \textcolor{keywordtype}{int} verbo
+      se);
+01235 
+01243 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00048_gabbfb92224c992c0e2ecef6b6e45260f2}{hwloc_obj_cpuset_snprintf}(\textcolor{keywordtype}{char} * \_\_hwloc\_restrict str, \textcolor{keywordtype}{size\_t} 
+      size, \textcolor{keywordtype}{size\_t} nobj, \textcolor{keyword}{const} hwloc\_obj\_t * \_\_hwloc\_restrict objs);
+01244 
+01251 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keyword}{const} \textcolor{keywordtype}{char} *
+01252 \hyperlink{a00048_ga2a12b2450489675bd5759dc47cbc51ed}{hwloc_obj_get_info_by_name}(hwloc\_obj\_t obj, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name) \_\_hwloc\_attribute\_p
+      ure;
+01253 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keyword}{const} \textcolor{keywordtype}{char} *
+\hypertarget{a00033_source_l01254}{}\hyperlink{a00048_ga2a12b2450489675bd5759dc47cbc51ed}{01254} \hyperlink{a00048_ga2a12b2450489675bd5759dc47cbc51ed}{hwloc_obj_get_info_by_name}(hwloc\_obj\_t obj, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name)
+01255 \{
+01256   \textcolor{keywordtype}{unsigned} i;
+01257   \textcolor{keywordflow}{for}(i=0; i<obj->\hyperlink{a00016_a9843acc28cfbba903b63ea14b137ff70}{infos_count}; i++)
+01258     \textcolor{keywordflow}{if} (!strcmp(obj->\hyperlink{a00016_ad59bcd73a10260a0e239be5c4b5888bb}{infos}[i].\hyperlink{a00018_a115dde58f40338a2d3276d59c099857d}{name}, name))
+01259       \textcolor{keywordflow}{return} obj->\hyperlink{a00016_ad59bcd73a10260a0e239be5c4b5888bb}{infos}[i].\hyperlink{a00018_a522efd7f5262a4493a73fa3476a041ce}{value};
+01260   \textcolor{keywordflow}{return} NULL;
+01261 \}
+01262 
+01270 HWLOC\_DECLSPEC \textcolor{keywordtype}{void} \hyperlink{a00048_gaba3afe636940872772ed6dfaf0b3552e}{hwloc_obj_add_info}(hwloc\_obj\_t obj, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *name, \textcolor{keyword}{const} \textcolor{keywordtype}{c
+      har} *value);
+01271 
+\hypertarget{a00033_source_l01329}{}\hyperlink{a00049_ga217dc8d373f8958cc93c154ebce1c71c}{01329} \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{
+\hypertarget{a00033_source_l01330}{}\hyperlink{a00049_gga217dc8d373f8958cc93c154ebce1c71ca2e0dd0128dac6b03408c7dd170477fdc}{01330}   \hyperlink{a00049_gga217dc8d373f8958cc93c154ebce1c71ca2e0dd0128dac6b03408c7dd170477fdc}{HWLOC_CPUBIND_PROCESS} = (1<<0), 
+\hypertarget{a00033_source_l01333}{}\hyperlink{a00049_gga217dc8d373f8958cc93c154ebce1c71caf1b6bbad00d7b1017b918e3719f4d421}{01333}   \hyperlink{a00049_gga217dc8d373f8958cc93c154ebce1c71caf1b6bbad00d7b1017b918e3719f4d421}{HWLOC_CPUBIND_THREAD} = (1<<1),  
+\hypertarget{a00033_source_l01335}{}\hyperlink{a00049_gga217dc8d373f8958cc93c154ebce1c71ca679a7e0f0c7ee06b123565f90d98e7fa}{01335}   \hyperlink{a00049_gga217dc8d373f8958cc93c154ebce1c71ca679a7e0f0c7ee06b123565f90d98e7fa}{HWLOC_CPUBIND_STRICT} = (1<<2),  
+\hypertarget{a00033_source_l01363}{}\hyperlink{a00049_gga217dc8d373f8958cc93c154ebce1c71ca41ce440443cc3087caed95ab60edcad6}{01363}   \hyperlink{a00049_gga217dc8d373f8958cc93c154ebce1c71ca41ce440443cc3087caed95ab60edcad6}{HWLOC_CPUBIND_NOMEMBIND} = (1<<3)
+01383 \} \hyperlink{a00049_ga217dc8d373f8958cc93c154ebce1c71c}{hwloc_cpubind_flags_t};
+01384 
+01390 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00049_gaf4cc194d5c0d38004a21b9f03522a7e3}{hwloc_set_cpubind}(hwloc\_topology\_t topology, hwloc\_const\_cpuse
+      t\_t \textcolor{keyword}{set}, \textcolor{keywordtype}{int} flags);
+01391 
+01397 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00049_gab52f83ab16eac465da55e16bdd30df77}{hwloc_get_cpubind}(hwloc\_topology\_t topology, hwloc\_cpuset\_t \textcolor{keyword}{se
+      t}, \textcolor{keywordtype}{int} flags);
+01398 
+01406 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00049_gac0ef3510b4e9c1273029ecf94e8c9686}{hwloc_set_proc_cpubind}(hwloc\_topology\_t topology, hwloc\_pid\_t 
+      pid, hwloc\_const\_cpuset\_t \textcolor{keyword}{set}, \textcolor{keywordtype}{int} flags);
+01407 
+01419 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00049_gaa1373a002b9a0a87eb002e26c590f2da}{hwloc_get_proc_cpubind}(hwloc\_topology\_t topology, hwloc\_pid\_t 
+      pid, hwloc\_cpuset\_t \textcolor{keyword}{set}, \textcolor{keywordtype}{int} flags);
+01420 
+01421 \textcolor{preprocessor}{#ifdef hwloc\_thread\_t}
+01422 \textcolor{preprocessor}{}
+01429 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00049_gaab65c34a0bc19c5a823f824543cedbd4}{hwloc_set_thread_cpubind}(hwloc\_topology\_t topology, hwloc\_thre
+      ad\_t thread, hwloc\_const\_cpuset\_t \textcolor{keyword}{set}, \textcolor{keywordtype}{int} flags);
+01430 \textcolor{preprocessor}{#endif}
+01431 \textcolor{preprocessor}{}
+01432 \textcolor{preprocessor}{#ifdef hwloc\_thread\_t}
+01433 \textcolor{preprocessor}{}
+01440 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00049_ga089cecfdb9a50e5c5cd1b6ff17352d42}{hwloc_get_thread_cpubind}(hwloc\_topology\_t topology, hwloc\_thre
+      ad\_t thread, hwloc\_cpuset\_t \textcolor{keyword}{set}, \textcolor{keywordtype}{int} flags);
+01441 \textcolor{preprocessor}{#endif}
+01442 \textcolor{preprocessor}{}
+01450 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00049_ga8e9a4b5ee3eaa18fd3a229790c6b5b17}{hwloc_get_last_cpu_location}(hwloc\_topology\_t topology, hwloc\_c
+      puset\_t \textcolor{keyword}{set}, \textcolor{keywordtype}{int} flags);
+01451 
+01468 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00049_ga1e005ddb9701e6a993a9eb8abe67a710}{hwloc_get_proc_last_cpu_location}(hwloc\_topology\_t topology, hw
+      loc\_pid\_t pid, hwloc\_cpuset\_t \textcolor{keyword}{set}, \textcolor{keywordtype}{int} flags);
+01469 
+\hypertarget{a00033_source_l01529}{}\hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{01529} \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{
+\hypertarget{a00033_source_l01530}{}\hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8a18675bb80ebc1bce5b652e9de8f3998c}{01530}   \hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8a18675bb80ebc1bce5b652e9de8f3998c}{HWLOC_MEMBIND_DEFAULT} =       0,      
+\hypertarget{a00033_source_l01532}{}\hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8a979c7aa78dd32780858f30f47a72cca0}{01532}   \hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8a979c7aa78dd32780858f30f47a72cca0}{HWLOC_MEMBIND_FIRSTTOUCH} =    1,      
+\hypertarget{a00033_source_l01546}{}\hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8ad811fa4b2a6002c4d63695a408ffde2c}{01546}   \hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8ad811fa4b2a6002c4d63695a408ffde2c}{HWLOC_MEMBIND_BIND} =          2,      
+\hypertarget{a00033_source_l01548}{}\hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8ae370075e5af016d42310f87ea5af236b}{01548}   \hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8ae370075e5af016d42310f87ea5af236b}{HWLOC_MEMBIND_INTERLEAVE} =    3,      
+\hypertarget{a00033_source_l01563}{}\hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8afb37480fe5f4236eb7dd4aef26f691e9}{01563}   \hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8afb37480fe5f4236eb7dd4aef26f691e9}{HWLOC_MEMBIND_REPLICATE} =     4,      
+\hypertarget{a00033_source_l01585}{}\hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8aecdd4164d647708fbb51a00d98dbb138}{01585}   \hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8aecdd4164d647708fbb51a00d98dbb138}{HWLOC_MEMBIND_NEXTTOUCH} =     5,      
+\hypertarget{a00033_source_l01595}{}\hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8a3185bd869b67817fb2bd5164bf360402}{01595}   \hyperlink{a00050_ggac9764f79505775d06407b40f5e4661e8a3185bd869b67817fb2bd5164bf360402}{HWLOC_MEMBIND_MIXED} = -1              
+01600 \} \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc_membind_policy_t};
+01601 
+\hypertarget{a00033_source_l01613}{}\hyperlink{a00050_gab00475fd98815bf4fb9aaf752030e7d2}{01613} \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{
+\hypertarget{a00033_source_l01614}{}\hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2a1b1b74aef138f64aff214a8cbdfe8eb4}{01614}   \hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2a1b1b74aef138f64aff214a8cbdfe8eb4}{HWLOC_MEMBIND_PROCESS} =       (1<<0), 
+\hypertarget{a00033_source_l01621}{}\hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2a1dc7dd5cdcd5796893a325a524555298}{01621}   \hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2a1dc7dd5cdcd5796893a325a524555298}{HWLOC_MEMBIND_THREAD} =        (1<<1), 
+\hypertarget{a00033_source_l01627}{}\hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2a0335311a0ee04166df2888d52b4a42c6}{01627}   \hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2a0335311a0ee04166df2888d52b4a42c6}{HWLOC_MEMBIND_STRICT} =        (1<<2), 
+\hypertarget{a00033_source_l01638}{}\hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2aa6e49e54f52827cb143cc869cfd748af}{01638}   \hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2aa6e49e54f52827cb143cc869cfd748af}{HWLOC_MEMBIND_MIGRATE} =       (1<<3), 
+\hypertarget{a00033_source_l01646}{}\hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2aad6b9eaf2ee324ca58dc8f58094b9997}{01646}   \hyperlink{a00050_ggab00475fd98815bf4fb9aaf752030e7d2aad6b9eaf2ee324ca58dc8f58094b9997}{HWLOC_MEMBIND_NOCPUBIND} =     (1<<4)  
+01669 \} \hyperlink{a00050_gab00475fd98815bf4fb9aaf752030e7d2}{hwloc_membind_flags_t};
+01670 
+01683 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00050_ga747962cbb16fd12ad6d126011c734a27}{hwloc_set_membind_nodeset}(hwloc\_topology\_t topology, hwloc\_con
+      st\_nodeset\_t nodeset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc_membind_policy_t} policy, \textcolor{keywordtype}{int} flags);
+01684 
+01698 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00050_ga8b6d1d90227aff8e44ef26bc1f8a8f95}{hwloc_set_membind}(hwloc\_topology\_t topology, hwloc\_const\_cpuse
+      t\_t cpuset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc_membind_policy_t} policy, \textcolor{keywordtype}{int} flags);
+01699 
+01740 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00050_ga7b46a4ca0b2db9723ca73b0c148ccd93}{hwloc_get_membind_nodeset}(hwloc\_topology\_t topology, hwloc\_nod
+      eset\_t nodeset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc_membind_policy_t} * policy, \textcolor{keywordtype}{int} flags);
+01741 
+01787 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00050_gab07aedba1119f99130e5f0b796b7d8a5}{hwloc_get_membind}(hwloc\_topology\_t topology, hwloc\_cpuset\_t cp
+      uset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc_membind_policy_t} * policy, \textcolor{keywordtype}{int} flags);
+01788 
+01798 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00050_gaf10d18cd4703ec980d7440a1c23fa07f}{hwloc_set_proc_membind_nodeset}(hwloc\_topology\_t topology, hwlo
+      c\_pid\_t pid, hwloc\_const\_nodeset\_t nodeset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc_membind_policy_t} policy, \textcolor{keywordtype}{int} fl
+      ags);
+01799 
+01809 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00050_gac63c4517e71b3f0d41b3dee3e83dc55c}{hwloc_set_proc_membind}(hwloc\_topology\_t topology, hwloc\_pid\_t 
+      pid, hwloc\_const\_cpuset\_t cpuset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc_membind_policy_t} policy, \textcolor{keywordtype}{int} flags);
+01810 
+01847 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00050_ga22074ed072e1039f74f17f7b16e9e39d}{hwloc_get_proc_membind_nodeset}(hwloc\_topology\_t topology, hwlo
+      c\_pid\_t pid, hwloc\_nodeset\_t nodeset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc_membind_policy_t} * policy, \textcolor{keywordtype}{int} flags)
+      ;
+01848 
+01888 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00050_gabaf9c13f1fa301d6895594cec52226e2}{hwloc_get_proc_membind}(hwloc\_topology\_t topology, hwloc\_pid\_t 
+      pid, hwloc\_cpuset\_t cpuset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc_membind_policy_t} * policy, \textcolor{keywordtype}{int} flags);
+01889 
+01896 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00050_gade5e2c28ea8475a479bf2b1df36c6ccd}{hwloc_set_area_membind_nodeset}(hwloc\_topology\_t topology, \textcolor{keyword}{cons
+      t} \textcolor{keywordtype}{void} *addr, \textcolor{keywordtype}{size\_t} len, hwloc\_const\_nodeset\_t nodeset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc_membind_policy_t} p
+      olicy, \textcolor{keywordtype}{int} flags);
+01897 
+01904 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00050_ga06594edeb4728cb9e014aed924d1e74a}{hwloc_set_area_membind}(hwloc\_topology\_t topology, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *
+      addr, \textcolor{keywordtype}{size\_t} len, hwloc\_const\_cpuset\_t cpuset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc_membind_policy_t} policy, \textcolor{keywordtype}{int
+      } flags);
+01905 
+01928 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00050_ga106e6fcd764d17be682faf7a5bc95720}{hwloc_get_area_membind_nodeset}(hwloc\_topology\_t topology, \textcolor{keyword}{cons
+      t} \textcolor{keywordtype}{void} *addr, \textcolor{keywordtype}{size\_t} len, hwloc\_nodeset\_t nodeset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc_membind_policy_t} * polic
+      y, \textcolor{keywordtype}{int} flags);
+01929 
+01954 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00050_gac02ee8f7606382ea7855ae4e1656ed0f}{hwloc_get_area_membind}(hwloc\_topology\_t topology, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *
+      addr, \textcolor{keywordtype}{size\_t} len, hwloc\_cpuset\_t cpuset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc_membind_policy_t} * policy, \textcolor{keywordtype}{int} fla
+      gs);
+01955 
+01963 HWLOC\_DECLSPEC \textcolor{keywordtype}{void} *\hyperlink{a00050_gac5586e58cf25c3596b7d4aa31ce13259}{hwloc_alloc}(hwloc\_topology\_t topology, \textcolor{keywordtype}{size\_t} len);
+01964 
+01974 HWLOC\_DECLSPEC \textcolor{keywordtype}{void} *\hyperlink{a00050_gaeaa00714a9c4319bda0a74ca6f8720e8}{hwloc_alloc_membind_nodeset}(hwloc\_topology\_t topology, \textcolor{keywordtype}{size\_
+      t} len, hwloc\_const\_nodeset\_t nodeset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc_membind_policy_t} policy, \textcolor{keywordtype}{int} flags) \_
+      \_hwloc\_attribute\_malloc;
+01975 
+01985 HWLOC\_DECLSPEC \textcolor{keywordtype}{void} *\hyperlink{a00050_ga221a7edc5d436300374fa16463f607e5}{hwloc_alloc_membind}(hwloc\_topology\_t topology, \textcolor{keywordtype}{size\_t} len, h
+      wloc\_const\_cpuset\_t cpuset, \hyperlink{a00050_gac9764f79505775d06407b40f5e4661e8}{hwloc_membind_policy_t} policy, \textcolor{keywordtype}{int} flags) \_\_hwloc\_att
+      ribute\_malloc;
+01986 
+01990 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00050_ga986d9b4cc76da592c4b937c6cb7d9d56}{hwloc_free}(hwloc\_topology\_t topology, \textcolor{keywordtype}{void} *addr, \textcolor{keywordtype}{size\_t} len);
+      
+01991 
+02022 HWLOC\_DECLSPEC \textcolor{keywordtype}{int} \hyperlink{a00051_ga59ccf6a63cb23d63940e8b782059d9cb}{hwloc_custom_insert_topology}(hwloc\_topology\_t newtopology, hwl
+      oc\_obj\_t newparent, hwloc\_topology\_t oldtopology, hwloc\_obj\_t oldroot);
+02023 
+02040 HWLOC\_DECLSPEC hwloc\_obj\_t \hyperlink{a00051_gac1037fe389bfa7c2bf0e3739b7e20844}{hwloc_custom_insert_group_object_by_parent}(hwloc\_topol
+      ogy\_t topology, hwloc\_obj\_t parent, \textcolor{keywordtype}{int} groupdepth);
+02041 
+02046 \textcolor{preprocessor}{#ifdef \_\_cplusplus}
+02047 \textcolor{preprocessor}{}\} \textcolor{comment}{/* extern "C" */}
+02048 \textcolor{preprocessor}{#endif}
+02049 \textcolor{preprocessor}{}
+02050 
+02051 \textcolor{comment}{/* high-level helpers */}
+02052 \textcolor{preprocessor}{#include <hwloc/helper.h>}
+02053 
+02054 
+02055 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* HWLOC\_H */}
+\end{DoxyCode}

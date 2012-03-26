@@ -14,7 +14,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Hardware Locality (hwloc)&#160;<span id="projectnumber">1.4</span></div>
+   <div id="projectname">Hardware Locality (hwloc)&#160;<span id="projectnumber">1.4.1</span></div>
   </td>
  </tr>
  </tbody>
@@ -56,8 +56,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html#gaea7c64dd59467f5201ba87712710b14d">hwloc_get_type_depth</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00041.html#gacd37bb612667dc437d66bfb175a8dc55">hwloc_obj_type_t</a> type)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"> <a class="el" href="a00041.html#gacd37bb612667dc437d66bfb175a8dc55">hwloc_obj_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html#gadd4964764ae7e49231065d58a553fd31">hwloc_get_depth_type</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, unsigned depth) </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"> unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html#ga20cfe2456f4cfdd789c9aca6d2fdd69f">hwloc_get_nbobjs_by_depth</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, unsigned depth) </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static inline int <br class="typebreak"/>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html#ga0131ab1051011fabfa69d7c1853e716c">hwloc_get_nbobjs_by_type</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00041.html#gacd37bb612667dc437d66bfb175a8dc55">hwloc_obj_type_t</a> type)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static inline int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html#gaba821f84ef64282d14577066e6d6547e">hwloc_get_nbobjs_by_type</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00041.html#gacd37bb612667dc437d66bfb175a8dc55">hwloc_obj_type_t</a> type) </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00046.html#ga0d109e33fc7990f62f665d336e5e5111">hwloc_topology_is_thissystem</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> restrict topology) </td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
@@ -155,12 +154,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga0131ab1051011fabfa69d7c1853e716c"></a><!-- doxytag: member="hwloc.h::hwloc_get_nbobjs_by_type" ref="ga0131ab1051011fabfa69d7c1853e716c" args="(hwloc_topology_t topology, hwloc_obj_type_t type)" -->
+<a class="anchor" id="gaba821f84ef64282d14577066e6d6547e"></a><!-- doxytag: member="hwloc.h::hwloc_get_nbobjs_by_type" ref="gaba821f84ef64282d14577066e6d6547e" args="(hwloc_topology_t topology, hwloc_obj_type_t type) " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static inline int  hwloc_get_nbobjs_by_type </td>
+          <td class="memname">static inline int hwloc_get_nbobjs_by_type </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a>&#160;</td>
           <td class="paramname"><em>topology</em>, </td>
@@ -212,7 +211,7 @@ Functions</h2></td></tr>
 
 <p>Returns the depth of objects of type <code>type</code>. </p>
 <p>If no object of this type is present on the underlying architecture, or if the OS doesn't provide this kind of information, the function returns HWLOC_TYPE_DEPTH_UNKNOWN.</p>
-<p>If type is absent but a similar type is acceptable, see also <a class="el" href="a00052.html#ga0ffafb4c0ae13b9a7541ca820ca34883" title="Returns the depth of objects of type type or below.">hwloc_get_type_or_below_depth()</a> and <a class="el" href="a00052.html#ga24b9cd5917fcebac6e45ae38d0a6cda4" title="Returns the depth of objects of type type or above.">hwloc_get_type_or_above_depth()</a>.</p>
+<p>If type is absent but a similar type is acceptable, see also <a class="el" href="a00052.html#ga081be77905201e9f42318e9974456b45" title="Returns the depth of objects of type type or below.">hwloc_get_type_or_below_depth()</a> and <a class="el" href="a00052.html#ga62a3f401854c209605c90079700f4bc5" title="Returns the depth of objects of type type or above.">hwloc_get_type_or_above_depth()</a>.</p>
 <p>If some objects of the given type exist in different levels, for instance L1 and L2 caches, the function returns HWLOC_TYPE_DEPTH_MULTIPLE.</p>
 <p>If an I/O object type is given, the function returns a virtual value because I/O objects are stored in special levels that are not CPU-related. This virtual depth may be passed to other hwloc functions such as <a class="el" href="a00047.html#gaedd78240b0c1108355586a268ec5a697" title="Returns the topology object at logical index idx from depth depth.">hwloc_get_obj_by_depth()</a> but it should not be considered as an actual depth by the application. In particular, it should not be compared with any other object depth or with the entire topology depth. </p>
 
@@ -261,7 +260,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Fri Mar 23 2012 15:27:46 for Hardware Locality (hwloc) by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Mon Mar 26 2012 16:32:11 for Hardware Locality (hwloc) by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

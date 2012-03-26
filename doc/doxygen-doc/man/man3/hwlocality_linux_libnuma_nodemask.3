@@ -1,4 +1,4 @@
-.TH "Helpers for manipulating Linux libnuma nodemask_t" 3 "Fri Mar 23 2012" "Version 1.4" "Hardware Locality (hwloc)" \" -*- nroff -*-
+.TH "Helpers for manipulating Linux libnuma nodemask_t" 3 "Mon Mar 26 2012" "Version 1.4.1" "Hardware Locality (hwloc)" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -19,6 +19,14 @@ Helpers for manipulating Linux libnuma nodemask_t \-
 .RI "static inline int \fBhwloc_nodeset_from_linux_libnuma_nodemask\fP (\fBhwloc_topology_t\fP topology, \fBhwloc_nodeset_t\fP nodeset, const nodemask_t *nodemask)"
 .br
 .in -1c
+.SH "Detailed Description"
+.PP 
+\fBNote:\fP
+.RS 4
+The Linux libnuma nodemask_t interface is deprecated and its implementation is at least incorrect with respect to sparse NUMA node ids. It is strongly advised to use struct bitmask instead of nodemask_t, or even to use hwloc directly. 
+.RE
+.PP
+
 .SH "Function Documentation"
 .PP 
 .SS "static inline int hwloc_cpuset_from_linux_libnuma_nodemask (\fBhwloc_topology_t\fPtopology, \fBhwloc_cpuset_t\fPcpuset, const nodemask_t *nodemask)\fC [static]\fP"

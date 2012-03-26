@@ -60,6 +60,7 @@
     <docanchor file="a00006">multinode_interface</docanchor>
     <docanchor file="a00006">multinode_tools</docanchor>
     <docanchor file="a00006">multinode_cpusets</docanchor>
+    <docanchor file="a00006">multinode_example</docanchor>
   </compound>
   <compound kind="page">
     <name>xml</name>
@@ -90,6 +91,7 @@
     <title>Frequently Asked Questions</title>
     <filename>a00011</filename>
     <docanchor file="a00011">faq_smt</docanchor>
+    <docanchor file="a00011">faq_valgrind</docanchor>
     <docanchor file="a00011">faq_onedim</docanchor>
     <docanchor file="a00011">faq_privileged</docanchor>
     <docanchor file="a00011">faq_upgrade</docanchor>
@@ -662,11 +664,11 @@
       <arglist>(hwloc_topology_t topology, unsigned depth) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline int __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline int</type>
       <name>hwloc_get_nbobjs_by_type</name>
       <anchorfile>a00046.html</anchorfile>
-      <anchor>ga0131ab1051011fabfa69d7c1853e716c</anchor>
-      <arglist>(hwloc_topology_t topology, hwloc_obj_type_t type)</arglist>
+      <anchor>gaba821f84ef64282d14577066e6d6547e</anchor>
+      <arglist>(hwloc_topology_t topology, hwloc_obj_type_t type) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function">
       <type>HWLOC_DECLSPEC int</type>
@@ -688,11 +690,11 @@
       <arglist>(hwloc_topology_t topology, unsigned depth, unsigned idx) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_obj_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_obj_t</type>
       <name>hwloc_get_obj_by_type</name>
       <anchorfile>a00047.html</anchorfile>
-      <anchor>ga701f83b2cf0cb8e0acd58cd2dc1c67a2</anchor>
-      <arglist>(hwloc_topology_t topology, hwloc_obj_type_t type, unsigned idx)</arglist>
+      <anchor>ga9be4a03488cdd0fb431e4aa1cbdea895</anchor>
+      <arglist>(hwloc_topology_t topology, hwloc_obj_type_t type, unsigned idx) __hwloc_attribute_pure</arglist>
     </member>
   </compound>
   <compound kind="group">
@@ -742,11 +744,11 @@
       <arglist>(char *__hwloc_restrict str, size_t size, size_t nobj, const hwloc_obj_t *__hwloc_restrict objs)</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline char *__hwloc_attribute_pure</type>
+      <type>static __hwloc_inline const char *</type>
       <name>hwloc_obj_get_info_by_name</name>
       <anchorfile>a00048.html</anchorfile>
-      <anchor>ga1f41387433f4c9e9c14b9f2e522919e4</anchor>
-      <arglist>(hwloc_obj_t obj, const char *name)</arglist>
+      <anchor>ga2a12b2450489675bd5759dc47cbc51ed</anchor>
+      <arglist>(hwloc_obj_t obj, const char *name) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function">
       <type>HWLOC_DECLSPEC void</type>
@@ -1072,18 +1074,18 @@
     <title>Object Type Helpers</title>
     <filename>a00052.html</filename>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline int __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline int</type>
       <name>hwloc_get_type_or_below_depth</name>
       <anchorfile>a00052.html</anchorfile>
-      <anchor>ga0ffafb4c0ae13b9a7541ca820ca34883</anchor>
-      <arglist>(hwloc_topology_t topology, hwloc_obj_type_t type)</arglist>
+      <anchor>ga081be77905201e9f42318e9974456b45</anchor>
+      <arglist>(hwloc_topology_t topology, hwloc_obj_type_t type) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline int __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline int</type>
       <name>hwloc_get_type_or_above_depth</name>
       <anchorfile>a00052.html</anchorfile>
-      <anchor>ga24b9cd5917fcebac6e45ae38d0a6cda4</anchor>
-      <arglist>(hwloc_topology_t topology, hwloc_obj_type_t type)</arglist>
+      <anchor>ga62a3f401854c209605c90079700f4bc5</anchor>
+      <arglist>(hwloc_topology_t topology, hwloc_obj_type_t type) __hwloc_attribute_pure</arglist>
     </member>
   </compound>
   <compound kind="group">
@@ -1091,25 +1093,25 @@
     <title>Basic Traversal Helpers</title>
     <filename>a00053.html</filename>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_obj_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_obj_t</type>
       <name>hwloc_get_root_obj</name>
       <anchorfile>a00053.html</anchorfile>
-      <anchor>ga632edae4a651996895ebde85ea2c1264</anchor>
-      <arglist>(hwloc_topology_t topology)</arglist>
+      <anchor>gadbf58f6e187efbdb3cd9a8e30311b7d7</anchor>
+      <arglist>(hwloc_topology_t topology) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_obj_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_obj_t</type>
       <name>hwloc_get_ancestor_obj_by_depth</name>
       <anchorfile>a00053.html</anchorfile>
-      <anchor>gafa813c4ff8d610b3e158224a56386b2f</anchor>
-      <arglist>(hwloc_topology_t topology __hwloc_attribute_unused, unsigned depth, hwloc_obj_t obj)</arglist>
+      <anchor>ga9b9d6af74eb0b78b1384aa66dd058ddc</anchor>
+      <arglist>(hwloc_topology_t topology __hwloc_attribute_unused, unsigned depth, hwloc_obj_t obj) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_obj_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_obj_t</type>
       <name>hwloc_get_ancestor_obj_by_type</name>
       <anchorfile>a00053.html</anchorfile>
-      <anchor>ga20ade151cb33991b4cd960924a830764</anchor>
-      <arglist>(hwloc_topology_t topology __hwloc_attribute_unused, hwloc_obj_type_t type, hwloc_obj_t obj)</arglist>
+      <anchor>gac93e1a95a71add57ac841daef1b94e5e</anchor>
+      <arglist>(hwloc_topology_t topology __hwloc_attribute_unused, hwloc_obj_type_t type, hwloc_obj_t obj) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static __hwloc_inline hwloc_obj_t</type>
@@ -1126,11 +1128,11 @@
       <arglist>(hwloc_topology_t topology, hwloc_obj_type_t type, hwloc_obj_t prev)</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_obj_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_obj_t</type>
       <name>hwloc_get_pu_obj_by_os_index</name>
       <anchorfile>a00053.html</anchorfile>
-      <anchor>ga61e00b83e7e0a1a946dc1bb29c49ccba</anchor>
-      <arglist>(hwloc_topology_t topology, unsigned os_index)</arglist>
+      <anchor>ga0bc54225b65d557c70c7cb5dfb714de7</anchor>
+      <arglist>(hwloc_topology_t topology, unsigned os_index) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static __hwloc_inline hwloc_obj_t</type>
@@ -1140,18 +1142,18 @@
       <arglist>(hwloc_topology_t topology __hwloc_attribute_unused, hwloc_obj_t parent, hwloc_obj_t prev)</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_obj_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_obj_t</type>
       <name>hwloc_get_common_ancestor_obj</name>
       <anchorfile>a00053.html</anchorfile>
-      <anchor>gac574b7b06d2d937002dd538e08dbd554</anchor>
-      <arglist>(hwloc_topology_t topology __hwloc_attribute_unused, hwloc_obj_t obj1, hwloc_obj_t obj2)</arglist>
+      <anchor>ga52a334f17c6b5b409d5cc6bb4ab8a2ab</anchor>
+      <arglist>(hwloc_topology_t topology __hwloc_attribute_unused, hwloc_obj_t obj1, hwloc_obj_t obj2) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline int __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline int</type>
       <name>hwloc_obj_is_in_subtree</name>
       <anchorfile>a00053.html</anchorfile>
-      <anchor>ga38d9bd3a7566d0e6b0ab95d652557707</anchor>
-      <arglist>(hwloc_topology_t topology __hwloc_attribute_unused, hwloc_obj_t obj, hwloc_obj_t subtree_root)</arglist>
+      <anchor>ga08b5c1c1a95ed27a219c8af864690b3e</anchor>
+      <arglist>(hwloc_topology_t topology __hwloc_attribute_unused, hwloc_obj_t obj, hwloc_obj_t subtree_root) __hwloc_attribute_pure</arglist>
     </member>
   </compound>
   <compound kind="group">
@@ -1187,39 +1189,39 @@
       <arglist>(hwloc_topology_t topology, hwloc_const_cpuset_t set, hwloc_obj_type_t type, hwloc_obj_t prev)</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_obj_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_obj_t</type>
       <name>hwloc_get_obj_inside_cpuset_by_depth</name>
       <anchorfile>a00054.html</anchorfile>
-      <anchor>ga20703980008f82379f98f56857611a1a</anchor>
-      <arglist>(hwloc_topology_t topology, hwloc_const_cpuset_t set, unsigned depth, unsigned idx)</arglist>
+      <anchor>ga57c8a0e227d1b16a31d19aaf755b42c0</anchor>
+      <arglist>(hwloc_topology_t topology, hwloc_const_cpuset_t set, unsigned depth, unsigned idx) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_obj_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_obj_t</type>
       <name>hwloc_get_obj_inside_cpuset_by_type</name>
       <anchorfile>a00054.html</anchorfile>
-      <anchor>ga50a80a0021e5843d968c3b97aebaad9b</anchor>
-      <arglist>(hwloc_topology_t topology, hwloc_const_cpuset_t set, hwloc_obj_type_t type, unsigned idx)</arglist>
+      <anchor>gaa8dcdb85224f7350b90fb0a1ca91e6d6</anchor>
+      <arglist>(hwloc_topology_t topology, hwloc_const_cpuset_t set, hwloc_obj_type_t type, unsigned idx) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline unsigned __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline unsigned</type>
       <name>hwloc_get_nbobjs_inside_cpuset_by_depth</name>
       <anchorfile>a00054.html</anchorfile>
-      <anchor>ga6807db0012369efe19b8d3dcee235493</anchor>
-      <arglist>(hwloc_topology_t topology, hwloc_const_cpuset_t set, unsigned depth)</arglist>
+      <anchor>ga457604a2dedbf70ba3b480558666b56b</anchor>
+      <arglist>(hwloc_topology_t topology, hwloc_const_cpuset_t set, unsigned depth) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline int __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline int</type>
       <name>hwloc_get_nbobjs_inside_cpuset_by_type</name>
       <anchorfile>a00054.html</anchorfile>
-      <anchor>ga72c5bc4317a4c3938e32447b769813a0</anchor>
-      <arglist>(hwloc_topology_t topology, hwloc_const_cpuset_t set, hwloc_obj_type_t type)</arglist>
+      <anchor>ga63481874c69ed257b1a0c03e7615ff97</anchor>
+      <arglist>(hwloc_topology_t topology, hwloc_const_cpuset_t set, hwloc_obj_type_t type) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline int __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline int</type>
       <name>hwloc_get_obj_index_inside_cpuset</name>
       <anchorfile>a00054.html</anchorfile>
-      <anchor>gace5ff7a134cac9b0ec6330346def5436</anchor>
-      <arglist>(hwloc_topology_t topology __hwloc_attribute_unused, hwloc_const_cpuset_t set, hwloc_obj_t obj)</arglist>
+      <anchor>ga7cdb6a4645e9b1ec80137e72d1736fdd</anchor>
+      <arglist>(hwloc_topology_t topology __hwloc_attribute_unused, hwloc_const_cpuset_t set, hwloc_obj_t obj) __hwloc_attribute_pure</arglist>
     </member>
   </compound>
   <compound kind="group">
@@ -1227,18 +1229,18 @@
     <title>Finding a single Object covering at least CPU set</title>
     <filename>a00055.html</filename>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_obj_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_obj_t</type>
       <name>hwloc_get_child_covering_cpuset</name>
       <anchorfile>a00055.html</anchorfile>
-      <anchor>gab56b99460194bbcb36016d36d55132a7</anchor>
-      <arglist>(hwloc_topology_t topology __hwloc_attribute_unused, hwloc_const_cpuset_t set, hwloc_obj_t parent)</arglist>
+      <anchor>ga69a22cc76c88115aee7b7e6fc53fca7d</anchor>
+      <arglist>(hwloc_topology_t topology __hwloc_attribute_unused, hwloc_const_cpuset_t set, hwloc_obj_t parent) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_obj_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_obj_t</type>
       <name>hwloc_get_obj_covering_cpuset</name>
       <anchorfile>a00055.html</anchorfile>
-      <anchor>ga2a0de36ea0c3c70fb5f4cba0bb192582</anchor>
-      <arglist>(hwloc_topology_t topology, hwloc_const_cpuset_t set)</arglist>
+      <anchor>ga68300dd0ee9c36a7a90f275a59e9af28</anchor>
+      <arglist>(hwloc_topology_t topology, hwloc_const_cpuset_t set) __hwloc_attribute_pure</arglist>
     </member>
   </compound>
   <compound kind="group">
@@ -1265,18 +1267,18 @@
     <title>Cache-specific Finding Helpers</title>
     <filename>a00057.html</filename>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_obj_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_obj_t</type>
       <name>hwloc_get_cache_covering_cpuset</name>
       <anchorfile>a00057.html</anchorfile>
-      <anchor>gae744419648117cbd613a038074aa0627</anchor>
-      <arglist>(hwloc_topology_t topology, hwloc_const_cpuset_t set)</arglist>
+      <anchor>ga2f936fd9a9c62f6d9b9951de3062e889</anchor>
+      <arglist>(hwloc_topology_t topology, hwloc_const_cpuset_t set) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_obj_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_obj_t</type>
       <name>hwloc_get_shared_cache_covering_obj</name>
       <anchorfile>a00057.html</anchorfile>
-      <anchor>ga75e961873d4b976ab10bc4739248c96d</anchor>
-      <arglist>(hwloc_topology_t topology __hwloc_attribute_unused, hwloc_obj_t obj)</arglist>
+      <anchor>ga000e08a1da039130daa072e77713bb43</anchor>
+      <arglist>(hwloc_topology_t topology __hwloc_attribute_unused, hwloc_obj_t obj) __hwloc_attribute_pure</arglist>
     </member>
   </compound>
   <compound kind="group">
@@ -1291,18 +1293,18 @@
       <arglist>(hwloc_topology_t topology, hwloc_obj_t src, hwloc_obj_t *__hwloc_restrict objs, unsigned max)</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_obj_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_obj_t</type>
       <name>hwloc_get_obj_below_by_type</name>
       <anchorfile>a00058.html</anchorfile>
-      <anchor>ga3d32c128aa36b5c9d56f6bf9e70d0e78</anchor>
-      <arglist>(hwloc_topology_t topology, hwloc_obj_type_t type1, unsigned idx1, hwloc_obj_type_t type2, unsigned idx2)</arglist>
+      <anchor>ga6c482c2097f01b1ff88598fec8a1ba3b</anchor>
+      <arglist>(hwloc_topology_t topology, hwloc_obj_type_t type1, unsigned idx1, hwloc_obj_type_t type2, unsigned idx2) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_obj_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_obj_t</type>
       <name>hwloc_get_obj_below_array_by_type</name>
       <anchorfile>a00058.html</anchorfile>
-      <anchor>ga340bb7021204078c30382ea77d38bde9</anchor>
-      <arglist>(hwloc_topology_t topology, int nr, hwloc_obj_type_t *typev, unsigned *idxv)</arglist>
+      <anchor>gac33a0990f4e771b2117ddedabc3f00f6</anchor>
+      <arglist>(hwloc_topology_t topology, int nr, hwloc_obj_type_t *typev, unsigned *idxv) __hwloc_attribute_pure</arglist>
     </member>
   </compound>
   <compound kind="group">
@@ -1343,32 +1345,32 @@
     <title>Cpuset Helpers</title>
     <filename>a00060.html</filename>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_const_cpuset_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_const_cpuset_t</type>
       <name>hwloc_topology_get_complete_cpuset</name>
       <anchorfile>a00060.html</anchorfile>
-      <anchor>ga75f0ac3ac41e9915541c3ae3153a6e26</anchor>
-      <arglist>(hwloc_topology_t topology)</arglist>
+      <anchor>ga418ebb39eaf1eac8f9cf4047cf59a534</anchor>
+      <arglist>(hwloc_topology_t topology) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_const_cpuset_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_const_cpuset_t</type>
       <name>hwloc_topology_get_topology_cpuset</name>
       <anchorfile>a00060.html</anchorfile>
-      <anchor>ga4497338d1cbae6f8a6d68cb14234d5d8</anchor>
-      <arglist>(hwloc_topology_t topology)</arglist>
+      <anchor>gaa319133e702fea664750c45735ac8a25</anchor>
+      <arglist>(hwloc_topology_t topology) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_const_cpuset_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_const_cpuset_t</type>
       <name>hwloc_topology_get_online_cpuset</name>
       <anchorfile>a00060.html</anchorfile>
-      <anchor>gad00abc77f1670049a5b2139471d0c8db</anchor>
-      <arglist>(hwloc_topology_t topology)</arglist>
+      <anchor>gafeb07985e2cc66aee1da447aff0bcab8</anchor>
+      <arglist>(hwloc_topology_t topology) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_const_cpuset_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_const_cpuset_t</type>
       <name>hwloc_topology_get_allowed_cpuset</name>
       <anchorfile>a00060.html</anchorfile>
-      <anchor>ga95f116c4c0b1ff2c6418c16341fc2e57</anchor>
-      <arglist>(hwloc_topology_t topology)</arglist>
+      <anchor>ga08e3b14e1fe7642b383633d34c1f3c4a</anchor>
+      <arglist>(hwloc_topology_t topology) __hwloc_attribute_pure</arglist>
     </member>
   </compound>
   <compound kind="group">
@@ -1376,25 +1378,25 @@
     <title>Nodeset Helpers</title>
     <filename>a00061.html</filename>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_const_nodeset_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_const_nodeset_t</type>
       <name>hwloc_topology_get_complete_nodeset</name>
       <anchorfile>a00061.html</anchorfile>
-      <anchor>gaf8331b6d5e60c463f7ebe21a878561d4</anchor>
-      <arglist>(hwloc_topology_t topology)</arglist>
+      <anchor>gaddb7a1f3d71510bb011189e0b8edf29f</anchor>
+      <arglist>(hwloc_topology_t topology) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_const_nodeset_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_const_nodeset_t</type>
       <name>hwloc_topology_get_topology_nodeset</name>
       <anchorfile>a00061.html</anchorfile>
-      <anchor>gae6821ede7676dfac0515a4b7b04b0397</anchor>
-      <arglist>(hwloc_topology_t topology)</arglist>
+      <anchor>ga78f80a3c04718ca273791a1071512031</anchor>
+      <arglist>(hwloc_topology_t topology) __hwloc_attribute_pure</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline hwloc_const_nodeset_t __hwloc_attribute_pure</type>
+      <type>static __hwloc_inline hwloc_const_nodeset_t</type>
       <name>hwloc_topology_get_allowed_nodeset</name>
       <anchorfile>a00061.html</anchorfile>
-      <anchor>ga5d829323f8d283687be43ea8c894eb3b</anchor>
-      <arglist>(hwloc_topology_t topology)</arglist>
+      <anchor>ga13915b8e074f59fbdf8f973739509293</anchor>
+      <arglist>(hwloc_topology_t topology) __hwloc_attribute_pure</arglist>
     </member>
   </compound>
   <compound kind="group">
@@ -1955,18 +1957,18 @@
     <title>Helpers for manipulating Linux libnuma bitmask</title>
     <filename>a00069.html</filename>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline struct bitmask *__hwloc_attribute_malloc</type>
+      <type>static __hwloc_inline struct bitmask *</type>
       <name>hwloc_cpuset_to_linux_libnuma_bitmask</name>
       <anchorfile>a00069.html</anchorfile>
-      <anchor>ga067ec565345a346bfd9d721cff5901ae</anchor>
-      <arglist>(hwloc_topology_t topology, hwloc_const_cpuset_t cpuset)</arglist>
+      <anchor>ga1a2ad777b9b4cf4aac0123f61c3ab8bd</anchor>
+      <arglist>(hwloc_topology_t topology, hwloc_const_cpuset_t cpuset) __hwloc_attribute_malloc</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static __hwloc_inline struct bitmask *__hwloc_attribute_malloc</type>
+      <type>static __hwloc_inline struct bitmask *</type>
       <name>hwloc_nodeset_to_linux_libnuma_bitmask</name>
       <anchorfile>a00069.html</anchorfile>
-      <anchor>gaa2c4cb4075422a19e07c450dc7092e69</anchor>
-      <arglist>(hwloc_topology_t topology, hwloc_const_nodeset_t nodeset)</arglist>
+      <anchor>gab67a395c48ddb56307b1465fab9bb9e6</anchor>
+      <arglist>(hwloc_topology_t topology, hwloc_const_nodeset_t nodeset) __hwloc_attribute_malloc</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static __hwloc_inline int</type>

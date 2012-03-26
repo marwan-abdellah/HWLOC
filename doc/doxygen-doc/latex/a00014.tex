@@ -1,0 +1,86 @@
+\hypertarget{a00014}{
+\section{hwloc\_\-distances\_\-s Struct Reference}
+\label{a00014}\index{hwloc\_\-distances\_\-s@{hwloc\_\-distances\_\-s}}
+}
+
+
+Distances between objects.  
+
+
+
+
+{\ttfamily \#include $<$hwloc.h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \hyperlink{a00014_a6fe066eaf62ee448aa05bab8e7217ff7}{relative\_\-depth}
+\item 
+unsigned \hyperlink{a00014_a4ca2af858cebbce7324ec49903d09474}{nbobjs}
+\item 
+float $\ast$ \hyperlink{a00014_a0f70f48d1bfb18e5e2008825da2967c9}{latency}
+\item 
+float \hyperlink{a00014_aab61bd1d1ae2e121bfe793c973ec829e}{latency\_\-max}
+\item 
+float \hyperlink{a00014_a204416418049a272bfb51602fc676342}{latency\_\-base}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Distances between objects. One object may contain a distance structure describing distances between all its descendants at a given relative depth. If the containing object is the root object of the topology, then the distances are available for all objects in the machine.
+
+If the {\ttfamily latency} pointer is not {\ttfamily NULL}, the pointed array contains memory latencies (non-\/zero values), as defined by the ACPI SLIT specification.
+
+In the future, some other types of distances may be considered. In these cases, {\ttfamily latency} may be {\ttfamily NULL}. 
+
+\subsection{Field Documentation}
+\hypertarget{a00014_a0f70f48d1bfb18e5e2008825da2967c9}{
+\index{hwloc\_\-distances\_\-s@{hwloc\_\-distances\_\-s}!latency@{latency}}
+\index{latency@{latency}!hwloc_distances_s@{hwloc\_\-distances\_\-s}}
+\subsubsection[{latency}]{\setlength{\rightskip}{0pt plus 5cm}float$\ast$ {\bf hwloc\_\-distances\_\-s::latency}}}
+\label{a00014_a0f70f48d1bfb18e5e2008825da2967c9}
+
+
+Matrix of latencies between objects, stored as a one-\/dimension array. May be {\ttfamily NULL} if the distances considered here are not latencies. Values are normalized to get 1.0 as the minimal value in the matrix. Latency from i-\/th to j-\/th object is stored in slot i$\ast$nbobjs+j. 
+
+\hypertarget{a00014_a204416418049a272bfb51602fc676342}{
+\index{hwloc\_\-distances\_\-s@{hwloc\_\-distances\_\-s}!latency\_\-base@{latency\_\-base}}
+\index{latency\_\-base@{latency\_\-base}!hwloc_distances_s@{hwloc\_\-distances\_\-s}}
+\subsubsection[{latency\_\-base}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf hwloc\_\-distances\_\-s::latency\_\-base}}}
+\label{a00014_a204416418049a272bfb51602fc676342}
+
+
+The multiplier that should be applied to latency matrix to retrieve the original OS-\/provided latencies. Usually 10 on Linux since ACPI SLIT uses 10 for local latency. 
+
+\hypertarget{a00014_aab61bd1d1ae2e121bfe793c973ec829e}{
+\index{hwloc\_\-distances\_\-s@{hwloc\_\-distances\_\-s}!latency\_\-max@{latency\_\-max}}
+\index{latency\_\-max@{latency\_\-max}!hwloc_distances_s@{hwloc\_\-distances\_\-s}}
+\subsubsection[{latency\_\-max}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf hwloc\_\-distances\_\-s::latency\_\-max}}}
+\label{a00014_aab61bd1d1ae2e121bfe793c973ec829e}
+
+
+The maximal value in the latency matrix. 
+
+\hypertarget{a00014_a4ca2af858cebbce7324ec49903d09474}{
+\index{hwloc\_\-distances\_\-s@{hwloc\_\-distances\_\-s}!nbobjs@{nbobjs}}
+\index{nbobjs@{nbobjs}!hwloc_distances_s@{hwloc\_\-distances\_\-s}}
+\subsubsection[{nbobjs}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf hwloc\_\-distances\_\-s::nbobjs}}}
+\label{a00014_a4ca2af858cebbce7324ec49903d09474}
+
+
+Number of objects considered in the matrix. It is the number of descendant objects at {\ttfamily relative\_\-depth} below the containing object. It corresponds to the result of hwloc\_\-get\_\-nbobjs\_\-inside\_\-cpuset\_\-by\_\-depth. 
+
+\hypertarget{a00014_a6fe066eaf62ee448aa05bab8e7217ff7}{
+\index{hwloc\_\-distances\_\-s@{hwloc\_\-distances\_\-s}!relative\_\-depth@{relative\_\-depth}}
+\index{relative\_\-depth@{relative\_\-depth}!hwloc_distances_s@{hwloc\_\-distances\_\-s}}
+\subsubsection[{relative\_\-depth}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf hwloc\_\-distances\_\-s::relative\_\-depth}}}
+\label{a00014_a6fe066eaf62ee448aa05bab8e7217ff7}
+
+
+Relative depth of the considered objects below the object containing this distance information. 
+
+
+
+The documentation for this struct was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+hwloc.h\end{DoxyCompactItemize}

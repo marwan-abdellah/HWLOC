@@ -1,6 +1,6 @@
 /*
  * Copyright © 2010-2011 inria.  All rights reserved.
- * Copyright © 2011 Université Bordeaux 1
+ * Copyright © 2011-2012 Université Bordeaux 1
  * Copyright © 2011 Cisco Systems, Inc.  All rights reserved.
  * See COPYING in top-level directory.
  */
@@ -511,9 +511,32 @@ hwloc_distances__finalize_logical(struct hwloc_topology *topology,
   }
   /* find the object covering cpuset AND nodeset (can't use hwloc_get_obj_covering_cpuset()) */
   root = hwloc_get_obj_covering_cpuset_nodeset(topology, cpuset, nodeset);
-  assert(root);
-  assert(hwloc_bitmap_isequal(cpuset, root->cpuset));
-  assert(hwloc_bitmap_isequal(nodeset, root->nodeset));
+  if (!root) {
+    /* should not happen, ignore the distance matrix and report an error. */
+    if (!hwloc_hide_errors()) {
+      char *a, *b;
+      hwloc_bitmap_asprintf(&a, cpuset);
+      hwloc_bitmap_asprintf(&b, nodeset);
+      fprintf(stderr, "****************************************************************************\n");
+      fprintf(stderr, "* Hwloc has encountered an error when adding a distance matrix to the topology.\n");
+      fprintf(stderr, "*\n");
+      fprintf(stderr, "* hwloc_distances__finalize_logical() could not find any object covering\n");
+      fprintf(stderr, "* cpuset %s and nodeset %s\n", a, b);
+      fprintf(stderr, "*\n");
+      fprintf(stderr, "* Please report this error message to the hwloc user's mailing list,\n");
+      fprintf(stderr, "* along with the output from the hwloc-gather-topology.sh script.\n");
+      fprintf(stderr, "****************************************************************************\n");
+      free(a);
+      free(b);
+    }
+    hwloc_bitmap_free(cpuset);
+    hwloc_bitmap_free(nodeset);
+    return;
+  }
+  /* ideally, root has the exact cpuset and nodeset.
+   * but ignoring or other things that remove objects may cause the object array to reduce */
+  assert(hwloc_bitmap_isincluded(cpuset, root->cpuset));
+  assert(hwloc_bitmap_isincluded(nodeset, root->nodeset));
   hwloc_bitmap_free(cpuset);
   hwloc_bitmap_free(nodeset);
   if (root->depth >= objs[0]->depth) {
@@ -853,8 +876,11 @@ hwloc__groups_by_distances(struct hwloc_topology *topology,
 	    if (groupids[j])
                 GROUP_DISTANCE(groupids[i]-1, groupids[j]-1) += DISTANCE(i, j);
       for(i=0; i<nbgroups; i++)
-          for(j=0; j<nbgroups; j++)
-              GROUP_DISTANCE(i, j) /= groupsizes[i]*groupsizes[j];
+          for(j=0; j<nbgroups; j++) {
+              unsigned groupsize = groupsizes[i]*groupsizes[j];
+              float groupsizef = (float) groupsize;
+              GROUP_DISTANCE(i, j) /= groupsizef;
+          }
 #ifdef HWLOC_DEBUG
       hwloc_debug("%s", "generated new distance matrix between groups:\n");
       hwloc_debug("%s", "  index");

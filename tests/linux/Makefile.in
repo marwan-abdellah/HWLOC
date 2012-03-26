@@ -225,7 +225,6 @@ MANIFEST_TOOL = @MANIFEST_TOOL@
 MKDIR_P = @MKDIR_P@
 NM = @NM@
 NMEDIT = @NMEDIT@
-NVCTRL_LIBS = @NVCTRL_LIBS@
 OBJDUMP = @OBJDUMP@
 OBJEXT = @OBJEXT@
 OTOOL = @OTOOL@
@@ -930,7 +929,7 @@ uninstall-am: uninstall-binSCRIPTS
 
 
 install-exec-hook:
-	$(SED) -e 's/abs_top_builddir\/utils/bindir/' -e '/abs_top_builddir/d' -i $(DESTDIR)$(bindir)/hwloc-gather-topology
+	$(SED) -e 's/abs_top_builddir\/utils/bindir/' -e '/abs_top_builddir/d' $(DESTDIR)$(bindir)/hwloc-gather-topology > $(DESTDIR)$(bindir)/hwloc-gather-topology.tmp && mv -f $(DESTDIR)$(bindir)/hwloc-gather-topology.tmp $(DESTDIR)$(bindir)/hwloc-gather-topology
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

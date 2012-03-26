@@ -31,9 +31,10 @@
 #include <hwloc/gl.h>
 #endif
 
+
 #define CONFIG_SPACE_CACHESIZE 256
 
-void
+static void
 hwloc_pci_traverse_print_cb(struct hwloc_topology *topology __hwloc_attribute_unused, struct hwloc_obj *pcidev, int depth __hwloc_attribute_unused)
 {
   char busid[14];
@@ -184,13 +185,12 @@ hwloc_linux_lookup_dpy_class(struct hwloc_topology *topology, struct hwloc_obj *
      * and add a display object with the display name */
     if (display.port > -1 && display.device > -1) {
         char display_name[64];
-        snprintf(display_name, sizeof(display_name), ":%d.%d", (display.port), display.device);
+        snprintf(display_name, sizeof(display_name), " dpy=:%d.%d", (display.port), display.device);
         hwloc_topology_insert_misc_object_by_parent(topology, pcidev, display_name);
         hwloc_linux_add_os_device(topology, pcidev, HWLOC_OBJ_OSDEV_DISPLAY, display_name);
     }
 #endif
 }
-
 
 /* block class objects are in
  * host%d/target%d:%d:%d/%d:%d:%d:%d/
@@ -541,11 +541,9 @@ hwloc_pci_find_hostbridge_parent(struct hwloc_topology *topology, struct hwloc_o
   /* restrict to the existing topology cpuset to avoid errors later */
   hwloc_bitmap_and(cpuset, cpuset, topology->levels[0][0]->cpuset);
 
-  /* why not inserting a group and let the core remove it if useless?
-   * 1) we need to make sure that the group is above all objects
-   * with same cpuset (to avoid attaching to caches or so)
-   * 2) the merge-keep-structure code is already done when coming here
-   */
+  /* if the remaining cpuset is empty, take the root */
+  if (hwloc_bitmap_iszero(cpuset))
+    hwloc_bitmap_copy(cpuset, hwloc_topology_get_topology_cpuset(topology));
 
   /* attach the hostbridge now that it contains the right objects */
   parent = hwloc_get_obj_covering_cpuset(topology, cpuset);

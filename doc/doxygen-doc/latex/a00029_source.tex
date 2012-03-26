@@ -1,0 +1,104 @@
+\hypertarget{a00029_source}{
+\section{cudart.h}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * Copyright © 2010 inria.  All rights reserved.}
+00003 \textcolor{comment}{ * Copyright © 2010-2011 Université Bordeaux 1}
+00004 \textcolor{comment}{ * Copyright © 2011 Cisco Systems, Inc.  All rights reserved.}
+00005 \textcolor{comment}{ * See COPYING in top-level directory.}
+00006 \textcolor{comment}{ */}
+00007 
+00016 \textcolor{preprocessor}{#ifndef HWLOC\_CUDART\_H}
+00017 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define HWLOC\_CUDART\_H}
+00018 \textcolor{preprocessor}{}
+00019 \textcolor{preprocessor}{#include <hwloc.h>}
+00020 \textcolor{preprocessor}{#include <hwloc/autogen/config.h>}
+00021 \textcolor{preprocessor}{#include <hwloc/linux.h>}
+00022 \textcolor{preprocessor}{#include <hwloc/helper.h>}
+00023 
+00024 \textcolor{preprocessor}{#include <cuda\_runtime\_api.h>}
+00025 
+00026 
+00027 \textcolor{preprocessor}{#ifdef \_\_cplusplus}
+00028 \textcolor{preprocessor}{}\textcolor{keyword}{extern} \textcolor{stringliteral}{"C"} \{
+00029 \textcolor{preprocessor}{#endif}
+00030 \textcolor{preprocessor}{}
+00031 
+00038 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00029_source_l00039}{}\hyperlink{a00072_ga1cbf127459986c345f873e2752ddf681}{00039} \hyperlink{a00072_ga1cbf127459986c345f873e2752ddf681}{hwloc_cudart_get_device_pci_ids}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology \_\_hwloc\_attribute\_unuse
+      d,
+00040                                \textcolor{keywordtype}{int} device, \textcolor{keywordtype}{int} *domain, \textcolor{keywordtype}{int} *bus, \textcolor{keywordtype}{int} *dev)
+00041 \{
+00042   cudaError\_t cerr;
+00043   \textcolor{keyword}{struct }cudaDeviceProp prop;
+00044 
+00045   cerr = cudaGetDeviceProperties(&prop, device);
+00046   \textcolor{keywordflow}{if} (cerr) \{
+00047     errno = ENOSYS;
+00048     \textcolor{keywordflow}{return} -1;
+00049   \}
+00050 
+00051 \textcolor{preprocessor}{#if CUDART\_VERSION >= 4000}
+00052 \textcolor{preprocessor}{}  *domain = prop.pciDomainID;
+00053 \textcolor{preprocessor}{#else}
+00054 \textcolor{preprocessor}{}  *domain = 0;
+00055 \textcolor{preprocessor}{#endif}
+00056 \textcolor{preprocessor}{}
+00057   *bus = prop.pciBusID;
+00058   *dev = prop.pciDeviceID;
+00059 
+00060   \textcolor{keywordflow}{return} 0;
+00061 \}
+00062 
+00071 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00029_source_l00072}{}\hyperlink{a00072_ga2daaf1dd1a9a7f11ccbc6821374120e9}{00072} \hyperlink{a00072_ga2daaf1dd1a9a7f11ccbc6821374120e9}{hwloc_cudart_get_device_cpuset}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology \_\_hwloc\_attribute\_unused
+      ,
+00073                                \textcolor{keywordtype}{int} device, \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc_cpuset_t} \textcolor{keyword}{set})
+00074 \{
+00075 \textcolor{preprocessor}{#ifdef HWLOC\_LINUX\_SYS}
+00076 \textcolor{preprocessor}{}  \textcolor{comment}{/* If we're on Linux, use the sysfs mechanism to get the local cpus */}
+00077 \textcolor{preprocessor}{#define HWLOC\_CUDART\_DEVICE\_SYSFS\_PATH\_MAX 128}
+00078 \textcolor{preprocessor}{}  \textcolor{keywordtype}{char} path[HWLOC\_CUDART\_DEVICE\_SYSFS\_PATH\_MAX];
+00079   FILE *sysfile = NULL;
+00080   \textcolor{keywordtype}{int} domain, bus, dev;
+00081   \textcolor{keywordflow}{if} (\hyperlink{a00072_ga1cbf127459986c345f873e2752ddf681}{hwloc_cudart_get_device_pci_ids}(topology, device, &domain, &bus, &dev))
+00082     \textcolor{keywordflow}{return} -1;
+00083 
+00084   sprintf(path, \textcolor{stringliteral}{"/sys/bus/pci/devices/%04x:%02x:%02x.0/local\_cpus"}, domain, bus, 
+      dev);
+00085   sysfile = fopen(path, \textcolor{stringliteral}{"r"});
+00086   \textcolor{keywordflow}{if} (!sysfile)
+00087     \textcolor{keywordflow}{return} -1;
+00088 
+00089   \hyperlink{a00067_gaeacad897c30dbea284948374ad4b010c}{hwloc_linux_parse_cpumap_file}(sysfile, \textcolor{keyword}{set});
+00090   \textcolor{keywordflow}{if} (\hyperlink{a00065_gaa94fed35d2a598bc4a8657b6955b7bf5}{hwloc_bitmap_iszero}(\textcolor{keyword}{set}))
+00091     \hyperlink{a00065_gab14743355fa03b36cef521cbcd2fbf64}{hwloc_bitmap_copy}(\textcolor{keyword}{set}, \hyperlink{a00060_ga418ebb39eaf1eac8f9cf4047cf59a534}{hwloc_topology_get_complete_cpuset}(topology));
+00092 
+00093   fclose(sysfile);
+00094 \textcolor{preprocessor}{#else}
+00095 \textcolor{preprocessor}{}  \textcolor{comment}{/* Non-Linux systems simply get a full cpuset */}
+00096   \hyperlink{a00065_gab14743355fa03b36cef521cbcd2fbf64}{hwloc_bitmap_copy}(\textcolor{keyword}{set}, \hyperlink{a00060_ga418ebb39eaf1eac8f9cf4047cf59a534}{hwloc_topology_get_complete_cpuset}(topology));
+00097 \textcolor{preprocessor}{#endif}
+00098 \textcolor{preprocessor}{}  \textcolor{keywordflow}{return} 0;
+00099 \}
+00100 
+00107 \textcolor{keyword}{static} \_\_hwloc\_inline \hyperlink{a00016}{hwloc_obj_t}
+\hypertarget{a00029_source_l00108}{}\hyperlink{a00072_gaaff84cc4ee4b27f35b21c33626651da0}{00108} \hyperlink{a00072_gaaff84cc4ee4b27f35b21c33626651da0}{hwloc_cudart_get_device_pcidev}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology, \textcolor{keywordtype}{int} device)
+00109 \{
+00110   \textcolor{keywordtype}{int} domain, bus, dev;
+00111 
+00112   \textcolor{keywordflow}{if} (\hyperlink{a00072_ga1cbf127459986c345f873e2752ddf681}{hwloc_cudart_get_device_pci_ids}(topology, device, &domain, &bus, &dev))
+00113     \textcolor{keywordflow}{return} NULL;
+00114 
+00115   \textcolor{keywordflow}{return} \hyperlink{a00064_ga546e1d690c63fb24177f3013ed78ceb1}{hwloc_get_pcidev_by_busid}(topology, domain, bus, dev, 0);
+00116 \}
+00117 
+00121 \textcolor{preprocessor}{#ifdef \_\_cplusplus}
+00122 \textcolor{preprocessor}{}\} \textcolor{comment}{/* extern "C" */}
+00123 \textcolor{preprocessor}{#endif}
+00124 \textcolor{preprocessor}{}
+00125 
+00126 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* HWLOC\_CUDART\_H */}
+\end{DoxyCode}

@@ -29,9 +29,11 @@ sources = \
         topology-xml.c \
         bind.c \
         cpuset.c \
-        misc.c
-        
-ldflags = 
+        misc.c \
+        NVCtrl.c \
+        gl.c
+               
+ldflags =
 
 # Conditionally add to the sources and ldflags
 
@@ -104,7 +106,7 @@ sources += topology-x86.c
 # Installable library
 
 libhwloc_la_SOURCES = $(sources)
-libhwloc_la_LDFLAGS = $(ldflags) -version-number $(libhwloc_so_version) $(HWLOC_LIBS) 
+libhwloc_la_LDFLAGS = $(ldflags) -version-info $(libhwloc_so_version) $(HWLOC_LIBS)
 
 # Embedded library (note the lack of a .so version number -- that
 # intentionally only appears in the installable library).  Also note
