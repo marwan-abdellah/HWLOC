@@ -170,16 +170,18 @@ hwloc_linux_lookup_drm_class(struct hwloc_topology *topology, struct hwloc_obj *
    */
 }
 
+/*
+ * Looks for the GPUs connected to the system and then shows
+ * the attached displays to them
+ */
 static void
 hwloc_linux_lookup_dpy_class(struct hwloc_topology *topology, struct hwloc_obj *pcidev)
 {
 #ifdef HWLOC_HAVE_GL
-    struct gpu_info gpu_ids;
-    gpu_ids.pci_device_id = pcidev->attr->pcidev.device_id;
-    gpu_ids.bus_id = pcidev->attr->pcidev.bus;
+    const int pci_bus_id = pcidev->attr->pcidev.bus;
 
     /* Getting the display info */
-    struct display_info display = get_gpu_display(gpu_ids);
+    struct display_info display = get_gpu_display(pci_bus_id);
 
     /* If GPU, Appending the display as a children to the GPU
      * and add a display object with the display name */

@@ -1,5 +1,6 @@
 /*
  * Copyright © 2012 Blue Brain Project, EPFL. All rights reserved.
+ * See COPYING in top-level directory.
  */
 
 #include <private/autogen/config.h>
@@ -14,30 +15,26 @@
 
 /*****************************************************************
  * Queries a display defined by its port and device numbers, and
- * returns the PCI ID and bus ID of the GPU connected to it.
+ * returns the bus ID of the GPU connected to it.
  ****************************************************************/
-struct gpu_info query_display(char* displayName)
+static int query_display(char* displayName)
 {
-  /* ID of the GPU connected to the input display */
-  struct gpu_info gpu_ids;
-  gpu_ids.bus_id = -1;
-  gpu_ids.pci_device_id = -1;
+  /* Bus ID of the GPU connected to the input display */
+  int bus_id = -1;
 
 #ifdef HWLOC_HAVE_GL
   Display* display = XOpenDisplay(displayName);
   if (display == 0) {
-      /* fprintf(stderr, "DISPLAY %s is NOT existing \n", displayName); */
-      return gpu_ids;
+      return bus_id;
   }
+  // TODO: check for NV_CONTROL X Extension
 
-  /* Query the number of screens connected to display */
-  int number_screens;
-  int sucess = XNVCTRLQueryTargetCount (display, NV_CTRL_TARGET_TYPE_X_SCREEN, &number_screens);
-
-  /* If query fails */
-  if (!sucess) {
-      fprintf(stderr, "Failed to retrieve the total number of screens attached to %s \n", displayName);
-      return gpu_ids;
+  int major, event, error;
+  if( !XQueryExtension( display, "NV_CONTROL", &major, &event, &error ))
+  {
+      XCloseDisplay( display);
+      printf("Missing extension \n");
+      return bus_id;
   }
 
   /* Default screen number */
@@ -47,86 +44,89 @@ struct gpu_info query_display(char* displayName)
    * For further details, see the <NVCtrl/NVCtrlLib.h> */
   unsigned int *ptr_binary_data;
   int data_lenght;
-  sucess = XNVCTRLQueryTargetBinaryData (display, NV_CTRL_TARGET_TYPE_X_SCREEN, default_screen_number, 0,
-                                         NV_CTRL_BINARY_DATA_GPUS_USED_BY_XSCREEN,
-                                         (unsigned char **) &ptr_binary_data, &data_lenght);
+
+  const int sucess = XNVCTRLQueryTargetBinaryData (display, NV_CTRL_TARGET_TYPE_X_SCREEN, default_screen_number, 0,
+                                                   NV_CTRL_BINARY_DATA_GPUS_USED_BY_XSCREEN,
+                                                   (unsigned char **) &ptr_binary_data, &data_lenght);
   if (!sucess) {
       fprintf(stderr, "Failed to query the GPUs attached to the default screen \n");
-      return gpu_ids;
-  }
-
-  const int gpu_number = ptr_binary_data[1];
-  free(ptr_binary_data);
-
-  /* Gets the PCI ID of the GPU defined by gpu_number
-   * For further details, see the <NVCtrl/NVCtrlLib.h> */
-  int nvCtrlPciId;
-  int sucess_id = XNVCTRLQueryTargetAttribute (display, NV_CTRL_TARGET_TYPE_GPU, gpu_number, 0, NV_CTRL_PCI_ID, &nvCtrlPciId);
-
-  /* Gets the Bus ID of the GPU defined by gpu_number
-   * For further details, see the <NVCtrl/NVCtrlLib.h> */
-  int nvCtrlPciBusId;
-  int sucess_bus = XNVCTRLQueryTargetAttribute(display, NV_CTRL_TARGET_TYPE_GPU, gpu_number, 0, NV_CTRL_PCI_BUS, &nvCtrlPciBusId);
-
-  if (sucess_id && sucess_bus) {
-      gpu_ids.pci_device_id = (int) nvCtrlPciId & 0x0000FFFF;
-      gpu_ids.bus_id = nvCtrlPciBusId;
 
       /* Closing the connection */
       XCloseDisplay(display);
-      return gpu_ids;
+      return bus_id;
+  }
+
+  const int success = XNVCTRLQueryTargetBinaryData (display, NV_CTRL_TARGET_TYPE_X_SCREEN, default_screen_number, 0,
+                                                    NV_CTRL_BINARY_DATA_GPUS_USED_BY_XSCREEN,
+                                                    (unsigned char **) &ptr_binary_data, &data_lenght);
+  if (success) {
+      const int gpu_number = ptr_binary_data[1];
+      free(ptr_binary_data);
+
+      /* Gets the bus ID of the GPU defined by gpu_number
+       * For further details, see the <NVCtrl/NVCtrlLib.h> */
+      int nvCtrlPciBusId;
+      const int success_bus = XNVCTRLQueryTargetAttribute(display, NV_CTRL_TARGET_TYPE_GPU, gpu_number, 0,
+                                                          NV_CTRL_PCI_BUS, &nvCtrlPciBusId);
+      if (success_bus) {
+        bus_id = nvCtrlPciBusId;
+      }
+  else
+    fprintf(stderr, "Failed to query the GPUs attached to the default screen \n");
   }
 
   /* Closing the connection */
   XCloseDisplay(display);
+  return bus_id;
 #else
   fprintf(stderr, "GL module is not supported \n");
+  return bus_id;
 #endif
-  return gpu_ids;
 }
 
 /*****************************************************************
  * Returns a DISPLAY for a given GPU.
- * The returned structure should have the format
+ * The returned structure should have the formatget_gpu_display
  * "[:][port][.][device]"
  ****************************************************************/
-struct display_info get_gpu_display(const struct gpu_info gpu_ids)
+struct display_info get_gpu_display(const int bus_id)
 {
-    // TODO: Modify the search mechanism later
-    struct display_info display;
-    display.port = -1;
-    display.device = -1;
+  struct display_info display;
+  display.port = -1;
+  display.device = -1;
 
-    int x_server_max = 10;
-    int x_screen_max = 10;
+  int x_server_max = 10;
+  int x_screen_max = 10;
 
-    int i,j;
-    for (i = 0; i < x_server_max; ++i) {
-        for (j = 0; j < x_screen_max; ++j) {
+  int i,j;
+  for (i = 0; i < x_server_max; ++i) {
+      for (j = 0; j < x_screen_max; ++j) {
 
-            /* Set the display name with the format "[:][x_server][.][x_screen]" */
-            char x_display [10];
-            snprintf(x_display,sizeof(x_display),":%d.%d",i, j);
+          /* Set the display name with the format "[:][x_server][.][x_screen]" */
+          char x_display [10];
+          snprintf(x_display,sizeof(x_display),":%d.%d", i, j);
 
-            /* Connection failure */
-            if (gpu_ids.bus_id != query_display(x_display).bus_id) {
-                continue;
-            }
-            else {
-                display.port = i;
-                display.device = j;
-                return display;
-            }
-        }
-    }
-    return display;
+
+          const query_bus_id = query_display(x_display);
+          if (query_bus_id == bus_id) {
+            display.port = i;
+            display.device = j;
+            return display;
+          }
+
+          /* Connection failure */
+          if (query_bus_id == -1) /* No X server on port/device */
+            break;
+      }
+  }
+  return display;
 }
 
 /*****************************************************************
  * Returns a cpuset of the socket attached to the host bridge
  * where the GPU defined by gpu_ids is connected in the topology.
  ****************************************************************/
- hwloc_bitmap_t get_gpu_cpuset(const hwloc_topology_t topology, const struct gpu_info gpu_ids)
+hwloc_bitmap_t get_pci_cpuset(const hwloc_topology_t topology, const int bus_id)
 {
     /* The number of PCI devices in the topology */
     const int pci_dev_count = hwloc_get_nbobjs_by_type(topology, HWLOC_OBJ_PCI_DEVICE);
@@ -137,7 +137,7 @@ struct display_info get_gpu_display(const struct gpu_info gpu_ids)
         const hwloc_obj_t pci_dev_object = hwloc_get_obj_by_type (topology, HWLOC_OBJ_PCI_DEVICE, i);
 
         /* PCI device ID */
-         if (gpu_ids.pci_device_id == pci_dev_object->attr->pcidev.device_id && gpu_ids.bus_id == pci_dev_object->attr->pcidev.bus) {
+        if (bus_id == pci_dev_object->attr->pcidev.bus) {
 
              /* Host bridge of the PCI device */
             const hwloc_obj_t host_bridge = hwloc_get_hostbridge_by_pcibus (topology,
@@ -148,7 +148,6 @@ struct display_info get_gpu_display(const struct gpu_info gpu_ids)
             * at which the PCI device is connected */
             return hwloc_bitmap_dup(host_bridge->prev_sibling->cpuset);
          }
-         else continue;
     }
 
     /* If not existing in the topology */
@@ -166,8 +165,8 @@ hwloc_bitmap_t get_display_cpuset(const hwloc_topology_t topology, const int por
     char x_display [10];
     snprintf(x_display,sizeof(x_display),":%d.%d", port, device);
 
-    const struct gpu_info gpu_ids = query_display(x_display);
-    const hwloc_bitmap_t cpuset = get_gpu_cpuset(topology, gpu_ids);
+    const int gpu_bus_id = query_display(x_display);
+    const hwloc_bitmap_t cpuset = get_pci_cpuset(topology, gpu_bus_id);
 
     return hwloc_bitmap_dup(cpuset);
 }

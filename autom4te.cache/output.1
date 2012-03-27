@@ -11645,10 +11645,10 @@ $as_echo "@%:@define HWLOC_HAVE_LIBPCI 1" >>confdefs.h
     HWLOC_CFLAGS="$HWLOC_CFLAGS $HWLOC_PCI_CFLAGS"
     
     # GL Support 
-    hwloc_gl_happy=no 									
-	if test "x$enable_gl" != "xno"; then				 
-       hwloc_gl_happy=yes								
-      
+    hwloc_gl_happy=no
+    if test "x$enable_gl" != "xno"; then
+    	hwloc_gl_happy=yes								
+   
        # X11 support. Cairo is checking for this module. 
        # Check if found for not in order not to DUBLICATE the search.    
        if test "x$found_X11" != "xyes"; then 
@@ -11727,17 +11727,17 @@ fi
 
 done
 
-        fi 
+       fi 
         
-        # If X11 was not found disable the GL Module 
-        if test "x$enable_X11" != "xyes"; then
-          { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: X11 headers not found, GL back-end disabled" >&5
+       # If X11 was not found disable the GL Module 
+       if test "x$enable_X11" != "xyes"; then
+       		{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: X11 headers not found, GL back-end disabled" >&5
 $as_echo "$as_me: WARNING: X11 headers not found, GL back-end disabled" >&2;}
-          hwloc_gl_happy=no
-        fi
+       		hwloc_gl_happy=no
+       fi
 	  
-        # Xext support.  
-        { $as_echo "$as_me:${as_lineno-$LINENO}: checking for XextFindDisplay in -lXext" >&5
+       # Xext support.  
+       { $as_echo "$as_me:${as_lineno-$LINENO}: checking for XextFindDisplay in -lXext" >&5
 $as_echo_n "checking for XextFindDisplay in -lXext... " >&6; }
 if test "${ac_cv_lib_Xext_XextFindDisplay+set}" = set; then :
   $as_echo_n "(cached) " >&6
@@ -11780,30 +11780,30 @@ if test "x$ac_cv_lib_Xext_XextFindDisplay" = x""yes; then :
 fi
 
          
-        # If Xext was not found disable the GL Module 
-         if test "x$enable_Xext" != "xyes"; then
-          { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Xext libs not found, GL back-end disabled" >&5
+       # If Xext was not found disable the GL Module 
+       if test "x$enable_Xext" != "xyes"; then
+       		{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Xext libs not found, GL back-end disabled" >&5
 $as_echo "$as_me: WARNING: Xext libs not found, GL back-end disabled" >&2;}
-          hwloc_gl_happy=no
-        fi
+          	hwloc_gl_happy=no
+       fi
        
-  		if test "x$hwloc_gl_happy" = "xyes"; then
-  		  
+       if test "x$hwloc_gl_happy" = "xyes"; then
+       		
 $as_echo "@%:@define HWLOC_HAVE_GL 1" >>confdefs.h
 
-  		  HWLOC_HAVE_GL=1
+  		  	HWLOC_HAVE_GL=1
 
-  		  CFLAGS="$HWLOC_CFLAGS $HWLOC_X11_CFLAGS -I../include/hwloc/NVCtrl"    
-  		  LIBS="$HWLOC_LIBS $HWLOC_X11_LIBS $HWLOC_XEXT_LIBS"
-  		else
-  		  if test "$enable_gl" = "yes"; then :
+  		  	CFLAGS="$HWLOC_CFLAGS $HWLOC_X11_CFLAGS -I../include/hwloc/NVCtrl"    
+  		  	LIBS="$HWLOC_LIBS $HWLOC_X11_LIBS $HWLOC_XEXT_LIBS"
+	   else
+	   		if test "$enable_gl" = "yes"; then :
   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: --enable-gl requested, but GL/X11 support was not found due to a missing component" >&5
 $as_echo "$as_me: WARNING: --enable-gl requested, but GL/X11 support was not found due to a missing component" >&2;}
-               as_fn_error $? "Cannot continue" "$LINENO" 5 
+	   		as_fn_error $? "Cannot continue" "$LINENO" 5 
 fi
-  		  HWLOC_HAVE_GL=0
+	   		HWLOC_HAVE_GL=0
 
-  		fi      
+ 	   fi      
     fi
     
     # libxml2 support

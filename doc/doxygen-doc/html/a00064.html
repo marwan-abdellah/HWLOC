@@ -48,8 +48,39 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static inline <a class="el" href="a00016.html">hwloc_obj_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00064.html#ga2bd3f856d0fc3c6c02642c17d763b823">hwloc_get_next_bridge</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, <a class="el" href="a00016.html">hwloc_obj_t</a> prev)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static inline int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00064.html#gaef22d6bf5cb0b7f13a863780126a8cb7">hwloc_bridge_covers_pcibus</a> (<a class="el" href="a00016.html">hwloc_obj_t</a> bridge, unsigned domain, unsigned bus)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static inline <a class="el" href="a00016.html">hwloc_obj_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00064.html#ga81d4f68afbd68d94eb70d4f5c603eff5">hwloc_get_hostbridge_by_pcibus</a> (<a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, unsigned domain, unsigned bus)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"> <a class="el" href="a00065.html#gaa3c2bf4c776d603dcebbb61b0c923d84">hwloc_bitmap_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00064.html#ga1219734ebc0451e3bc44e744664ebf7d">get_pci_cpuset</a> (const <a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a> topology, const int pci_bus_id)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga1219734ebc0451e3bc44e744664ebf7d"></a><!-- doxytag: member="helper.h::get_pci_cpuset" ref="ga1219734ebc0451e3bc44e744664ebf7d" args="(const hwloc_topology_t topology, const int pci_bus_id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> <a class="el" href="a00065.html#gaa3c2bf4c776d603dcebbb61b0c923d84">hwloc_bitmap_t</a> get_pci_cpuset </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00039.html#ga9d1e76ee15a7dee158b786c30b6a6e38">hwloc_topology_t</a>&#160;</td>
+          <td class="paramname"><em>topology</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>pci_bus_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns a cpuset of the socket attached to the host bridge where the PCI device defined by bus id is connected in the topology. </p>
+<p>This is useful for retrieving the cpuset of the socket attached to the host bridge where the PCI device defined by bus id is connected in the topology. </p>
+
+</div>
+</div>
 <a class="anchor" id="gaef22d6bf5cb0b7f13a863780126a8cb7"></a><!-- doxytag: member="helper.h::hwloc_bridge_covers_pcibus" ref="gaef22d6bf5cb0b7f13a863780126a8cb7" args="(hwloc_obj_t bridge, unsigned domain, unsigned bus)" -->
 <div class="memitem">
 <div class="memproto">
@@ -316,7 +347,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 </div>
-<hr class="footer"/><address class="footer"><small>Generated on Mon Mar 26 2012 16:32:11 for Hardware Locality (hwloc) by&#160;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Mar 27 2012 16:49:17 for Hardware Locality (hwloc) by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
 </body>

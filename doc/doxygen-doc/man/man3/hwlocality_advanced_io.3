@@ -1,4 +1,4 @@
-.TH "Advanced I/O object traversal helpers" 3 "Mon Mar 26 2012" "Version 1.4.1" "Hardware Locality (hwloc)" \" -*- nroff -*-
+.TH "Advanced I/O object traversal helpers" 3 "Tue Mar 27 2012" "Version 1.4.1" "Hardware Locality (hwloc)" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -30,9 +30,15 @@ Advanced I/O object traversal helpers \-
 .ti -1c
 .RI "static inline \fBhwloc_obj_t\fP \fBhwloc_get_hostbridge_by_pcibus\fP (\fBhwloc_topology_t\fP topology, unsigned domain, unsigned bus)"
 .br
+.ti -1c
+.RI " \fBhwloc_bitmap_t\fP \fBget_pci_cpuset\fP (const \fBhwloc_topology_t\fP topology, const int pci_bus_id)"
+.br
 .in -1c
 .SH "Function Documentation"
 .PP 
+.SS " \fBhwloc_bitmap_t\fP get_pci_cpuset (const \fBhwloc_topology_t\fPtopology, const intpci_bus_id)"
+.PP
+Returns a cpuset of the socket attached to the host bridge where the PCI device defined by bus id is connected in the topology. This is useful for retrieving the cpuset of the socket attached to the host bridge where the PCI device defined by bus id is connected in the topology. 
 .SS "static inline int hwloc_bridge_covers_pcibus (\fBhwloc_obj_t\fPbridge, unsigneddomain, unsignedbus)\fC [static]\fP"
 .SS "static inline \fBhwloc_obj_t\fP hwloc_get_hostbridge_by_pcibus (\fBhwloc_topology_t\fPtopology, unsigneddomain, unsignedbus)\fC [static]\fP"
 .PP

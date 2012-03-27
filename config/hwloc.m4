@@ -694,10 +694,10 @@ EOF])
     HWLOC_CFLAGS="$HWLOC_CFLAGS $HWLOC_PCI_CFLAGS"
     
     # GL Support 
-    hwloc_gl_happy=no 									
-	if test "x$enable_gl" != "xno"; then				 
-       hwloc_gl_happy=yes								
-      
+    hwloc_gl_happy=no
+    if test "x$enable_gl" != "xno"; then
+    	hwloc_gl_happy=yes								
+   
        # X11 support. Cairo is checking for this module. 
        # Check if found for not in order not to DUBLICATE the search.    
        if test "x$found_X11" != "xyes"; then 
@@ -711,36 +711,36 @@ EOF])
             )],,
             [[#include <X11/Xlib.h>]]
           )
-        fi 
+       fi 
         
-        # If X11 was not found disable the GL Module 
-        if test "x$enable_X11" != "xyes"; then
-          AC_MSG_WARN([X11 headers not found, GL back-end disabled])
-          hwloc_gl_happy=no
-        fi
+       # If X11 was not found disable the GL Module 
+       if test "x$enable_X11" != "xyes"; then
+       		AC_MSG_WARN([X11 headers not found, GL back-end disabled])
+       		hwloc_gl_happy=no
+       fi
 	  
-        # Xext support.  
-        AC_CHECK_LIB([Xext], [XextFindDisplay], 
-        	[enable_Xext=yes LIBS="$LIBS -lXext"
+       # Xext support.  
+       AC_CHECK_LIB([Xext], [XextFindDisplay],
+       		[enable_Xext=yes LIBS="$LIBS -lXext"
         	AC_SUBST([HWLOC_XEXT_LIBS], ["-lXext"])])
          
-        # If Xext was not found disable the GL Module 
-         if test "x$enable_Xext" != "xyes"; then
-          AC_MSG_WARN([Xext libs not found, GL back-end disabled])
-          hwloc_gl_happy=no
-        fi
+       # If Xext was not found disable the GL Module 
+       if test "x$enable_Xext" != "xyes"; then
+       		AC_MSG_WARN([Xext libs not found, GL back-end disabled])
+          	hwloc_gl_happy=no
+       fi
        
-  		if test "x$hwloc_gl_happy" = "xyes"; then
-  		  AC_DEFINE([HWLOC_HAVE_GL], [1], [Define to 1 if you have the GL module components.])
-  		  AC_SUBST([HWLOC_HAVE_GL], [1])
-  		  CFLAGS="$HWLOC_CFLAGS $HWLOC_X11_CFLAGS -I../include/hwloc/NVCtrl"    
-  		  LIBS="$HWLOC_LIBS $HWLOC_X11_LIBS $HWLOC_XEXT_LIBS"
-  		else
-  		  AS_IF([test "$enable_gl" = "yes"],
-              [AC_MSG_WARN([--enable-gl requested, but GL/X11 support was not found due to a missing component])
-               AC_MSG_ERROR([Cannot continue])])
-  		  AC_SUBST([HWLOC_HAVE_GL], [0])
-  		fi      
+       if test "x$hwloc_gl_happy" = "xyes"; then
+       		AC_DEFINE([HWLOC_HAVE_GL], [1], [Define to 1 if you have the GL module components.])
+  		  	AC_SUBST([HWLOC_HAVE_GL], [1])
+  		  	CFLAGS="$HWLOC_CFLAGS $HWLOC_X11_CFLAGS -I../include/hwloc/NVCtrl"    
+  		  	LIBS="$HWLOC_LIBS $HWLOC_X11_LIBS $HWLOC_XEXT_LIBS"
+	   else
+	   		AS_IF([test "$enable_gl" = "yes"],
+	   		[AC_MSG_WARN([--enable-gl requested, but GL/X11 support was not found due to a missing component])
+	   		AC_MSG_ERROR([Cannot continue])])
+	   		AC_SUBST([HWLOC_HAVE_GL], [0])
+ 	   fi      
     fi
     
     # libxml2 support

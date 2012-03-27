@@ -1339,6 +1339,15 @@ hwloc_get_hostbridge_by_pcibus(hwloc_topology_t topology,
   return NULL;
 }
 
+/** \brief Returns a cpuset of the socket attached to the host bridge
+ * where the PCI device defined by bus id is connected in the topology
+ *
+ * This is useful for retrieving the cpuset of the socket attached
+ * to the host bridge where the PCI device defined by bus id is
+ * connected in the topology.
+ */
+HWLOC_DECLSPEC hwloc_bitmap_t get_pci_cpuset(const hwloc_topology_t topology, const int pci_bus_id);
+
 /** @} */
 
 

@@ -1525,6 +1525,13 @@
       <anchor>ga81d4f68afbd68d94eb70d4f5c603eff5</anchor>
       <arglist>(hwloc_topology_t topology, unsigned domain, unsigned bus)</arglist>
     </member>
+    <member kind="function">
+      <type>HWLOC_DECLSPEC hwloc_bitmap_t</type>
+      <name>get_pci_cpuset</name>
+      <anchorfile>a00064.html</anchorfile>
+      <anchor>ga1219734ebc0451e3bc44e744664ebf7d</anchor>
+      <arglist>(const hwloc_topology_t topology, const int pci_bus_id)</arglist>
+    </member>
   </compound>
   <compound kind="group">
     <name>hwlocality_bitmap</name>
