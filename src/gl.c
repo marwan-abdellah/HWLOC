@@ -29,7 +29,7 @@ static int query_display(char* displayName)
   }
   /* Check for NV-CONTROL extension */
   int opcode, event, error;
-  if( !XQueryExtension( display, "NV-CONTROL", &opcode, &event, &error ))
+  if( !XQueryExtension(display, "NV-CONTROL", &opcode, &event, &error))
   {
       XCloseDisplay( display);
       return bus_id;

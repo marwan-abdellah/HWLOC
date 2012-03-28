@@ -3,6 +3,7 @@
  * Copyright © 2009-2011 inria.  All rights reserved.
  * Copyright © 2009-2012 Université Bordeaux 1
  * Copyright © 2009-2011 Cisco Systems, Inc.  All rights reserved.
+ * Copyright © 2012 Blue Brain Project, EPFL. All rights reserved.
  * See COPYING in top-level directory.
  */
 
