@@ -44,4 +44,3 @@ HWLOC_DECLSPEC hwloc_bitmap_t get_display_cpuset(const hwloc_topology_t topology
 
 #endif /* HWLOC_GL_H */
 
-

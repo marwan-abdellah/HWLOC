@@ -27,13 +27,11 @@ static int query_display(char* displayName)
   if (display == 0) {
       return bus_id;
   }
-  // TODO: check for NV_CONTROL X Extension
-
-  int major, event, error;
-  if( !XQueryExtension( display, "NV_CONTROL", &major, &event, &error ))
+  /* Check for NV-CONTROL extension */
+  int opcode, event, error;
+  if( !XQueryExtension( display, "NV-CONTROL", &opcode, &event, &error ))
   {
       XCloseDisplay( display);
-      printf("Missing extension \n");
       return bus_id;
   }
 
