@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.11.29)  29 MAR 2012 18:48
+=======
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.11.29)  28 MAR 2012 09:42
+>>>>>>> acd8c0281fd8655b827ca9f56891360abfa93788
 entering extended mode
  %&-line parsing enabled.
 **a4-refman.tex
@@ -3899,7 +3903,11 @@ exlive/fonts/type1/urw/helvetic/uhvbo8ac.pfb></usr/share/texmf-texlive/fonts/ty
 pe1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmbi8
 a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
 xmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
+<<<<<<< HEAD
 Output written on a4-refman.pdf (181 pages, 1456025 bytes).
+=======
+Output written on a4-refman.pdf (181 pages, 1459262 bytes).
+>>>>>>> acd8c0281fd8655b827ca9f56891360abfa93788
 PDF statistics:
  6365 PDF objects out of 7423 (max. 8388607)
  1258 named destinations out of 1440 (max. 500000)
