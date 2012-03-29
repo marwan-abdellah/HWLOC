@@ -21,6 +21,9 @@
 #include <stdlib.h>
 #include <errno.h>
 
+#ifdef HWLOC_HAVE_GL
+#include <hwloc/gl.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -1340,14 +1343,16 @@ hwloc_get_hostbridge_by_pcibus(hwloc_topology_t topology,
   return NULL;
 }
 
+#ifdef HWLOC_HAVE_GL
 /** \brief Returns a cpuset of the socket attached to the host bridge
- * where the PCI device defined by bus id is connected in the topology
+ * for a given PCI device defined by its info.
  *
  * This is useful for retrieving the cpuset of the socket attached
- * to the host bridge where the PCI device defined by bus id is
- * connected in the topology.
+ * to the host bridge where the PCI device defined by its bus, domain,
+ * function, device ID's is connected in the topology.
  */
-HWLOC_DECLSPEC hwloc_bitmap_t get_pci_cpuset(const hwloc_topology_t topology, const int pci_bus_id);
+HWLOC_DECLSPEC hwloc_bitmap_t get_pci_cpuset(const hwloc_topology_t topology, const pci_dev_info pci_info);
+#endif
 
 /** @} */
 

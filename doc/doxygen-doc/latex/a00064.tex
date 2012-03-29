@@ -20,27 +20,11 @@ static inline \hyperlink{a00016}{hwloc\_\-obj\_\-t} \hyperlink{a00064_ga2bd3f856
 static inline int \hyperlink{a00064_gaef22d6bf5cb0b7f13a863780126a8cb7}{hwloc\_\-bridge\_\-covers\_\-pcibus} (\hyperlink{a00016}{hwloc\_\-obj\_\-t} bridge, unsigned domain, unsigned bus)
 \item 
 static inline \hyperlink{a00016}{hwloc\_\-obj\_\-t} \hyperlink{a00064_ga81d4f68afbd68d94eb70d4f5c603eff5}{hwloc\_\-get\_\-hostbridge\_\-by\_\-pcibus} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, unsigned domain, unsigned bus)
-\item 
- \hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} \hyperlink{a00064_ga1219734ebc0451e3bc44e744664ebf7d}{get\_\-pci\_\-cpuset} (const \hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, const int pci\_\-bus\_\-id)
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\hypertarget{a00064_ga1219734ebc0451e3bc44e744664ebf7d}{
-\index{hwlocality\_\-advanced\_\-io@{hwlocality\_\-advanced\_\-io}!get\_\-pci\_\-cpuset@{get\_\-pci\_\-cpuset}}
-\index{get\_\-pci\_\-cpuset@{get\_\-pci\_\-cpuset}!hwlocality_advanced_io@{hwlocality\_\-advanced\_\-io}}
-\subsubsection[{get\_\-pci\_\-cpuset}]{\setlength{\rightskip}{0pt plus 5cm} {\bf hwloc\_\-bitmap\_\-t} get\_\-pci\_\-cpuset (
-\begin{DoxyParamCaption}
-\item[{const {\bf hwloc\_\-topology\_\-t}}]{topology, }
-\item[{const int}]{pci\_\-bus\_\-id}
-\end{DoxyParamCaption}
-)}}
-\label{a00064_ga1219734ebc0451e3bc44e744664ebf7d}
-
-
-Returns a cpuset of the socket attached to the host bridge where the PCI device defined by bus id is connected in the topology. 
-
-This is useful for retrieving the cpuset of the socket attached to the host bridge where the PCI device defined by bus id is connected in the topology. \hypertarget{a00064_gaef22d6bf5cb0b7f13a863780126a8cb7}{
+\hypertarget{a00064_gaef22d6bf5cb0b7f13a863780126a8cb7}{
 \index{hwlocality\_\-advanced\_\-io@{hwlocality\_\-advanced\_\-io}!hwloc\_\-bridge\_\-covers\_\-pcibus@{hwloc\_\-bridge\_\-covers\_\-pcibus}}
 \index{hwloc\_\-bridge\_\-covers\_\-pcibus@{hwloc\_\-bridge\_\-covers\_\-pcibus}!hwlocality_advanced_io@{hwlocality\_\-advanced\_\-io}}
 \subsubsection[{hwloc\_\-bridge\_\-covers\_\-pcibus}]{\setlength{\rightskip}{0pt plus 5cm}static inline int hwloc\_\-bridge\_\-covers\_\-pcibus (
