@@ -39,8 +39,8 @@
 #include <X11/Xutil.h>
 #include <X11/extensions/Xext.h>
 #include <X11/extensions/extutil.h>
-#include "NVCtrlLib.h"
-#include "nv_control.h"
+#include "hwloc/NVCtrl/NVCtrlLib.h"
+#include "hwloc/NVCtrl/nv_control.h"
 
 #define NVCTRL_EXT_EXISTS              1
 #define NVCTRL_EXT_NEED_TARGET_SWAP    2

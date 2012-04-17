@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.11.29)  29 MAR 2012 18:48
-=======
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.11.29)  28 MAR 2012 09:42
->>>>>>> acd8c0281fd8655b827ca9f56891360abfa93788
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.11.29)  17 APR 2012 14:22
 entering extended mode
  %&-line parsing enabled.
 **a4-refman.tex
@@ -807,8 +803,29 @@ Package tocloft Note: The document has chapter divisions.
 \cfttabindent=\skip96
 \cfttabnumwidth=\skip97
 )
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.76 <
+      <<<<<< HEAD
+? 
+
+Overfull \hbox (18.88643pt too wide) in paragraph at lines 76--86
+[]\OT1/cmr/m/n/10 <<<<<<< HEAD   =======   >>>>>>> acd8c0281fd8655b827ca9f56891
+360abfa93788
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--86
+
+ []
+
 \tmplength=\skip98
- (/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
 (/usr/share/texmf-texlive/tex/latex/base/t1enc.def
@@ -895,21 +912,25 @@ LaTeX Info: Redefining \pageref on input line 39.
 \AtBeginShipoutBox=\box61
 \big@size=\dimen127
 Package hyperref Info: Option `pageanchor' set `false' on input line 40.
- [1
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 41.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+]
 [2
+
+] [1] [2
 
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 53.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 57.
  (./a4-refman.toc
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
 LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 1.
 
- (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ztmcm.fd
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 1.
@@ -941,10 +962,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
- [1]
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 78.
- [2] [3]
+ [1] [2] [3]
 Overfull \hbox (1.49988pt too wide) detected at line 173
 \T1/ptm/m/n/10 15.13.3.10 
  []
@@ -1222,19 +1240,19 @@ Overfull \hbox (1.49988pt too wide) detected at line 516
  [11] [12
 
 ]
-Package hyperref Info: Option `pageanchor' set `true' on input line 56.
+Package hyperref Info: Option `pageanchor' set `true' on input line 60.
 
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 57.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 57.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 61.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 61.
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
-(Font)              scaled to size 18.66588pt on input line 57.
+(Font)              scaled to size 18.66588pt on input line 61.
 LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
-(Font)              scaled to size 22.39185pt on input line 57.
+(Font)              scaled to size 22.39185pt on input line 61.
  (./index.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
@@ -1263,7 +1281,7 @@ Open MPI project ([][]\T1/pcr/m/n/10 http://www.open-mpi.org/[][]\T1/ptm/m/n/10
  ).
  []
 
-[2] <dudley.png, id=2691, 451.6875pt x 572.1375pt>
+[2] <dudley.png, id=2698, 451.6875pt x 572.1375pt>
 File: dudley.png Graphic file (type png)
  <use dudley.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1341,7 +1359,7 @@ Overfull \hbox (5.40022pt too wide) in paragraph at lines 187--187
 x00001000"[] 
  []
 
-[5] <hagrid.png, id=2709, 973.6375pt x 291.0875pt>
+[5] <hagrid.png, id=2716, 973.6375pt x 291.0875pt>
 File: hagrid.png Graphic file (type png)
  <use hagrid.png>
 Underfull \hbox (badness 10000) in paragraph at lines 204--206
@@ -1384,7 +1402,7 @@ Overfull \hbox (29.40024pt too wide) in paragraph at lines 269--269
 ="0x00000001"/>[] 
  []
 
-<emmett.png, id=2715, 431.6125pt x 431.6125pt>
+<emmett.png, id=2722, 431.6125pt x 431.6125pt>
 File: emmett.png Graphic file (type png)
  <use emmett.png> [7 <./emmett.png>]
 Overfull \hbox (0.60022pt too wide) in paragraph at lines 319--319
@@ -1425,7 +1443,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 LaTeX Font Info:    Font shape `OT1/phv/bc/n' will be
 (Font)              scaled to size 10.79993pt on input line 367.
 
-<ppc64-with-smt.pdf, id=2736, 1154.3125pt x 431.6125pt>
+<ppc64-with-smt.pdf, id=2743, 1154.3125pt x 431.6125pt>
 File: ppc64-with-smt.pdf Graphic file (type pdf)
 
 <use ppc64-with-smt.pdf>
@@ -1437,7 +1455,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 376--378
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-<ppc64-without-smt.pdf, id=2750, 592.2125pt x 431.6125pt>
+<ppc64-without-smt.pdf, id=2758, 592.2125pt x 431.6125pt>
 File: ppc64-without-smt.pdf Graphic file (type pdf)
 
 <use ppc64-without-smt.pdf>
@@ -1445,7 +1463,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 384--386
 
  []
 
-<ppc64-full-with-smt.pdf, id=2752, 913.4125pt x 1355.0625pt>
+<ppc64-full-with-smt.pdf, id=2760, 913.4125pt x 1355.0625pt>
 File: ppc64-full-with-smt.pdf Graphic file (type pdf)
 
 <use ppc64-full-with-smt.pdf>
@@ -1522,7 +1540,7 @@ A
 Chapter 2.
 (./a00001.tex [17
 
-] <diagram.pdf, id=2939, 673.51625pt x 690.58pt>
+] <diagram.pdf, id=2946, 673.51625pt x 690.58pt>
 File: diagram.pdf Graphic file (type pdf)
 
 <use diagram.pdf>
@@ -1585,7 +1603,7 @@ CI_-DEVICE[][] \T1/ptm/m/n/10 and [][]\T1/pcr/m/n/10 HWLOC_-OBJ_-OS_-DEVICE[][]
 
 pdfTeX warning: /usr/bin//pdflatex (file ./devel09-pci.pdf): PDF inclusion: fou
 nd PDF version <1.5>, but at most version <1.4> allowed
-<devel09-pci.pdf, id=3085, 659.46375pt x 531.9875pt>
+<devel09-pci.pdf, id=3092, 659.46375pt x 531.9875pt>
 File: devel09-pci.pdf Graphic file (type pdf)
  <use devel09-pci.pdf>
 Underfull \hbox (badness 10000) in paragraph at lines 24--26
@@ -1652,7 +1670,7 @@ opology_-set_-xmlbuffer()[][] is called).
  []
 
 )
-Overfull \hbox (4.14711pt too wide) in paragraph at lines 15--87
+Overfull \hbox (4.14711pt too wide) in paragraph at lines 15--91
 []\T1/ptm/m/n/10 It is there-fore strongly rec-om-mended to check the re-turn v
 alue of both [][]hwloc_-topology_-
  []
@@ -3826,7 +3844,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  11910 strings out of 495061
  192031 string characters out of 1182620
- 249708 words of memory out of 3000000
+ 249773 words of memory out of 3000000
  13430 multiletter control sequences out of 15000+50000
  71781 words of font info for 101 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
@@ -3896,20 +3914,17 @@ laced by a fixed one
 
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive
 /fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/urw/couri
-er/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrro8a.pfb></u
-sr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texmf-t
-exlive/fonts/type1/urw/helvetic/uhvbo8ac.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmbi8
-a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
-xmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-<<<<<<< HEAD
-Output written on a4-refman.pdf (181 pages, 1456025 bytes).
-=======
-Output written on a4-refman.pdf (181 pages, 1459262 bytes).
->>>>>>> acd8c0281fd8655b827ca9f56891360abfa93788
+1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pf
+b></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrro8a.pfb></usr/share/tex
+mf-texlive/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texmf-texlive/fonts
+/type1/urw/helvetic/uhvbo8ac.pfb></usr/share/texmf-texlive/fonts/type1/urw/time
+s/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/
+share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/
+fonts/type1/urw/times/utmri8a.pfb>
+Output written on a4-refman.pdf (183 pages, 1472325 bytes).
 PDF statistics:
- 6365 PDF objects out of 7423 (max. 8388607)
+ 6375 PDF objects out of 7423 (max. 8388607)
  1258 named destinations out of 1440 (max. 500000)
  4217 words of extra memory for PDF output out of 10000 (max. 10000000)
 
