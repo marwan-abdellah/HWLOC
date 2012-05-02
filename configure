@@ -11787,14 +11787,91 @@ $as_echo "$as_me: WARNING: Xext libs not found, GL back-end disabled" >&2;}
           	hwloc_gl_happy=no
        fi
 
+       # Debian / Ubuntu
+       # There is no .pc or package configuration file shipped with the
+       # the nvidia-setting package, so we can't use AC_CHECK_LIB,
+       # instead we just check if the files are existing or not
+       # to enable the GL module
+
+       NVCTRL_LIB_DIR=/usr/lib
+       NVCTRL_INV_DIR=/usr/include/NVCtrl
+	   as_ac_File=`$as_echo "ac_cv_file_$NVCTRL_LIB_DIR/libXNVCtrl.so" | $as_tr_sh`
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $NVCTRL_LIB_DIR/libXNVCtrl.so" >&5
+$as_echo_n "checking for $NVCTRL_LIB_DIR/libXNVCtrl.so... " >&6; }
+if eval "test \"\${$as_ac_File+set}\"" = set; then :
+  $as_echo_n "(cached) " >&6
+else
+  test "$cross_compiling" = yes &&
+  as_fn_error $? "cannot check for file existence when cross compiling" "$LINENO" 5
+if test -r "$NVCTRL_LIB_DIR/libXNVCtrl.so"; then
+  eval "$as_ac_File=yes"
+else
+  eval "$as_ac_File=no"
+fi
+fi
+eval ac_res=\$$as_ac_File
+	       { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_res" >&5
+$as_echo "$ac_res" >&6; }
+if eval test \"x\$"$as_ac_File"\" = x"yes"; then :
+  as_ac_File=`$as_echo "ac_cv_file_$NVCTRL_INV_DIR/NVCtrl.h" | $as_tr_sh`
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $NVCTRL_INV_DIR/NVCtrl.h" >&5
+$as_echo_n "checking for $NVCTRL_INV_DIR/NVCtrl.h... " >&6; }
+if eval "test \"\${$as_ac_File+set}\"" = set; then :
+  $as_echo_n "(cached) " >&6
+else
+  test "$cross_compiling" = yes &&
+  as_fn_error $? "cannot check for file existence when cross compiling" "$LINENO" 5
+if test -r "$NVCTRL_INV_DIR/NVCtrl.h"; then
+  eval "$as_ac_File=yes"
+else
+  eval "$as_ac_File=no"
+fi
+fi
+eval ac_res=\$$as_ac_File
+	       { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_res" >&5
+$as_echo "$ac_res" >&6; }
+if eval test \"x\$"$as_ac_File"\" = x"yes"; then :
+  as_ac_File=`$as_echo "ac_cv_file_$NVCTRL_INV_DIR/NVCtrlLib.h" | $as_tr_sh`
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $NVCTRL_INV_DIR/NVCtrlLib.h" >&5
+$as_echo_n "checking for $NVCTRL_INV_DIR/NVCtrlLib.h... " >&6; }
+if eval "test \"\${$as_ac_File+set}\"" = set; then :
+  $as_echo_n "(cached) " >&6
+else
+  test "$cross_compiling" = yes &&
+  as_fn_error $? "cannot check for file existence when cross compiling" "$LINENO" 5
+if test -r "$NVCTRL_INV_DIR/NVCtrlLib.h"; then
+  eval "$as_ac_File=yes"
+else
+  eval "$as_ac_File=no"
+fi
+fi
+eval ac_res=\$$as_ac_File
+	       { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_res" >&5
+$as_echo "$ac_res" >&6; }
+if eval test \"x\$"$as_ac_File"\" = x"yes"; then :
+  hwloc_gl_happy="yes"
+else
+  hwloc_gl_happy="no"
+fi
+
+else
+  hwloc_gl_happy="no"
+fi
+
+else
+  hwloc_gl_happy="no"
+fi
+
+
        if test "x$hwloc_gl_happy" = "xyes"; then
 
 $as_echo "#define HWLOC_HAVE_GL 1" >>confdefs.h
 
   		  	HWLOC_HAVE_GL=1
 
-  		  	CFLAGS="$HWLOC_CFLAGS $HWLOC_X11_CFLAGS -I../include/hwloc/NVCtrl"
+  		  	CFLAGS="$HWLOC_CFLAGS $HWLOC_X11_CFLAGS -I$NVCTRL_INV_DIR"
   		  	LIBS="$HWLOC_LIBS $HWLOC_X11_LIBS $HWLOC_XEXT_LIBS"
+  		  	HWLOC_LDFLAGS_GL="-L$NVCTRL_LIB_DIR -lXNVCtrl"
 	   else
 	   		if test "$enable_gl" = "yes"; then :
   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: --enable-gl requested, but GL/X11 support was not found due to a missing component" >&5
@@ -11944,6 +12021,7 @@ fi
     HWLOC_CPPFLAGS='-I$(HWLOC_top_builddir)/include -I$(HWLOC_top_srcdir)/include'
 
     HWLOC_LDFLAGS='-L$(HWLOC_top_builddir)/src'
+    HWLOC_LDFLAGS="$HWLOC_LDFLAGS $HWLOC_LDFLAGS_GL"
 
 
 

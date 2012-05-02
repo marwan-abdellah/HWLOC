@@ -711,8 +711,8 @@ EOF])
             )],,
             [[#include <X11/Xlib.h>]]
           )
-       fi 
-        
+       fi
+       
        # If X11 was not found disable the GL Module 
        if test "x$enable_X11" != "xyes"; then
        		AC_MSG_WARN([X11 headers not found, GL back-end disabled])
@@ -730,11 +730,26 @@ EOF])
           	hwloc_gl_happy=no
        fi
        
+       # Debian / Ubuntu 
+       # There is no .pc or package configuration file shipped with the 
+       # the nvidia-setting package, so we can't use AC_CHECK_LIB,
+       # instead we just check if the files are existing or not 
+       # to enable the GL module 
+        
+       NVCTRL_LIB_DIR=/usr/lib
+       NVCTRL_INV_DIR=/usr/include/NVCtrl
+	   AC_CHECK_FILE($NVCTRL_LIB_DIR/libXNVCtrl.so,
+	   		AC_CHECK_FILE($NVCTRL_INV_DIR/NVCtrl.h,
+	   			AC_CHECK_FILE($NVCTRL_INV_DIR/NVCtrlLib.h, hwloc_gl_happy="yes", hwloc_gl_happy="no"), 
+	   				hwloc_gl_happy="no"), 
+	   					hwloc_gl_happy="no")
+	   
        if test "x$hwloc_gl_happy" = "xyes"; then
        		AC_DEFINE([HWLOC_HAVE_GL], [1], [Define to 1 if you have the GL module components.])
   		  	AC_SUBST([HWLOC_HAVE_GL], [1])
-  		  	CFLAGS="$HWLOC_CFLAGS $HWLOC_X11_CFLAGS -I../include/hwloc/NVCtrl"    
+  		  	CFLAGS="$HWLOC_CFLAGS $HWLOC_X11_CFLAGS -I$NVCTRL_INV_DIR"    
   		  	LIBS="$HWLOC_LIBS $HWLOC_X11_LIBS $HWLOC_XEXT_LIBS"
+  		  	HWLOC_LDFLAGS_GL="-L$NVCTRL_LIB_DIR -lXNVCtrl"
 	   else
 	   		AS_IF([test "$enable_gl" = "yes"],
 	   		[AC_MSG_WARN([--enable-gl requested, but GL/X11 support was not found due to a missing component])
@@ -769,6 +784,7 @@ EOF])
     HWLOC_CPPFLAGS='-I$(HWLOC_top_builddir)/include -I$(HWLOC_top_srcdir)/include'
     AC_SUBST(HWLOC_CPPFLAGS)
     HWLOC_LDFLAGS='-L$(HWLOC_top_builddir)/src'
+    HWLOC_LDFLAGS="$HWLOC_LDFLAGS $HWLOC_LDFLAGS_GL"
     AC_SUBST(HWLOC_LDFLAGS)
     AC_SUBST(HWLOC_LIBS)
 

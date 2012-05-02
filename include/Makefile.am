@@ -19,9 +19,6 @@ include_hwloc_HEADERS = \
         hwloc/cuda.h \
         hwloc/cudart.h \
         hwloc/rename.h \
-        hwloc/NVCtrl/nv_control.h \
-        hwloc/NVCtrl/NVCtrl.h \
-        hwloc/NVCtrl/NVCtrlLib.h \
         hwloc/gl.h
 
 include_hwloc_autogendir = $(includedir)/hwloc/autogen

@@ -30,7 +30,6 @@ sources = \
         bind.c \
         cpuset.c \
         misc.c \
-        NVCtrl.c \
         gl.c
                
 ldflags =

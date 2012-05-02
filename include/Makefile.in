@@ -110,10 +110,8 @@ am__installdirs = "$(DESTDIR)$(includedir)" \
 	"$(DESTDIR)$(include_hwloc_autogendir)"
 am__include_hwloc_HEADERS_DIST = hwloc/bitmap.h hwloc/cpuset.h \
 	hwloc/helper.h hwloc/myriexpress.h hwloc/openfabrics-verbs.h \
-	hwloc/cuda.h hwloc/cudart.h hwloc/rename.h \
-	hwloc/NVCtrl/nv_control.h hwloc/NVCtrl/NVCtrl.h \
-	hwloc/NVCtrl/NVCtrlLib.h hwloc/gl.h hwloc/linux.h \
-	hwloc/linux-libnuma.h private/solaris-chiptype.h \
+	hwloc/cuda.h hwloc/cudart.h hwloc/rename.h hwloc/gl.h \
+	hwloc/linux.h hwloc/linux-libnuma.h private/solaris-chiptype.h \
 	hwloc/glibc-sched.h
 am__noinst_HEADERS_DIST = private/private.h private/debug.h \
 	private/misc.h private/cpuid.h
@@ -302,12 +300,9 @@ top_srcdir = @top_srcdir@
 @HWLOC_BUILD_STANDALONE_TRUE@	hwloc/myriexpress.h \
 @HWLOC_BUILD_STANDALONE_TRUE@	hwloc/openfabrics-verbs.h \
 @HWLOC_BUILD_STANDALONE_TRUE@	hwloc/cuda.h hwloc/cudart.h \
-@HWLOC_BUILD_STANDALONE_TRUE@	hwloc/rename.h \
-@HWLOC_BUILD_STANDALONE_TRUE@	hwloc/NVCtrl/nv_control.h \
-@HWLOC_BUILD_STANDALONE_TRUE@	hwloc/NVCtrl/NVCtrl.h \
-@HWLOC_BUILD_STANDALONE_TRUE@	hwloc/NVCtrl/NVCtrlLib.h \
-@HWLOC_BUILD_STANDALONE_TRUE@	hwloc/gl.h $(am__append_1) \
-@HWLOC_BUILD_STANDALONE_TRUE@	$(am__append_2) $(am__append_3)
+@HWLOC_BUILD_STANDALONE_TRUE@	hwloc/rename.h hwloc/gl.h \
+@HWLOC_BUILD_STANDALONE_TRUE@	$(am__append_1) $(am__append_2) \
+@HWLOC_BUILD_STANDALONE_TRUE@	$(am__append_3)
 @HWLOC_BUILD_STANDALONE_TRUE@include_hwloc_autogendir = $(includedir)/hwloc/autogen
 @HWLOC_BUILD_STANDALONE_TRUE@nodist_include_hwloc_autogen_HEADERS = hwloc/autogen/config.h 
 @HWLOC_BUILD_STANDALONE_TRUE@noinst_HEADERS = \
