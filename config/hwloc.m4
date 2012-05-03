@@ -749,7 +749,7 @@ EOF])
   		  	AC_SUBST([HWLOC_HAVE_GL], [1])
   		  	CFLAGS="$HWLOC_CFLAGS $HWLOC_X11_CFLAGS -I$NVCTRL_INV_DIR"    
   		  	LIBS="$HWLOC_LIBS $HWLOC_X11_LIBS $HWLOC_XEXT_LIBS"
-  		  	HWLOC_LDFLAGS_GL="-L$NVCTRL_LIB_DIR -lXNVCtrl"
+  		  	HWLOC_LIBS="$HWLOC_LIBS -L$NVCTRL_LIB_DIR -lXNVCtrl"
 	   else
 	   		AS_IF([test "$enable_gl" = "yes"],
 	   		[AC_MSG_WARN([--enable-gl requested, but GL/X11 support was not found due to a missing component])
