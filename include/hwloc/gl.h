@@ -15,30 +15,30 @@
 extern "C" {
 #endif
 
-struct struct_display_info
+struct hwloc_gl_display_info
 {
     int port;   /* Port (X-server or ignored) */
     int device; /* Device (X-screen, later Windows GPU affinity device) */
-};
+} ;
 
-typedef struct struct_display_info display_info;
+/* typedef struct struct_hwloc_gl_display_info hwloc_gl_display_info; */
 
-struct struct_pci_dev_info
+struct hwloc_gl_pci_dev_info
 {
     int pci_device; /* The PCI device number the specified device is using */
     int pci_bus; /* The PCI bus number the specified device is using */
     int pci_function; /* the PCI function number the specified device is using*/
     int pci_domain; /* The PCI domain number the specified device is using */
-};
+} ;
 
-typedef struct struct_pci_dev_info pci_dev_info;
+/* typedef struct struct_hwloc_gl_pci_dev_info hwloc_gl_pci_dev_info; */
 
-/** \brief Returns a DISPLAY for a given GPU defined by its pci_dev_info..
+/** \brief Returns a DISPLAY for a given GPU defined by its hwloc_gl_pci_dev_info..
  *
  * The returned structure should have the format
  * "[:][port][.][device]"
  */
-HWLOC_DECLSPEC display_info get_gpu_display(const pci_dev_info pci_info);
+HWLOC_DECLSPEC struct hwloc_gl_display_info hwloc_gl_get_gpu_display(const struct hwloc_gl_pci_dev_info pci_info);
 
 /** \brief Returns the cpuset of the socket connected to the
  * host bridge connecting the GPU attached to the display
@@ -48,7 +48,7 @@ HWLOC_DECLSPEC display_info get_gpu_display(const pci_dev_info pci_info);
  * The returned structure will have the format
  * "[:][port][.][device]"
  */
-HWLOC_DECLSPEC hwloc_bitmap_t get_display_cpuset(const hwloc_topology_t topology, const int port, const int device);
+HWLOC_DECLSPEC hwloc_bitmap_t hwloc_gl_get_display_cpuset(const hwloc_topology_t topology, const int port, const int device);
 
 
 #ifdef __cplusplus

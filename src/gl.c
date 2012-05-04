@@ -1,5 +1,5 @@
 /*
- * Copyright © 2012 Blue Brain Project, EPFL. All rights reserved.
+ * Copyright © 2012 Blue Brain Project, BBP/EPFL. All rights reserved.
  * See COPYING in top-level directory.
  */
 
@@ -19,7 +19,7 @@
  * connected to it.
  ****************************************************************/
 
-static pci_dev_info query_display(char* displayName)
+static struct hwloc_gl_pci_dev_info query_display(char* displayName)
 {
 #ifdef HWLOC_HAVE_GL
     Display* display;
@@ -39,8 +39,8 @@ static pci_dev_info query_display(char* displayName)
     int success_info;
 #endif
 
-    /* Initializing the pci_dev_info to -1's in case of failure */
-    pci_dev_info dev_info;
+    /* Initializing the hwloc_gl_pci_dev_info to -1's in case of failure */
+    struct hwloc_gl_pci_dev_info dev_info;
     dev_info.pci_device = -1;
     dev_info.pci_function = -1;
     dev_info.pci_bus = -1;
@@ -136,17 +136,17 @@ static pci_dev_info query_display(char* displayName)
 
 
 /*****************************************************************
- * Returns a DISPLAY for a given GPU defined by its pci_dev_info.
- * The returned  ure should have the formatget_gpu_display
+ * Returns a DISPLAY for a given GPU defined by its hwloc_gl_pci_dev_info.
+ * The returned  ure should have the formathwloc_gl_get_gpu_display
  * "[:][port][.][device]"
  ****************************************************************/
-display_info get_gpu_display(const pci_dev_info pci_info)
+struct hwloc_gl_display_info hwloc_gl_get_gpu_display(const struct hwloc_gl_pci_dev_info pci_info)
 {
-    display_info display;
+    struct hwloc_gl_display_info display;
     int x_server_max;
     int x_screen_max;
     int i,j;
-    pci_dev_info query_pci_info;
+    struct hwloc_gl_pci_dev_info query_pci_info;
 
     /* Return -1's in case of failure */
     display.port = -1;
@@ -188,10 +188,10 @@ display_info get_gpu_display(const pci_dev_info pci_info)
 
 /*****************************************************************
  * Returns a cpuset of the socket attached to the host bridge
- * where the GPU defined by defined by its pci_dev_info is
+ * where the GPU defined by defined by its hwloc_gl_pci_dev_info is
  * connected in the topology.
  ****************************************************************/
-hwloc_bitmap_t get_pci_cpuset(const hwloc_topology_t topology, const pci_dev_info pci_info)
+hwloc_bitmap_t hwloc_gl_get_pci_cpuset(const hwloc_topology_t topology, const struct hwloc_gl_pci_dev_info pci_info)
 {
     int i;
     int pci_dev_count; /* The number of PCI devices in the topology */
@@ -231,15 +231,15 @@ hwloc_bitmap_t get_pci_cpuset(const hwloc_topology_t topology, const pci_dev_inf
  * input port and device integers and having the format
  * [:][port][.][device] under X systems
  ****************************************************************/
-hwloc_bitmap_t get_display_cpuset(const hwloc_topology_t topology, const int port, const int device)
+hwloc_bitmap_t hwloc_gl_get_display_cpuset(const hwloc_topology_t topology, const int port, const int device)
 {
     char x_display [10];
-    pci_dev_info pci_info;
+    struct hwloc_gl_pci_dev_info pci_info;
     hwloc_bitmap_t cpuset;
 
     snprintf(x_display,sizeof(x_display),":%d.%d", port, device);
     pci_info = query_display(x_display);
-    cpuset = get_pci_cpuset(topology, pci_info);
+    cpuset = hwloc_gl_get_pci_cpuset(topology, pci_info);
     return hwloc_bitmap_dup(cpuset);
 }
 

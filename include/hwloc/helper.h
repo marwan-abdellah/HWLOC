@@ -3,7 +3,7 @@
  * Copyright © 2009-2011 inria.  All rights reserved.
  * Copyright © 2009-2012 Université Bordeaux 1
  * Copyright © 2009-2010 Cisco Systems, Inc.  All rights reserved.
- * Copyright © 2012 Blue Brain Project, EPFL. All rights reserved.
+ * Copyright © 2012 Blue Brain Project, BBP/EPFL. All rights reserved.
  * See COPYING in top-level directory.
  */
 
@@ -1351,7 +1351,7 @@ hwloc_get_hostbridge_by_pcibus(hwloc_topology_t topology,
  * to the host bridge where the PCI device defined by its bus, domain,
  * function, device ID's is connected in the topology.
  */
-HWLOC_DECLSPEC hwloc_bitmap_t get_pci_cpuset(const hwloc_topology_t topology, const pci_dev_info pci_info);
+HWLOC_DECLSPEC hwloc_bitmap_t get_pci_cpuset(const hwloc_topology_t topology, const struct hwloc_gl_pci_dev_info pci_info);
 #endif
 
 /** @} */
