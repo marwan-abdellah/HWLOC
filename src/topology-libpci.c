@@ -176,25 +176,24 @@ hwloc_linux_lookup_drm_class(struct hwloc_topology *topology, struct hwloc_obj *
 static void
 hwloc_linux_lookup_display_class(struct hwloc_topology *topology, struct hwloc_obj *pcidev)
 {
+  struct hwloc_gl_display_info display;
+  struct hwloc_gl_pci_dev_info pci_info;
+  pci_info.pci_bus = pcidev->attr->pcidev.bus;
+  pci_info.pci_device = pcidev->attr->pcidev.device_id;
+  pci_info.pci_domain = pcidev->attr->pcidev.domain;
+  pci_info.pci_function = pcidev->attr->pcidev.func;
 
-    struct hwloc_gl_display_info display;
-    struct hwloc_gl_pci_dev_info pci_info;
-    pci_info.pci_bus = pcidev->attr->pcidev.bus;
-    pci_info.pci_device = pcidev->attr->pcidev.device_id;
-    pci_info.pci_domain = pcidev->attr->pcidev.domain;
-    pci_info.pci_function = pcidev->attr->pcidev.func;
+  /* Getting the display info */
+  display = hwloc_gl_get_gpu_display(pci_info);
 
-    /* Getting the display info */
-    display = hwloc_gl_get_gpu_display(pci_info);
-
-    /* If GPU, Appending the display as a children to the GPU
+  /* If GPU, Appending the display as a children to the GPU
    * and add a display object with the display name */
-    if (display.port > -1 && display.device > -1) {
-        char display_name[64];
-        snprintf(display_name, sizeof(display_name), ":%d.%d", (display.port), display.device);
-        hwloc_topology_insert_misc_object_by_parent(topology, pcidev, display_name);
-        hwloc_linux_add_os_device(topology, pcidev, HWLOC_OBJ_OSDEV_DISPLAY, display_name);
-    }
+  if (display.port > -1 && display.device > -1) {
+    char display_name[64];
+    snprintf(display_name, sizeof(display_name), ":%d.%d", (display.port), display.device);
+    hwloc_topology_insert_misc_object_by_parent(topology, pcidev, display_name);
+    hwloc_linux_add_os_device(topology, pcidev, HWLOC_OBJ_OSDEV_DISPLAY, display_name);
+  }
 }
 #endif
 

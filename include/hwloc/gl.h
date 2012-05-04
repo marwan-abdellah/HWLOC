@@ -17,16 +17,16 @@ extern "C" {
 
 struct hwloc_gl_display_info
 {
-    int port;   /* Port (X-server or ignored) */
-    int device; /* Device (X-screen, later Windows GPU affinity device) */
+  int port;   /* Port (X-server or ignored) */
+  int device; /* Device (X-screen, later Windows GPU affinity device) */
 } ;
 
 struct hwloc_gl_pci_dev_info
 {
-    int pci_device; /* The PCI device number the specified device is using */
-    int pci_bus; /* The PCI bus number the specified device is using */
-    int pci_function; /* the PCI function number the specified device is using*/
-    int pci_domain; /* The PCI domain number the specified device is using */
+  int pci_device; /* The PCI device number the specified device is using */
+  int pci_bus; /* The PCI bus number the specified device is using */
+  int pci_function; /* the PCI function number the specified device is using*/
+  int pci_domain; /* The PCI domain number the specified device is using */
 } ;
 
 
@@ -52,7 +52,6 @@ HWLOC_DECLSPEC struct hwloc_gl_display_info hwloc_gl_get_gpu_display(const struc
  * "[:][port][.][device]"
  */
 HWLOC_DECLSPEC hwloc_bitmap_t hwloc_gl_get_display_cpuset(const hwloc_topology_t topology, const int port, const int device);
-
 
 #ifdef __cplusplus
 } /* extern "C" */
