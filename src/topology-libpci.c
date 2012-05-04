@@ -22,14 +22,11 @@
 #include <assert.h>
 #include <stdarg.h>
 #include <setjmp.h>
+#include <hwloc/gl.h>
 #ifdef HWLOC_LINUX_SYS
 #include <hwloc/linux.h>
 #include <dirent.h>
 #include <sys/types.h>
-#endif
-
-#ifdef HWLOC_HAVE_GL
-#include <hwloc/gl.h>
 #endif
 
 
@@ -171,14 +168,15 @@ hwloc_linux_lookup_drm_class(struct hwloc_topology *topology, struct hwloc_obj *
    */
 }
 
+#ifdef HWLOC_HAVE_GL
 /*
  * Looks for the GPUs connected to the system and then shows
  * the attached displays to them
  */
 static void
-hwloc_linux_lookup_dpy_class(struct hwloc_topology *topology, struct hwloc_obj *pcidev)
+hwloc_linux_lookup_display_class(struct hwloc_topology *topology, struct hwloc_obj *pcidev)
 {
-#ifdef HWLOC_HAVE_GL
+
     struct hwloc_gl_display_info display;
     struct hwloc_gl_pci_dev_info pci_info;
     pci_info.pci_bus = pcidev->attr->pcidev.bus;
@@ -193,12 +191,12 @@ hwloc_linux_lookup_dpy_class(struct hwloc_topology *topology, struct hwloc_obj *
    * and add a display object with the display name */
     if (display.port > -1 && display.device > -1) {
         char display_name[64];
-        snprintf(display_name, sizeof(display_name), " dpy=:%d.%d", (display.port), display.device);
+        snprintf(display_name, sizeof(display_name), ":%d.%d", (display.port), display.device);
         hwloc_topology_insert_misc_object_by_parent(topology, pcidev, display_name);
         hwloc_linux_add_os_device(topology, pcidev, HWLOC_OBJ_OSDEV_DISPLAY, display_name);
     }
-#endif
 }
+#endif
 
 /* block class objects are in
  * host%d/target%d:%d:%d/%d:%d:%d:%d/
@@ -342,7 +340,9 @@ hwloc_pci_traverse_lookuposdevices_cb(struct hwloc_topology *topology, struct hw
   hwloc_linux_lookup_dma_class(topology, pcidev, pcidevpath);
   hwloc_linux_lookup_drm_class(topology, pcidev, pcidevpath);
   hwloc_linux_lookup_block_class(topology, pcidev, pcidevpath);
-  hwloc_linux_lookup_dpy_class(topology, pcidev);
+#ifdef HWLOC_HAVE_GL
+  hwloc_linux_lookup_display_class(topology, pcidev);
+#endif
   }
 #endif /* HWLOC_LINUX_SYS */
 }

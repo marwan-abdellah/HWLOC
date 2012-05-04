@@ -21,8 +21,6 @@ struct hwloc_gl_display_info
     int device; /* Device (X-screen, later Windows GPU affinity device) */
 } ;
 
-/* typedef struct struct_hwloc_gl_display_info hwloc_gl_display_info; */
-
 struct hwloc_gl_pci_dev_info
 {
     int pci_device; /* The PCI device number the specified device is using */
@@ -31,7 +29,12 @@ struct hwloc_gl_pci_dev_info
     int pci_domain; /* The PCI domain number the specified device is using */
 } ;
 
-/* typedef struct struct_hwloc_gl_pci_dev_info hwloc_gl_pci_dev_info; */
+
+/** \brief Returns a cpuset of the socket attached to the host bridge
+ * where the GPU defined by defined by its hwloc_gl_pci_dev_info is
+ * connected in the topology.
+ */
+hwloc_bitmap_t hwloc_gl_get_pci_cpuset(const hwloc_topology_t topology, const struct hwloc_gl_pci_dev_info pci_info);
 
 /** \brief Returns a DISPLAY for a given GPU defined by its hwloc_gl_pci_dev_info..
  *
