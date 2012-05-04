@@ -17,18 +17,18 @@ extern "C" {
 
 struct struct_display_info
 {
-  int port;   /* Port (X-server or ignored) */
-  int device; /* Device (X-screen, later Windows GPU affinity device) */
+    int port;   /* Port (X-server or ignored) */
+    int device; /* Device (X-screen, later Windows GPU affinity device) */
 };
 
 typedef struct struct_display_info display_info;
 
 struct struct_pci_dev_info
 {
-  int pci_device; /* The PCI device number the specified device is using */
-  int pci_bus; /* The PCI bus number the specified device is using */
-  int pci_function; /* the PCI function number the specified device is using*/
-  int pci_domain; /* The PCI domain number the specified device is using */
+    int pci_device; /* The PCI device number the specified device is using */
+    int pci_bus; /* The PCI bus number the specified device is using */
+    int pci_function; /* the PCI function number the specified device is using*/
+    int pci_domain; /* The PCI domain number the specified device is using */
 };
 
 typedef struct struct_pci_dev_info pci_dev_info;
