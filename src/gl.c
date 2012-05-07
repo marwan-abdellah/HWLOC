@@ -11,18 +11,29 @@
 #include <hwloc/gl.h>
 
 /*****************************************************************
- * Queries a display defined by its port and device numbers, and
+ * Allocates a hwloc_obj_t of type PCI_DEVICE and returns a
+ * pointer to this object.
+ ****************************************************************/
+static hwloc_obj_t hwloc_gl_alloc_pcidev_object(void)
+{
+  struct hwloc_obj *obj = malloc(sizeof(*obj));
+  memset(obj, 0, sizeof(*obj));
+  obj->type = HWLOC_OBJ_PCI_DEVICE;
+  obj->os_level = -1;
+  obj->attr = malloc(sizeof(*obj->attr));
+  memset(obj->attr, 0, sizeof(*obj->attr));
+  return obj;
+}
+
+/*****************************************************************
+ * MODIFIED: Queries a display defined by its port and device numbers, and
  * returns a   having unique identifiers for the GPU
  * connected to it.
  ****************************************************************/
-static struct hwloc_gl_pci_dev_info hwloc_gl_query_display(char* displayName)
+hwloc_obj_t hwloc_gl_query_display(hwloc_topology_t topology, char* displayName)
 {
-  /* Initializing the hwloc_gl_pci_dev_info to -1's in case of failure */
-  struct hwloc_gl_pci_dev_info dev_info;
-  dev_info.pci_device = -1;
-  dev_info.pci_function = -1;
-  dev_info.pci_bus = -1;
-  dev_info.pci_domain = -1;
+  /* Allocate pcidev object for retreving pcidev data in */
+  hwloc_obj_t display_obj = NULL;
 
 #ifdef HWLOC_HAVE_GL
   Display* display;
@@ -39,17 +50,18 @@ static struct hwloc_gl_pci_dev_info hwloc_gl_query_display(char* displayName)
   int nv_ctrl_pci_func;
   int success;
   int success_info;
+  int i;
 
   display = XOpenDisplay(displayName);
   if (display == 0) {
-    return dev_info;
+    return display_obj;
   }
 
   /* Check for NV-CONTROL extension */
   if( !XQueryExtension(display, "NV-CONTROL", &opcode, &event, &error))
   {
     XCloseDisplay( display);
-    return dev_info;
+    return display_obj;
   }
 
   default_screen_number = DefaultScreen(display);
@@ -64,7 +76,7 @@ static struct hwloc_gl_pci_dev_info hwloc_gl_query_display(char* displayName)
 
     /* Closing the connection */
     XCloseDisplay(display);
-    return dev_info;
+    return display_obj;
   }
 
   success = XNVCTRLQueryTargetBinaryData (display, NV_CTRL_TARGET_TYPE_X_SCREEN, default_screen_number, 0,
@@ -87,58 +99,74 @@ static struct hwloc_gl_pci_dev_info hwloc_gl_query_display(char* displayName)
         if (success_info) {
           success_info = XNVCTRLQueryTargetAttribute(display, NV_CTRL_TARGET_TYPE_GPU, gpu_number, 0,
                                                      NV_CTRL_PCI_FUNCTION, &nv_ctrl_pci_func);
-          dev_info.pci_bus = (int) nv_ctrl_pci_bus;
-          /* For further details, see the <NVCtrl/NVCtrlLib.h> */
-          dev_info.pci_device = (int) nv_ctrl_pci_device & 0x0000FFFF;
-          dev_info.pci_domain = (int) nv_ctrl_pci_domain;
-          dev_info.pci_function = (int) nv_ctrl_pci_func;
 
+          /* This part only works if the I/O and BRIDGES flags are set */
+          int num_pci_devices = hwloc_get_nbobjs_by_type(topology, HWLOC_OBJ_PCI_DEVICE);
+          if (num_pci_devices > 0)
+          {
+            for (i = 0; i < num_pci_devices; ++i)
+            {
+              display_obj = hwloc_get_obj_by_type(topology, HWLOC_OBJ_PCI_DEVICE, i);
+
+              /* For further details, see the <NVCtrl/NVCtrlLib.h> */
+              if ((int) display_obj->attr->pcidev.bus == (int) nv_ctrl_pci_bus &&
+                  (int) display_obj->attr->pcidev.device_id == ((int) nv_ctrl_pci_device & 0x0000FFFF) &&
+                  (int) display_obj->attr->pcidev.domain == (int) nv_ctrl_pci_domain &&
+                  (int) display_obj->attr->pcidev.func == (int) nv_ctrl_pci_func) {
+                printf("PCI_DEVICE %s \n", display_obj->name);
+                return display_obj;
+              }
+            }
+          }
         }
         else {
           XCloseDisplay(display);
-          return dev_info;
+          return display_obj;
         }
       }
       else {
         XCloseDisplay(display);
-        return dev_info;
+        return display_obj;
       }
     }
     else {
       XCloseDisplay(display);
-      return dev_info;
+      return display_obj;
     }
   }
   else
     fprintf(stderr, "Failed to query the GPUs attached to the default screen \n");
 
   XCloseDisplay(display);
-  return dev_info;
+  return display_obj;
 
 #else
   printf("GL module is not loaded \n");
-  return dev_info;
+  return display_obj;
 #endif
 }
 
 /*****************************************************************
- * Returns a DISPLAY for a given GPU defined by its hwloc_gl_pci_dev_info.
+ * MODIFIED: Returns a DISPLAY for a given GPU defined by its hwloc_gl_pci_dev_info.
  * The returned  ure should have the formathwloc_gl_get_gpu_display
  * "[:][port][.][device]"
  ****************************************************************/
-struct hwloc_gl_display_info hwloc_gl_get_gpu_display(const struct hwloc_gl_pci_dev_info pci_info)
+hwloc_gl_display_info_t hwloc_gl_get_gpu_display(hwloc_topology_t topology, const hwloc_obj_t display_obj)
 {
-  struct hwloc_gl_display_info display;
-  struct hwloc_gl_pci_dev_info query_pci_info;
+  hwloc_gl_display_info_t display;
+  hwloc_obj_t query_display_obj;
+
   int x_server_max;
   int x_screen_max;
   int i,j;
 
-  /* Return -1's in case of failure */
-  display.port = -1;
-  display.device = -1;
+  /* Return -1's in case of failure to get valid display info */
+  display = malloc (sizeof(display));
+  display->port = -1;
+  display->device = -1;
 
   /* Try the first 10 servers with 10 screens */
+  /* For each x server, if the first x screen fails move to the next x server */
   x_server_max = 10;
   x_screen_max = 10;
 
@@ -149,41 +177,59 @@ struct hwloc_gl_display_info hwloc_gl_get_gpu_display(const struct hwloc_gl_pci_
       char x_display [10];
       snprintf(x_display,sizeof(x_display),":%d.%d", i, j);
 
-      query_pci_info = hwloc_gl_query_display(x_display);
-      if (query_pci_info.pci_bus == pci_info.pci_bus &&
-          query_pci_info.pci_device == pci_info.pci_device &&
-          query_pci_info.pci_domain == pci_info.pci_domain &&
-          query_pci_info.pci_function == pci_info.pci_function
-          ) {
-        display.port = i;
-        display.device = j;
+      query_display_obj = hwloc_gl_query_display(topology, x_display);
+
+      if (query_display_obj == NULL)
+        break;
+
+      /*
+      printf("------------------------------------------------------------------------\n");
+      printf("dpy %s \n", x_display);
+
+      printf("--query_display_obj->attr->pcidev.bus %d \n", query_display_obj->attr->pcidev.bus);
+      printf("--query_display_obj->attr->pcidev.device_id %d \n", query_display_obj->attr->pcidev.device_id);
+      printf("--query_display_obj->attr->pcidev.domain %d \n", query_display_obj->attr->pcidev.domain);
+      printf("--query_display_obj->attr->pcidev.func %d \n", query_display_obj->attr->pcidev.func);
+
+      printf("--display_obj->attr->pcidev.bus %d \n", display_obj->attr->pcidev.bus);
+      printf("--display_obj->attr->pcidev.device_id %d \n", display_obj->attr->pcidev.device_id);
+      printf("--display_obj->attr->pcidev.domain %d \n", display_obj->attr->pcidev.domain);
+      printf("--display_obj->attr->pcidev.func %d \n", display_obj->attr->pcidev.func);
+      */
+
+
+      if (query_display_obj->attr->pcidev.bus == display_obj->attr->pcidev.bus &&
+          query_display_obj->attr->pcidev.device_id == display_obj->attr->pcidev.device_id &&
+          query_display_obj->attr->pcidev.domain == display_obj->attr->pcidev.domain &&
+          query_display_obj->attr->pcidev.func == display_obj->attr->pcidev.func) {
+
+        display->port = i;
+        display->device = j;
+
         return display;
       }
-
-      /* Connection failure This is a double check */
-      if (query_pci_info.pci_bus == -1 ||
-          query_pci_info.pci_device == -1 ||
-          query_pci_info.pci_domain == -1 ||
-          query_pci_info.pci_function == -1
-          ) /* No X server on port/device */
-        break;
     }
   }
   return display;
 }
+
+
+
 
 /*****************************************************************
  * Returns a cpuset of the socket attached to the host bridge
  * where the GPU defined by defined by its hwloc_gl_pci_dev_info is
  * connected in the topology.
  ****************************************************************/
-hwloc_bitmap_t hwloc_gl_get_pci_cpuset(const hwloc_topology_t topology, const struct hwloc_gl_pci_dev_info pci_info)
+hwloc_bitmap_t
+hwloc_gl_get_pci_cpuset(hwloc_topology_t topology, const hwloc_obj_t display_obj)
 {
   int i;
+  hwloc_bitmap_t cpuset;
+  int pci_dev_count; /* The number of PCI devices in the topology */
 
-  /* The number of PCI devices in the topology */
-  int pci_dev_count = hwloc_get_nbobjs_by_type(topology, HWLOC_OBJ_PCI_DEVICE);
-  hwloc_bitmap_t cpuset = hwloc_bitmap_alloc();
+  pci_dev_count = hwloc_get_nbobjs_by_type(topology, HWLOC_OBJ_PCI_DEVICE);
+  cpuset = hwloc_bitmap_alloc();
 
   for (i = 0; i < pci_dev_count; ++i) {
     /* PCI device object */
@@ -191,11 +237,10 @@ hwloc_bitmap_t hwloc_gl_get_pci_cpuset(const hwloc_topology_t topology, const st
     pci_dev_object = hwloc_get_obj_by_type (topology, HWLOC_OBJ_PCI_DEVICE, i);
 
     /* PCI device ID */
-    if (pci_info.pci_bus == pci_dev_object->attr->pcidev.bus &&
-        pci_info.pci_device == pci_dev_object->attr->pcidev.device_id &&
-        pci_info.pci_domain == pci_dev_object->attr->pcidev.domain &&
-        pci_info.pci_function == pci_dev_object->attr->pcidev.func
-        ) {
+    if (display_obj->attr->pcidev.bus == pci_dev_object->attr->pcidev.bus &&
+        display_obj->attr->pcidev.dev == pci_dev_object->attr->pcidev.device_id &&
+        display_obj->attr->pcidev.domain == pci_dev_object->attr->pcidev.domain &&
+        display_obj->attr->pcidev.func == pci_dev_object->attr->pcidev.func) {
 
       /* Host bridge of the PCI device */
       hwloc_obj_t host_bridge;
@@ -203,8 +248,8 @@ hwloc_bitmap_t hwloc_gl_get_pci_cpuset(const hwloc_topology_t topology, const st
                                                     pci_dev_object->attr->pcidev.domain,
                                                     pci_dev_object->attr->pcidev.bus);
 
-      /* Get the cpuset of the socket attached to host bridge
-            * at which the PCI device is connected */
+      /* Get the cpuset of the socket attached to host
+       * bridge at which the PCI device is connected */
       cpuset = host_bridge->prev_sibling->cpuset;
       return hwloc_bitmap_dup(cpuset);
     }
@@ -222,22 +267,23 @@ hwloc_bitmap_t hwloc_gl_get_pci_cpuset(const hwloc_topology_t topology, const st
  * [:][port][.][device] under X systems.
  * It returns empty cpuset for non screens.
  ****************************************************************/
-hwloc_bitmap_t hwloc_gl_get_display_cpuset(const hwloc_topology_t topology, const int port, const int device)
+hwloc_bitmap_t hwloc_gl_get_display_cpuset(hwloc_topology_t topology, const int port, const int device)
 {
   char x_display [10];
-  struct hwloc_gl_pci_dev_info pci_info;
-  hwloc_bitmap_t cpuset = hwloc_bitmap_alloc();
+  hwloc_obj_t display_obj;
+  hwloc_bitmap_t cpuset;
+
+  /* Allocate the cpuset and initialize it to zeros in case of failure */
+  cpuset = hwloc_bitmap_alloc();
   hwloc_bitmap_zero(cpuset);
 
   snprintf(x_display,sizeof(x_display),":%d.%d", port, device);
-  pci_info = hwloc_gl_query_display(x_display);
+  display_obj = hwloc_gl_query_display(topology, x_display);
 
-  /* If the GL module was not enabled or wrong device */
-  if (pci_info.pci_bus == -1 && pci_info.pci_device == -1 && pci_info.pci_domain == -1 && pci_info.pci_function == -1)
-    return hwloc_bitmap_dup(cpuset);
-  else {
-    cpuset = hwloc_gl_get_pci_cpuset(topology, pci_info);
-    return hwloc_bitmap_dup(cpuset);
+  if (display_obj != NULL) {
+      cpuset = hwloc_gl_get_pci_cpuset(topology, display_obj);
+      return hwloc_bitmap_dup(cpuset);
   }
+  else /* If the gl module was not enabled or wrong device */
+    return hwloc_bitmap_dup(cpuset);
 }
-

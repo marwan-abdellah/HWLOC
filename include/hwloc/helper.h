@@ -21,9 +21,9 @@
 #include <stdlib.h>
 #include <errno.h>
 
-#ifdef HWLOC_HAVE_GL
+//#ifdef HWLOC_HAVE_GL
 #include <hwloc/gl.h>
-#endif
+//#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -1287,6 +1287,35 @@ hwloc_get_pcidev_by_busidstring(hwloc_topology_t topology, const char *busid)
 
   return hwloc_get_pcidev_by_busid(topology, domain, bus, dev, func);
 }
+
+/** \brief Find the PCI device object matching the GPU connected to the
+ * display defined by its port and device as [:]port[.]device
+ */
+static __hwloc_inline hwloc_obj_t
+hwloc_get_pcidev_by_display(hwloc_topology_t topology, hwloc_gl_display_info_t display_info)
+{
+  hwloc_obj_t pcidev_obj;
+
+  /* Forming the display string */
+  char x_display [10];
+  snprintf(x_display,sizeof(x_display),":%d.%d", display_info->port, display_info->device);
+
+  pcidev_obj = hwloc_gl_query_display(topology, x_display);
+
+  if (pcidev_obj != NULL)
+    return pcidev_obj;
+  else
+    return NULL;
+}
+
+static __hwloc_inline hwloc_gl_display_info_t
+hwloc_get_pcidev_display(hwloc_topology_t topology, hwloc_obj_t pcidev)
+{
+  return NULL;
+}
+
+
+
 
 /** \brief Get the next OS device in the system.
  *
