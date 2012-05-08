@@ -11,7 +11,7 @@
 #include <hwloc/gl.h>
 
 /*****************************************************************
- * Allocates a hwloc_obj_t of type PCI_DEVICE and returns a
+ * Allocates a hwloc_obj_t of type HWLOC_OBJ_PCI_DEVICE and returns a
  * pointer to this object.
  ****************************************************************/
 static hwloc_obj_t hwloc_gl_alloc_pcidev_object(void)
@@ -26,29 +26,30 @@ static hwloc_obj_t hwloc_gl_alloc_pcidev_object(void)
 }
 
 /*****************************************************************
- * MODIFIED: Queries a display defined by its port and device numbers, and
- * returns a   having unique identifiers for the GPU
- * connected to it.
+ * Queries a display defined by its port and device numbers in the
+ * string format ":[port].[device]", and
+ * returns a hwloc_obj_t containg the desired pci parameters (bus,
+ * device id, domain, function)
  ****************************************************************/
 hwloc_obj_t hwloc_gl_query_display(hwloc_topology_t topology, char* displayName)
 {
-  /* Allocate pcidev object for retreving pcidev data in */
   hwloc_obj_t display_obj = NULL;
 
 #ifdef HWLOC_HAVE_GL
   Display* display;
   int opcode, event, error;
-  int default_screen_number;  /* Default screen number */
+  int default_screen_number;
   unsigned int *ptr_binary_data;
   int data_lenght;
-  int sucess;
   int gpu_number;
 
+  int num_pci_devices;
   int nv_ctrl_pci_bus;
   int nv_ctrl_pci_device;
   int nv_ctrl_pci_domain;
   int nv_ctrl_pci_func;
-  int success;
+
+  int success_gpu;
   int success_info;
   int i;
 
@@ -66,23 +67,12 @@ hwloc_obj_t hwloc_gl_query_display(hwloc_topology_t topology, char* displayName)
 
   default_screen_number = DefaultScreen(display);
 
-  /* Gets the GPU number attached to the default screen.
-     * For further details, see the <NVCtrl/NVCtrlLib.h> */
-  sucess = XNVCTRLQueryTargetBinaryData(display, NV_CTRL_TARGET_TYPE_X_SCREEN, default_screen_number, 0,
-                                        NV_CTRL_BINARY_DATA_GPUS_USED_BY_XSCREEN,
-                                        (unsigned char **) &ptr_binary_data, &data_lenght);
-  if (!sucess) {
-    fprintf(stderr, "Failed to query the GPUs attached to the default screen \n");
-
-    /* Closing the connection */
-    XCloseDisplay(display);
-    return display_obj;
-  }
-
-  success = XNVCTRLQueryTargetBinaryData (display, NV_CTRL_TARGET_TYPE_X_SCREEN, default_screen_number, 0,
+  /* Gets the GPU number attached to the default screen. */
+  /* For further details, see the <NVCtrl/NVCtrlLib.h> */
+  success_gpu = XNVCTRLQueryTargetBinaryData (display, NV_CTRL_TARGET_TYPE_X_SCREEN, default_screen_number, 0,
                                           NV_CTRL_BINARY_DATA_GPUS_USED_BY_XSCREEN,
                                           (unsigned char **) &ptr_binary_data, &data_lenght);
-  if (success) {
+  if (success_gpu) {
     gpu_number = ptr_binary_data[1];
     free(ptr_binary_data);
 
@@ -100,23 +90,32 @@ hwloc_obj_t hwloc_gl_query_display(hwloc_topology_t topology, char* displayName)
           success_info = XNVCTRLQueryTargetAttribute(display, NV_CTRL_TARGET_TYPE_GPU, gpu_number, 0,
                                                      NV_CTRL_PCI_FUNCTION, &nv_ctrl_pci_func);
 
-          /* This part only works if the I/O and BRIDGES flags are set */
-          int num_pci_devices = hwloc_get_nbobjs_by_type(topology, HWLOC_OBJ_PCI_DEVICE);
-          if (num_pci_devices > 0)
-          {
-            for (i = 0; i < num_pci_devices; ++i)
+          if (topology != NULL) {
+            /* This part only works if the I/O and BRIDGES flags are set */
+            num_pci_devices = hwloc_get_nbobjs_by_type(topology, HWLOC_OBJ_PCI_DEVICE);
+            if (num_pci_devices > 0)
             {
-              display_obj = hwloc_get_obj_by_type(topology, HWLOC_OBJ_PCI_DEVICE, i);
+              for (i = 0; i < num_pci_devices; ++i)
+              {
+                display_obj = hwloc_get_obj_by_type(topology, HWLOC_OBJ_PCI_DEVICE, i);
 
-              /* For further details, see the <NVCtrl/NVCtrlLib.h> */
-              if ((int) display_obj->attr->pcidev.bus == (int) nv_ctrl_pci_bus &&
-                  (int) display_obj->attr->pcidev.device_id == ((int) nv_ctrl_pci_device & 0x0000FFFF) &&
-                  (int) display_obj->attr->pcidev.domain == (int) nv_ctrl_pci_domain &&
-                  (int) display_obj->attr->pcidev.func == (int) nv_ctrl_pci_func) {
-                printf("PCI_DEVICE %s \n", display_obj->name);
-                return display_obj;
+                /* For further details, see the <NVCtrl/NVCtrlLib.h> */
+                if ((int) display_obj->attr->pcidev.bus == (int) nv_ctrl_pci_bus &&
+                    (int) display_obj->attr->pcidev.device_id == ((int) nv_ctrl_pci_device & 0x0000FFFF) &&
+                    (int) display_obj->attr->pcidev.domain == (int) nv_ctrl_pci_domain &&
+                    (int) display_obj->attr->pcidev.func == (int) nv_ctrl_pci_func) {
+                  return display_obj;
+                }
               }
             }
+          }
+          else {
+            display_obj = hwloc_gl_alloc_pcidev_object();
+
+            display_obj->attr->pcidev.bus = nv_ctrl_pci_bus;
+            display_obj->attr->pcidev.device_id = nv_ctrl_pci_device & 0x0000FFFF;
+            display_obj->attr->pcidev.domain = nv_ctrl_pci_domain;
+            display_obj->attr->pcidev.func = nv_ctrl_pci_func;
           }
         }
         else {
@@ -137,6 +136,7 @@ hwloc_obj_t hwloc_gl_query_display(hwloc_topology_t topology, char* displayName)
   else
     fprintf(stderr, "Failed to query the GPUs attached to the default screen \n");
 
+  /* Closing the connection */
   XCloseDisplay(display);
   return display_obj;
 
@@ -147,20 +147,20 @@ hwloc_obj_t hwloc_gl_query_display(hwloc_topology_t topology, char* displayName)
 }
 
 /*****************************************************************
- * MODIFIED: Returns a DISPLAY for a given GPU defined by its hwloc_gl_pci_dev_info.
- * The returned  ure should have the formathwloc_gl_get_gpu_display
- * "[:][port][.][device]"
+ * Returns a DISPLAY for a given GPU defined by its pcidev_obj
+ * which contains the pci info required for doing the matching a
+ * pci device in the topology.
  ****************************************************************/
-hwloc_gl_display_info_t hwloc_gl_get_gpu_display(hwloc_topology_t topology, const hwloc_obj_t display_obj)
+hwloc_gl_display_info_t hwloc_gl_get_gpu_display(hwloc_topology_t topology, const hwloc_obj_t pcidev_obj)
 {
-  hwloc_gl_display_info_t display;
+  hwloc_gl_display_info_t display = NULL;
   hwloc_obj_t query_display_obj;
 
   int x_server_max;
   int x_screen_max;
   int i,j;
 
-  /* Return -1's in case of failure to get valid display info */
+  /* Return -1's in case of failure of getting valid display info */
   display = malloc (sizeof(display));
   display->port = -1;
   display->device = -1;
@@ -173,35 +173,20 @@ hwloc_gl_display_info_t hwloc_gl_get_gpu_display(hwloc_topology_t topology, cons
   for (i = 0; i < x_server_max; ++i) {
     for (j = 0; j < x_screen_max; ++j) {
 
-      /* Set the display name with the format "[:][x_server][.][x_screen]" */
+      /* Formulate the display string with the format "[:][x_server][.][x_screen]" */
       char x_display [10];
       snprintf(x_display,sizeof(x_display),":%d.%d", i, j);
 
+      /* Retrieve an object matching the x_display */
       query_display_obj = hwloc_gl_query_display(topology, x_display);
 
       if (query_display_obj == NULL)
         break;
 
-      /*
-      printf("------------------------------------------------------------------------\n");
-      printf("dpy %s \n", x_display);
-
-      printf("--query_display_obj->attr->pcidev.bus %d \n", query_display_obj->attr->pcidev.bus);
-      printf("--query_display_obj->attr->pcidev.device_id %d \n", query_display_obj->attr->pcidev.device_id);
-      printf("--query_display_obj->attr->pcidev.domain %d \n", query_display_obj->attr->pcidev.domain);
-      printf("--query_display_obj->attr->pcidev.func %d \n", query_display_obj->attr->pcidev.func);
-
-      printf("--display_obj->attr->pcidev.bus %d \n", display_obj->attr->pcidev.bus);
-      printf("--display_obj->attr->pcidev.device_id %d \n", display_obj->attr->pcidev.device_id);
-      printf("--display_obj->attr->pcidev.domain %d \n", display_obj->attr->pcidev.domain);
-      printf("--display_obj->attr->pcidev.func %d \n", display_obj->attr->pcidev.func);
-      */
-
-
-      if (query_display_obj->attr->pcidev.bus == display_obj->attr->pcidev.bus &&
-          query_display_obj->attr->pcidev.device_id == display_obj->attr->pcidev.device_id &&
-          query_display_obj->attr->pcidev.domain == display_obj->attr->pcidev.domain &&
-          query_display_obj->attr->pcidev.func == display_obj->attr->pcidev.func) {
+      if (query_display_obj->attr->pcidev.bus == pcidev_obj->attr->pcidev.bus &&
+          query_display_obj->attr->pcidev.device_id == pcidev_obj->attr->pcidev.device_id &&
+          query_display_obj->attr->pcidev.domain == pcidev_obj->attr->pcidev.domain &&
+          query_display_obj->attr->pcidev.func == pcidev_obj->attr->pcidev.func) {
 
         display->port = i;
         display->device = j;
@@ -213,16 +198,45 @@ hwloc_gl_display_info_t hwloc_gl_get_gpu_display(hwloc_topology_t topology, cons
   return display;
 }
 
-
-
+/*****************************************************************
+ * Returns the DISPLAY parameters for a given pcidev_obj.
+ * Note: This function doesn't need to have an input topology and
+ * is just used for adding the display parameters in the topology
+ * created by running the "lstop" utility.
+ ****************************************************************/
+hwloc_gl_display_info_t hwloc_gl_get_gpu_display_private(const hwloc_obj_t pcidev_obj)
+{
+  return hwloc_gl_get_gpu_display(NULL, pcidev_obj);
+}
 
 /*****************************************************************
+ * Returns a hwloc_obj_t HWLOC_OBJ_PCI_DEVICE representing the GPU
+ * connected to a display defined by its port and device
+ * parameters.
+ * Returns NULL if no GPU was connected to the give port and
+ * device or for non exisiting display.
+ ****************************************************************/
+hwloc_obj_t hwloc_gl_get_gpu_by_display(hwloc_topology_t topology, const int port, const int device)
+{
+  char x_display [10];
+  hwloc_obj_t display_obj;
+
+  /* Formulate the display string */
+  snprintf(x_display, sizeof(x_display), ":%d.%d", port, device);
+  display_obj = hwloc_gl_query_display(topology, x_display);
+
+  if (display_obj != NULL)
+    return display_obj;
+  else
+    return NULL;
+}
+/*****************************************************************
  * Returns a cpuset of the socket attached to the host bridge
- * where the GPU defined by defined by its hwloc_gl_pci_dev_info is
- * connected in the topology.
+ * where the GPU defined by the pcidev_obj is connected in the
+ * topology.
  ****************************************************************/
 hwloc_bitmap_t
-hwloc_gl_get_pci_cpuset(hwloc_topology_t topology, const hwloc_obj_t display_obj)
+hwloc_gl_get_pci_cpuset(hwloc_topology_t topology, const hwloc_obj_t pcidev_obj)
 {
   int i;
   hwloc_bitmap_t cpuset;
@@ -237,10 +251,10 @@ hwloc_gl_get_pci_cpuset(hwloc_topology_t topology, const hwloc_obj_t display_obj
     pci_dev_object = hwloc_get_obj_by_type (topology, HWLOC_OBJ_PCI_DEVICE, i);
 
     /* PCI device ID */
-    if (display_obj->attr->pcidev.bus == pci_dev_object->attr->pcidev.bus &&
-        display_obj->attr->pcidev.dev == pci_dev_object->attr->pcidev.device_id &&
-        display_obj->attr->pcidev.domain == pci_dev_object->attr->pcidev.domain &&
-        display_obj->attr->pcidev.func == pci_dev_object->attr->pcidev.func) {
+    if (pcidev_obj->attr->pcidev.bus == pci_dev_object->attr->pcidev.bus &&
+        pcidev_obj->attr->pcidev.device_id == pci_dev_object->attr->pcidev.device_id &&
+        pcidev_obj->attr->pcidev.domain == pci_dev_object->attr->pcidev.domain &&
+        pcidev_obj->attr->pcidev.func == pci_dev_object->attr->pcidev.func) {
 
       /* Host bridge of the PCI device */
       hwloc_obj_t host_bridge;
@@ -263,9 +277,10 @@ hwloc_gl_get_pci_cpuset(hwloc_topology_t topology, const hwloc_obj_t display_obj
 /*****************************************************************
  * Returns the cpuset of the socket connected to the host bridge
  * connecting the GPU attached to the display defined by the
- * input port and device integers and having the format
- * [:][port][.][device] under X systems.
- * It returns empty cpuset for non screens.
+ * input port and device integers and having the generic format
+ * [:][port][.][device] or the format [:][server][.][screen] under
+ * X systems.
+ * It returns empty (zero) cpuset for an invalid display.
  ****************************************************************/
 hwloc_bitmap_t hwloc_gl_get_display_cpuset(hwloc_topology_t topology, const int port, const int device)
 {
@@ -277,13 +292,23 @@ hwloc_bitmap_t hwloc_gl_get_display_cpuset(hwloc_topology_t topology, const int 
   cpuset = hwloc_bitmap_alloc();
   hwloc_bitmap_zero(cpuset);
 
-  snprintf(x_display,sizeof(x_display),":%d.%d", port, device);
+  /* Formulate the display string */
+  snprintf(x_display, sizeof(x_display), ":%d.%d", port, device);
   display_obj = hwloc_gl_query_display(topology, x_display);
 
   if (display_obj != NULL) {
-      cpuset = hwloc_gl_get_pci_cpuset(topology, display_obj);
-      return hwloc_bitmap_dup(cpuset);
-  }
-  else /* If the gl module was not enabled or wrong device */
+    cpuset = hwloc_gl_get_pci_cpuset(topology, display_obj);
     return hwloc_bitmap_dup(cpuset);
+  }
+  else /* If the gl module was not enabled or wrong display */
+    return hwloc_bitmap_dup(cpuset);
+}
+
+/*****************************************************************
+ * Returns the cpuset of the socket connected to the host bridge
+ * connecting the pci device defined by pcidev_obj.
+ ****************************************************************/
+hwloc_bitmap_t hwloc_get_pcidevice_cpuset(hwloc_topology_t topology, const hwloc_obj_t pcidev_obj)
+{
+    return hwloc_bitmap_dup(hwloc_gl_get_pci_cpuset(topology, pcidev_obj));
 }

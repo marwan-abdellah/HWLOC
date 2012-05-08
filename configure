@@ -678,6 +678,8 @@ HWLOC_HAVE_CUDART_FALSE
 HWLOC_HAVE_CUDART_TRUE
 HWLOC_HAVE_MYRIEXPRESS_FALSE
 HWLOC_HAVE_MYRIEXPRESS_TRUE
+HWLOC_HAVE_GL_FALSE
+HWLOC_HAVE_GL_TRUE
 HWLOC_HAVE_CUDA_FALSE
 HWLOC_HAVE_CUDA_TRUE
 HWLOC_HAVE_LIBIBVERBS_FALSE
@@ -14641,6 +14643,14 @@ else
   HWLOC_HAVE_CUDA_FALSE=
 fi
 
+	 if test "x$hwloc_have_gl" = "xyes"; then
+  HWLOC_HAVE_GL_TRUE=
+  HWLOC_HAVE_GL_FALSE='#'
+else
+  HWLOC_HAVE_GL_TRUE='#'
+  HWLOC_HAVE_GL_FALSE=
+fi
+
 	 if test "x$hwloc_have_myriexpress" = "xyes"; then
   HWLOC_HAVE_MYRIEXPRESS_TRUE=
   HWLOC_HAVE_MYRIEXPRESS_FALSE='#'
@@ -22418,6 +22428,10 @@ Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${HWLOC_HAVE_CUDA_TRUE}" && test -z "${HWLOC_HAVE_CUDA_FALSE}"; then
   as_fn_error $? "conditional \"HWLOC_HAVE_CUDA\" was never defined.
+Usually this means the macro was only invoked conditionally." "$LINENO" 5
+fi
+if test -z "${HWLOC_HAVE_GL_TRUE}" && test -z "${HWLOC_HAVE_GL_FALSE}"; then
+  as_fn_error $? "conditional \"HWLOC_HAVE_GL\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${HWLOC_HAVE_MYRIEXPRESS_TRUE}" && test -z "${HWLOC_HAVE_MYRIEXPRESS_FALSE}"; then

@@ -20,10 +20,7 @@
 
 #include <stdlib.h>
 #include <errno.h>
-
-//#ifdef HWLOC_HAVE_GL
 #include <hwloc/gl.h>
-//#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -1289,16 +1286,16 @@ hwloc_get_pcidev_by_busidstring(hwloc_topology_t topology, const char *busid)
 }
 
 /** \brief Find the PCI device object matching the GPU connected to the
- * display defined by its port and device as [:]port[.]device
+ * display defined by its port and device as [:][port][.][device]
  */
 static __hwloc_inline hwloc_obj_t
-hwloc_get_pcidev_by_display(hwloc_topology_t topology, hwloc_gl_display_info_t display_info)
+hwloc_get_pcidev_by_display(hwloc_topology_t topology, const int port, const int device)
 {
   hwloc_obj_t pcidev_obj;
 
   /* Forming the display string */
   char x_display [10];
-  snprintf(x_display,sizeof(x_display),":%d.%d", display_info->port, display_info->device);
+  snprintf(x_display,sizeof(x_display),":%d.%d", port, device);
 
   pcidev_obj = hwloc_gl_query_display(topology, x_display);
 
@@ -1307,15 +1304,6 @@ hwloc_get_pcidev_by_display(hwloc_topology_t topology, hwloc_gl_display_info_t d
   else
     return NULL;
 }
-
-static __hwloc_inline hwloc_gl_display_info_t
-hwloc_get_pcidev_display(hwloc_topology_t topology, hwloc_obj_t pcidev)
-{
-  return NULL;
-}
-
-
-
 
 /** \brief Get the next OS device in the system.
  *
@@ -1372,7 +1360,6 @@ hwloc_get_hostbridge_by_pcibus(hwloc_topology_t topology,
   return NULL;
 }
 
-#ifdef HWLOC_HAVE_GL
 /** \brief Returns a cpuset of the socket attached to the host bridge
  * for a given PCI device defined by its info.
  *
@@ -1380,8 +1367,7 @@ hwloc_get_hostbridge_by_pcibus(hwloc_topology_t topology,
  * to the host bridge where the PCI device defined by its bus, domain,
  * function, device ID's is connected in the topology.
  */
-HWLOC_DECLSPEC hwloc_bitmap_t get_pci_cpuset(const hwloc_topology_t topology, const struct hwloc_gl_pci_dev_info pci_info);
-#endif
+HWLOC_DECLSPEC hwloc_bitmap_t hwloc_get_pcidevice_cpuset(hwloc_topology_t topology, const hwloc_obj_t pcidev_obj);
 
 /** @} */
 

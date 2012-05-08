@@ -168,20 +168,6 @@ hwloc_linux_lookup_drm_class(struct hwloc_topology *topology, struct hwloc_obj *
    */
 }
 
-
-static void print_children(hwloc_topology_t topology, hwloc_obj_t obj,
-                           int depth)
-{
-  char string[128];
-  unsigned i;
-  hwloc_obj_snprintf(string, sizeof(string), topology, obj, "#", 0);
-  printf("%*s%s\n", 2*depth, "", string);
-  for (i = 0; i < obj->arity; i++) {
-    print_children(topology, obj->children[i], depth + 1);
-  }
-}
-
-
 #ifdef HWLOC_HAVE_GL
 /*
  * Looks for the GPUs connected to the system and then shows
@@ -192,9 +178,8 @@ hwloc_linux_lookup_display_class(struct hwloc_topology *topology, struct hwloc_o
 {
   hwloc_gl_display_info_t display;
 
-
   /* Getting the display info */
-  display = hwloc_gl_get_gpu_display(topology, pcidev);
+  display = hwloc_gl_get_gpu_display_private(pcidev);
 
   /* If GPU, Appending the display as a children to the GPU
    * and add a display object with the display name */
