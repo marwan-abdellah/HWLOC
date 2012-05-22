@@ -1,0 +1,850 @@
+\hypertarget{a00065}{
+\section{The bitmap API}
+\label{a00065}\index{The bitmap API@{The bitmap API}}
+}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00065_ga3f6861045a8029ade373510ffa727d2a}{hwloc\_\-bitmap\_\-foreach\_\-begin}(id, bitmap)
+\item 
+\#define \hyperlink{a00065_gafcf3246db406218d4e155735b3fa6528}{hwloc\_\-bitmap\_\-foreach\_\-end}()
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct hwloc\_\-bitmap\_\-s $\ast$ \hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t}
+\item 
+typedef struct hwloc\_\-bitmap\_\-s $\ast$ \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} \hyperlink{a00065_ga9fb6aedc30d4ef4998fa53e2403b6130}{hwloc\_\-bitmap\_\-alloc} (void) 
+\item 
+ \hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} \hyperlink{a00065_gadd4479485685bda179f4b8b9b70f671e}{hwloc\_\-bitmap\_\-alloc\_\-full} (void) 
+\item 
+ void \hyperlink{a00065_ga8e7035fe555ef96921bfb98e08519bc7}{hwloc\_\-bitmap\_\-free} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap)
+\item 
+ \hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} \hyperlink{a00065_gaaa4ed76211cd3694dfbea2109fc440be}{hwloc\_\-bitmap\_\-dup} (\hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap) 
+\item 
+ void \hyperlink{a00065_gab14743355fa03b36cef521cbcd2fbf64}{hwloc\_\-bitmap\_\-copy} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} dst, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} src)
+\item 
+ int \hyperlink{a00065_ga6c0d60db98f27276752c1e5fafcbd7d1}{hwloc\_\-bitmap\_\-snprintf} (char $\ast$restrict buf, size\_\-t buflen, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap)
+\item 
+ int \hyperlink{a00065_gad3cf87ceb58aa91656756bbb58057320}{hwloc\_\-bitmap\_\-asprintf} (char $\ast$$\ast$strp, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap)
+\item 
+ int \hyperlink{a00065_ga553cd5ceb1925bfd31788e70b4a46ae8}{hwloc\_\-bitmap\_\-sscanf} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap, const char $\ast$restrict string)
+\item 
+ int \hyperlink{a00065_gab94b52560ea4333663895b3276e89af2}{hwloc\_\-bitmap\_\-list\_\-snprintf} (char $\ast$restrict buf, size\_\-t buflen, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap)
+\item 
+ int \hyperlink{a00065_ga600651f00d39d378f423acbd75d938d2}{hwloc\_\-bitmap\_\-list\_\-asprintf} (char $\ast$$\ast$strp, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap)
+\item 
+ int \hyperlink{a00065_gafe8fc90e7a9171e287cf1bfa11e85980}{hwloc\_\-bitmap\_\-list\_\-sscanf} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap, const char $\ast$restrict string)
+\item 
+ int \hyperlink{a00065_gae0e0619f43a4af5efafb75f489c1c6ec}{hwloc\_\-bitmap\_\-taskset\_\-snprintf} (char $\ast$restrict buf, size\_\-t buflen, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap)
+\item 
+ int \hyperlink{a00065_gaa3df92e204ffb24ceddd44d8d58f6eaa}{hwloc\_\-bitmap\_\-taskset\_\-asprintf} (char $\ast$$\ast$strp, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap)
+\item 
+ int \hyperlink{a00065_ga71b28ef0d7206e37adbb94468c03e1a9}{hwloc\_\-bitmap\_\-taskset\_\-sscanf} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap, const char $\ast$restrict string)
+\item 
+ void \hyperlink{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}{hwloc\_\-bitmap\_\-zero} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap)
+\item 
+ void \hyperlink{a00065_ga52456f7ef79d68e610cb65e3f7ffafad}{hwloc\_\-bitmap\_\-fill} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap)
+\item 
+ void \hyperlink{a00065_ga8ea10f5ebaadb8418f28f953d6106190}{hwloc\_\-bitmap\_\-only} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap, unsigned id)
+\item 
+ void \hyperlink{a00065_ga88204c1c313aa067da10241b5886a166}{hwloc\_\-bitmap\_\-allbut} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap, unsigned id)
+\item 
+ void \hyperlink{a00065_ga02eae57cff32b6aa55044e6609ae7d73}{hwloc\_\-bitmap\_\-from\_\-ulong} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap, unsigned long mask)
+\item 
+ void \hyperlink{a00065_ga3c44c943cb3a3e4577b32d924e4f36f2}{hwloc\_\-bitmap\_\-from\_\-ith\_\-ulong} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap, unsigned i, unsigned long mask)
+\item 
+ void \hyperlink{a00065_ga497556af0cc34f109ae0277999c074d3}{hwloc\_\-bitmap\_\-set} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap, unsigned id)
+\item 
+ void \hyperlink{a00065_ga9d4f8fc40f552a76c943b5b773ac17d6}{hwloc\_\-bitmap\_\-set\_\-range} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap, unsigned begin, int end)
+\item 
+ void \hyperlink{a00065_ga56027d6b141a3da441925e6e999de1c1}{hwloc\_\-bitmap\_\-set\_\-ith\_\-ulong} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap, unsigned i, unsigned long mask)
+\item 
+ void \hyperlink{a00065_ga54e89b87ba5f5c18323f16690e0e5730}{hwloc\_\-bitmap\_\-clr} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap, unsigned id)
+\item 
+ void \hyperlink{a00065_gac27bd46fd5b387def6b40712b7ee2796}{hwloc\_\-bitmap\_\-clr\_\-range} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap, unsigned begin, int end)
+\item 
+ void \hyperlink{a00065_ga4630aa1b7e08eac5b41be126194e84a1}{hwloc\_\-bitmap\_\-singlify} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} bitmap)
+\item 
+ unsigned long \hyperlink{a00065_ga4fee4e3cea99e4a389c54a6c3f0c78ed}{hwloc\_\-bitmap\_\-to\_\-ulong} (\hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap) 
+\item 
+ unsigned long \hyperlink{a00065_gabc0b9f4cae56a1303c38b2380086efc2}{hwloc\_\-bitmap\_\-to\_\-ith\_\-ulong} (\hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap, unsigned i) 
+\item 
+ int \hyperlink{a00065_ga2583f44cbdb5fff2ea40efdcf3975d3f}{hwloc\_\-bitmap\_\-isset} (\hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap, unsigned id) 
+\item 
+ int \hyperlink{a00065_gaa94fed35d2a598bc4a8657b6955b7bf5}{hwloc\_\-bitmap\_\-iszero} (\hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap) 
+\item 
+ int \hyperlink{a00065_ga59a07ecd8e74f2d4ee4271a1dbf0e4dd}{hwloc\_\-bitmap\_\-isfull} (\hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap) 
+\item 
+ int \hyperlink{a00065_ga42472a7b75ca79cae19f0611fdb849e6}{hwloc\_\-bitmap\_\-first} (\hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap) 
+\item 
+ int \hyperlink{a00065_ga00fc0b9d7d603e271b75956a7dd28826}{hwloc\_\-bitmap\_\-next} (\hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap, int prev) 
+\item 
+ int \hyperlink{a00065_ga4d5786ea9561d9ddbf90bc0ce606c549}{hwloc\_\-bitmap\_\-last} (\hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap) 
+\item 
+ int \hyperlink{a00065_ga12d520387be74f849f191d7a06ac325c}{hwloc\_\-bitmap\_\-weight} (\hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap) 
+\item 
+ void \hyperlink{a00065_ga1ba1de709ee9a7cf5cc8ad2d9a1a81d4}{hwloc\_\-bitmap\_\-or} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} res, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap1, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap2)
+\item 
+ void \hyperlink{a00065_gac2f7675dcf1b664a832413d9990d1bcf}{hwloc\_\-bitmap\_\-and} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} res, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap1, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap2)
+\item 
+ void \hyperlink{a00065_ga7618a962685d95564564ba07e9b2199b}{hwloc\_\-bitmap\_\-andnot} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} res, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap1, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap2)
+\item 
+ void \hyperlink{a00065_ga5743af61c30758df75aec29c12444616}{hwloc\_\-bitmap\_\-xor} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} res, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap1, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap2)
+\item 
+ void \hyperlink{a00065_ga4a8088d62755a083ffce9d592c9e3878}{hwloc\_\-bitmap\_\-not} (\hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} res, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap)
+\item 
+ int \hyperlink{a00065_ga575c27953709a8cb9a047aae65157526}{hwloc\_\-bitmap\_\-intersects} (\hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap1, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap2) 
+\item 
+ int \hyperlink{a00065_gaae29e14a926c198e8f91e6e4790621e7}{hwloc\_\-bitmap\_\-isincluded} (\hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} sub\_\-bitmap, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} super\_\-bitmap) 
+\item 
+ int \hyperlink{a00065_ga4dd6a75ab63d33ef33bd626b0e489388}{hwloc\_\-bitmap\_\-isequal} (\hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap1, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap2) 
+\item 
+ int \hyperlink{a00065_gac1cbd1e03f9986552243761e657e1752}{hwloc\_\-bitmap\_\-compare\_\-first} (\hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap1, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap2) 
+\item 
+ int \hyperlink{a00065_gadd3aa325f2d6a17b5aa3b3be9c740da0}{hwloc\_\-bitmap\_\-compare} (\hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap1, \hyperlink{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{hwloc\_\-const\_\-bitmap\_\-t} bitmap2) 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} type represents a set of objects, typically OS processors -\/-\/ which may actually be hardware threads (represented by \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc\_\-cpuset\_\-t}, which is a typedef for \hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t}) -\/-\/ or memory nodes (represented by \hyperlink{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{hwloc\_\-nodeset\_\-t}, which is also a typedef for \hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t}).
+
+{\itshape Both CPU and node sets are always indexed by OS physical number.\/}
+
+\begin{DoxyNote}{Note}
+CPU sets and nodesets are described in \hyperlink{a00040}{Object sets (hwloc\_\-cpuset\_\-t and hwloc\_\-nodeset\_\-t)}.
+\end{DoxyNote}
+A bitmap may be of infinite size. 
+
+\subsection{Define Documentation}
+\hypertarget{a00065_ga3f6861045a8029ade373510ffa727d2a}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-foreach\_\-begin@{hwloc\_\-bitmap\_\-foreach\_\-begin}}
+\index{hwloc\_\-bitmap\_\-foreach\_\-begin@{hwloc\_\-bitmap\_\-foreach\_\-begin}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-foreach\_\-begin}]{\setlength{\rightskip}{0pt plus 5cm}\#define hwloc\_\-bitmap\_\-foreach\_\-begin(
+\begin{DoxyParamCaption}
+\item[{}]{id, }
+\item[{}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga3f6861045a8029ade373510ffa727d2a}
+
+
+Loop macro iterating on bitmap {\ttfamily bitmap}. 
+
+{\ttfamily index} is the loop variable; it should be an unsigned int. The first iteration will set {\ttfamily index} to the lowest index in the bitmap. Successive iterations will iterate through, in order, all remaining indexes that in the bitmap. To be specific: each iteration will return a value for {\ttfamily index} such that hwloc\_\-bitmap\_\-isset(bitmap, index) is true.
+
+The assert prevents the loop from being infinite if the bitmap is infinite. \hypertarget{a00065_gafcf3246db406218d4e155735b3fa6528}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-foreach\_\-end@{hwloc\_\-bitmap\_\-foreach\_\-end}}
+\index{hwloc\_\-bitmap\_\-foreach\_\-end@{hwloc\_\-bitmap\_\-foreach\_\-end}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-foreach\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}\#define hwloc\_\-bitmap\_\-foreach\_\-end(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gafcf3246db406218d4e155735b3fa6528}
+
+
+End of loop. Needs a terminating ';'. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{a00065_ga3f6861045a8029ade373510ffa727d2a}{hwloc\_\-bitmap\_\-foreach\_\-begin} 
+\end{DoxySeeAlso}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-t@{hwloc\_\-bitmap\_\-t}}
+\index{hwloc\_\-bitmap\_\-t@{hwloc\_\-bitmap\_\-t}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct hwloc\_\-bitmap\_\-s$\ast$ {\bf hwloc\_\-bitmap\_\-t}}}
+\label{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}
+
+
+Set of bits represented as an opaque pointer to an internal bitmap. 
+
+\hypertarget{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-const\_\-bitmap\_\-t@{hwloc\_\-const\_\-bitmap\_\-t}}
+\index{hwloc\_\-const\_\-bitmap\_\-t@{hwloc\_\-const\_\-bitmap\_\-t}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-const\_\-bitmap\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct hwloc\_\-bitmap\_\-s$\ast$ {\bf hwloc\_\-const\_\-bitmap\_\-t}}}
+\label{a00065_ga2fb1bbc8aea1ea22dee2f0fd39659f48}
+
+
+a non-\/modifiable \hyperlink{a00065_gaa3c2bf4c776d603dcebbb61b0c923d84}{hwloc\_\-bitmap\_\-t} 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{a00065_ga88204c1c313aa067da10241b5886a166}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-allbut@{hwloc\_\-bitmap\_\-allbut}}
+\index{hwloc\_\-bitmap\_\-allbut@{hwloc\_\-bitmap\_\-allbut}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-allbut}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-allbut (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap, }
+\item[{unsigned}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga88204c1c313aa067da10241b5886a166}
+
+
+Fill the bitmap {\ttfamily and} clear the index {\ttfamily id}. 
+
+\hypertarget{a00065_ga9fb6aedc30d4ef4998fa53e2403b6130}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-alloc@{hwloc\_\-bitmap\_\-alloc}}
+\index{hwloc\_\-bitmap\_\-alloc@{hwloc\_\-bitmap\_\-alloc}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-alloc}]{\setlength{\rightskip}{0pt plus 5cm} {\bf hwloc\_\-bitmap\_\-t} hwloc\_\-bitmap\_\-alloc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga9fb6aedc30d4ef4998fa53e2403b6130}
+
+
+Allocate a new empty bitmap. 
+
+\begin{DoxyReturn}{Returns}
+A valid bitmap or {\ttfamily NULL}.
+\end{DoxyReturn}
+The bitmap should be freed by a corresponding call to \hyperlink{a00065_ga8e7035fe555ef96921bfb98e08519bc7}{hwloc\_\-bitmap\_\-free()}. \hypertarget{a00065_gadd4479485685bda179f4b8b9b70f671e}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-alloc\_\-full@{hwloc\_\-bitmap\_\-alloc\_\-full}}
+\index{hwloc\_\-bitmap\_\-alloc\_\-full@{hwloc\_\-bitmap\_\-alloc\_\-full}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-alloc\_\-full}]{\setlength{\rightskip}{0pt plus 5cm} {\bf hwloc\_\-bitmap\_\-t} hwloc\_\-bitmap\_\-alloc\_\-full (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gadd4479485685bda179f4b8b9b70f671e}
+
+
+Allocate a new full bitmap. 
+
+\hypertarget{a00065_gac2f7675dcf1b664a832413d9990d1bcf}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-and@{hwloc\_\-bitmap\_\-and}}
+\index{hwloc\_\-bitmap\_\-and@{hwloc\_\-bitmap\_\-and}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-and}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-and (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{res, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap1, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap2}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gac2f7675dcf1b664a832413d9990d1bcf}
+
+
+And bitmaps {\ttfamily bitmap1} and {\ttfamily bitmap2} and store the result in bitmap {\ttfamily res}. 
+
+\hypertarget{a00065_ga7618a962685d95564564ba07e9b2199b}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-andnot@{hwloc\_\-bitmap\_\-andnot}}
+\index{hwloc\_\-bitmap\_\-andnot@{hwloc\_\-bitmap\_\-andnot}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-andnot}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-andnot (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{res, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap1, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap2}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga7618a962685d95564564ba07e9b2199b}
+
+
+And bitmap {\ttfamily bitmap1} and the negation of {\ttfamily bitmap2} and store the result in bitmap {\ttfamily res}. 
+
+\hypertarget{a00065_gad3cf87ceb58aa91656756bbb58057320}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-asprintf@{hwloc\_\-bitmap\_\-asprintf}}
+\index{hwloc\_\-bitmap\_\-asprintf@{hwloc\_\-bitmap\_\-asprintf}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-asprintf}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-asprintf (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{strp, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gad3cf87ceb58aa91656756bbb58057320}
+
+
+Stringify a bitmap into a newly allocated string. 
+
+\hypertarget{a00065_ga54e89b87ba5f5c18323f16690e0e5730}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-clr@{hwloc\_\-bitmap\_\-clr}}
+\index{hwloc\_\-bitmap\_\-clr@{hwloc\_\-bitmap\_\-clr}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-clr}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-clr (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap, }
+\item[{unsigned}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga54e89b87ba5f5c18323f16690e0e5730}
+
+
+Remove index {\ttfamily id} from bitmap {\ttfamily bitmap}. 
+
+\hypertarget{a00065_gac27bd46fd5b387def6b40712b7ee2796}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-clr\_\-range@{hwloc\_\-bitmap\_\-clr\_\-range}}
+\index{hwloc\_\-bitmap\_\-clr\_\-range@{hwloc\_\-bitmap\_\-clr\_\-range}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-clr\_\-range}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-clr\_\-range (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap, }
+\item[{unsigned}]{begin, }
+\item[{int}]{end}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gac27bd46fd5b387def6b40712b7ee2796}
+
+
+Remove indexes from {\ttfamily begin} to {\ttfamily end} in bitmap {\ttfamily bitmap}. 
+
+If {\ttfamily end} is {\ttfamily -\/1}, the range is infinite. \hypertarget{a00065_gadd3aa325f2d6a17b5aa3b3be9c740da0}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-compare@{hwloc\_\-bitmap\_\-compare}}
+\index{hwloc\_\-bitmap\_\-compare@{hwloc\_\-bitmap\_\-compare}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-compare (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap1, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap2}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gadd3aa325f2d6a17b5aa3b3be9c740da0}
+
+
+Compare bitmaps {\ttfamily bitmap1} and {\ttfamily bitmap2} using their highest index. 
+
+Higher most significant bit is higher. The empty bitmap is considered lower than anything. \hypertarget{a00065_gac1cbd1e03f9986552243761e657e1752}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-compare\_\-first@{hwloc\_\-bitmap\_\-compare\_\-first}}
+\index{hwloc\_\-bitmap\_\-compare\_\-first@{hwloc\_\-bitmap\_\-compare\_\-first}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-compare\_\-first}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-compare\_\-first (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap1, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap2}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gac1cbd1e03f9986552243761e657e1752}
+
+
+Compare bitmaps {\ttfamily bitmap1} and {\ttfamily bitmap2} using their lowest index. 
+
+Smaller least significant bit is smaller. The empty bitmap is considered higher than anything. \hypertarget{a00065_gab14743355fa03b36cef521cbcd2fbf64}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-copy@{hwloc\_\-bitmap\_\-copy}}
+\index{hwloc\_\-bitmap\_\-copy@{hwloc\_\-bitmap\_\-copy}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-copy (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{dst, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gab14743355fa03b36cef521cbcd2fbf64}
+
+
+Copy the contents of bitmap {\ttfamily src} into the already allocated bitmap {\ttfamily dst}. 
+
+\hypertarget{a00065_gaaa4ed76211cd3694dfbea2109fc440be}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-dup@{hwloc\_\-bitmap\_\-dup}}
+\index{hwloc\_\-bitmap\_\-dup@{hwloc\_\-bitmap\_\-dup}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-dup}]{\setlength{\rightskip}{0pt plus 5cm} {\bf hwloc\_\-bitmap\_\-t} hwloc\_\-bitmap\_\-dup (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gaaa4ed76211cd3694dfbea2109fc440be}
+
+
+Duplicate bitmap {\ttfamily bitmap} by allocating a new bitmap and copying {\ttfamily bitmap} contents. 
+
+If {\ttfamily bitmap} is {\ttfamily NULL}, {\ttfamily NULL} is returned. \hypertarget{a00065_ga52456f7ef79d68e610cb65e3f7ffafad}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-fill@{hwloc\_\-bitmap\_\-fill}}
+\index{hwloc\_\-bitmap\_\-fill@{hwloc\_\-bitmap\_\-fill}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-fill}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-fill (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga52456f7ef79d68e610cb65e3f7ffafad}
+
+
+Fill bitmap {\ttfamily bitmap} with all possible indexes (even if those objects don't exist or are otherwise unavailable) 
+
+\hypertarget{a00065_ga42472a7b75ca79cae19f0611fdb849e6}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-first@{hwloc\_\-bitmap\_\-first}}
+\index{hwloc\_\-bitmap\_\-first@{hwloc\_\-bitmap\_\-first}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-first}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-first (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga42472a7b75ca79cae19f0611fdb849e6}
+
+
+Compute the first index (least significant bit) in bitmap {\ttfamily bitmap}. 
+
+\begin{DoxyReturn}{Returns}
+-\/1 if no index is set. 
+\end{DoxyReturn}
+\hypertarget{a00065_ga8e7035fe555ef96921bfb98e08519bc7}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-free@{hwloc\_\-bitmap\_\-free}}
+\index{hwloc\_\-bitmap\_\-free@{hwloc\_\-bitmap\_\-free}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-free}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-free (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga8e7035fe555ef96921bfb98e08519bc7}
+
+
+Free bitmap {\ttfamily bitmap}. 
+
+If {\ttfamily bitmap} is {\ttfamily NULL}, no operation is performed. \hypertarget{a00065_ga3c44c943cb3a3e4577b32d924e4f36f2}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-from\_\-ith\_\-ulong@{hwloc\_\-bitmap\_\-from\_\-ith\_\-ulong}}
+\index{hwloc\_\-bitmap\_\-from\_\-ith\_\-ulong@{hwloc\_\-bitmap\_\-from\_\-ith\_\-ulong}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-from\_\-ith\_\-ulong}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-from\_\-ith\_\-ulong (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap, }
+\item[{unsigned}]{i, }
+\item[{unsigned long}]{mask}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga3c44c943cb3a3e4577b32d924e4f36f2}
+
+
+Setup bitmap {\ttfamily bitmap} from unsigned long {\ttfamily mask} used as {\ttfamily i} -\/th subset. 
+
+\hypertarget{a00065_ga02eae57cff32b6aa55044e6609ae7d73}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-from\_\-ulong@{hwloc\_\-bitmap\_\-from\_\-ulong}}
+\index{hwloc\_\-bitmap\_\-from\_\-ulong@{hwloc\_\-bitmap\_\-from\_\-ulong}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-from\_\-ulong}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-from\_\-ulong (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap, }
+\item[{unsigned long}]{mask}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga02eae57cff32b6aa55044e6609ae7d73}
+
+
+Setup bitmap {\ttfamily bitmap} from unsigned long {\ttfamily mask}. 
+
+\hypertarget{a00065_ga575c27953709a8cb9a047aae65157526}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-intersects@{hwloc\_\-bitmap\_\-intersects}}
+\index{hwloc\_\-bitmap\_\-intersects@{hwloc\_\-bitmap\_\-intersects}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-intersects}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-intersects (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap1, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap2}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga575c27953709a8cb9a047aae65157526}
+
+
+Test whether bitmaps {\ttfamily bitmap1} and {\ttfamily bitmap2} intersects. 
+
+\hypertarget{a00065_ga4dd6a75ab63d33ef33bd626b0e489388}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-isequal@{hwloc\_\-bitmap\_\-isequal}}
+\index{hwloc\_\-bitmap\_\-isequal@{hwloc\_\-bitmap\_\-isequal}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-isequal}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-isequal (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap1, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap2}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga4dd6a75ab63d33ef33bd626b0e489388}
+
+
+Test whether bitmap {\ttfamily bitmap1} is equal to bitmap {\ttfamily bitmap2}. 
+
+\hypertarget{a00065_ga59a07ecd8e74f2d4ee4271a1dbf0e4dd}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-isfull@{hwloc\_\-bitmap\_\-isfull}}
+\index{hwloc\_\-bitmap\_\-isfull@{hwloc\_\-bitmap\_\-isfull}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-isfull}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-isfull (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga59a07ecd8e74f2d4ee4271a1dbf0e4dd}
+
+
+Test whether bitmap {\ttfamily bitmap} is completely full. 
+
+\hypertarget{a00065_gaae29e14a926c198e8f91e6e4790621e7}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-isincluded@{hwloc\_\-bitmap\_\-isincluded}}
+\index{hwloc\_\-bitmap\_\-isincluded@{hwloc\_\-bitmap\_\-isincluded}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-isincluded}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-isincluded (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{sub\_\-bitmap, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{super\_\-bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gaae29e14a926c198e8f91e6e4790621e7}
+
+
+Test whether bitmap {\ttfamily sub\_\-bitmap} is part of bitmap {\ttfamily super\_\-bitmap}. 
+
+\hypertarget{a00065_ga2583f44cbdb5fff2ea40efdcf3975d3f}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-isset@{hwloc\_\-bitmap\_\-isset}}
+\index{hwloc\_\-bitmap\_\-isset@{hwloc\_\-bitmap\_\-isset}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-isset}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-isset (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap, }
+\item[{unsigned}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga2583f44cbdb5fff2ea40efdcf3975d3f}
+
+
+Test whether index {\ttfamily id} is part of bitmap {\ttfamily bitmap}. 
+
+\hypertarget{a00065_gaa94fed35d2a598bc4a8657b6955b7bf5}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-iszero@{hwloc\_\-bitmap\_\-iszero}}
+\index{hwloc\_\-bitmap\_\-iszero@{hwloc\_\-bitmap\_\-iszero}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-iszero}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-iszero (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gaa94fed35d2a598bc4a8657b6955b7bf5}
+
+
+Test whether bitmap {\ttfamily bitmap} is empty. 
+
+\hypertarget{a00065_ga4d5786ea9561d9ddbf90bc0ce606c549}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-last@{hwloc\_\-bitmap\_\-last}}
+\index{hwloc\_\-bitmap\_\-last@{hwloc\_\-bitmap\_\-last}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-last}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-last (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga4d5786ea9561d9ddbf90bc0ce606c549}
+
+
+Compute the last index (most significant bit) in bitmap {\ttfamily bitmap}. 
+
+\begin{DoxyReturn}{Returns}
+-\/1 if no index is bitmap, or if the index bitmap is infinite. 
+\end{DoxyReturn}
+\hypertarget{a00065_ga600651f00d39d378f423acbd75d938d2}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-list\_\-asprintf@{hwloc\_\-bitmap\_\-list\_\-asprintf}}
+\index{hwloc\_\-bitmap\_\-list\_\-asprintf@{hwloc\_\-bitmap\_\-list\_\-asprintf}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-list\_\-asprintf}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-list\_\-asprintf (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{strp, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga600651f00d39d378f423acbd75d938d2}
+
+
+Stringify a bitmap into a newly allocated list string. 
+
+\hypertarget{a00065_gab94b52560ea4333663895b3276e89af2}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-list\_\-snprintf@{hwloc\_\-bitmap\_\-list\_\-snprintf}}
+\index{hwloc\_\-bitmap\_\-list\_\-snprintf@{hwloc\_\-bitmap\_\-list\_\-snprintf}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-list\_\-snprintf}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-list\_\-snprintf (
+\begin{DoxyParamCaption}
+\item[{char $\ast$restrict}]{buf, }
+\item[{size\_\-t}]{buflen, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gab94b52560ea4333663895b3276e89af2}
+
+
+Stringify a bitmap in the list format. 
+
+Lists are comma-\/separated indexes or ranges. Ranges are dash separated indexes. The last range may not have a ending indexes if the bitmap is infinite.
+
+Up to {\ttfamily buflen} characters may be written in buffer {\ttfamily buf}.
+
+If {\ttfamily buflen} is 0, {\ttfamily buf} may safely be {\ttfamily NULL}.
+
+\begin{DoxyReturn}{Returns}
+the number of character that were actually written if not truncating, or that would have been written (not including the ending $\backslash$0). 
+\end{DoxyReturn}
+\hypertarget{a00065_gafe8fc90e7a9171e287cf1bfa11e85980}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-list\_\-sscanf@{hwloc\_\-bitmap\_\-list\_\-sscanf}}
+\index{hwloc\_\-bitmap\_\-list\_\-sscanf@{hwloc\_\-bitmap\_\-list\_\-sscanf}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-list\_\-sscanf}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-list\_\-sscanf (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap, }
+\item[{const char $\ast$restrict}]{string}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gafe8fc90e7a9171e287cf1bfa11e85980}
+
+
+Parse a list string and stores it in bitmap {\ttfamily bitmap}. 
+
+\hypertarget{a00065_ga00fc0b9d7d603e271b75956a7dd28826}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-next@{hwloc\_\-bitmap\_\-next}}
+\index{hwloc\_\-bitmap\_\-next@{hwloc\_\-bitmap\_\-next}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-next}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-next (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap, }
+\item[{int}]{prev}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga00fc0b9d7d603e271b75956a7dd28826}
+
+
+Compute the next index in bitmap {\ttfamily bitmap} which is after index {\ttfamily prev}. 
+
+If {\ttfamily prev} is -\/1, the first index is returned.
+
+\begin{DoxyReturn}{Returns}
+-\/1 if no index with higher index is bitmap. 
+\end{DoxyReturn}
+\hypertarget{a00065_ga4a8088d62755a083ffce9d592c9e3878}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-not@{hwloc\_\-bitmap\_\-not}}
+\index{hwloc\_\-bitmap\_\-not@{hwloc\_\-bitmap\_\-not}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-not}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-not (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{res, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga4a8088d62755a083ffce9d592c9e3878}
+
+
+Negate bitmap {\ttfamily bitmap} and store the result in bitmap {\ttfamily res}. 
+
+\hypertarget{a00065_ga8ea10f5ebaadb8418f28f953d6106190}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-only@{hwloc\_\-bitmap\_\-only}}
+\index{hwloc\_\-bitmap\_\-only@{hwloc\_\-bitmap\_\-only}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-only}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-only (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap, }
+\item[{unsigned}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga8ea10f5ebaadb8418f28f953d6106190}
+
+
+Empty the bitmap {\ttfamily bitmap} and add bit {\ttfamily id}. 
+
+\hypertarget{a00065_ga1ba1de709ee9a7cf5cc8ad2d9a1a81d4}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-or@{hwloc\_\-bitmap\_\-or}}
+\index{hwloc\_\-bitmap\_\-or@{hwloc\_\-bitmap\_\-or}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-or}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-or (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{res, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap1, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap2}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga1ba1de709ee9a7cf5cc8ad2d9a1a81d4}
+
+
+Or bitmaps {\ttfamily bitmap1} and {\ttfamily bitmap2} and store the result in bitmap {\ttfamily res}. 
+
+\hypertarget{a00065_ga497556af0cc34f109ae0277999c074d3}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-set@{hwloc\_\-bitmap\_\-set}}
+\index{hwloc\_\-bitmap\_\-set@{hwloc\_\-bitmap\_\-set}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-set}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-set (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap, }
+\item[{unsigned}]{id}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga497556af0cc34f109ae0277999c074d3}
+
+
+Add index {\ttfamily id} in bitmap {\ttfamily bitmap}. 
+
+\hypertarget{a00065_ga56027d6b141a3da441925e6e999de1c1}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-set\_\-ith\_\-ulong@{hwloc\_\-bitmap\_\-set\_\-ith\_\-ulong}}
+\index{hwloc\_\-bitmap\_\-set\_\-ith\_\-ulong@{hwloc\_\-bitmap\_\-set\_\-ith\_\-ulong}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-set\_\-ith\_\-ulong}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-set\_\-ith\_\-ulong (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap, }
+\item[{unsigned}]{i, }
+\item[{unsigned long}]{mask}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga56027d6b141a3da441925e6e999de1c1}
+
+
+Replace {\ttfamily i} -\/th subset of bitmap {\ttfamily bitmap} with unsigned long {\ttfamily mask}. 
+
+\hypertarget{a00065_ga9d4f8fc40f552a76c943b5b773ac17d6}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-set\_\-range@{hwloc\_\-bitmap\_\-set\_\-range}}
+\index{hwloc\_\-bitmap\_\-set\_\-range@{hwloc\_\-bitmap\_\-set\_\-range}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-set\_\-range}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-set\_\-range (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap, }
+\item[{unsigned}]{begin, }
+\item[{int}]{end}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga9d4f8fc40f552a76c943b5b773ac17d6}
+
+
+Add indexes from {\ttfamily begin} to {\ttfamily end} in bitmap {\ttfamily bitmap}. 
+
+If {\ttfamily end} is {\ttfamily -\/1}, the range is infinite. \hypertarget{a00065_ga4630aa1b7e08eac5b41be126194e84a1}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-singlify@{hwloc\_\-bitmap\_\-singlify}}
+\index{hwloc\_\-bitmap\_\-singlify@{hwloc\_\-bitmap\_\-singlify}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-singlify}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-singlify (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga4630aa1b7e08eac5b41be126194e84a1}
+
+
+Keep a single index among those set in bitmap {\ttfamily bitmap}. 
+
+May be useful before binding so that the process does not have a chance of migrating between multiple logical CPUs in the original mask. \hypertarget{a00065_ga6c0d60db98f27276752c1e5fafcbd7d1}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-snprintf@{hwloc\_\-bitmap\_\-snprintf}}
+\index{hwloc\_\-bitmap\_\-snprintf@{hwloc\_\-bitmap\_\-snprintf}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-snprintf}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-snprintf (
+\begin{DoxyParamCaption}
+\item[{char $\ast$restrict}]{buf, }
+\item[{size\_\-t}]{buflen, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga6c0d60db98f27276752c1e5fafcbd7d1}
+
+
+Stringify a bitmap. 
+
+Up to {\ttfamily buflen} characters may be written in buffer {\ttfamily buf}.
+
+If {\ttfamily buflen} is 0, {\ttfamily buf} may safely be {\ttfamily NULL}.
+
+\begin{DoxyReturn}{Returns}
+the number of character that were actually written if not truncating, or that would have been written (not including the ending $\backslash$0). 
+\end{DoxyReturn}
+\hypertarget{a00065_ga553cd5ceb1925bfd31788e70b4a46ae8}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-sscanf@{hwloc\_\-bitmap\_\-sscanf}}
+\index{hwloc\_\-bitmap\_\-sscanf@{hwloc\_\-bitmap\_\-sscanf}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-sscanf}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-sscanf (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap, }
+\item[{const char $\ast$restrict}]{string}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga553cd5ceb1925bfd31788e70b4a46ae8}
+
+
+Parse a bitmap string and stores it in bitmap {\ttfamily bitmap}. 
+
+\hypertarget{a00065_gaa3df92e204ffb24ceddd44d8d58f6eaa}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-taskset\_\-asprintf@{hwloc\_\-bitmap\_\-taskset\_\-asprintf}}
+\index{hwloc\_\-bitmap\_\-taskset\_\-asprintf@{hwloc\_\-bitmap\_\-taskset\_\-asprintf}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-taskset\_\-asprintf}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-taskset\_\-asprintf (
+\begin{DoxyParamCaption}
+\item[{char $\ast$$\ast$}]{strp, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gaa3df92e204ffb24ceddd44d8d58f6eaa}
+
+
+Stringify a bitmap into a newly allocated taskset-\/specific string. 
+
+\hypertarget{a00065_gae0e0619f43a4af5efafb75f489c1c6ec}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-taskset\_\-snprintf@{hwloc\_\-bitmap\_\-taskset\_\-snprintf}}
+\index{hwloc\_\-bitmap\_\-taskset\_\-snprintf@{hwloc\_\-bitmap\_\-taskset\_\-snprintf}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-taskset\_\-snprintf}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-taskset\_\-snprintf (
+\begin{DoxyParamCaption}
+\item[{char $\ast$restrict}]{buf, }
+\item[{size\_\-t}]{buflen, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gae0e0619f43a4af5efafb75f489c1c6ec}
+
+
+Stringify a bitmap in the taskset-\/specific format. 
+
+The taskset command manipulates bitmap strings that contain a single (possible very long) hexadecimal number starting with 0x.
+
+Up to {\ttfamily buflen} characters may be written in buffer {\ttfamily buf}.
+
+If {\ttfamily buflen} is 0, {\ttfamily buf} may safely be {\ttfamily NULL}.
+
+\begin{DoxyReturn}{Returns}
+the number of character that were actually written if not truncating, or that would have been written (not including the ending $\backslash$0). 
+\end{DoxyReturn}
+\hypertarget{a00065_ga71b28ef0d7206e37adbb94468c03e1a9}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-taskset\_\-sscanf@{hwloc\_\-bitmap\_\-taskset\_\-sscanf}}
+\index{hwloc\_\-bitmap\_\-taskset\_\-sscanf@{hwloc\_\-bitmap\_\-taskset\_\-sscanf}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-taskset\_\-sscanf}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-taskset\_\-sscanf (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap, }
+\item[{const char $\ast$restrict}]{string}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga71b28ef0d7206e37adbb94468c03e1a9}
+
+
+Parse a taskset-\/specific bitmap string and stores it in bitmap {\ttfamily bitmap}. 
+
+\hypertarget{a00065_gabc0b9f4cae56a1303c38b2380086efc2}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-to\_\-ith\_\-ulong@{hwloc\_\-bitmap\_\-to\_\-ith\_\-ulong}}
+\index{hwloc\_\-bitmap\_\-to\_\-ith\_\-ulong@{hwloc\_\-bitmap\_\-to\_\-ith\_\-ulong}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-to\_\-ith\_\-ulong}]{\setlength{\rightskip}{0pt plus 5cm} unsigned long hwloc\_\-bitmap\_\-to\_\-ith\_\-ulong (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap, }
+\item[{unsigned}]{i}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_gabc0b9f4cae56a1303c38b2380086efc2}
+
+
+Convert the {\ttfamily i} -\/th subset of bitmap {\ttfamily bitmap} into unsigned long mask. 
+
+\hypertarget{a00065_ga4fee4e3cea99e4a389c54a6c3f0c78ed}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-to\_\-ulong@{hwloc\_\-bitmap\_\-to\_\-ulong}}
+\index{hwloc\_\-bitmap\_\-to\_\-ulong@{hwloc\_\-bitmap\_\-to\_\-ulong}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-to\_\-ulong}]{\setlength{\rightskip}{0pt plus 5cm} unsigned long hwloc\_\-bitmap\_\-to\_\-ulong (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga4fee4e3cea99e4a389c54a6c3f0c78ed}
+
+
+Convert the beginning part of bitmap {\ttfamily bitmap} into unsigned long {\ttfamily mask}. 
+
+\hypertarget{a00065_ga12d520387be74f849f191d7a06ac325c}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-weight@{hwloc\_\-bitmap\_\-weight}}
+\index{hwloc\_\-bitmap\_\-weight@{hwloc\_\-bitmap\_\-weight}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-weight}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-bitmap\_\-weight (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga12d520387be74f849f191d7a06ac325c}
+
+
+Compute the \char`\"{}weight\char`\"{} of bitmap {\ttfamily bitmap} (i.e., number of indexes that are in the bitmap). 
+
+\begin{DoxyReturn}{Returns}
+the number of indexes that are in the bitmap. 
+\end{DoxyReturn}
+\hypertarget{a00065_ga5743af61c30758df75aec29c12444616}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-xor@{hwloc\_\-bitmap\_\-xor}}
+\index{hwloc\_\-bitmap\_\-xor@{hwloc\_\-bitmap\_\-xor}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-xor}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-xor (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{res, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap1, }
+\item[{{\bf hwloc\_\-const\_\-bitmap\_\-t}}]{bitmap2}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga5743af61c30758df75aec29c12444616}
+
+
+Xor bitmaps {\ttfamily bitmap1} and {\ttfamily bitmap2} and store the result in bitmap {\ttfamily res}. 
+
+\hypertarget{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}{
+\index{hwlocality\_\-bitmap@{hwlocality\_\-bitmap}!hwloc\_\-bitmap\_\-zero@{hwloc\_\-bitmap\_\-zero}}
+\index{hwloc\_\-bitmap\_\-zero@{hwloc\_\-bitmap\_\-zero}!hwlocality_bitmap@{hwlocality\_\-bitmap}}
+\subsubsection[{hwloc\_\-bitmap\_\-zero}]{\setlength{\rightskip}{0pt plus 5cm} void hwloc\_\-bitmap\_\-zero (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-bitmap\_\-t}}]{bitmap}
+\end{DoxyParamCaption}
+)}}
+\label{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}
+
+
+Empty the bitmap {\ttfamily bitmap}. 
+

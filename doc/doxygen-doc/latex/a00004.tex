@@ -1,0 +1,18 @@
+Some operating systems do not systematically provide separate functions for CPU and memory binding. This means that CPU binding functions may have have effects on the memory binding policy. Likewise, changing the memory binding policy may change the CPU binding of the current thread. This is often not a problem for applications, so by default hwloc will make use of these functions when they provide better binding support.
+
+If the application does not want the CPU binding to change when changing the memory policy, it needs to use the HWLOC\_\-MEMBIND\_\-NOCPUBIND flag to prevent hwloc from using OS functions which would change the CPU binding. Additionally, HWLOC\_\-CPUBIND\_\-NOMEMBIND can be passed to CPU binding function to prevent hwloc from using OS functions would change the memory binding policy. Of course, using these flags will reduce hwloc's overall support for binding, so their use is discouraged.
+
+One can avoid using these flags but still closely control both memory and CPU binding by allocating memory, touching each page in the allocated memory, and then changing the CPU binding. The already-\/really-\/allocated memory will then be \char`\"{}locked\char`\"{} to physical memory and will not be migrated. Thus, even if the memory binding policy gets changed by the CPU binding order, the already-\/allocated memory will not change with it. When binding and allocating further memory, the CPU binding should be performed again in case the memory binding altered the previously-\/selected CPU binding.
+
+Not all operating systems support the notion of a \char`\"{}current\char`\"{} memory binding policy for the current process, but such operating systems often still provide a way to allocate data on a given node set. Conversely, some operating systems support the notion of a \char`\"{}current\char`\"{} memory binding policy and do not permit allocating data on a specific node set without changing the current policy and allocate the data. To provide the most powerful coverage of these facilities, hwloc provides:
+
+
+\begin{DoxyItemize}
+\item functions that set/get the current memory binding policies (if supported): hwloc\_\-set/get\_\-membind\_\-$\ast$() and hwloc\_\-set/get\_\-proc\_\-membind() 
+\item functions that allocate memory bound to specific node set without changing the current memory binding policy (if supported): \hyperlink{a00050_ga221a7edc5d436300374fa16463f607e5}{hwloc\_\-alloc\_\-membind()} and \hyperlink{a00050_gaeaa00714a9c4319bda0a74ca6f8720e8}{hwloc\_\-alloc\_\-membind\_\-nodeset()}. 
+\item helpers which, if needed, change the current memory binding policy of the process in order to obtain memory binding: \hyperlink{a00059_ga6178c6a9ec1dd88ec9f6a9fcdcc7d634}{hwloc\_\-alloc\_\-membind\_\-policy()} and \hyperlink{a00059_ga3e772fbc4de626ed80f13d332b7d4d03}{hwloc\_\-alloc\_\-membind\_\-policy\_\-nodeset()} 
+\end{DoxyItemize}
+
+An application can thus use the two first sets of functions if it wants to manage separately the global process binding policy and directed allocation, or use the third set of functions if it does not care about the process memory binding policy.
+
+See \hyperlink{a00049}{CPU binding} and \hyperlink{a00050}{Memory binding} for hwloc's API functions regarding CPU and memory binding, respectively. 

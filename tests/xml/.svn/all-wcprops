@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/hwloc/!svn/ver/4478/branches/display/tests/xml
+END
+8em64t-2mi2ma2c.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/hwloc/!svn/ver/4478/branches/display/tests/xml/8em64t-2mi2ma2c.xml
+END
+16em64t-4s2c2t.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/hwloc/!svn/ver/4478/branches/display/tests/xml/16em64t-4s2c2t.xml
+END
+16em64t-4s2c2t-offlines.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/hwloc/!svn/ver/4478/branches/display/tests/xml/16em64t-4s2c2t-offlines.xml
+END
+test-topology.sh.in
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/hwloc/!svn/ver/4478/branches/display/tests/xml/test-topology.sh.in
+END
+96em64t-4n4d3ca2co-pci.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/hwloc/!svn/ver/4478/branches/display/tests/xml/96em64t-4n4d3ca2co-pci.xml
+END
+24em64t-2n6c2t-pci.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/hwloc/!svn/ver/4478/branches/display/tests/xml/24em64t-2n6c2t-pci.xml
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/hwloc/!svn/ver/4478/branches/display/tests/xml/Makefile.am
+END
+16amd64-8n2c-cpusets.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/hwloc/!svn/ver/4478/branches/display/tests/xml/16amd64-8n2c-cpusets.xml
+END

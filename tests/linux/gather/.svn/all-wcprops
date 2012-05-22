@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/gather
+END
+test-gather-topology.sh.in
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/gather/test-gather-topology.sh.in
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/gather/Makefile.am
+END

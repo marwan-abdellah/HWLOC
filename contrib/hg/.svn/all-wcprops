@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/hwloc/!svn/ver/4478/branches/display/contrib/hg
+END
+.hgignore
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/hwloc/!svn/ver/4478/branches/display/contrib/hg/.hgignore
+END
+set-hg-share-perms.csh
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/hwloc/!svn/ver/4478/branches/display/contrib/hg/set-hg-share-perms.csh
+END
+build-hgignore.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/hwloc/!svn/ver/4478/branches/display/contrib/hg/build-hgignore.pl
+END

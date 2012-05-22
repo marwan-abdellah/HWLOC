@@ -1,0 +1,76 @@
+\hypertarget{a00057}{
+\section{Cache-\/specific Finding Helpers}
+\label{a00057}\index{Cache-\/specific Finding Helpers@{Cache-\/specific Finding Helpers}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static inline int \hyperlink{a00057_gac3cfbb68829b606e61ab039f142f29a0}{hwloc\_\-get\_\-cache\_\-type\_\-depth} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, unsigned cachelevel, \hyperlink{a00041_gab6e1e7efedae8b341f3ee14fbe53d66c}{hwloc\_\-obj\_\-cache\_\-type\_\-t} cachetype)
+\item 
+static inline \hyperlink{a00016}{hwloc\_\-obj\_\-t} \hyperlink{a00057_ga2f936fd9a9c62f6d9b9951de3062e889}{hwloc\_\-get\_\-cache\_\-covering\_\-cpuset} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc\_\-const\_\-cpuset\_\-t} set) 
+\item 
+static inline \hyperlink{a00016}{hwloc\_\-obj\_\-t} \hyperlink{a00057_ga000e08a1da039130daa072e77713bb43}{hwloc\_\-get\_\-shared\_\-cache\_\-covering\_\-obj} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology , \hyperlink{a00016}{hwloc\_\-obj\_\-t} obj) 
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00057_ga2f936fd9a9c62f6d9b9951de3062e889}{
+\index{hwlocality\_\-helper\_\-find\_\-cache@{hwlocality\_\-helper\_\-find\_\-cache}!hwloc\_\-get\_\-cache\_\-covering\_\-cpuset@{hwloc\_\-get\_\-cache\_\-covering\_\-cpuset}}
+\index{hwloc\_\-get\_\-cache\_\-covering\_\-cpuset@{hwloc\_\-get\_\-cache\_\-covering\_\-cpuset}!hwlocality_helper_find_cache@{hwlocality\_\-helper\_\-find\_\-cache}}
+\subsubsection[{hwloc\_\-get\_\-cache\_\-covering\_\-cpuset}]{\setlength{\rightskip}{0pt plus 5cm}static inline {\bf hwloc\_\-obj\_\-t} hwloc\_\-get\_\-cache\_\-covering\_\-cpuset (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-const\_\-cpuset\_\-t}}]{set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00057_ga2f936fd9a9c62f6d9b9951de3062e889}
+
+
+Get the first cache covering a cpuset {\ttfamily set}. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily NULL} if no cache matches.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function cannot work if the root object does not have a CPU set, e.g. if the topology is made of different machines. 
+\end{DoxyNote}
+\hypertarget{a00057_gac3cfbb68829b606e61ab039f142f29a0}{
+\index{hwlocality\_\-helper\_\-find\_\-cache@{hwlocality\_\-helper\_\-find\_\-cache}!hwloc\_\-get\_\-cache\_\-type\_\-depth@{hwloc\_\-get\_\-cache\_\-type\_\-depth}}
+\index{hwloc\_\-get\_\-cache\_\-type\_\-depth@{hwloc\_\-get\_\-cache\_\-type\_\-depth}!hwlocality_helper_find_cache@{hwlocality\_\-helper\_\-find\_\-cache}}
+\subsubsection[{hwloc\_\-get\_\-cache\_\-type\_\-depth}]{\setlength{\rightskip}{0pt plus 5cm}static inline int hwloc\_\-get\_\-cache\_\-type\_\-depth (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{unsigned}]{cachelevel, }
+\item[{{\bf hwloc\_\-obj\_\-cache\_\-type\_\-t}}]{cachetype}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00057_gac3cfbb68829b606e61ab039f142f29a0}
+
+
+Find the depth of cache objects matching cache depth and type. 
+
+Return the depth of the topology level that contains cache objects whose attributes match {\ttfamily cachedepth} and {\ttfamily cachetype}. This function intends to disambiguate the case where \hyperlink{a00046_gaea7c64dd59467f5201ba87712710b14d}{hwloc\_\-get\_\-type\_\-depth()} returns {\ttfamily HWLOC\_\-TYPE\_\-DEPTH\_\-MULTIPLE}.
+
+If no cache level matches, {\ttfamily HWLOC\_\-TYPE\_\-DEPTH\_\-UNKNOWN} is returned.
+
+If {\ttfamily cachetype} is {\ttfamily HWLOC\_\-OBJ\_\-CACHE\_\-UNIFIED}, the depth of the unique matching unified cache level is returned.
+
+If {\ttfamily cachetype} is {\ttfamily HWLOC\_\-OBJ\_\-CACHE\_\-DATA} or {\ttfamily HWLOC\_\-OBJ\_\-CACHE\_\-INSTRUCTION}, either a matching cache, or a unified cache is returned.
+
+If {\ttfamily cachetype} is {\ttfamily -\/1}, it is ignored and multiple levels may match. The function returns either the depth of a uniquely matching level or {\ttfamily HWLOC\_\-TYPE\_\-DEPTH\_\-MULTIPLE}. \hypertarget{a00057_ga000e08a1da039130daa072e77713bb43}{
+\index{hwlocality\_\-helper\_\-find\_\-cache@{hwlocality\_\-helper\_\-find\_\-cache}!hwloc\_\-get\_\-shared\_\-cache\_\-covering\_\-obj@{hwloc\_\-get\_\-shared\_\-cache\_\-covering\_\-obj}}
+\index{hwloc\_\-get\_\-shared\_\-cache\_\-covering\_\-obj@{hwloc\_\-get\_\-shared\_\-cache\_\-covering\_\-obj}!hwlocality_helper_find_cache@{hwlocality\_\-helper\_\-find\_\-cache}}
+\subsubsection[{hwloc\_\-get\_\-shared\_\-cache\_\-covering\_\-obj}]{\setlength{\rightskip}{0pt plus 5cm}static inline {\bf hwloc\_\-obj\_\-t} hwloc\_\-get\_\-shared\_\-cache\_\-covering\_\-obj (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t} topology}]{, }
+\item[{{\bf hwloc\_\-obj\_\-t}}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00057_ga000e08a1da039130daa072e77713bb43}
+
+
+Get the first cache shared between an object and somebody else. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily NULL} if no cache matches or if an invalid object is given. 
+\end{DoxyReturn}

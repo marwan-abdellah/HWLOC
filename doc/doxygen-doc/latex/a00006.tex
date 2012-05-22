@@ -1,0 +1,78 @@
+hwloc is usually used for consulting and manipulating single machine topologies. This includes large systems as long as a single instance of the operating system manages the entire system. However it is sometimes desirable to have multiple independent hosts inside the same topology, for instance when applying algorithms to an entire cluster topology. hwloc therefore offers the ability to agregate multiple host topologies into a single global one.\hypertarget{a00006_multinode_cpusets}{}\section{Multi-\/node Objects Specifities}\label{a00006_multinode_cpusets}
+A multi-\/node topology contains several single-\/node topologies. Those are assembled by making their own root objects (usually Machine object) children of higher objects. These higher objects include at least the root of the global topology (usually a System object). Some intermediate objects may also exists, for instance to represent switches in a large fabric.
+
+There are actually three possible types of objects that have different properties with respect to cpusets, nodesets and binding. Indeed those cpusets and nodesets were designed for execution and memory binding within a single operating system. Binding on another system or across several different systems would be meaningless.
+
+
+\begin{DoxyDescription}
+\item[Local objects ]Any object that corresponds to the local machine may be manipulated as usual. Obviously, if the multi-\/node topology does not contain the local machine topology, no such local object exists.  
+\item[Objects from other nodes ]Any object that comes from inside another node is represented as usual but its cpusets and nodesets should not be used for binding since binding on another system makes no sense.  
+\item[Objects above single nodes ]Any object above single-\/node topologies does not have any cpuset or nodeset pointer because binding across multiple systems makes no sense. This includes the glocal root object of a multi-\/node topology and possibly some intermediate objects between this global root and the local root of single-\/node topologies.  
+\end{DoxyDescription}
+
+It is important to keep this in mind before binding using multi-\/node topologies. To make sure binding on an object is possible, one should first check that its cpuset or nodeset pointer is not NULL. Then, one should check whether the object is indeed local.
+
+To find out which machine a given object correspond too, one may look at the info attributes of the parent Machine object. The {\ttfamily HostName} info is usually available in Machine objects, it may be retrieved with the following code: \begin{DoxyVerb}
+  hwloc_obj_t machine_obj;
+  obj = hwloc_get_ancestor_obj_by_type(topology, HWLOC_OBJ_MACHINE, obj);
+  if (machine_obj)
+    return hwloc_obj_get_info_by_name(machine_obj, "HostName");
+  else
+    return NULL;
+\end{DoxyVerb}
+ The hwloc assembler scripts (see below) also add {\ttfamily AssemblerName} and {\ttfamily AssemblerIndex} info attributes to the Machine objects to identify the corresponding host name and index during assembly.\hypertarget{a00006_multinode_tools}{}\section{Assembling topologies with command-\/line tools}\label{a00006_multinode_tools}
+One way to manipulate multinode topologies is to retrieve other nodes' topologies as XML files and combine them as a global XML topology. It may then be loaded with \hyperlink{a00044_ga93efcc8a962afe1ed23393700682173f}{hwloc\_\-topology\_\-set\_\-xml()} or with the HWLOC\_\-XMLFILE environment variable.
+
+The hwloc-\/assembler and hwloc-\/assembler-\/remote utilities offer the ability to combine XML topologies or remote nodes' topologies (see \hyperlink{a00002}{Command-\/Line Tools}).\hypertarget{a00006_multinode_interface}{}\section{Assembling topologies with the programming interface}\label{a00006_multinode_interface}
+The hwloc programming interface offers the ability to build multinode topologies using the {\itshape custom\/} interface. A new multinode topology has to be initialized with \hyperlink{a00043_ga5c2d6f476af87005c7bd0811d4548b9f}{hwloc\_\-topology\_\-init()} and then set to custom with \hyperlink{a00044_ga12024fec46f9368fb8fc5c624089c5ec}{hwloc\_\-topology\_\-set\_\-custom()}. Topologies and objects mat then be assembled. Later, the custom topology is finalized as usual with \hyperlink{a00043_ga91e2e6427b95fb7339c99dbbef996e71}{hwloc\_\-topology\_\-load()}.
+
+A custom topology starts with a single root object of type System. It may be modified by inserting a new child object with \hyperlink{a00051_gac1037fe389bfa7c2bf0e3739b7e20844}{hwloc\_\-custom\_\-insert\_\-group\_\-object\_\-by\_\-parent()} or by duplicating another topology with \hyperlink{a00051_ga59ccf6a63cb23d63940e8b782059d9cb}{hwloc\_\-custom\_\-insert\_\-topology()}. Both of these operations require to specify the parent object in the custom topology where the insertion will take place. This parent may be either the root (returned by \hyperlink{a00053_gadbf58f6e187efbdb3cd9a8e30311b7d7}{hwloc\_\-get\_\-root\_\-obj()}) or an already-\/inserted object (returned by \hyperlink{a00051_gac1037fe389bfa7c2bf0e3739b7e20844}{hwloc\_\-custom\_\-insert\_\-group\_\-object\_\-by\_\-parent()}).
+
+Ideally, any existing object in the custom topology could be the parent. However, special care should be taken when traversing the topology to find such an object because most links between objects (children, siblings, cousins) are not setup until \hyperlink{a00043_ga91e2e6427b95fb7339c99dbbef996e71}{hwloc\_\-topology\_\-load()} is invoked.\hypertarget{a00006_multinode_example}{}\section{Example of assembly with the programming interface}\label{a00006_multinode_example}
+If the topologies of two hosts have been previously gathered in XML files {\ttfamily host1.xml} and {\ttfamily host2.xml}, the global topology may be assembled with the following code.
+
+\begin{DoxyVerb}
+hwloc_topology_t host1, host2, global;
+
+/* initialize global topology */
+hwloc_topology_init(&global);
+hwloc_topology_set_custom(global);
+
+/* insert host1 entire topology below the global topology root */
+hwloc_topology_init(&host1);
+hwloc_topology_load(host1);
+hwloc_custom_insert_topology(global, hwloc_get_root_obj(global),
+                             host1, NULL);
+hwloc_topology_destroy(host1);
+
+/* insert host2 entire topology below the global topology root */
+hwloc_topology_init(&host2);
+hwloc_topology_load(host2);
+hwloc_custom_insert_topology(global, hwloc_get_root_obj(global),
+                             host2, NULL);
+hwloc_topology_destroy(host2);
+
+/* load and play with the global topology */
+hwloc_topology_load(global);
+...
+\end{DoxyVerb}
+
+
+If a intermediate object such as a switch should be inserted above one of the host topologies: \begin{DoxyVerb}
+...
+/* insert a switch object below the global topology root */
+hwloc_obj_t sw =
+   hwloc_custom_insert_group_object_by_parent(global,
+                              hwloc_get_root_obj(global), 0);
+
+/* insert host2 entire topology below the switch */
+hwloc_topology_init(&host2);
+hwloc_topology_load(host2);
+hwloc_custom_insert_topology(global, switch, host2, NULL);
+hwloc_topology_destroy(host2);
+
+/* load and play with the global topology */
+hwloc_topology_load(global);
+...
+\end{DoxyVerb}
+ 

@@ -1,0 +1,58 @@
+\hypertarget{a00056}{
+\section{Finding a set of similar Objects covering at least a CPU set}
+\label{a00056}\index{Finding a set of similar Objects covering at least a CPU set@{Finding a set of similar Objects covering at least a CPU set}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static inline \hyperlink{a00016}{hwloc\_\-obj\_\-t} \hyperlink{a00056_ga2f9a4ec15e9cfae8c21501257a51ce5b}{hwloc\_\-get\_\-next\_\-obj\_\-covering\_\-cpuset\_\-by\_\-depth} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc\_\-const\_\-cpuset\_\-t} set, unsigned depth, \hyperlink{a00016}{hwloc\_\-obj\_\-t} prev)
+\item 
+static inline \hyperlink{a00016}{hwloc\_\-obj\_\-t} \hyperlink{a00056_ga5915ea30f326676b3a4cfff371ce04d1}{hwloc\_\-get\_\-next\_\-obj\_\-covering\_\-cpuset\_\-by\_\-type} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc\_\-const\_\-cpuset\_\-t} set, \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc\_\-obj\_\-type\_\-t} type, \hyperlink{a00016}{hwloc\_\-obj\_\-t} prev)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00056_ga2f9a4ec15e9cfae8c21501257a51ce5b}{
+\index{hwlocality\_\-helper\_\-find\_\-coverings@{hwlocality\_\-helper\_\-find\_\-coverings}!hwloc\_\-get\_\-next\_\-obj\_\-covering\_\-cpuset\_\-by\_\-depth@{hwloc\_\-get\_\-next\_\-obj\_\-covering\_\-cpuset\_\-by\_\-depth}}
+\index{hwloc\_\-get\_\-next\_\-obj\_\-covering\_\-cpuset\_\-by\_\-depth@{hwloc\_\-get\_\-next\_\-obj\_\-covering\_\-cpuset\_\-by\_\-depth}!hwlocality_helper_find_coverings@{hwlocality\_\-helper\_\-find\_\-coverings}}
+\subsubsection[{hwloc\_\-get\_\-next\_\-obj\_\-covering\_\-cpuset\_\-by\_\-depth}]{\setlength{\rightskip}{0pt plus 5cm}static inline {\bf hwloc\_\-obj\_\-t} hwloc\_\-get\_\-next\_\-obj\_\-covering\_\-cpuset\_\-by\_\-depth (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-const\_\-cpuset\_\-t}}]{set, }
+\item[{unsigned}]{depth, }
+\item[{{\bf hwloc\_\-obj\_\-t}}]{prev}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00056_ga2f9a4ec15e9cfae8c21501257a51ce5b}
+
+
+Iterate through same-\/depth objects covering at least CPU set {\ttfamily set}. 
+
+If object {\ttfamily prev} is {\ttfamily NULL}, return the first object at depth {\ttfamily depth} covering at least part of CPU set {\ttfamily set}. The next invokation should pass the previous return value in {\ttfamily prev} so as to obtain the next object covering at least another part of {\ttfamily set}.
+
+\begin{DoxyNote}{Note}
+This function cannot work if objects at the given depth do not have CPU sets or if the topology is made of different machines. 
+\end{DoxyNote}
+\hypertarget{a00056_ga5915ea30f326676b3a4cfff371ce04d1}{
+\index{hwlocality\_\-helper\_\-find\_\-coverings@{hwlocality\_\-helper\_\-find\_\-coverings}!hwloc\_\-get\_\-next\_\-obj\_\-covering\_\-cpuset\_\-by\_\-type@{hwloc\_\-get\_\-next\_\-obj\_\-covering\_\-cpuset\_\-by\_\-type}}
+\index{hwloc\_\-get\_\-next\_\-obj\_\-covering\_\-cpuset\_\-by\_\-type@{hwloc\_\-get\_\-next\_\-obj\_\-covering\_\-cpuset\_\-by\_\-type}!hwlocality_helper_find_coverings@{hwlocality\_\-helper\_\-find\_\-coverings}}
+\subsubsection[{hwloc\_\-get\_\-next\_\-obj\_\-covering\_\-cpuset\_\-by\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}static inline {\bf hwloc\_\-obj\_\-t} hwloc\_\-get\_\-next\_\-obj\_\-covering\_\-cpuset\_\-by\_\-type (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-const\_\-cpuset\_\-t}}]{set, }
+\item[{{\bf hwloc\_\-obj\_\-type\_\-t}}]{type, }
+\item[{{\bf hwloc\_\-obj\_\-t}}]{prev}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00056_ga5915ea30f326676b3a4cfff371ce04d1}
+
+
+Iterate through same-\/type objects covering at least CPU set {\ttfamily set}. 
+
+If object {\ttfamily prev} is {\ttfamily NULL}, return the first object of type {\ttfamily type} covering at least part of CPU set {\ttfamily set}. The next invokation should pass the previous return value in {\ttfamily prev} so as to obtain the next object of type {\ttfamily type} covering at least another part of {\ttfamily set}.
+
+If there are no or multiple depths for type {\ttfamily type}, {\ttfamily NULL} is returned. The caller may fallback to \hyperlink{a00056_ga2f9a4ec15e9cfae8c21501257a51ce5b}{hwloc\_\-get\_\-next\_\-obj\_\-covering\_\-cpuset\_\-by\_\-depth()} for each depth.
+
+\begin{DoxyNote}{Note}
+This function cannot work if objects of the given type do not have CPU sets or if the topology is made of different machines. 
+\end{DoxyNote}

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/hwloc/!svn/ver/4479/branches/display/doc
+END
+www.open-mpi.org-footer.inc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hwloc/!svn/ver/4478/branches/display/doc/www.open-mpi.org-footer.inc
+END
+doxygen-config.cfg.in
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/hwloc/!svn/ver/4478/branches/display/doc/doxygen-config.cfg.in
+END
+doxygen.css
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/hwloc/!svn/ver/4478/branches/display/doc/doxygen.css
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/hwloc/!svn/ver/4479/branches/display/doc/Makefile.am
+END
+doxygen.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/hwloc/!svn/ver/4478/branches/display/doc/doxygen.cfg
+END
+www.open-mpi.org-css.inc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/hwloc/!svn/ver/4478/branches/display/doc/www.open-mpi.org-css.inc
+END
+www.open-mpi.org-header.inc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hwloc/!svn/ver/4478/branches/display/doc/www.open-mpi.org-header.inc
+END
+www.open-mpi.org.cfg
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/hwloc/!svn/ver/4478/branches/display/doc/www.open-mpi.org.cfg
+END
+hwloc-hello.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/hwloc/!svn/ver/4478/branches/display/doc/hwloc-hello.c
+END
+hwloc.doxy
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/hwloc/!svn/ver/4478/branches/display/doc/hwloc.doxy
+END

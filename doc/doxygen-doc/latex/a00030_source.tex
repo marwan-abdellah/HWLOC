@@ -1,0 +1,100 @@
+\hypertarget{a00030_source}{
+\section{glibc-\/sched.h}
+}
+
+\begin{DoxyCode}
+00001 \textcolor{comment}{/*}
+00002 \textcolor{comment}{ * Copyright © 2009 CNRS}
+00003 \textcolor{comment}{ * Copyright © 2009-2012 inria.  All rights reserved.}
+00004 \textcolor{comment}{ * Copyright © 2009-2011 Université Bordeaux 1}
+00005 \textcolor{comment}{ * Copyright © 2011 Cisco Systems, Inc.  All rights reserved.}
+00006 \textcolor{comment}{ * See COPYING in top-level directory.}
+00007 \textcolor{comment}{ */}
+00008 
+00019 \textcolor{preprocessor}{#ifndef HWLOC\_GLIBC\_SCHED\_H}
+00020 \textcolor{preprocessor}{}\textcolor{preprocessor}{#define HWLOC\_GLIBC\_SCHED\_H}
+00021 \textcolor{preprocessor}{}
+00022 \textcolor{preprocessor}{#include <hwloc.h>}
+00023 \textcolor{preprocessor}{#include <hwloc/helper.h>}
+00024 \textcolor{preprocessor}{#include <assert.h>}
+00025 
+00026 \textcolor{preprocessor}{#if !defined \_GNU\_SOURCE || !defined \_SCHED\_H || (!defined CPU\_SETSIZE && !define
+      d sched\_priority)}
+00027 \textcolor{preprocessor}{}\textcolor{preprocessor}{#error Please make sure to include sched.h before including glibc-sched.h, and de
+      fine \_GNU\_SOURCE before any inclusion of sched.h}
+00028 \textcolor{preprocessor}{}\textcolor{preprocessor}{#endif}
+00029 \textcolor{preprocessor}{}
+00030 
+00031 \textcolor{preprocessor}{#ifdef \_\_cplusplus}
+00032 \textcolor{preprocessor}{}\textcolor{keyword}{extern} \textcolor{stringliteral}{"C"} \{
+00033 \textcolor{preprocessor}{#endif}
+00034 \textcolor{preprocessor}{}
+00035 
+00036 \textcolor{preprocessor}{#ifdef HWLOC\_HAVE\_CPU\_SET}
+00037 \textcolor{preprocessor}{}
+00038 
+00051 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00030_source_l00052}{}\hyperlink{a00066_ga39454e6013441d32e58ef4c4fcba7e4b}{00052} \hyperlink{a00066_ga39454e6013441d32e58ef4c4fcba7e4b}{hwloc_cpuset_to_glibc_sched_affinity}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology \_\_hwloc\_attribute\_
+      unused, \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc_const_cpuset_t} hwlocset,
+00053                                     cpu\_set\_t *schedset, \textcolor{keywordtype}{size\_t} schedsetsize)
+00054 \{
+00055 \textcolor{preprocessor}{#ifdef CPU\_ZERO\_S}
+00056 \textcolor{preprocessor}{}  \textcolor{keywordtype}{unsigned} cpu;
+00057   CPU\_ZERO\_S(schedsetsize, schedset);
+00058   \hyperlink{a00065_ga3f6861045a8029ade373510ffa727d2a}{hwloc_bitmap_foreach_begin}(cpu, hwlocset)
+00059     CPU\_SET\_S(cpu, schedsetsize, schedset);
+00060   \hyperlink{a00065_gafcf3246db406218d4e155735b3fa6528}{hwloc_bitmap_foreach_end}();
+00061 \textcolor{preprocessor}{#else }\textcolor{comment}{/* !CPU\_ZERO\_S */}
+00062   \textcolor{keywordtype}{unsigned} cpu;
+00063   CPU\_ZERO(schedset);
+00064   assert(schedsetsize == \textcolor{keyword}{sizeof}(cpu\_set\_t));
+00065   \hyperlink{a00065_ga3f6861045a8029ade373510ffa727d2a}{hwloc_bitmap_foreach_begin}(cpu, hwlocset)
+00066     CPU\_SET(cpu, schedset);
+00067   \hyperlink{a00065_gafcf3246db406218d4e155735b3fa6528}{hwloc_bitmap_foreach_end}();
+00068 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* !CPU\_ZERO\_S */}
+00069   \textcolor{keywordflow}{return} 0;
+00070 \}
+00071 
+00079 \textcolor{keyword}{static} \_\_hwloc\_inline \textcolor{keywordtype}{int}
+\hypertarget{a00030_source_l00080}{}\hyperlink{a00066_ga6df504b2f5440b527be05cdad6b1655e}{00080} \hyperlink{a00066_ga6df504b2f5440b527be05cdad6b1655e}{hwloc_cpuset_from_glibc_sched_affinity}(\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc_topology_t} topology \_\_hwloc\_attribut
+      e\_unused, \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc_cpuset_t} hwlocset,
+00081                                        \textcolor{keyword}{const} cpu\_set\_t *schedset, \textcolor{keywordtype}{size\_t} schedset
+      size)
+00082 \{
+00083   \textcolor{keywordtype}{int} cpu;
+00084 \textcolor{preprocessor}{#ifdef CPU\_ZERO\_S}
+00085 \textcolor{preprocessor}{}  \textcolor{keywordtype}{int} count;
+00086 \textcolor{preprocessor}{#endif}
+00087 \textcolor{preprocessor}{}  \hyperlink{a00065_ga6c540b9fe63b8223b6aba46d56dd63b8}{hwloc_bitmap_zero}(hwlocset);
+00088 \textcolor{preprocessor}{#ifdef CPU\_ZERO\_S}
+00089 \textcolor{preprocessor}{}  count = CPU\_COUNT\_S(schedsetsize, schedset);
+00090   cpu = 0;
+00091   \textcolor{keywordflow}{while} (count) \{
+00092     \textcolor{keywordflow}{if} (CPU\_ISSET\_S(cpu, schedsetsize, schedset)) \{
+00093       \hyperlink{a00065_ga497556af0cc34f109ae0277999c074d3}{hwloc_bitmap_set}(hwlocset, cpu);
+00094       count--;
+00095     \}
+00096     cpu++;
+00097   \}
+00098 \textcolor{preprocessor}{#else }\textcolor{comment}{/* !CPU\_ZERO\_S */}
+00099   \textcolor{comment}{/* sched.h does not support dynamic cpu\_set\_t (introduced in glibc 2.7),}
+00100 \textcolor{comment}{   * assume we have a very old interface without CPU\_COUNT (added in 2.6)}
+00101 \textcolor{comment}{   */}
+00102   assert(schedsetsize == \textcolor{keyword}{sizeof}(cpu\_set\_t));
+00103   \textcolor{keywordflow}{for}(cpu=0; cpu<CPU\_SETSIZE; cpu++)
+00104     \textcolor{keywordflow}{if} (CPU\_ISSET(cpu, schedset))
+00105       \hyperlink{a00065_ga497556af0cc34f109ae0277999c074d3}{hwloc_bitmap_set}(hwlocset, cpu);
+00106 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* !CPU\_ZERO\_S */}
+00107   \textcolor{keywordflow}{return} 0;
+00108 \}
+00109 
+00113 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* CPU\_SET */}
+00114 
+00115 
+00116 \textcolor{preprocessor}{#ifdef \_\_cplusplus}
+00117 \textcolor{preprocessor}{}\} \textcolor{comment}{/* extern "C" */}
+00118 \textcolor{preprocessor}{#endif}
+00119 \textcolor{preprocessor}{}
+00120 
+00121 \textcolor{preprocessor}{#endif }\textcolor{comment}{/* HWLOC\_GLIBC\_SCHED\_H */}
+\end{DoxyCode}

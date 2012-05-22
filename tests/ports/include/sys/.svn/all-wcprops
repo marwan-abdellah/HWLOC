@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/sys
+END
+rset.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/sys/rset.h
+END
+mpctl.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/sys/mpctl.h
+END
+processor.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/sys/processor.h
+END
+procset.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/sys/procset.h
+END
+systeminfo.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/sys/systeminfo.h
+END
+sysctl.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/sys/sysctl.h
+END
+lgrp_user.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/sys/lgrp_user.h
+END
+cpuset.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/sys/cpuset.h
+END
+systemcfg.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/sys/systemcfg.h
+END
+thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/sys/thread.h
+END

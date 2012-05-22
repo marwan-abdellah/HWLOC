@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/hwloc/!svn/ver/4478/branches/display/contrib
+END
+update-my-copyright.pl
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/hwloc/!svn/ver/4478/branches/display/contrib/update-my-copyright.pl
+END
+hwloc-valgrind.supp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/hwloc/!svn/ver/4478/branches/display/contrib/hwloc-valgrind.supp
+END

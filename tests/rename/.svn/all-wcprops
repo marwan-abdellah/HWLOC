@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/hwloc/!svn/ver/4478/branches/display/tests/rename
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/hwloc/!svn/ver/4478/branches/display/tests/rename/main.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/hwloc/!svn/ver/4478/branches/display/tests/rename/Makefile.am
+END

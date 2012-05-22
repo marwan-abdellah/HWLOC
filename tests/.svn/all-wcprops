@@ -1,0 +1,221 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/hwloc/!svn/ver/4487/branches/display/tests
+END
+hwloc_bitmap_string.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_bitmap_string.c
+END
+gl.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/hwloc/!svn/ver/4487/branches/display/tests/gl.c
+END
+hwloc_bind.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_bind.c
+END
+hwloc_bitmap.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_bitmap.c
+END
+hwloc_get_shared_cache_covering_obj.c
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_get_shared_cache_covering_obj.c
+END
+hwloc_groups.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_groups.c
+END
+cuda.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/hwloc/!svn/ver/4478/branches/display/tests/cuda.c
+END
+hwloc_bitmap_singlify.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_bitmap_singlify.c
+END
+hwloc_get_cache_covering_cpuset.c
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_get_cache_covering_cpuset.c
+END
+hwloc_get_next_obj_covering_cpuset.c
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_get_next_obj_covering_cpuset.c
+END
+hwloc_get_obj_inside_cpuset.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_get_obj_inside_cpuset.c
+END
+hwloc_iodevs.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_iodevs.c
+END
+xmlbuffer.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/hwloc/!svn/ver/4478/branches/display/tests/xmlbuffer.c
+END
+hwloc_type_depth.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_type_depth.c
+END
+hwloc_is_thissystem.c
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_is_thissystem.c
+END
+hwloc_obj_infos.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_obj_infos.c
+END
+glibc-sched.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/hwloc/!svn/ver/4478/branches/display/tests/glibc-sched.c
+END
+hwloc_synthetic.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_synthetic.c
+END
+hwloc_backends.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_backends.c
+END
+hwloc_custom.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_custom.c
+END
+hwloc_bitmap_first_last_weight.c
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_bitmap_first_last_weight.c
+END
+hwloc_distances.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_distances.c
+END
+openfabrics-verbs.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/hwloc/!svn/ver/4478/branches/display/tests/openfabrics-verbs.c
+END
+hwloc_insert_misc.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_insert_misc.c
+END
+cudart.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/hwloc/!svn/ver/4478/branches/display/tests/cudart.c
+END
+linux-libnuma.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux-libnuma.c
+END
+hwloc_get_obj_covering_cpuset.c
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_get_obj_covering_cpuset.c
+END
+hwloc_get_closest_objs.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_get_closest_objs.c
+END
+hwloc_get_obj_below_array_by_type.c
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_get_obj_below_array_by_type.c
+END
+hwloc_get_largest_objs_inside_cpuset.c
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_get_largest_objs_inside_cpuset.c
+END
+hwloc_topology_restrict.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_topology_restrict.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/hwloc/!svn/ver/4479/branches/display/tests/Makefile.am
+END
+hwloc_object_userdata.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_object_userdata.c
+END
+myriexpress.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/hwloc/!svn/ver/4478/branches/display/tests/myriexpress.c
+END
+hwloc_groups2.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_groups2.c
+END
+hwloc_get_last_cpu_location.c
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/hwloc/!svn/ver/4478/branches/display/tests/hwloc_get_last_cpu_location.c
+END

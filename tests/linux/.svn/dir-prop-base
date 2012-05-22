@@ -1,0 +1,9 @@
+K 10
+svn:ignore
+V 60
+Makefile.in
+Makefile
+test-topology.sh
+hwloc-gather-topology
+
+END

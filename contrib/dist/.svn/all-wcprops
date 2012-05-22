@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/hwloc/!svn/ver/4478/branches/display/contrib/dist
+END
+make_dist_tarball
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/hwloc/!svn/ver/4478/branches/display/contrib/dist/make_dist_tarball
+END

@@ -1,0 +1,713 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux
+END
+48amd64-4d2n6c-sparse.output
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/48amd64-4d2n6c-sparse.output
+END
+32amd64-4s2n4c-cgroup.xml.options
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/32amd64-4s2n4c-cgroup.xml.options
+END
+16em64t-4s2c2t-offlines.xml.output
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t-offlines.xml.output
+END
+16em64t-4s2c2t-offlines.xml.source
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t-offlines.xml.source
+END
+16em64t-4s2c2t-offlines.output
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t-offlines.output
+END
+16em64t-4s2c2t-offlines_noadmin.options
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t-offlines_noadmin.options
+END
+2i386-2c-nohugepage.xml.source
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2i386-2c-nohugepage.xml.source
+END
+2i386-2c-nohugepage.xml.output
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2i386-2c-nohugepage.xml.output
+END
+16amd64-4n4c-cgroup-distance-merge.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16amd64-4n4c-cgroup-distance-merge.tar.bz2
+END
+8em64t-2s4c-heterogeneous.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/8em64t-2s4c-heterogeneous.tar.bz2
+END
+128ia64-17n4s2c.output
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/128ia64-17n4s2c.output
+END
+16em64t-4s2c2t-offlines_noadmin.output
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t-offlines_noadmin.output
+END
+16em64t-4s2c2t-offlines_noadmin.source
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t-offlines_noadmin.source
+END
+256ppc-8n8s4t-nosys.source
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/256ppc-8n8s4t-nosys.source
+END
+256ppc-8n8s4t-nosys.output
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/256ppc-8n8s4t-nosys.output
+END
+256ia64-64n2s2c.output
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/256ia64-64n2s2c.output
+END
+8ia64-2n2s2c.output
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/8ia64-2n2s2c.output
+END
+2arm-2c.output
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2arm-2c.output
+END
+16amd64-4n4c-cgroup-distance-merge.options
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16amd64-4n4c-cgroup-distance-merge.options
+END
+20s390-2g6s4c.output
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/20s390-2g6s4c.output
+END
+8em64t-2s2ca2c.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/8em64t-2s2ca2c.tar.bz2
+END
+2i386-2t-hugepagesizecount.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2i386-2t-hugepagesizecount.tar.bz2
+END
+256ppc-8n8s4t.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/256ppc-8n8s4t.tar.bz2
+END
+32amd64-4s2n4c-cgroup.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/32amd64-4s2n4c-cgroup.tar.bz2
+END
+4ppc-4c.output
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/4ppc-4c.output
+END
+2i386-2t-hugepagesizecount.xml.env
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2i386-2t-hugepagesizecount.xml.env
+END
+16amd64-8n2c-cpusets_noadmin.options
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16amd64-8n2c-cpusets_noadmin.options
+END
+16em64t-4s2c2t.xml.options
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t.xml.options
+END
+32amd64-4s2n4c-cgroup.xml.env
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/32amd64-4s2n4c-cgroup.xml.env
+END
+96em64t-4n4d3ca2co.output
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/96em64t-4n4d3ca2co.output
+END
+32ppc-4n4c2c.output
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/32ppc-4n4c2c.output
+END
+2i386-2t-hugepagesizecount.xml.output
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2i386-2t-hugepagesizecount.xml.output
+END
+2i386-2t-hugepagesizecount.xml.source
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2i386-2t-hugepagesizecount.xml.source
+END
+8ia64-2n2s2c.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/8ia64-2n2s2c.tar.bz2
+END
+256ppc-8n8s4t.output
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/256ppc-8n8s4t.output
+END
+4qs22-2s2t.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/4qs22-2s2t.tar.bz2
+END
+64amd64-4s2n4ca2co.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/64amd64-4s2n4ca2co.tar.bz2
+END
+20s390-2g6s4c.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/20s390-2g6s4c.tar.bz2
+END
+8amd64-4n2c.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/8amd64-4n2c.tar.bz2
+END
+16amd64-8n2c.output
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16amd64-8n2c.output
+END
+8ia64-2s2c2t.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/8ia64-2s2c2t.tar.bz2
+END
+4ppc-4c.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/4ppc-4c.tar.bz2
+END
+16em64t-2m4c2t.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-2m4c2t.tar.bz2
+END
+16ia64-8n2s.output
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16ia64-8n2s.output
+END
+16em64t-4s2c2t_ncaches.options
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t_ncaches.options
+END
+32ppc-4n4c2c.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/32ppc-4n4c2c.tar.bz2
+END
+64amd64-4s2n4ca2co.output
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/64amd64-4s2n4ca2co.output
+END
+16em64t-4s2c2t.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t.tar.bz2
+END
+64fake-4n2s2ca2c2t.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/64fake-4n2s2ca2c2t.tar.bz2
+END
+16em64t-4s2c2t_ncaches.source
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t_ncaches.source
+END
+16em64t-4s2c2t_ncaches.output
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t_ncaches.output
+END
+2amd64-2n.output
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2amd64-2n.output
+END
+2ps3-2t.output
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2ps3-2t.output
+END
+4ia64-4s.output
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/4ia64-4s.output
+END
+256ppc-8n8s4t-nocache.exclude
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/256ppc-8n8s4t-nocache.exclude
+END
+16amd64-8n2c.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16amd64-8n2c.tar.bz2
+END
+32amd64-4s2n4c-cgroup.env
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/32amd64-4s2n4c-cgroup.env
+END
+256ia64-64n2s2c.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/256ia64-64n2s2c.tar.bz2
+END
+16em64t-4s2c2t-offlines.xml.options
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t-offlines.xml.options
+END
+256ppc-8n8s4t-nocache.source
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/256ppc-8n8s4t-nocache.source
+END
+256ppc-8n8s4t-nocache.output
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/256ppc-8n8s4t-nocache.output
+END
+8em64t-4c2t.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/8em64t-4c2t.tar.bz2
+END
+16ia64-8n2s.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16ia64-8n2s.tar.bz2
+END
+16em64t-4s2c2t.xml.output
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t.xml.output
+END
+16em64t-4s2c2t.xml.source
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t.xml.source
+END
+8em64t-2s2ca2c.output
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/8em64t-2s2ca2c.output
+END
+2arm-2c.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2arm-2c.tar.bz2
+END
+16em64t-4s2c2t.output
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t.output
+END
+64fake-4n2s2ca2c2t.output
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/64fake-4n2s2ca2c2t.output
+END
+8ia64-4s2c.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/8ia64-4s2c.tar.bz2
+END
+32amd64-4s2n4c-cgroup.xml.output
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/32amd64-4s2n4c-cgroup.xml.output
+END
+32amd64-4s2n4c-cgroup.xml.source
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/32amd64-4s2n4c-cgroup.xml.source
+END
+32amd64-4s2n4c-cgroup.output
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/32amd64-4s2n4c-cgroup.output
+END
+2amd64-2n.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2amd64-2n.tar.bz2
+END
+2ps3-2t.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2ps3-2t.tar.bz2
+END
+4em64t-2c2t-ignore-reorder.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/4em64t-2c2t-ignore-reorder.tar.bz2
+END
+16em64t-4s2c2t_merge.options
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t_merge.options
+END
+8em64t-4c2t.output
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/8em64t-4c2t.output
+END
+48amd64-4d2n6c-sparse.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/48amd64-4d2n6c-sparse.tar.bz2
+END
+hwloc-gather-topology.in
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/hwloc-gather-topology.in
+END
+1alpha.output
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/1alpha.output
+END
+4em64t-2c2t-ignore-reorder.options
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/4em64t-2c2t-ignore-reorder.options
+END
+16amd64-8n2c-cpusets.xml.options
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16amd64-8n2c-cpusets.xml.options
+END
+8ia64-2s2c2t.output
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/8ia64-2s2c2t.output
+END
+test-topology.sh.in
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/test-topology.sh.in
+END
+16em64t-4s2c2t-offlines.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t-offlines.tar.bz2
+END
+16em64t-4s2cu2c.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2cu2c.tar.bz2
+END
+16amd64-8n2c-cpusets.xml.source
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16amd64-8n2c-cpusets.xml.source
+END
+16amd64-8n2c-cpusets.xml.output
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16amd64-8n2c-cpusets.xml.output
+END
+16amd64-8n2c-cpusets.output
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16amd64-8n2c-cpusets.output
+END
+2s390-2c.output
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2s390-2c.output
+END
+16amd64-8n2c-cpusets_noadmin.source
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16amd64-8n2c-cpusets_noadmin.source
+END
+16amd64-8n2c-cpusets_noadmin.output
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16amd64-8n2c-cpusets_noadmin.output
+END
+2i386-2c-nohugepage.xml.options
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2i386-2c-nohugepage.xml.options
+END
+256ppc-8n8s4t-nosys.exclude
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/256ppc-8n8s4t-nosys.exclude
+END
+1alpha.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/1alpha.tar.bz2
+END
+96em64t-4n4d3ca2co-forcecpuinfo.env
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/96em64t-4n4d3ca2co-forcecpuinfo.env
+END
+16em64t-4s2cu2c.output
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2cu2c.output
+END
+4ia64-4s.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/4ia64-4s.tar.bz2
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/README
+END
+16amd64-8n2c-cpusets.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16amd64-8n2c-cpusets.tar.bz2
+END
+96em64t-4n4d3ca2co-forcecpuinfo.output
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/96em64t-4n4d3ca2co-forcecpuinfo.output
+END
+96em64t-4n4d3ca2co-forcecpuinfo.source
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/96em64t-4n4d3ca2co-forcecpuinfo.source
+END
+96em64t-4n4d3ca2co.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/96em64t-4n4d3ca2co.tar.bz2
+END
+4qs22-2s2t.output
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/4qs22-2s2t.output
+END
+16em64t-4s2c2t_merge.source
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t_merge.source
+END
+16em64t-4s2c2t_merge.output
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-4s2c2t_merge.output
+END
+2s390-2c.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2s390-2c.tar.bz2
+END
+8ia64-4s2c.output
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/8ia64-4s2c.output
+END
+8amd64-4n2c.output
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/8amd64-4n2c.output
+END
+16amd64-4n4c-cgroup-distance-merge.output
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16amd64-4n4c-cgroup-distance-merge.output
+END
+8em64t-2s4c-heterogeneous.output
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/8em64t-2s4c-heterogeneous.output
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/Makefile.am
+END
+4em64t-2c2t-ignore-reorder.output
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/4em64t-2c2t-ignore-reorder.output
+END
+2i386-2c-nohugepage.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2i386-2c-nohugepage.tar.bz2
+END
+16em64t-2m4c2t.output
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/16em64t-2m4c2t.output
+END
+128ia64-17n4s2c.tar.bz2
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/128ia64-17n4s2c.tar.bz2
+END
+2i386-2t-hugepagesizecount.xml.options
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/hwloc/!svn/ver/4478/branches/display/tests/linux/2i386-2t-hugepagesizecount.xml.options
+END

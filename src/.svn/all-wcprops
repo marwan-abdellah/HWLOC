@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/hwloc/!svn/ver/4491/branches/display/src
+END
+topology-hpux.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/hwloc/!svn/ver/4478/branches/display/src/topology-hpux.c
+END
+topology-darwin.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/hwloc/!svn/ver/4478/branches/display/src/topology-darwin.c
+END
+topology-x86.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/hwloc/!svn/ver/4478/branches/display/src/topology-x86.c
+END
+topology-osf.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/hwloc/!svn/ver/4478/branches/display/src/topology-osf.c
+END
+gl.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/hwloc/!svn/ver/4490/branches/display/src/gl.c
+END
+traversal.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/hwloc/!svn/ver/4478/branches/display/src/traversal.c
+END
+topology-windows.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/hwloc/!svn/ver/4478/branches/display/src/topology-windows.c
+END
+hwloc.dtd
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/hwloc/!svn/ver/4478/branches/display/src/hwloc.dtd
+END
+topology-solaris-chiptype.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/hwloc/!svn/ver/4478/branches/display/src/topology-solaris-chiptype.c
+END
+topology-linux.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/hwloc/!svn/ver/4478/branches/display/src/topology-linux.c
+END
+topology-xml.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/hwloc/!svn/ver/4478/branches/display/src/topology-xml.c
+END
+topology-libpci.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/hwloc/!svn/ver/4491/branches/display/src/topology-libpci.c
+END
+bitmap.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/hwloc/!svn/ver/4478/branches/display/src/bitmap.c
+END
+bind.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/hwloc/!svn/ver/4478/branches/display/src/bind.c
+END
+topology.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/hwloc/!svn/ver/4478/branches/display/src/topology.c
+END
+distances.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/hwloc/!svn/ver/4478/branches/display/src/distances.c
+END
+topology-freebsd.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/hwloc/!svn/ver/4478/branches/display/src/topology-freebsd.c
+END
+topology-synthetic.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/hwloc/!svn/ver/4478/branches/display/src/topology-synthetic.c
+END
+topology-solaris.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/hwloc/!svn/ver/4478/branches/display/src/topology-solaris.c
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/hwloc/!svn/ver/4490/branches/display/src/Makefile.am
+END
+dolib.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/hwloc/!svn/ver/4478/branches/display/src/dolib.c
+END
+topology-aix.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/hwloc/!svn/ver/4478/branches/display/src/topology-aix.c
+END
+misc.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/hwloc/!svn/ver/4478/branches/display/src/misc.c
+END

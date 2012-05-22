@@ -1,0 +1,522 @@
+\contentsline {chapter}{\numberline {1}Hardware Locality}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Installation}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}CLI Examples}{3}{section.1.3}
+\contentsline {section}{\numberline {1.4}Programming Interface}{9}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Portability}{9}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}API Example}{12}{subsection.1.4.2}
+\contentsline {section}{\numberline {1.5}Questions and Bugs}{15}{section.1.5}
+\contentsline {section}{\numberline {1.6}History / Credits}{16}{section.1.6}
+\contentsline {section}{\numberline {1.7}Further Reading}{16}{section.1.7}
+\contentsline {chapter}{\numberline {2}Terms and Definitions}{17}{chapter.2}
+\contentsline {chapter}{\numberline {3}Command-\/Line Tools}{21}{chapter.3}
+\contentsline {section}{\numberline {3.1}lstopo and lstopo-\/gui}{21}{section.3.1}
+\contentsline {section}{\numberline {3.2}hwloc-\/bind}{21}{section.3.2}
+\contentsline {section}{\numberline {3.3}hwloc-\/calc}{22}{section.3.3}
+\contentsline {section}{\numberline {3.4}hwloc-\/distrib}{22}{section.3.4}
+\contentsline {section}{\numberline {3.5}hwloc-\/ps}{22}{section.3.5}
+\contentsline {section}{\numberline {3.6}hwloc-\/gather-\/topology}{22}{section.3.6}
+\contentsline {section}{\numberline {3.7}hwloc-\/distances}{22}{section.3.7}
+\contentsline {section}{\numberline {3.8}hwloc-\/assembler}{23}{section.3.8}
+\contentsline {section}{\numberline {3.9}hwloc-\/assembler-\/remote}{23}{section.3.9}
+\contentsline {chapter}{\numberline {4}Environment Variables}{25}{chapter.4}
+\contentsline {chapter}{\numberline {5}CPU and Memory Binding Overview}{29}{chapter.5}
+\contentsline {chapter}{\numberline {6}I/O Devices}{31}{chapter.6}
+\contentsline {section}{\numberline {6.1}Enabling and requirements}{31}{section.6.1}
+\contentsline {section}{\numberline {6.2}I/O object hierarchy}{31}{section.6.2}
+\contentsline {section}{\numberline {6.3}Software devices}{32}{section.6.3}
+\contentsline {section}{\numberline {6.4}Consulting I/O devices and binding}{32}{section.6.4}
+\contentsline {section}{\numberline {6.5}Examples}{33}{section.6.5}
+\contentsline {chapter}{\numberline {7}Multi-\/node Topologies}{35}{chapter.7}
+\contentsline {section}{\numberline {7.1}Multi-\/node Objects Specifities}{35}{section.7.1}
+\contentsline {section}{\numberline {7.2}Assembling topologies with command-\/line tools}{36}{section.7.2}
+\contentsline {section}{\numberline {7.3}Assembling topologies with the programming interface}{36}{section.7.3}
+\contentsline {section}{\numberline {7.4}Example of assembly with the programming interface}{37}{section.7.4}
+\contentsline {chapter}{\numberline {8}Importing and exporting topologies from/to XML files}{39}{chapter.8}
+\contentsline {section}{\numberline {8.1}libxml2 and minimalistic XML backends}{39}{section.8.1}
+\contentsline {section}{\numberline {8.2}XML import error management}{40}{section.8.2}
+\contentsline {chapter}{\numberline {9}Interoperability With Other Software}{41}{chapter.9}
+\contentsline {chapter}{\numberline {10}Thread Safety}{43}{chapter.10}
+\contentsline {chapter}{\numberline {11}Embedding hwloc in Other Software}{45}{chapter.11}
+\contentsline {section}{\numberline {11.1}Using hwloc's M4 Embedding Capabilities}{45}{section.11.1}
+\contentsline {section}{\numberline {11.2}Example Embedding hwloc}{47}{section.11.2}
+\contentsline {chapter}{\numberline {12}Frequently Asked Questions}{49}{chapter.12}
+\contentsline {section}{\numberline {12.1}I do not want hwloc to rediscover my enormous machine topology every time I rerun a process}{49}{section.12.1}
+\contentsline {section}{\numberline {12.2}Does hwloc require privileged access?}{49}{section.12.2}
+\contentsline {section}{\numberline {12.3}hwloc only has a one-\/dimensional view of the architecture, it ignores distances}{50}{section.12.3}
+\contentsline {section}{\numberline {12.4}How may I ignore symmetric multithreading, hyper-\/threading, ... ?}{50}{section.12.4}
+\contentsline {section}{\numberline {12.5}What happens if my topology is asymmetric?}{51}{section.12.5}
+\contentsline {section}{\numberline {12.6}How do I annotate the topology with private notes?}{52}{section.12.6}
+\contentsline {section}{\numberline {12.7}Why does Valgrind complain about hwloc memory leaks?}{52}{section.12.7}
+\contentsline {section}{\numberline {12.8}How do I handle API upgrades?}{52}{section.12.8}
+\contentsline {chapter}{\numberline {13}Module Index}{55}{chapter.13}
+\contentsline {section}{\numberline {13.1}Modules}{55}{section.13.1}
+\contentsline {chapter}{\numberline {14}Data Structure Index}{57}{chapter.14}
+\contentsline {section}{\numberline {14.1}Data Structures}{57}{section.14.1}
+\contentsline {chapter}{\numberline {15}Module Documentation}{59}{chapter.15}
+\contentsline {section}{\numberline {15.1}API version}{59}{section.15.1}
+\contentsline {subsection}{\numberline {15.1.1}Define Documentation}{59}{subsection.15.1.1}
+\contentsline {subsubsection}{\numberline {15.1.1.1}HWLOC\_\discretionary {-}{}{}API\_\discretionary {-}{}{}VERSION}{59}{subsubsection.15.1.1.1}
+\contentsline {subsection}{\numberline {15.1.2}Function Documentation}{59}{subsection.15.1.2}
+\contentsline {subsubsection}{\numberline {15.1.2.1}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}api\_\discretionary {-}{}{}version}{59}{subsubsection.15.1.2.1}
+\contentsline {section}{\numberline {15.2}Topology context}{59}{section.15.2}
+\contentsline {subsection}{\numberline {15.2.1}Typedef Documentation}{60}{subsection.15.2.1}
+\contentsline {subsubsection}{\numberline {15.2.1.1}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}t}{60}{subsubsection.15.2.1.1}
+\contentsline {section}{\numberline {15.3}Object sets (hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}t and hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}t)}{60}{section.15.3}
+\contentsline {subsection}{\numberline {15.3.1}Detailed Description}{60}{subsection.15.3.1}
+\contentsline {subsection}{\numberline {15.3.2}Typedef Documentation}{60}{subsection.15.3.2}
+\contentsline {subsubsection}{\numberline {15.3.2.1}hwloc\_\discretionary {-}{}{}const\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}t}{60}{subsubsection.15.3.2.1}
+\contentsline {subsubsection}{\numberline {15.3.2.2}hwloc\_\discretionary {-}{}{}const\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}t}{60}{subsubsection.15.3.2.2}
+\contentsline {subsubsection}{\numberline {15.3.2.3}hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}t}{60}{subsubsection.15.3.2.3}
+\contentsline {subsubsection}{\numberline {15.3.2.4}hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}t}{61}{subsubsection.15.3.2.4}
+\contentsline {section}{\numberline {15.4}Topology Object Types}{61}{section.15.4}
+\contentsline {subsection}{\numberline {15.4.1}Typedef Documentation}{62}{subsection.15.4.1}
+\contentsline {subsubsection}{\numberline {15.4.1.1}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}type\_\discretionary {-}{}{}t}{62}{subsubsection.15.4.1.1}
+\contentsline {subsubsection}{\numberline {15.4.1.2}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}cache\_\discretionary {-}{}{}type\_\discretionary {-}{}{}t}{62}{subsubsection.15.4.1.2}
+\contentsline {subsubsection}{\numberline {15.4.1.3}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}osdev\_\discretionary {-}{}{}type\_\discretionary {-}{}{}t}{62}{subsubsection.15.4.1.3}
+\contentsline {subsection}{\numberline {15.4.2}Enumeration Type Documentation}{62}{subsection.15.4.2}
+\contentsline {subsubsection}{\numberline {15.4.2.1}hwloc\_\discretionary {-}{}{}compare\_\discretionary {-}{}{}types\_\discretionary {-}{}{}e}{62}{subsubsection.15.4.2.1}
+\contentsline {subsubsection}{\numberline {15.4.2.2}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}type\_\discretionary {-}{}{}e}{62}{subsubsection.15.4.2.2}
+\contentsline {subsubsection}{\numberline {15.4.2.3}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}cache\_\discretionary {-}{}{}type\_\discretionary {-}{}{}e}{62}{subsubsection.15.4.2.3}
+\contentsline {subsubsection}{\numberline {15.4.2.4}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}osdev\_\discretionary {-}{}{}type\_\discretionary {-}{}{}e}{63}{subsubsection.15.4.2.4}
+\contentsline {subsubsection}{\numberline {15.4.2.5}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}type\_\discretionary {-}{}{}t}{63}{subsubsection.15.4.2.5}
+\contentsline {subsection}{\numberline {15.4.3}Function Documentation}{64}{subsection.15.4.3}
+\contentsline {subsubsection}{\numberline {15.4.3.1}hwloc\_\discretionary {-}{}{}compare\_\discretionary {-}{}{}types}{64}{subsubsection.15.4.3.1}
+\contentsline {section}{\numberline {15.5}Topology Objects}{64}{section.15.5}
+\contentsline {subsection}{\numberline {15.5.1}Typedef Documentation}{65}{subsection.15.5.1}
+\contentsline {subsubsection}{\numberline {15.5.1.1}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}t}{65}{subsubsection.15.5.1.1}
+\contentsline {section}{\numberline {15.6}Create and Destroy Topologies}{65}{section.15.6}
+\contentsline {subsection}{\numberline {15.6.1}Function Documentation}{65}{subsection.15.6.1}
+\contentsline {subsubsection}{\numberline {15.6.1.1}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}check}{65}{subsubsection.15.6.1.1}
+\contentsline {subsubsection}{\numberline {15.6.1.2}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}destroy}{66}{subsubsection.15.6.1.2}
+\contentsline {subsubsection}{\numberline {15.6.1.3}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}init}{66}{subsubsection.15.6.1.3}
+\contentsline {subsubsection}{\numberline {15.6.1.4}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}load}{66}{subsubsection.15.6.1.4}
+\contentsline {section}{\numberline {15.7}Configure Topology Detection}{67}{section.15.7}
+\contentsline {subsection}{\numberline {15.7.1}Detailed Description}{68}{subsection.15.7.1}
+\contentsline {subsection}{\numberline {15.7.2}Enumeration Type Documentation}{68}{subsection.15.7.2}
+\contentsline {subsubsection}{\numberline {15.7.2.1}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}flags\_\discretionary {-}{}{}e}{68}{subsubsection.15.7.2.1}
+\contentsline {subsection}{\numberline {15.7.3}Function Documentation}{69}{subsection.15.7.3}
+\contentsline {subsubsection}{\numberline {15.7.3.1}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}support}{69}{subsubsection.15.7.3.1}
+\contentsline {subsubsection}{\numberline {15.7.3.2}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}ignore\_\discretionary {-}{}{}all\_\discretionary {-}{}{}keep\_\discretionary {-}{}{}structure}{69}{subsubsection.15.7.3.2}
+\contentsline {subsubsection}{\numberline {15.7.3.3}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}ignore\_\discretionary {-}{}{}type}{69}{subsubsection.15.7.3.3}
+\contentsline {subsubsection}{\numberline {15.7.3.4}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}ignore\_\discretionary {-}{}{}type\_\discretionary {-}{}{}keep\_\discretionary {-}{}{}structure}{69}{subsubsection.15.7.3.4}
+\contentsline {subsubsection}{\numberline {15.7.3.5}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}custom}{70}{subsubsection.15.7.3.5}
+\contentsline {subsubsection}{\numberline {15.7.3.6}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}distance\_\discretionary {-}{}{}matrix}{70}{subsubsection.15.7.3.6}
+\contentsline {subsubsection}{\numberline {15.7.3.7}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}flags}{70}{subsubsection.15.7.3.7}
+\contentsline {subsubsection}{\numberline {15.7.3.8}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}fsroot}{70}{subsubsection.15.7.3.8}
+\contentsline {subsubsection}{\numberline {15.7.3.9}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}pid}{71}{subsubsection.15.7.3.9}
+\contentsline {subsubsection}{\numberline {15.7.3.10}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}synthetic}{71}{subsubsection.15.7.3.10}
+\contentsline {subsubsection}{\numberline {15.7.3.11}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}xml}{72}{subsubsection.15.7.3.11}
+\contentsline {subsubsection}{\numberline {15.7.3.12}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}set\_\discretionary {-}{}{}xmlbuffer}{72}{subsubsection.15.7.3.12}
+\contentsline {section}{\numberline {15.8}Tinker With Topologies.}{73}{section.15.8}
+\contentsline {subsection}{\numberline {15.8.1}Enumeration Type Documentation}{73}{subsection.15.8.1}
+\contentsline {subsubsection}{\numberline {15.8.1.1}hwloc\_\discretionary {-}{}{}restrict\_\discretionary {-}{}{}flags\_\discretionary {-}{}{}e}{73}{subsubsection.15.8.1.1}
+\contentsline {subsection}{\numberline {15.8.2}Function Documentation}{74}{subsection.15.8.2}
+\contentsline {subsubsection}{\numberline {15.8.2.1}hwloc\_\discretionary {-}{}{}free\_\discretionary {-}{}{}xmlbuffer}{74}{subsubsection.15.8.2.1}
+\contentsline {subsubsection}{\numberline {15.8.2.2}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}export\_\discretionary {-}{}{}xml}{74}{subsubsection.15.8.2.2}
+\contentsline {subsubsection}{\numberline {15.8.2.3}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}export\_\discretionary {-}{}{}xmlbuffer}{74}{subsubsection.15.8.2.3}
+\contentsline {subsubsection}{\numberline {15.8.2.4}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}insert\_\discretionary {-}{}{}misc\_\discretionary {-}{}{}object\_\discretionary {-}{}{}by\_\discretionary {-}{}{}cpuset}{74}{subsubsection.15.8.2.4}
+\contentsline {subsubsection}{\numberline {15.8.2.5}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}insert\_\discretionary {-}{}{}misc\_\discretionary {-}{}{}object\_\discretionary {-}{}{}by\_\discretionary {-}{}{}parent}{75}{subsubsection.15.8.2.5}
+\contentsline {subsubsection}{\numberline {15.8.2.6}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}restrict}{75}{subsubsection.15.8.2.6}
+\contentsline {section}{\numberline {15.9}Get Some Topology Information}{75}{section.15.9}
+\contentsline {subsection}{\numberline {15.9.1}Detailed Description}{76}{subsection.15.9.1}
+\contentsline {subsection}{\numberline {15.9.2}Enumeration Type Documentation}{76}{subsection.15.9.2}
+\contentsline {subsubsection}{\numberline {15.9.2.1}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}type\_\discretionary {-}{}{}depth\_\discretionary {-}{}{}e}{76}{subsubsection.15.9.2.1}
+\contentsline {subsection}{\numberline {15.9.3}Function Documentation}{76}{subsection.15.9.3}
+\contentsline {subsubsection}{\numberline {15.9.3.1}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}depth\_\discretionary {-}{}{}type}{76}{subsubsection.15.9.3.1}
+\contentsline {subsubsection}{\numberline {15.9.3.2}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}nbobjs\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}{76}{subsubsection.15.9.3.2}
+\contentsline {subsubsection}{\numberline {15.9.3.3}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}nbobjs\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}{77}{subsubsection.15.9.3.3}
+\contentsline {subsubsection}{\numberline {15.9.3.4}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}type\_\discretionary {-}{}{}depth}{77}{subsubsection.15.9.3.4}
+\contentsline {subsubsection}{\numberline {15.9.3.5}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}depth}{77}{subsubsection.15.9.3.5}
+\contentsline {subsubsection}{\numberline {15.9.3.6}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}is\_\discretionary {-}{}{}thissystem}{77}{subsubsection.15.9.3.6}
+\contentsline {section}{\numberline {15.10}Retrieve Objects}{78}{section.15.10}
+\contentsline {subsection}{\numberline {15.10.1}Detailed Description}{78}{subsection.15.10.1}
+\contentsline {subsection}{\numberline {15.10.2}Function Documentation}{78}{subsection.15.10.2}
+\contentsline {subsubsection}{\numberline {15.10.2.1}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}{78}{subsubsection.15.10.2.1}
+\contentsline {subsubsection}{\numberline {15.10.2.2}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}{78}{subsubsection.15.10.2.2}
+\contentsline {section}{\numberline {15.11}Object/String Conversion}{78}{section.15.11}
+\contentsline {subsection}{\numberline {15.11.1}Function Documentation}{79}{subsection.15.11.1}
+\contentsline {subsubsection}{\numberline {15.11.1.1}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}add\_\discretionary {-}{}{}info}{79}{subsubsection.15.11.1.1}
+\contentsline {subsubsection}{\numberline {15.11.1.2}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}snprintf}{79}{subsubsection.15.11.1.2}
+\contentsline {subsubsection}{\numberline {15.11.1.3}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}snprintf}{79}{subsubsection.15.11.1.3}
+\contentsline {subsubsection}{\numberline {15.11.1.4}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}get\_\discretionary {-}{}{}info\_\discretionary {-}{}{}by\_\discretionary {-}{}{}name}{79}{subsubsection.15.11.1.4}
+\contentsline {subsubsection}{\numberline {15.11.1.5}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}snprintf}{80}{subsubsection.15.11.1.5}
+\contentsline {subsubsection}{\numberline {15.11.1.6}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}type\_\discretionary {-}{}{}of\_\discretionary {-}{}{}string}{80}{subsubsection.15.11.1.6}
+\contentsline {subsubsection}{\numberline {15.11.1.7}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}type\_\discretionary {-}{}{}snprintf}{80}{subsubsection.15.11.1.7}
+\contentsline {subsubsection}{\numberline {15.11.1.8}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}type\_\discretionary {-}{}{}string}{81}{subsubsection.15.11.1.8}
+\contentsline {section}{\numberline {15.12}CPU binding}{81}{section.15.12}
+\contentsline {subsection}{\numberline {15.12.1}Detailed Description}{81}{subsection.15.12.1}
+\contentsline {subsection}{\numberline {15.12.2}Enumeration Type Documentation}{82}{subsection.15.12.2}
+\contentsline {subsubsection}{\numberline {15.12.2.1}hwloc\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}flags\_\discretionary {-}{}{}t}{82}{subsubsection.15.12.2.1}
+\contentsline {subsection}{\numberline {15.12.3}Function Documentation}{83}{subsection.15.12.3}
+\contentsline {subsubsection}{\numberline {15.12.3.1}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}cpubind}{83}{subsubsection.15.12.3.1}
+\contentsline {subsubsection}{\numberline {15.12.3.2}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}last\_\discretionary {-}{}{}cpu\_\discretionary {-}{}{}location}{83}{subsubsection.15.12.3.2}
+\contentsline {subsubsection}{\numberline {15.12.3.3}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}cpubind}{83}{subsubsection.15.12.3.3}
+\contentsline {subsubsection}{\numberline {15.12.3.4}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}last\_\discretionary {-}{}{}cpu\_\discretionary {-}{}{}location}{84}{subsubsection.15.12.3.4}
+\contentsline {subsubsection}{\numberline {15.12.3.5}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}thread\_\discretionary {-}{}{}cpubind}{84}{subsubsection.15.12.3.5}
+\contentsline {subsubsection}{\numberline {15.12.3.6}hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}cpubind}{84}{subsubsection.15.12.3.6}
+\contentsline {subsubsection}{\numberline {15.12.3.7}hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}cpubind}{84}{subsubsection.15.12.3.7}
+\contentsline {subsubsection}{\numberline {15.12.3.8}hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}thread\_\discretionary {-}{}{}cpubind}{85}{subsubsection.15.12.3.8}
+\contentsline {section}{\numberline {15.13}Memory binding}{85}{section.15.13}
+\contentsline {subsection}{\numberline {15.13.1}Detailed Description}{86}{subsection.15.13.1}
+\contentsline {subsection}{\numberline {15.13.2}Enumeration Type Documentation}{87}{subsection.15.13.2}
+\contentsline {subsubsection}{\numberline {15.13.2.1}hwloc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}flags\_\discretionary {-}{}{}t}{87}{subsubsection.15.13.2.1}
+\contentsline {subsubsection}{\numberline {15.13.2.2}hwloc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}policy\_\discretionary {-}{}{}t}{87}{subsubsection.15.13.2.2}
+\contentsline {subsection}{\numberline {15.13.3}Function Documentation}{88}{subsection.15.13.3}
+\contentsline {subsubsection}{\numberline {15.13.3.1}hwloc\_\discretionary {-}{}{}alloc}{88}{subsubsection.15.13.3.1}
+\contentsline {subsubsection}{\numberline {15.13.3.2}hwloc\_\discretionary {-}{}{}alloc\_\discretionary {-}{}{}membind}{89}{subsubsection.15.13.3.2}
+\contentsline {subsubsection}{\numberline {15.13.3.3}hwloc\_\discretionary {-}{}{}alloc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}{89}{subsubsection.15.13.3.3}
+\contentsline {subsubsection}{\numberline {15.13.3.4}hwloc\_\discretionary {-}{}{}free}{89}{subsubsection.15.13.3.4}
+\contentsline {subsubsection}{\numberline {15.13.3.5}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind}{89}{subsubsection.15.13.3.5}
+\contentsline {subsubsection}{\numberline {15.13.3.6}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}{90}{subsubsection.15.13.3.6}
+\contentsline {subsubsection}{\numberline {15.13.3.7}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}membind}{90}{subsubsection.15.13.3.7}
+\contentsline {subsubsection}{\numberline {15.13.3.8}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}{91}{subsubsection.15.13.3.8}
+\contentsline {subsubsection}{\numberline {15.13.3.9}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind}{92}{subsubsection.15.13.3.9}
+\contentsline {subsubsection}{\numberline {15.13.3.10}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}{92}{subsubsection.15.13.3.10}
+\contentsline {subsubsection}{\numberline {15.13.3.11}hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind}{93}{subsubsection.15.13.3.11}
+\contentsline {subsubsection}{\numberline {15.13.3.12}hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}{93}{subsubsection.15.13.3.12}
+\contentsline {subsubsection}{\numberline {15.13.3.13}hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}membind}{93}{subsubsection.15.13.3.13}
+\contentsline {subsubsection}{\numberline {15.13.3.14}hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}{94}{subsubsection.15.13.3.14}
+\contentsline {subsubsection}{\numberline {15.13.3.15}hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind}{94}{subsubsection.15.13.3.15}
+\contentsline {subsubsection}{\numberline {15.13.3.16}hwloc\_\discretionary {-}{}{}set\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}nodeset}{94}{subsubsection.15.13.3.16}
+\contentsline {section}{\numberline {15.14}Building Custom Topologies}{95}{section.15.14}
+\contentsline {subsection}{\numberline {15.14.1}Detailed Description}{95}{subsection.15.14.1}
+\contentsline {subsection}{\numberline {15.14.2}Function Documentation}{95}{subsection.15.14.2}
+\contentsline {subsubsection}{\numberline {15.14.2.1}hwloc\_\discretionary {-}{}{}custom\_\discretionary {-}{}{}insert\_\discretionary {-}{}{}group\_\discretionary {-}{}{}object\_\discretionary {-}{}{}by\_\discretionary {-}{}{}parent}{95}{subsubsection.15.14.2.1}
+\contentsline {subsubsection}{\numberline {15.14.2.2}hwloc\_\discretionary {-}{}{}custom\_\discretionary {-}{}{}insert\_\discretionary {-}{}{}topology}{95}{subsubsection.15.14.2.2}
+\contentsline {section}{\numberline {15.15}Object Type Helpers}{96}{section.15.15}
+\contentsline {subsection}{\numberline {15.15.1}Detailed Description}{96}{subsection.15.15.1}
+\contentsline {subsection}{\numberline {15.15.2}Function Documentation}{96}{subsection.15.15.2}
+\contentsline {subsubsection}{\numberline {15.15.2.1}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}type\_\discretionary {-}{}{}or\_\discretionary {-}{}{}above\_\discretionary {-}{}{}depth}{96}{subsubsection.15.15.2.1}
+\contentsline {subsubsection}{\numberline {15.15.2.2}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}type\_\discretionary {-}{}{}or\_\discretionary {-}{}{}below\_\discretionary {-}{}{}depth}{96}{subsubsection.15.15.2.2}
+\contentsline {section}{\numberline {15.16}Basic Traversal Helpers}{97}{section.15.16}
+\contentsline {subsection}{\numberline {15.16.1}Detailed Description}{97}{subsection.15.16.1}
+\contentsline {subsection}{\numberline {15.16.2}Function Documentation}{97}{subsection.15.16.2}
+\contentsline {subsubsection}{\numberline {15.16.2.1}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}ancestor\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}{97}{subsubsection.15.16.2.1}
+\contentsline {subsubsection}{\numberline {15.16.2.2}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}ancestor\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}{97}{subsubsection.15.16.2.2}
+\contentsline {subsubsection}{\numberline {15.16.2.3}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}common\_\discretionary {-}{}{}ancestor\_\discretionary {-}{}{}obj}{98}{subsubsection.15.16.2.3}
+\contentsline {subsubsection}{\numberline {15.16.2.4}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}child}{98}{subsubsection.15.16.2.4}
+\contentsline {subsubsection}{\numberline {15.16.2.5}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}{98}{subsubsection.15.16.2.5}
+\contentsline {subsubsection}{\numberline {15.16.2.6}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}{98}{subsubsection.15.16.2.6}
+\contentsline {subsubsection}{\numberline {15.16.2.7}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}pu\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}os\_\discretionary {-}{}{}index}{98}{subsubsection.15.16.2.7}
+\contentsline {subsubsection}{\numberline {15.16.2.8}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}root\_\discretionary {-}{}{}obj}{98}{subsubsection.15.16.2.8}
+\contentsline {subsubsection}{\numberline {15.16.2.9}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}is\_\discretionary {-}{}{}in\_\discretionary {-}{}{}subtree}{99}{subsubsection.15.16.2.9}
+\contentsline {section}{\numberline {15.17}Finding Objects Inside a CPU set}{99}{section.15.17}
+\contentsline {subsection}{\numberline {15.17.1}Function Documentation}{99}{subsection.15.17.1}
+\contentsline {subsubsection}{\numberline {15.17.1.1}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}first\_\discretionary {-}{}{}largest\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset}{99}{subsubsection.15.17.1.1}
+\contentsline {subsubsection}{\numberline {15.17.1.2}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}largest\_\discretionary {-}{}{}objs\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset}{100}{subsubsection.15.17.1.2}
+\contentsline {subsubsection}{\numberline {15.17.1.3}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}nbobjs\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}{100}{subsubsection.15.17.1.3}
+\contentsline {subsubsection}{\numberline {15.17.1.4}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}nbobjs\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}{100}{subsubsection.15.17.1.4}
+\contentsline {subsubsection}{\numberline {15.17.1.5}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}{100}{subsubsection.15.17.1.5}
+\contentsline {subsubsection}{\numberline {15.17.1.6}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}{101}{subsubsection.15.17.1.6}
+\contentsline {subsubsection}{\numberline {15.17.1.7}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}index\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset}{101}{subsubsection.15.17.1.7}
+\contentsline {subsubsection}{\numberline {15.17.1.8}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}{101}{subsubsection.15.17.1.8}
+\contentsline {subsubsection}{\numberline {15.17.1.9}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}inside\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}{101}{subsubsection.15.17.1.9}
+\contentsline {section}{\numberline {15.18}Finding a single Object covering at least CPU set}{102}{section.15.18}
+\contentsline {subsection}{\numberline {15.18.1}Function Documentation}{102}{subsection.15.18.1}
+\contentsline {subsubsection}{\numberline {15.18.1.1}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}child\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}cpuset}{102}{subsubsection.15.18.1.1}
+\contentsline {subsubsection}{\numberline {15.18.1.2}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}cpuset}{102}{subsubsection.15.18.1.2}
+\contentsline {section}{\numberline {15.19}Finding a set of similar Objects covering at least a CPU set}{103}{section.15.19}
+\contentsline {subsection}{\numberline {15.19.1}Function Documentation}{103}{subsection.15.19.1}
+\contentsline {subsubsection}{\numberline {15.19.1.1}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}{103}{subsubsection.15.19.1.1}
+\contentsline {subsubsection}{\numberline {15.19.1.2}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}{103}{subsubsection.15.19.1.2}
+\contentsline {section}{\numberline {15.20}Cache-\/specific Finding Helpers}{104}{section.15.20}
+\contentsline {subsection}{\numberline {15.20.1}Function Documentation}{104}{subsection.15.20.1}
+\contentsline {subsubsection}{\numberline {15.20.1.1}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}cache\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}cpuset}{104}{subsubsection.15.20.1.1}
+\contentsline {subsubsection}{\numberline {15.20.1.2}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}cache\_\discretionary {-}{}{}type\_\discretionary {-}{}{}depth}{104}{subsubsection.15.20.1.2}
+\contentsline {subsubsection}{\numberline {15.20.1.3}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}shared\_\discretionary {-}{}{}cache\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}obj}{105}{subsubsection.15.20.1.3}
+\contentsline {section}{\numberline {15.21}Advanced Traversal Helpers}{105}{section.15.21}
+\contentsline {subsection}{\numberline {15.21.1}Detailed Description}{105}{subsection.15.21.1}
+\contentsline {subsection}{\numberline {15.21.2}Function Documentation}{105}{subsection.15.21.2}
+\contentsline {subsubsection}{\numberline {15.21.2.1}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}closest\_\discretionary {-}{}{}objs}{105}{subsubsection.15.21.2.1}
+\contentsline {subsubsection}{\numberline {15.21.2.2}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}below\_\discretionary {-}{}{}array\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}{106}{subsubsection.15.21.2.2}
+\contentsline {subsubsection}{\numberline {15.21.2.3}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}below\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}{106}{subsubsection.15.21.2.3}
+\contentsline {section}{\numberline {15.22}Binding Helpers}{106}{section.15.22}
+\contentsline {subsection}{\numberline {15.22.1}Function Documentation}{107}{subsection.15.22.1}
+\contentsline {subsubsection}{\numberline {15.22.1.1}hwloc\_\discretionary {-}{}{}alloc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}policy}{107}{subsubsection.15.22.1.1}
+\contentsline {subsubsection}{\numberline {15.22.1.2}hwloc\_\discretionary {-}{}{}alloc\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}policy\_\discretionary {-}{}{}nodeset}{107}{subsubsection.15.22.1.2}
+\contentsline {subsubsection}{\numberline {15.22.1.3}hwloc\_\discretionary {-}{}{}distribute}{107}{subsubsection.15.22.1.3}
+\contentsline {subsubsection}{\numberline {15.22.1.4}hwloc\_\discretionary {-}{}{}distributev}{107}{subsubsection.15.22.1.4}
+\contentsline {section}{\numberline {15.23}Cpuset Helpers}{108}{section.15.23}
+\contentsline {subsection}{\numberline {15.23.1}Function Documentation}{108}{subsection.15.23.1}
+\contentsline {subsubsection}{\numberline {15.23.1.1}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}allowed\_\discretionary {-}{}{}cpuset}{108}{subsubsection.15.23.1.1}
+\contentsline {subsubsection}{\numberline {15.23.1.2}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}complete\_\discretionary {-}{}{}cpuset}{108}{subsubsection.15.23.1.2}
+\contentsline {subsubsection}{\numberline {15.23.1.3}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}online\_\discretionary {-}{}{}cpuset}{109}{subsubsection.15.23.1.3}
+\contentsline {subsubsection}{\numberline {15.23.1.4}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpuset}{109}{subsubsection.15.23.1.4}
+\contentsline {section}{\numberline {15.24}Nodeset Helpers}{109}{section.15.24}
+\contentsline {subsection}{\numberline {15.24.1}Function Documentation}{109}{subsection.15.24.1}
+\contentsline {subsubsection}{\numberline {15.24.1.1}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}allowed\_\discretionary {-}{}{}nodeset}{109}{subsubsection.15.24.1.1}
+\contentsline {subsubsection}{\numberline {15.24.1.2}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}complete\_\discretionary {-}{}{}nodeset}{110}{subsubsection.15.24.1.2}
+\contentsline {subsubsection}{\numberline {15.24.1.3}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}get\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}nodeset}{110}{subsubsection.15.24.1.3}
+\contentsline {section}{\numberline {15.25}Conversion between cpuset and nodeset}{110}{section.15.25}
+\contentsline {subsection}{\numberline {15.25.1}Detailed Description}{111}{subsection.15.25.1}
+\contentsline {subsection}{\numberline {15.25.2}Function Documentation}{111}{subsection.15.25.2}
+\contentsline {subsubsection}{\numberline {15.25.2.1}hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}nodeset}{111}{subsubsection.15.25.2.1}
+\contentsline {subsubsection}{\numberline {15.25.2.2}hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}strict}{111}{subsubsection.15.25.2.2}
+\contentsline {subsubsection}{\numberline {15.25.2.3}hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}nodeset}{111}{subsubsection.15.25.2.3}
+\contentsline {subsubsection}{\numberline {15.25.2.4}hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}strict}{112}{subsubsection.15.25.2.4}
+\contentsline {section}{\numberline {15.26}Distances}{112}{section.15.26}
+\contentsline {subsection}{\numberline {15.26.1}Function Documentation}{112}{subsection.15.26.1}
+\contentsline {subsubsection}{\numberline {15.26.1.1}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}distance\_\discretionary {-}{}{}matrix\_\discretionary {-}{}{}covering\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}{112}{subsubsection.15.26.1.1}
+\contentsline {subsubsection}{\numberline {15.26.1.2}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}latency}{113}{subsubsection.15.26.1.2}
+\contentsline {subsubsection}{\numberline {15.26.1.3}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}whole\_\discretionary {-}{}{}distance\_\discretionary {-}{}{}matrix\_\discretionary {-}{}{}by\_\discretionary {-}{}{}depth}{113}{subsubsection.15.26.1.3}
+\contentsline {subsubsection}{\numberline {15.26.1.4}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}whole\_\discretionary {-}{}{}distance\_\discretionary {-}{}{}matrix\_\discretionary {-}{}{}by\_\discretionary {-}{}{}type}{113}{subsubsection.15.26.1.4}
+\contentsline {section}{\numberline {15.27}Advanced I/O object traversal helpers}{114}{section.15.27}
+\contentsline {subsection}{\numberline {15.27.1}Function Documentation}{115}{subsection.15.27.1}
+\contentsline {subsubsection}{\numberline {15.27.1.1}hwloc\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}covers\_\discretionary {-}{}{}pcibus}{115}{subsubsection.15.27.1.1}
+\contentsline {subsubsection}{\numberline {15.27.1.2}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}hostbridge\_\discretionary {-}{}{}by\_\discretionary {-}{}{}pcibus}{115}{subsubsection.15.27.1.2}
+\contentsline {subsubsection}{\numberline {15.27.1.3}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}bridge}{115}{subsubsection.15.27.1.3}
+\contentsline {subsubsection}{\numberline {15.27.1.4}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}osdev}{115}{subsubsection.15.27.1.4}
+\contentsline {subsubsection}{\numberline {15.27.1.5}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}next\_\discretionary {-}{}{}pcidev}{115}{subsubsection.15.27.1.5}
+\contentsline {subsubsection}{\numberline {15.27.1.6}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}non\_\discretionary {-}{}{}io\_\discretionary {-}{}{}ancestor\_\discretionary {-}{}{}obj}{115}{subsubsection.15.27.1.6}
+\contentsline {subsubsection}{\numberline {15.27.1.7}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}by\_\discretionary {-}{}{}busid}{116}{subsubsection.15.27.1.7}
+\contentsline {subsubsection}{\numberline {15.27.1.8}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}by\_\discretionary {-}{}{}busidstring}{116}{subsubsection.15.27.1.8}
+\contentsline {subsubsection}{\numberline {15.27.1.9}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}by\_\discretionary {-}{}{}display}{116}{subsubsection.15.27.1.9}
+\contentsline {subsubsection}{\numberline {15.27.1.10}hwloc\_\discretionary {-}{}{}get\_\discretionary {-}{}{}pcidevice\_\discretionary {-}{}{}cpuset}{116}{subsubsection.15.27.1.10}
+\contentsline {section}{\numberline {15.28}The bitmap API}{116}{section.15.28}
+\contentsline {subsection}{\numberline {15.28.1}Detailed Description}{118}{subsection.15.28.1}
+\contentsline {subsection}{\numberline {15.28.2}Define Documentation}{118}{subsection.15.28.2}
+\contentsline {subsubsection}{\numberline {15.28.2.1}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}foreach\_\discretionary {-}{}{}begin}{118}{subsubsection.15.28.2.1}
+\contentsline {subsubsection}{\numberline {15.28.2.2}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}foreach\_\discretionary {-}{}{}end}{118}{subsubsection.15.28.2.2}
+\contentsline {subsection}{\numberline {15.28.3}Typedef Documentation}{119}{subsection.15.28.3}
+\contentsline {subsubsection}{\numberline {15.28.3.1}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}t}{119}{subsubsection.15.28.3.1}
+\contentsline {subsubsection}{\numberline {15.28.3.2}hwloc\_\discretionary {-}{}{}const\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}t}{119}{subsubsection.15.28.3.2}
+\contentsline {subsection}{\numberline {15.28.4}Function Documentation}{119}{subsection.15.28.4}
+\contentsline {subsubsection}{\numberline {15.28.4.1}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}allbut}{119}{subsubsection.15.28.4.1}
+\contentsline {subsubsection}{\numberline {15.28.4.2}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}alloc}{119}{subsubsection.15.28.4.2}
+\contentsline {subsubsection}{\numberline {15.28.4.3}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}alloc\_\discretionary {-}{}{}full}{119}{subsubsection.15.28.4.3}
+\contentsline {subsubsection}{\numberline {15.28.4.4}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}and}{119}{subsubsection.15.28.4.4}
+\contentsline {subsubsection}{\numberline {15.28.4.5}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}andnot}{119}{subsubsection.15.28.4.5}
+\contentsline {subsubsection}{\numberline {15.28.4.6}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}asprintf}{119}{subsubsection.15.28.4.6}
+\contentsline {subsubsection}{\numberline {15.28.4.7}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}clr}{120}{subsubsection.15.28.4.7}
+\contentsline {subsubsection}{\numberline {15.28.4.8}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}clr\_\discretionary {-}{}{}range}{120}{subsubsection.15.28.4.8}
+\contentsline {subsubsection}{\numberline {15.28.4.9}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}compare}{120}{subsubsection.15.28.4.9}
+\contentsline {subsubsection}{\numberline {15.28.4.10}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}compare\_\discretionary {-}{}{}first}{120}{subsubsection.15.28.4.10}
+\contentsline {subsubsection}{\numberline {15.28.4.11}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}copy}{120}{subsubsection.15.28.4.11}
+\contentsline {subsubsection}{\numberline {15.28.4.12}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}dup}{120}{subsubsection.15.28.4.12}
+\contentsline {subsubsection}{\numberline {15.28.4.13}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}fill}{120}{subsubsection.15.28.4.13}
+\contentsline {subsubsection}{\numberline {15.28.4.14}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}first}{120}{subsubsection.15.28.4.14}
+\contentsline {subsubsection}{\numberline {15.28.4.15}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}free}{121}{subsubsection.15.28.4.15}
+\contentsline {subsubsection}{\numberline {15.28.4.16}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}from\_\discretionary {-}{}{}ith\_\discretionary {-}{}{}ulong}{121}{subsubsection.15.28.4.16}
+\contentsline {subsubsection}{\numberline {15.28.4.17}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}from\_\discretionary {-}{}{}ulong}{121}{subsubsection.15.28.4.17}
+\contentsline {subsubsection}{\numberline {15.28.4.18}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}intersects}{121}{subsubsection.15.28.4.18}
+\contentsline {subsubsection}{\numberline {15.28.4.19}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}isequal}{121}{subsubsection.15.28.4.19}
+\contentsline {subsubsection}{\numberline {15.28.4.20}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}isfull}{121}{subsubsection.15.28.4.20}
+\contentsline {subsubsection}{\numberline {15.28.4.21}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}isincluded}{121}{subsubsection.15.28.4.21}
+\contentsline {subsubsection}{\numberline {15.28.4.22}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}isset}{121}{subsubsection.15.28.4.22}
+\contentsline {subsubsection}{\numberline {15.28.4.23}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}iszero}{121}{subsubsection.15.28.4.23}
+\contentsline {subsubsection}{\numberline {15.28.4.24}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}last}{122}{subsubsection.15.28.4.24}
+\contentsline {subsubsection}{\numberline {15.28.4.25}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}list\_\discretionary {-}{}{}asprintf}{122}{subsubsection.15.28.4.25}
+\contentsline {subsubsection}{\numberline {15.28.4.26}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}list\_\discretionary {-}{}{}snprintf}{122}{subsubsection.15.28.4.26}
+\contentsline {subsubsection}{\numberline {15.28.4.27}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}list\_\discretionary {-}{}{}sscanf}{122}{subsubsection.15.28.4.27}
+\contentsline {subsubsection}{\numberline {15.28.4.28}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}next}{122}{subsubsection.15.28.4.28}
+\contentsline {subsubsection}{\numberline {15.28.4.29}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}not}{122}{subsubsection.15.28.4.29}
+\contentsline {subsubsection}{\numberline {15.28.4.30}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}only}{123}{subsubsection.15.28.4.30}
+\contentsline {subsubsection}{\numberline {15.28.4.31}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}or}{123}{subsubsection.15.28.4.31}
+\contentsline {subsubsection}{\numberline {15.28.4.32}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}set}{123}{subsubsection.15.28.4.32}
+\contentsline {subsubsection}{\numberline {15.28.4.33}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}set\_\discretionary {-}{}{}ith\_\discretionary {-}{}{}ulong}{123}{subsubsection.15.28.4.33}
+\contentsline {subsubsection}{\numberline {15.28.4.34}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}set\_\discretionary {-}{}{}range}{123}{subsubsection.15.28.4.34}
+\contentsline {subsubsection}{\numberline {15.28.4.35}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}singlify}{123}{subsubsection.15.28.4.35}
+\contentsline {subsubsection}{\numberline {15.28.4.36}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}snprintf}{123}{subsubsection.15.28.4.36}
+\contentsline {subsubsection}{\numberline {15.28.4.37}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}sscanf}{124}{subsubsection.15.28.4.37}
+\contentsline {subsubsection}{\numberline {15.28.4.38}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}taskset\_\discretionary {-}{}{}asprintf}{124}{subsubsection.15.28.4.38}
+\contentsline {subsubsection}{\numberline {15.28.4.39}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}taskset\_\discretionary {-}{}{}snprintf}{124}{subsubsection.15.28.4.39}
+\contentsline {subsubsection}{\numberline {15.28.4.40}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}taskset\_\discretionary {-}{}{}sscanf}{124}{subsubsection.15.28.4.40}
+\contentsline {subsubsection}{\numberline {15.28.4.41}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}to\_\discretionary {-}{}{}ith\_\discretionary {-}{}{}ulong}{124}{subsubsection.15.28.4.41}
+\contentsline {subsubsection}{\numberline {15.28.4.42}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}to\_\discretionary {-}{}{}ulong}{124}{subsubsection.15.28.4.42}
+\contentsline {subsubsection}{\numberline {15.28.4.43}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}weight}{124}{subsubsection.15.28.4.43}
+\contentsline {subsubsection}{\numberline {15.28.4.44}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}xor}{125}{subsubsection.15.28.4.44}
+\contentsline {subsubsection}{\numberline {15.28.4.45}hwloc\_\discretionary {-}{}{}bitmap\_\discretionary {-}{}{}zero}{125}{subsubsection.15.28.4.45}
+\contentsline {section}{\numberline {15.29}Helpers for manipulating glibc sched affinity}{125}{section.15.29}
+\contentsline {subsection}{\numberline {15.29.1}Function Documentation}{125}{subsection.15.29.1}
+\contentsline {subsubsection}{\numberline {15.29.1.1}hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}glibc\_\discretionary {-}{}{}sched\_\discretionary {-}{}{}affinity}{125}{subsubsection.15.29.1.1}
+\contentsline {subsubsection}{\numberline {15.29.1.2}hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}glibc\_\discretionary {-}{}{}sched\_\discretionary {-}{}{}affinity}{125}{subsubsection.15.29.1.2}
+\contentsline {section}{\numberline {15.30}Linux-\/only helpers}{126}{section.15.30}
+\contentsline {subsection}{\numberline {15.30.1}Detailed Description}{126}{subsection.15.30.1}
+\contentsline {subsection}{\numberline {15.30.2}Function Documentation}{126}{subsection.15.30.2}
+\contentsline {subsubsection}{\numberline {15.30.2.1}hwloc\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}get\_\discretionary {-}{}{}tid\_\discretionary {-}{}{}cpubind}{126}{subsubsection.15.30.2.1}
+\contentsline {subsubsection}{\numberline {15.30.2.2}hwloc\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}parse\_\discretionary {-}{}{}cpumap\_\discretionary {-}{}{}file}{126}{subsubsection.15.30.2.2}
+\contentsline {subsubsection}{\numberline {15.30.2.3}hwloc\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}set\_\discretionary {-}{}{}tid\_\discretionary {-}{}{}cpubind}{126}{subsubsection.15.30.2.3}
+\contentsline {section}{\numberline {15.31}Helpers for manipulating Linux libnuma unsigned long masks}{126}{section.15.31}
+\contentsline {subsection}{\numberline {15.31.1}Function Documentation}{127}{subsection.15.31.1}
+\contentsline {subsubsection}{\numberline {15.31.1.1}hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}{127}{subsubsection.15.31.1.1}
+\contentsline {subsubsection}{\numberline {15.31.1.2}hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}{127}{subsubsection.15.31.1.2}
+\contentsline {subsubsection}{\numberline {15.31.1.3}hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}{127}{subsubsection.15.31.1.3}
+\contentsline {subsubsection}{\numberline {15.31.1.4}hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}ulongs}{128}{subsubsection.15.31.1.4}
+\contentsline {section}{\numberline {15.32}Helpers for manipulating Linux libnuma bitmask}{128}{section.15.32}
+\contentsline {subsection}{\numberline {15.32.1}Function Documentation}{128}{subsection.15.32.1}
+\contentsline {subsubsection}{\numberline {15.32.1.1}hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}{128}{subsubsection.15.32.1.1}
+\contentsline {subsubsection}{\numberline {15.32.1.2}hwloc\_\discretionary {-}{}{}cpuset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}{128}{subsubsection.15.32.1.2}
+\contentsline {subsubsection}{\numberline {15.32.1.3}hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}from\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}{129}{subsubsection.15.32.1.3}
+\contentsline {subsubsection}{\numberline {15.32.1.4}hwloc\_\discretionary {-}{}{}nodeset\_\discretionary {-}{}{}to\_\discretionary {-}{}{}linux\_\discretionary {-}{}{}libnuma\_\discretionary {-}{}{}bitmask}{129}{subsubsection.15.32.1.4}
+\contentsline {section}{\numberline {15.33}CUDA Driver API Specific Functions}{129}{section.15.33}
+\contentsline {subsection}{\numberline {15.33.1}Function Documentation}{129}{subsection.15.33.1}
+\contentsline {subsubsection}{\numberline {15.33.1.1}hwloc\_\discretionary {-}{}{}cuda\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}cpuset}{129}{subsubsection.15.33.1.1}
+\contentsline {subsubsection}{\numberline {15.33.1.2}hwloc\_\discretionary {-}{}{}cuda\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}pci\_\discretionary {-}{}{}ids}{130}{subsubsection.15.33.1.2}
+\contentsline {subsubsection}{\numberline {15.33.1.3}hwloc\_\discretionary {-}{}{}cuda\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}pcidev}{130}{subsubsection.15.33.1.3}
+\contentsline {section}{\numberline {15.34}CUDA Runtime API Specific Functions}{130}{section.15.34}
+\contentsline {subsection}{\numberline {15.34.1}Function Documentation}{130}{subsection.15.34.1}
+\contentsline {subsubsection}{\numberline {15.34.1.1}hwloc\_\discretionary {-}{}{}cudart\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}cpuset}{130}{subsubsection.15.34.1.1}
+\contentsline {subsubsection}{\numberline {15.34.1.2}hwloc\_\discretionary {-}{}{}cudart\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}pci\_\discretionary {-}{}{}ids}{131}{subsubsection.15.34.1.2}
+\contentsline {subsubsection}{\numberline {15.34.1.3}hwloc\_\discretionary {-}{}{}cudart\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}pcidev}{131}{subsubsection.15.34.1.3}
+\contentsline {section}{\numberline {15.35}OpenFabrics-\/Specific Functions}{131}{section.15.35}
+\contentsline {subsection}{\numberline {15.35.1}Function Documentation}{131}{subsection.15.35.1}
+\contentsline {subsubsection}{\numberline {15.35.1.1}hwloc\_\discretionary {-}{}{}ibv\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}cpuset}{131}{subsubsection.15.35.1.1}
+\contentsline {subsubsection}{\numberline {15.35.1.2}hwloc\_\discretionary {-}{}{}ibv\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}osdev\_\discretionary {-}{}{}by\_\discretionary {-}{}{}name}{131}{subsubsection.15.35.1.2}
+\contentsline {section}{\numberline {15.36}Myrinet Express-\/Specific Functions}{132}{section.15.36}
+\contentsline {subsection}{\numberline {15.36.1}Function Documentation}{132}{subsection.15.36.1}
+\contentsline {subsubsection}{\numberline {15.36.1.1}hwloc\_\discretionary {-}{}{}mx\_\discretionary {-}{}{}board\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}cpuset}{132}{subsubsection.15.36.1.1}
+\contentsline {subsubsection}{\numberline {15.36.1.2}hwloc\_\discretionary {-}{}{}mx\_\discretionary {-}{}{}endpoint\_\discretionary {-}{}{}get\_\discretionary {-}{}{}device\_\discretionary {-}{}{}cpuset}{132}{subsubsection.15.36.1.2}
+\contentsline {chapter}{\numberline {16}Data Structure Documentation}{133}{chapter.16}
+\contentsline {section}{\numberline {16.1}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}bridge\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s Struct Reference}{133}{section.16.1}
+\contentsline {subsection}{\numberline {16.1.1}Detailed Description}{133}{subsection.16.1.1}
+\contentsline {subsection}{\numberline {16.1.2}Field Documentation}{134}{subsection.16.1.2}
+\contentsline {subsubsection}{\numberline {16.1.2.1}depth}{134}{subsubsection.16.1.2.1}
+\contentsline {subsubsection}{\numberline {16.1.2.2}domain}{134}{subsubsection.16.1.2.2}
+\contentsline {subsubsection}{\numberline {16.1.2.3}downstream}{134}{subsubsection.16.1.2.3}
+\contentsline {subsubsection}{\numberline {16.1.2.4}downstream\_\discretionary {-}{}{}type}{134}{subsubsection.16.1.2.4}
+\contentsline {subsubsection}{\numberline {16.1.2.5}pci}{134}{subsubsection.16.1.2.5}
+\contentsline {subsubsection}{\numberline {16.1.2.6}pci}{134}{subsubsection.16.1.2.6}
+\contentsline {subsubsection}{\numberline {16.1.2.7}secondary\_\discretionary {-}{}{}bus}{134}{subsubsection.16.1.2.7}
+\contentsline {subsubsection}{\numberline {16.1.2.8}subordinate\_\discretionary {-}{}{}bus}{134}{subsubsection.16.1.2.8}
+\contentsline {subsubsection}{\numberline {16.1.2.9}upstream}{134}{subsubsection.16.1.2.9}
+\contentsline {subsubsection}{\numberline {16.1.2.10}upstream\_\discretionary {-}{}{}type}{134}{subsubsection.16.1.2.10}
+\contentsline {section}{\numberline {16.2}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}cache\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s Struct Reference}{134}{section.16.2}
+\contentsline {subsection}{\numberline {16.2.1}Detailed Description}{134}{subsection.16.2.1}
+\contentsline {subsection}{\numberline {16.2.2}Field Documentation}{135}{subsection.16.2.2}
+\contentsline {subsubsection}{\numberline {16.2.2.1}associativity}{135}{subsubsection.16.2.2.1}
+\contentsline {subsubsection}{\numberline {16.2.2.2}depth}{135}{subsubsection.16.2.2.2}
+\contentsline {subsubsection}{\numberline {16.2.2.3}linesize}{135}{subsubsection.16.2.2.3}
+\contentsline {subsubsection}{\numberline {16.2.2.4}size}{135}{subsubsection.16.2.2.4}
+\contentsline {subsubsection}{\numberline {16.2.2.5}type}{135}{subsubsection.16.2.2.5}
+\contentsline {section}{\numberline {16.3}hwloc\_\discretionary {-}{}{}distances\_\discretionary {-}{}{}s Struct Reference}{135}{section.16.3}
+\contentsline {subsection}{\numberline {16.3.1}Detailed Description}{135}{subsection.16.3.1}
+\contentsline {subsection}{\numberline {16.3.2}Field Documentation}{136}{subsection.16.3.2}
+\contentsline {subsubsection}{\numberline {16.3.2.1}latency}{136}{subsubsection.16.3.2.1}
+\contentsline {subsubsection}{\numberline {16.3.2.2}latency\_\discretionary {-}{}{}base}{136}{subsubsection.16.3.2.2}
+\contentsline {subsubsection}{\numberline {16.3.2.3}latency\_\discretionary {-}{}{}max}{136}{subsubsection.16.3.2.3}
+\contentsline {subsubsection}{\numberline {16.3.2.4}nbobjs}{136}{subsubsection.16.3.2.4}
+\contentsline {subsubsection}{\numberline {16.3.2.5}relative\_\discretionary {-}{}{}depth}{136}{subsubsection.16.3.2.5}
+\contentsline {section}{\numberline {16.4}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}group\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s Struct Reference}{136}{section.16.4}
+\contentsline {subsection}{\numberline {16.4.1}Detailed Description}{137}{subsection.16.4.1}
+\contentsline {subsection}{\numberline {16.4.2}Field Documentation}{137}{subsection.16.4.2}
+\contentsline {subsubsection}{\numberline {16.4.2.1}depth}{137}{subsubsection.16.4.2.1}
+\contentsline {section}{\numberline {16.5}hwloc\_\discretionary {-}{}{}obj Struct Reference}{137}{section.16.5}
+\contentsline {subsection}{\numberline {16.5.1}Detailed Description}{138}{subsection.16.5.1}
+\contentsline {subsection}{\numberline {16.5.2}Field Documentation}{138}{subsection.16.5.2}
+\contentsline {subsubsection}{\numberline {16.5.2.1}allowed\_\discretionary {-}{}{}cpuset}{138}{subsubsection.16.5.2.1}
+\contentsline {subsubsection}{\numberline {16.5.2.2}allowed\_\discretionary {-}{}{}nodeset}{138}{subsubsection.16.5.2.2}
+\contentsline {subsubsection}{\numberline {16.5.2.3}arity}{139}{subsubsection.16.5.2.3}
+\contentsline {subsubsection}{\numberline {16.5.2.4}attr}{139}{subsubsection.16.5.2.4}
+\contentsline {subsubsection}{\numberline {16.5.2.5}children}{139}{subsubsection.16.5.2.5}
+\contentsline {subsubsection}{\numberline {16.5.2.6}complete\_\discretionary {-}{}{}cpuset}{139}{subsubsection.16.5.2.6}
+\contentsline {subsubsection}{\numberline {16.5.2.7}complete\_\discretionary {-}{}{}nodeset}{139}{subsubsection.16.5.2.7}
+\contentsline {subsubsection}{\numberline {16.5.2.8}cpuset}{139}{subsubsection.16.5.2.8}
+\contentsline {subsubsection}{\numberline {16.5.2.9}depth}{140}{subsubsection.16.5.2.9}
+\contentsline {subsubsection}{\numberline {16.5.2.10}distances}{140}{subsubsection.16.5.2.10}
+\contentsline {subsubsection}{\numberline {16.5.2.11}distances\_\discretionary {-}{}{}count}{140}{subsubsection.16.5.2.11}
+\contentsline {subsubsection}{\numberline {16.5.2.12}first\_\discretionary {-}{}{}child}{140}{subsubsection.16.5.2.12}
+\contentsline {subsubsection}{\numberline {16.5.2.13}infos}{140}{subsubsection.16.5.2.13}
+\contentsline {subsubsection}{\numberline {16.5.2.14}infos\_\discretionary {-}{}{}count}{140}{subsubsection.16.5.2.14}
+\contentsline {subsubsection}{\numberline {16.5.2.15}last\_\discretionary {-}{}{}child}{140}{subsubsection.16.5.2.15}
+\contentsline {subsubsection}{\numberline {16.5.2.16}logical\_\discretionary {-}{}{}index}{140}{subsubsection.16.5.2.16}
+\contentsline {subsubsection}{\numberline {16.5.2.17}memory}{141}{subsubsection.16.5.2.17}
+\contentsline {subsubsection}{\numberline {16.5.2.18}name}{141}{subsubsection.16.5.2.18}
+\contentsline {subsubsection}{\numberline {16.5.2.19}next\_\discretionary {-}{}{}cousin}{141}{subsubsection.16.5.2.19}
+\contentsline {subsubsection}{\numberline {16.5.2.20}next\_\discretionary {-}{}{}sibling}{141}{subsubsection.16.5.2.20}
+\contentsline {subsubsection}{\numberline {16.5.2.21}nodeset}{141}{subsubsection.16.5.2.21}
+\contentsline {subsubsection}{\numberline {16.5.2.22}online\_\discretionary {-}{}{}cpuset}{141}{subsubsection.16.5.2.22}
+\contentsline {subsubsection}{\numberline {16.5.2.23}os\_\discretionary {-}{}{}index}{142}{subsubsection.16.5.2.23}
+\contentsline {subsubsection}{\numberline {16.5.2.24}os\_\discretionary {-}{}{}level}{142}{subsubsection.16.5.2.24}
+\contentsline {subsubsection}{\numberline {16.5.2.25}parent}{142}{subsubsection.16.5.2.25}
+\contentsline {subsubsection}{\numberline {16.5.2.26}prev\_\discretionary {-}{}{}cousin}{142}{subsubsection.16.5.2.26}
+\contentsline {subsubsection}{\numberline {16.5.2.27}prev\_\discretionary {-}{}{}sibling}{142}{subsubsection.16.5.2.27}
+\contentsline {subsubsection}{\numberline {16.5.2.28}sibling\_\discretionary {-}{}{}rank}{142}{subsubsection.16.5.2.28}
+\contentsline {subsubsection}{\numberline {16.5.2.29}symmetric\_\discretionary {-}{}{}subtree}{142}{subsubsection.16.5.2.29}
+\contentsline {subsubsection}{\numberline {16.5.2.30}type}{142}{subsubsection.16.5.2.30}
+\contentsline {subsubsection}{\numberline {16.5.2.31}userdata}{142}{subsubsection.16.5.2.31}
+\contentsline {section}{\numberline {16.6}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u Union Reference}{143}{section.16.6}
+\contentsline {subsection}{\numberline {16.6.1}Detailed Description}{143}{subsection.16.6.1}
+\contentsline {subsection}{\numberline {16.6.2}Field Documentation}{144}{subsection.16.6.2}
+\contentsline {subsubsection}{\numberline {16.6.2.1}bridge}{144}{subsubsection.16.6.2.1}
+\contentsline {subsubsection}{\numberline {16.6.2.2}cache}{144}{subsubsection.16.6.2.2}
+\contentsline {subsubsection}{\numberline {16.6.2.3}group}{144}{subsubsection.16.6.2.3}
+\contentsline {subsubsection}{\numberline {16.6.2.4}osdev}{144}{subsubsection.16.6.2.4}
+\contentsline {subsubsection}{\numberline {16.6.2.5}pcidev}{144}{subsubsection.16.6.2.5}
+\contentsline {section}{\numberline {16.7}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}info\_\discretionary {-}{}{}s Struct Reference}{144}{section.16.7}
+\contentsline {subsection}{\numberline {16.7.1}Detailed Description}{144}{subsection.16.7.1}
+\contentsline {subsection}{\numberline {16.7.2}Field Documentation}{144}{subsection.16.7.2}
+\contentsline {subsubsection}{\numberline {16.7.2.1}name}{144}{subsubsection.16.7.2.1}
+\contentsline {subsubsection}{\numberline {16.7.2.2}value}{144}{subsubsection.16.7.2.2}
+\contentsline {section}{\numberline {16.8}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}memory\_\discretionary {-}{}{}s::hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}memory\_\discretionary {-}{}{}page\_\discretionary {-}{}{}type\_\discretionary {-}{}{}s Struct Reference}{145}{section.16.8}
+\contentsline {subsection}{\numberline {16.8.1}Detailed Description}{145}{subsection.16.8.1}
+\contentsline {subsection}{\numberline {16.8.2}Field Documentation}{145}{subsection.16.8.2}
+\contentsline {subsubsection}{\numberline {16.8.2.1}count}{145}{subsubsection.16.8.2.1}
+\contentsline {subsubsection}{\numberline {16.8.2.2}size}{145}{subsubsection.16.8.2.2}
+\contentsline {section}{\numberline {16.9}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}memory\_\discretionary {-}{}{}s Struct Reference}{145}{section.16.9}
+\contentsline {subsection}{\numberline {16.9.1}Detailed Description}{146}{subsection.16.9.1}
+\contentsline {subsection}{\numberline {16.9.2}Field Documentation}{146}{subsection.16.9.2}
+\contentsline {subsubsection}{\numberline {16.9.2.1}local\_\discretionary {-}{}{}memory}{146}{subsubsection.16.9.2.1}
+\contentsline {subsubsection}{\numberline {16.9.2.2}page\_\discretionary {-}{}{}types}{146}{subsubsection.16.9.2.2}
+\contentsline {subsubsection}{\numberline {16.9.2.3}page\_\discretionary {-}{}{}types\_\discretionary {-}{}{}len}{146}{subsubsection.16.9.2.3}
+\contentsline {subsubsection}{\numberline {16.9.2.4}total\_\discretionary {-}{}{}memory}{146}{subsubsection.16.9.2.4}
+\contentsline {section}{\numberline {16.10}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}osdev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s Struct Reference}{146}{section.16.10}
+\contentsline {subsection}{\numberline {16.10.1}Detailed Description}{146}{subsection.16.10.1}
+\contentsline {subsection}{\numberline {16.10.2}Field Documentation}{147}{subsection.16.10.2}
+\contentsline {subsubsection}{\numberline {16.10.2.1}type}{147}{subsubsection.16.10.2.1}
+\contentsline {section}{\numberline {16.11}hwloc\_\discretionary {-}{}{}obj\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}u::hwloc\_\discretionary {-}{}{}pcidev\_\discretionary {-}{}{}attr\_\discretionary {-}{}{}s Struct Reference}{147}{section.16.11}
+\contentsline {subsection}{\numberline {16.11.1}Detailed Description}{147}{subsection.16.11.1}
+\contentsline {subsection}{\numberline {16.11.2}Field Documentation}{148}{subsection.16.11.2}
+\contentsline {subsubsection}{\numberline {16.11.2.1}bus}{148}{subsubsection.16.11.2.1}
+\contentsline {subsubsection}{\numberline {16.11.2.2}class\_\discretionary {-}{}{}id}{148}{subsubsection.16.11.2.2}
+\contentsline {subsubsection}{\numberline {16.11.2.3}dev}{148}{subsubsection.16.11.2.3}
+\contentsline {subsubsection}{\numberline {16.11.2.4}device\_\discretionary {-}{}{}id}{148}{subsubsection.16.11.2.4}
+\contentsline {subsubsection}{\numberline {16.11.2.5}domain}{148}{subsubsection.16.11.2.5}
+\contentsline {subsubsection}{\numberline {16.11.2.6}func}{148}{subsubsection.16.11.2.6}
+\contentsline {subsubsection}{\numberline {16.11.2.7}linkspeed}{148}{subsubsection.16.11.2.7}
+\contentsline {subsubsection}{\numberline {16.11.2.8}revision}{148}{subsubsection.16.11.2.8}
+\contentsline {subsubsection}{\numberline {16.11.2.9}subdevice\_\discretionary {-}{}{}id}{148}{subsubsection.16.11.2.9}
+\contentsline {subsubsection}{\numberline {16.11.2.10}subvendor\_\discretionary {-}{}{}id}{148}{subsubsection.16.11.2.10}
+\contentsline {subsubsection}{\numberline {16.11.2.11}vendor\_\discretionary {-}{}{}id}{148}{subsubsection.16.11.2.11}
+\contentsline {section}{\numberline {16.12}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}cpubind\_\discretionary {-}{}{}support Struct Reference}{148}{section.16.12}
+\contentsline {subsection}{\numberline {16.12.1}Detailed Description}{149}{subsection.16.12.1}
+\contentsline {subsection}{\numberline {16.12.2}Field Documentation}{149}{subsection.16.12.2}
+\contentsline {subsubsection}{\numberline {16.12.2.1}get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}cpubind}{149}{subsubsection.16.12.2.1}
+\contentsline {subsubsection}{\numberline {16.12.2.2}get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}last\_\discretionary {-}{}{}cpu\_\discretionary {-}{}{}location}{149}{subsubsection.16.12.2.2}
+\contentsline {subsubsection}{\numberline {16.12.2.3}get\_\discretionary {-}{}{}thisproc\_\discretionary {-}{}{}cpubind}{149}{subsubsection.16.12.2.3}
+\contentsline {subsubsection}{\numberline {16.12.2.4}get\_\discretionary {-}{}{}thisproc\_\discretionary {-}{}{}last\_\discretionary {-}{}{}cpu\_\discretionary {-}{}{}location}{149}{subsubsection.16.12.2.4}
+\contentsline {subsubsection}{\numberline {16.12.2.5}get\_\discretionary {-}{}{}thisthread\_\discretionary {-}{}{}cpubind}{149}{subsubsection.16.12.2.5}
+\contentsline {subsubsection}{\numberline {16.12.2.6}get\_\discretionary {-}{}{}thisthread\_\discretionary {-}{}{}last\_\discretionary {-}{}{}cpu\_\discretionary {-}{}{}location}{149}{subsubsection.16.12.2.6}
+\contentsline {subsubsection}{\numberline {16.12.2.7}get\_\discretionary {-}{}{}thread\_\discretionary {-}{}{}cpubind}{149}{subsubsection.16.12.2.7}
+\contentsline {subsubsection}{\numberline {16.12.2.8}set\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}cpubind}{149}{subsubsection.16.12.2.8}
+\contentsline {subsubsection}{\numberline {16.12.2.9}set\_\discretionary {-}{}{}thisproc\_\discretionary {-}{}{}cpubind}{150}{subsubsection.16.12.2.9}
+\contentsline {subsubsection}{\numberline {16.12.2.10}set\_\discretionary {-}{}{}thisthread\_\discretionary {-}{}{}cpubind}{150}{subsubsection.16.12.2.10}
+\contentsline {subsubsection}{\numberline {16.12.2.11}set\_\discretionary {-}{}{}thread\_\discretionary {-}{}{}cpubind}{150}{subsubsection.16.12.2.11}
+\contentsline {section}{\numberline {16.13}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}discovery\_\discretionary {-}{}{}support Struct Reference}{150}{section.16.13}
+\contentsline {subsection}{\numberline {16.13.1}Detailed Description}{150}{subsection.16.13.1}
+\contentsline {subsection}{\numberline {16.13.2}Field Documentation}{150}{subsection.16.13.2}
+\contentsline {subsubsection}{\numberline {16.13.2.1}pu}{150}{subsubsection.16.13.2.1}
+\contentsline {section}{\numberline {16.14}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}membind\_\discretionary {-}{}{}support Struct Reference}{150}{section.16.14}
+\contentsline {subsection}{\numberline {16.14.1}Detailed Description}{151}{subsection.16.14.1}
+\contentsline {subsection}{\numberline {16.14.2}Field Documentation}{151}{subsection.16.14.2}
+\contentsline {subsubsection}{\numberline {16.14.2.1}alloc\_\discretionary {-}{}{}membind}{151}{subsubsection.16.14.2.1}
+\contentsline {subsubsection}{\numberline {16.14.2.2}bind\_\discretionary {-}{}{}membind}{151}{subsubsection.16.14.2.2}
+\contentsline {subsubsection}{\numberline {16.14.2.3}firsttouch\_\discretionary {-}{}{}membind}{151}{subsubsection.16.14.2.3}
+\contentsline {subsubsection}{\numberline {16.14.2.4}get\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind}{151}{subsubsection.16.14.2.4}
+\contentsline {subsubsection}{\numberline {16.14.2.5}get\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind}{152}{subsubsection.16.14.2.5}
+\contentsline {subsubsection}{\numberline {16.14.2.6}get\_\discretionary {-}{}{}thisproc\_\discretionary {-}{}{}membind}{152}{subsubsection.16.14.2.6}
+\contentsline {subsubsection}{\numberline {16.14.2.7}get\_\discretionary {-}{}{}thisthread\_\discretionary {-}{}{}membind}{152}{subsubsection.16.14.2.7}
+\contentsline {subsubsection}{\numberline {16.14.2.8}interleave\_\discretionary {-}{}{}membind}{152}{subsubsection.16.14.2.8}
+\contentsline {subsubsection}{\numberline {16.14.2.9}migrate\_\discretionary {-}{}{}membind}{152}{subsubsection.16.14.2.9}
+\contentsline {subsubsection}{\numberline {16.14.2.10}nexttouch\_\discretionary {-}{}{}membind}{152}{subsubsection.16.14.2.10}
+\contentsline {subsubsection}{\numberline {16.14.2.11}replicate\_\discretionary {-}{}{}membind}{152}{subsubsection.16.14.2.11}
+\contentsline {subsubsection}{\numberline {16.14.2.12}set\_\discretionary {-}{}{}area\_\discretionary {-}{}{}membind}{152}{subsubsection.16.14.2.12}
+\contentsline {subsubsection}{\numberline {16.14.2.13}set\_\discretionary {-}{}{}proc\_\discretionary {-}{}{}membind}{152}{subsubsection.16.14.2.13}
+\contentsline {subsubsection}{\numberline {16.14.2.14}set\_\discretionary {-}{}{}thisproc\_\discretionary {-}{}{}membind}{152}{subsubsection.16.14.2.14}
+\contentsline {subsubsection}{\numberline {16.14.2.15}set\_\discretionary {-}{}{}thisthread\_\discretionary {-}{}{}membind}{153}{subsubsection.16.14.2.15}
+\contentsline {section}{\numberline {16.15}hwloc\_\discretionary {-}{}{}topology\_\discretionary {-}{}{}support Struct Reference}{153}{section.16.15}
+\contentsline {subsection}{\numberline {16.15.1}Detailed Description}{153}{subsection.16.15.1}
+\contentsline {subsection}{\numberline {16.15.2}Field Documentation}{153}{subsection.16.15.2}
+\contentsline {subsubsection}{\numberline {16.15.2.1}cpubind}{153}{subsubsection.16.15.2.1}
+\contentsline {subsubsection}{\numberline {16.15.2.2}discovery}{153}{subsubsection.16.15.2.2}
+\contentsline {subsubsection}{\numberline {16.15.2.3}membind}{153}{subsubsection.16.15.2.3}

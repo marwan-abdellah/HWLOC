@@ -1,0 +1,23 @@
+K 10
+svn:ignore
+V 176
+configure
+Makefile.in
+main
+config.log
+config.status
+libtool
+foo
+foo.c
+autom4te.cache
+hwloc-tree
+.deps
+aclocal.m4
+Makefile
+make.out
+check.out
+clean.out
+config.out
+distclean.out
+
+END

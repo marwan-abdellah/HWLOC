@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/hwloc/!svn/ver/4488/branches/display/include
+END
+hwloc.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/hwloc/!svn/ver/4479/branches/display/include/hwloc.h
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/hwloc/!svn/ver/4479/branches/display/include/Makefile.am
+END

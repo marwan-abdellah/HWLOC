@@ -1,0 +1,293 @@
+\hypertarget{a00041}{
+\section{Topology Object Types}
+\label{a00041}\index{Topology Object Types@{Topology Object Types}}
+}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \hyperlink{a00041_ga791c9875c8fe20f3e1e5871e0657e59b}{hwloc\_\-obj\_\-cache\_\-type\_\-e} \hyperlink{a00041_gab6e1e7efedae8b341f3ee14fbe53d66c}{hwloc\_\-obj\_\-cache\_\-type\_\-t}
+\item 
+typedef enum \hyperlink{a00041_ga48a4803c72574191d7ead1c62aaf9860}{hwloc\_\-obj\_\-bridge\_\-type\_\-e} \hyperlink{a00041_ga0a947e8c5adcc729b126bd09c01a0153}{hwloc\_\-obj\_\-bridge\_\-type\_\-t}
+\item 
+typedef enum \hyperlink{a00041_ga64f5d539df299c97ae80ce53fc4b56c0}{hwloc\_\-obj\_\-osdev\_\-type\_\-e} \hyperlink{a00041_ga90c1e82a60ba5871d07645169e636987}{hwloc\_\-obj\_\-osdev\_\-type\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc\_\-obj\_\-type\_\-t} \{ \par
+\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a3aa1b842d1fd4207ebce171f95a244ec}{HWLOC\_\-OBJ\_\-SYSTEM}, 
+\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a3f4e83ffc4a259354959ae8a9eaa2a80}{HWLOC\_\-OBJ\_\-MACHINE}, 
+\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{HWLOC\_\-OBJ\_\-NODE}, 
+\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a1ac6e07775ae4324b3fe9dbd72c785ec}{HWLOC\_\-OBJ\_\-SOCKET}, 
+\par
+\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a56ee0b7eca88f363b75b34fdde8c9ddc}{HWLOC\_\-OBJ\_\-CACHE}, 
+\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55ac793958f330bca371aa1535de8aff45f}{HWLOC\_\-OBJ\_\-CORE}, 
+\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55abca6887e80cb291353b0a0c1da83f661}{HWLOC\_\-OBJ\_\-PU}, 
+\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a5269ef95be72f88465559d35c9b7ad56}{HWLOC\_\-OBJ\_\-GROUP}, 
+\par
+\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a19f8a6953fa91efc76bcbcdf2d22de4d}{HWLOC\_\-OBJ\_\-MISC}, 
+\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a6825f10895fea60aca7a6ba9fe273db0}{HWLOC\_\-OBJ\_\-BRIDGE}, 
+\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a5d8117a54df1fbd3606ab19e42cb0ea9}{HWLOC\_\-OBJ\_\-PCI\_\-DEVICE}, 
+\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55a51e7280240fd9f25589cbbe538bdb075}{HWLOC\_\-OBJ\_\-OS\_\-DEVICE}, 
+\par
+\hyperlink{a00041_ggacd37bb612667dc437d66bfb175a8dc55addb5f843e1812445a84e6b2a844b1ebc}{HWLOC\_\-OBJ\_\-TYPE\_\-MAX}
+ \}
+\item 
+enum \hyperlink{a00041_ga791c9875c8fe20f3e1e5871e0657e59b}{hwloc\_\-obj\_\-cache\_\-type\_\-e} \{ \hyperlink{a00041_gga791c9875c8fe20f3e1e5871e0657e59ba3900b3b2db54941aac249e5a638a2d7a}{HWLOC\_\-OBJ\_\-CACHE\_\-UNIFIED}, 
+\hyperlink{a00041_gga791c9875c8fe20f3e1e5871e0657e59bacac60ecad4206f85aeb79bef1604b488}{HWLOC\_\-OBJ\_\-CACHE\_\-DATA}, 
+\hyperlink{a00041_gga791c9875c8fe20f3e1e5871e0657e59ba6f98b0d422b38ba90c5f5c79a11b0658}{HWLOC\_\-OBJ\_\-CACHE\_\-INSTRUCTION}
+ \}
+\item 
+enum \hyperlink{a00041_ga48a4803c72574191d7ead1c62aaf9860}{hwloc\_\-obj\_\-bridge\_\-type\_\-e} \{ \hyperlink{a00041_gga48a4803c72574191d7ead1c62aaf9860a2c7660f3864ad2810c1e72aad285e574}{HWLOC\_\-OBJ\_\-BRIDGE\_\-HOST}, 
+\hyperlink{a00041_gga48a4803c72574191d7ead1c62aaf9860a8f3b4cecf3dab6073d74696d10863c60}{HWLOC\_\-OBJ\_\-BRIDGE\_\-PCI}
+ \}
+\item 
+enum \hyperlink{a00041_ga64f5d539df299c97ae80ce53fc4b56c0}{hwloc\_\-obj\_\-osdev\_\-type\_\-e} \{ \par
+\hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a689b0488c3c0d08d116751c6b9cb8871}{HWLOC\_\-OBJ\_\-OSDEV\_\-BLOCK}, 
+\hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0aa3a09798ef2836abb236dc3a645ffc90}{HWLOC\_\-OBJ\_\-OSDEV\_\-GPU}, 
+\hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0ab715d81155f771573c8682dffc65021b}{HWLOC\_\-OBJ\_\-OSDEV\_\-NETWORK}, 
+\hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a52157d03694fdae82dddd57ca8c973b6}{HWLOC\_\-OBJ\_\-OSDEV\_\-OPENFABRICS}, 
+\par
+\hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a827ad1643360711a8b6c6af671366791}{HWLOC\_\-OBJ\_\-OSDEV\_\-DMA}, 
+\hyperlink{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a5da1cc266d3d288fdc639b0e800e9da4}{HWLOC\_\-OBJ\_\-OSDEV\_\-DISPLAY}
+ \}
+\item 
+enum \hyperlink{a00041_ga46323568968005137c32f6a1cd405b74}{hwloc\_\-compare\_\-types\_\-e} \{ \hyperlink{a00041_gga46323568968005137c32f6a1cd405b74a2f8297ea36eba46e7596e810a67298fb}{HWLOC\_\-TYPE\_\-UNORDERED}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ int \hyperlink{a00041_gabd7da4f4ea12b420b8ecbde458b27805}{hwloc\_\-compare\_\-types} (\hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc\_\-obj\_\-type\_\-t} type1, \hyperlink{a00041_gacd37bb612667dc437d66bfb175a8dc55}{hwloc\_\-obj\_\-type\_\-t} type2) 
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{a00041_ga0a947e8c5adcc729b126bd09c01a0153}{
+\index{hwlocality\_\-types@{hwlocality\_\-types}!hwloc\_\-obj\_\-bridge\_\-type\_\-t@{hwloc\_\-obj\_\-bridge\_\-type\_\-t}}
+\index{hwloc\_\-obj\_\-bridge\_\-type\_\-t@{hwloc\_\-obj\_\-bridge\_\-type\_\-t}!hwlocality_types@{hwlocality\_\-types}}
+\subsubsection[{hwloc\_\-obj\_\-bridge\_\-type\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf hwloc\_\-obj\_\-bridge\_\-type\_\-e}  {\bf hwloc\_\-obj\_\-bridge\_\-type\_\-t}}}
+\label{a00041_ga0a947e8c5adcc729b126bd09c01a0153}
+
+
+Type of one side (upstream or downstream) of an I/O bridge. 
+
+\hypertarget{a00041_gab6e1e7efedae8b341f3ee14fbe53d66c}{
+\index{hwlocality\_\-types@{hwlocality\_\-types}!hwloc\_\-obj\_\-cache\_\-type\_\-t@{hwloc\_\-obj\_\-cache\_\-type\_\-t}}
+\index{hwloc\_\-obj\_\-cache\_\-type\_\-t@{hwloc\_\-obj\_\-cache\_\-type\_\-t}!hwlocality_types@{hwlocality\_\-types}}
+\subsubsection[{hwloc\_\-obj\_\-cache\_\-type\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf hwloc\_\-obj\_\-cache\_\-type\_\-e}  {\bf hwloc\_\-obj\_\-cache\_\-type\_\-t}}}
+\label{a00041_gab6e1e7efedae8b341f3ee14fbe53d66c}
+
+
+Cache type. 
+
+\hypertarget{a00041_ga90c1e82a60ba5871d07645169e636987}{
+\index{hwlocality\_\-types@{hwlocality\_\-types}!hwloc\_\-obj\_\-osdev\_\-type\_\-t@{hwloc\_\-obj\_\-osdev\_\-type\_\-t}}
+\index{hwloc\_\-obj\_\-osdev\_\-type\_\-t@{hwloc\_\-obj\_\-osdev\_\-type\_\-t}!hwlocality_types@{hwlocality\_\-types}}
+\subsubsection[{hwloc\_\-obj\_\-osdev\_\-type\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf hwloc\_\-obj\_\-osdev\_\-type\_\-e}  {\bf hwloc\_\-obj\_\-osdev\_\-type\_\-t}}}
+\label{a00041_ga90c1e82a60ba5871d07645169e636987}
+
+
+Type of a OS device. 
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{a00041_ga46323568968005137c32f6a1cd405b74}{
+\index{hwlocality\_\-types@{hwlocality\_\-types}!hwloc\_\-compare\_\-types\_\-e@{hwloc\_\-compare\_\-types\_\-e}}
+\index{hwloc\_\-compare\_\-types\_\-e@{hwloc\_\-compare\_\-types\_\-e}!hwlocality_types@{hwlocality\_\-types}}
+\subsubsection[{hwloc\_\-compare\_\-types\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf hwloc\_\-compare\_\-types\_\-e}}}
+\label{a00041_ga46323568968005137c32f6a1cd405b74}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{HWLOC\_\-TYPE\_\-UNORDERED@{HWLOC\_\-TYPE\_\-UNORDERED}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-TYPE\_\-UNORDERED@{HWLOC\_\-TYPE\_\-UNORDERED}}\item[{\em 
+\hypertarget{a00041_gga46323568968005137c32f6a1cd405b74a2f8297ea36eba46e7596e810a67298fb}{
+HWLOC\_\-TYPE\_\-UNORDERED}
+\label{a00041_gga46323568968005137c32f6a1cd405b74a2f8297ea36eba46e7596e810a67298fb}
+}]Value returned by hwloc\_\-compare\_\-types when types can not be compared. \end{description}
+\end{Desc}
+
+\hypertarget{a00041_ga48a4803c72574191d7ead1c62aaf9860}{
+\index{hwlocality\_\-types@{hwlocality\_\-types}!hwloc\_\-obj\_\-bridge\_\-type\_\-e@{hwloc\_\-obj\_\-bridge\_\-type\_\-e}}
+\index{hwloc\_\-obj\_\-bridge\_\-type\_\-e@{hwloc\_\-obj\_\-bridge\_\-type\_\-e}!hwlocality_types@{hwlocality\_\-types}}
+\subsubsection[{hwloc\_\-obj\_\-bridge\_\-type\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf hwloc\_\-obj\_\-bridge\_\-type\_\-e}}}
+\label{a00041_ga48a4803c72574191d7ead1c62aaf9860}
+
+
+Type of one side (upstream or downstream) of an I/O bridge. 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{HWLOC\_\-OBJ\_\-BRIDGE\_\-HOST@{HWLOC\_\-OBJ\_\-BRIDGE\_\-HOST}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-BRIDGE\_\-HOST@{HWLOC\_\-OBJ\_\-BRIDGE\_\-HOST}}\item[{\em 
+\hypertarget{a00041_gga48a4803c72574191d7ead1c62aaf9860a2c7660f3864ad2810c1e72aad285e574}{
+HWLOC\_\-OBJ\_\-BRIDGE\_\-HOST}
+\label{a00041_gga48a4803c72574191d7ead1c62aaf9860a2c7660f3864ad2810c1e72aad285e574}
+}]Host-\/side of a bridge, only possible upstream. \index{HWLOC\_\-OBJ\_\-BRIDGE\_\-PCI@{HWLOC\_\-OBJ\_\-BRIDGE\_\-PCI}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-BRIDGE\_\-PCI@{HWLOC\_\-OBJ\_\-BRIDGE\_\-PCI}}\item[{\em 
+\hypertarget{a00041_gga48a4803c72574191d7ead1c62aaf9860a8f3b4cecf3dab6073d74696d10863c60}{
+HWLOC\_\-OBJ\_\-BRIDGE\_\-PCI}
+\label{a00041_gga48a4803c72574191d7ead1c62aaf9860a8f3b4cecf3dab6073d74696d10863c60}
+}]PCI-\/side of a bridge. \end{description}
+\end{Desc}
+
+\hypertarget{a00041_ga791c9875c8fe20f3e1e5871e0657e59b}{
+\index{hwlocality\_\-types@{hwlocality\_\-types}!hwloc\_\-obj\_\-cache\_\-type\_\-e@{hwloc\_\-obj\_\-cache\_\-type\_\-e}}
+\index{hwloc\_\-obj\_\-cache\_\-type\_\-e@{hwloc\_\-obj\_\-cache\_\-type\_\-e}!hwlocality_types@{hwlocality\_\-types}}
+\subsubsection[{hwloc\_\-obj\_\-cache\_\-type\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf hwloc\_\-obj\_\-cache\_\-type\_\-e}}}
+\label{a00041_ga791c9875c8fe20f3e1e5871e0657e59b}
+
+
+Cache type. 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{HWLOC\_\-OBJ\_\-CACHE\_\-UNIFIED@{HWLOC\_\-OBJ\_\-CACHE\_\-UNIFIED}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-CACHE\_\-UNIFIED@{HWLOC\_\-OBJ\_\-CACHE\_\-UNIFIED}}\item[{\em 
+\hypertarget{a00041_gga791c9875c8fe20f3e1e5871e0657e59ba3900b3b2db54941aac249e5a638a2d7a}{
+HWLOC\_\-OBJ\_\-CACHE\_\-UNIFIED}
+\label{a00041_gga791c9875c8fe20f3e1e5871e0657e59ba3900b3b2db54941aac249e5a638a2d7a}
+}]Unified cache. \index{HWLOC\_\-OBJ\_\-CACHE\_\-DATA@{HWLOC\_\-OBJ\_\-CACHE\_\-DATA}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-CACHE\_\-DATA@{HWLOC\_\-OBJ\_\-CACHE\_\-DATA}}\item[{\em 
+\hypertarget{a00041_gga791c9875c8fe20f3e1e5871e0657e59bacac60ecad4206f85aeb79bef1604b488}{
+HWLOC\_\-OBJ\_\-CACHE\_\-DATA}
+\label{a00041_gga791c9875c8fe20f3e1e5871e0657e59bacac60ecad4206f85aeb79bef1604b488}
+}]Data cache. \index{HWLOC\_\-OBJ\_\-CACHE\_\-INSTRUCTION@{HWLOC\_\-OBJ\_\-CACHE\_\-INSTRUCTION}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-CACHE\_\-INSTRUCTION@{HWLOC\_\-OBJ\_\-CACHE\_\-INSTRUCTION}}\item[{\em 
+\hypertarget{a00041_gga791c9875c8fe20f3e1e5871e0657e59ba6f98b0d422b38ba90c5f5c79a11b0658}{
+HWLOC\_\-OBJ\_\-CACHE\_\-INSTRUCTION}
+\label{a00041_gga791c9875c8fe20f3e1e5871e0657e59ba6f98b0d422b38ba90c5f5c79a11b0658}
+}]Instruction cache. Only used when the HWLOC\_\-TOPOLOGY\_\-FLAG\_\-ICACHES topology flag is set. \end{description}
+\end{Desc}
+
+\hypertarget{a00041_ga64f5d539df299c97ae80ce53fc4b56c0}{
+\index{hwlocality\_\-types@{hwlocality\_\-types}!hwloc\_\-obj\_\-osdev\_\-type\_\-e@{hwloc\_\-obj\_\-osdev\_\-type\_\-e}}
+\index{hwloc\_\-obj\_\-osdev\_\-type\_\-e@{hwloc\_\-obj\_\-osdev\_\-type\_\-e}!hwlocality_types@{hwlocality\_\-types}}
+\subsubsection[{hwloc\_\-obj\_\-osdev\_\-type\_\-e}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf hwloc\_\-obj\_\-osdev\_\-type\_\-e}}}
+\label{a00041_ga64f5d539df299c97ae80ce53fc4b56c0}
+
+
+Type of a OS device. 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{HWLOC\_\-OBJ\_\-OSDEV\_\-BLOCK@{HWLOC\_\-OBJ\_\-OSDEV\_\-BLOCK}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-OSDEV\_\-BLOCK@{HWLOC\_\-OBJ\_\-OSDEV\_\-BLOCK}}\item[{\em 
+\hypertarget{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a689b0488c3c0d08d116751c6b9cb8871}{
+HWLOC\_\-OBJ\_\-OSDEV\_\-BLOCK}
+\label{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a689b0488c3c0d08d116751c6b9cb8871}
+}]Operating system block device. For instance \char`\"{}sda\char`\"{} on Linux. \index{HWLOC\_\-OBJ\_\-OSDEV\_\-GPU@{HWLOC\_\-OBJ\_\-OSDEV\_\-GPU}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-OSDEV\_\-GPU@{HWLOC\_\-OBJ\_\-OSDEV\_\-GPU}}\item[{\em 
+\hypertarget{a00041_gga64f5d539df299c97ae80ce53fc4b56c0aa3a09798ef2836abb236dc3a645ffc90}{
+HWLOC\_\-OBJ\_\-OSDEV\_\-GPU}
+\label{a00041_gga64f5d539df299c97ae80ce53fc4b56c0aa3a09798ef2836abb236dc3a645ffc90}
+}]Operating system GPU device. For instance the \char`\"{}card0\char`\"{} DRM device on Linux. \index{HWLOC\_\-OBJ\_\-OSDEV\_\-NETWORK@{HWLOC\_\-OBJ\_\-OSDEV\_\-NETWORK}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-OSDEV\_\-NETWORK@{HWLOC\_\-OBJ\_\-OSDEV\_\-NETWORK}}\item[{\em 
+\hypertarget{a00041_gga64f5d539df299c97ae80ce53fc4b56c0ab715d81155f771573c8682dffc65021b}{
+HWLOC\_\-OBJ\_\-OSDEV\_\-NETWORK}
+\label{a00041_gga64f5d539df299c97ae80ce53fc4b56c0ab715d81155f771573c8682dffc65021b}
+}]Operating system network device. For instance the \char`\"{}eth0\char`\"{} interface on Linux. \index{HWLOC\_\-OBJ\_\-OSDEV\_\-OPENFABRICS@{HWLOC\_\-OBJ\_\-OSDEV\_\-OPENFABRICS}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-OSDEV\_\-OPENFABRICS@{HWLOC\_\-OBJ\_\-OSDEV\_\-OPENFABRICS}}\item[{\em 
+\hypertarget{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a52157d03694fdae82dddd57ca8c973b6}{
+HWLOC\_\-OBJ\_\-OSDEV\_\-OPENFABRICS}
+\label{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a52157d03694fdae82dddd57ca8c973b6}
+}]Operating system openfabrics device. For instance the \char`\"{}mlx4\_\-0\char`\"{} InfiniBand HCA device on Linux. \index{HWLOC\_\-OBJ\_\-OSDEV\_\-DMA@{HWLOC\_\-OBJ\_\-OSDEV\_\-DMA}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-OSDEV\_\-DMA@{HWLOC\_\-OBJ\_\-OSDEV\_\-DMA}}\item[{\em 
+\hypertarget{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a827ad1643360711a8b6c6af671366791}{
+HWLOC\_\-OBJ\_\-OSDEV\_\-DMA}
+\label{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a827ad1643360711a8b6c6af671366791}
+}]Operating system dma engine device. For instance the \char`\"{}dma0chan0\char`\"{} DMA channel on Linux. \index{HWLOC\_\-OBJ\_\-OSDEV\_\-DISPLAY@{HWLOC\_\-OBJ\_\-OSDEV\_\-DISPLAY}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-OSDEV\_\-DISPLAY@{HWLOC\_\-OBJ\_\-OSDEV\_\-DISPLAY}}\item[{\em 
+\hypertarget{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a5da1cc266d3d288fdc639b0e800e9da4}{
+HWLOC\_\-OBJ\_\-OSDEV\_\-DISPLAY}
+\label{a00041_gga64f5d539df299c97ae80ce53fc4b56c0a5da1cc266d3d288fdc639b0e800e9da4}
+}]Operating system display device. For instance the DISPLAY :0.0 attached to the GPU. \end{description}
+\end{Desc}
+
+\hypertarget{a00041_gacd37bb612667dc437d66bfb175a8dc55}{
+\index{hwlocality\_\-types@{hwlocality\_\-types}!hwloc\_\-obj\_\-type\_\-t@{hwloc\_\-obj\_\-type\_\-t}}
+\index{hwloc\_\-obj\_\-type\_\-t@{hwloc\_\-obj\_\-type\_\-t}!hwlocality_types@{hwlocality\_\-types}}
+\subsubsection[{hwloc\_\-obj\_\-type\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf hwloc\_\-obj\_\-type\_\-t}}}
+\label{a00041_gacd37bb612667dc437d66bfb175a8dc55}
+
+
+Type of topology object. 
+
+\begin{DoxyNote}{Note}
+Do not rely on the ordering or completeness of the values as new ones may be defined in the future! If you need to compare types, use \hyperlink{a00041_gabd7da4f4ea12b420b8ecbde458b27805}{hwloc\_\-compare\_\-types()} instead. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{HWLOC\_\-OBJ\_\-SYSTEM@{HWLOC\_\-OBJ\_\-SYSTEM}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-SYSTEM@{HWLOC\_\-OBJ\_\-SYSTEM}}\item[{\em 
+\hypertarget{a00041_ggacd37bb612667dc437d66bfb175a8dc55a3aa1b842d1fd4207ebce171f95a244ec}{
+HWLOC\_\-OBJ\_\-SYSTEM}
+\label{a00041_ggacd37bb612667dc437d66bfb175a8dc55a3aa1b842d1fd4207ebce171f95a244ec}
+}]Whole system (may be a cluster of machines). The whole system that is accessible to hwloc. That may comprise several machines in SSI systems like Kerrighed. \index{HWLOC\_\-OBJ\_\-MACHINE@{HWLOC\_\-OBJ\_\-MACHINE}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-MACHINE@{HWLOC\_\-OBJ\_\-MACHINE}}\item[{\em 
+\hypertarget{a00041_ggacd37bb612667dc437d66bfb175a8dc55a3f4e83ffc4a259354959ae8a9eaa2a80}{
+HWLOC\_\-OBJ\_\-MACHINE}
+\label{a00041_ggacd37bb612667dc437d66bfb175a8dc55a3f4e83ffc4a259354959ae8a9eaa2a80}
+}]Machine. The typical root object type. A set of processors and memory with cache coherency. \index{HWLOC\_\-OBJ\_\-NODE@{HWLOC\_\-OBJ\_\-NODE}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-NODE@{HWLOC\_\-OBJ\_\-NODE}}\item[{\em 
+\hypertarget{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}{
+HWLOC\_\-OBJ\_\-NODE}
+\label{a00041_ggacd37bb612667dc437d66bfb175a8dc55aaf0964881117bdedf1a5e9332cd120dd}
+}]NUMA node. A set of processors around memory which the processors can directly access. \index{HWLOC\_\-OBJ\_\-SOCKET@{HWLOC\_\-OBJ\_\-SOCKET}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-SOCKET@{HWLOC\_\-OBJ\_\-SOCKET}}\item[{\em 
+\hypertarget{a00041_ggacd37bb612667dc437d66bfb175a8dc55a1ac6e07775ae4324b3fe9dbd72c785ec}{
+HWLOC\_\-OBJ\_\-SOCKET}
+\label{a00041_ggacd37bb612667dc437d66bfb175a8dc55a1ac6e07775ae4324b3fe9dbd72c785ec}
+}]Socket, physical package, or chip. In the physical meaning, i.e. that you can add or remove physically. \index{HWLOC\_\-OBJ\_\-CACHE@{HWLOC\_\-OBJ\_\-CACHE}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-CACHE@{HWLOC\_\-OBJ\_\-CACHE}}\item[{\em 
+\hypertarget{a00041_ggacd37bb612667dc437d66bfb175a8dc55a56ee0b7eca88f363b75b34fdde8c9ddc}{
+HWLOC\_\-OBJ\_\-CACHE}
+\label{a00041_ggacd37bb612667dc437d66bfb175a8dc55a56ee0b7eca88f363b75b34fdde8c9ddc}
+}]Cache. Can be L1i, L1d, L2, L3, ... \index{HWLOC\_\-OBJ\_\-CORE@{HWLOC\_\-OBJ\_\-CORE}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-CORE@{HWLOC\_\-OBJ\_\-CORE}}\item[{\em 
+\hypertarget{a00041_ggacd37bb612667dc437d66bfb175a8dc55ac793958f330bca371aa1535de8aff45f}{
+HWLOC\_\-OBJ\_\-CORE}
+\label{a00041_ggacd37bb612667dc437d66bfb175a8dc55ac793958f330bca371aa1535de8aff45f}
+}]Core. A computation unit (may be shared by several logical processors). \index{HWLOC\_\-OBJ\_\-PU@{HWLOC\_\-OBJ\_\-PU}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-PU@{HWLOC\_\-OBJ\_\-PU}}\item[{\em 
+\hypertarget{a00041_ggacd37bb612667dc437d66bfb175a8dc55abca6887e80cb291353b0a0c1da83f661}{
+HWLOC\_\-OBJ\_\-PU}
+\label{a00041_ggacd37bb612667dc437d66bfb175a8dc55abca6887e80cb291353b0a0c1da83f661}
+}]Processing Unit, or (Logical) Processor. An execution unit (may share a core with some other logical processors, e.g. in the case of an SMT core). Objects of this kind are always reported and can thus be used as fallback when others are not. \index{HWLOC\_\-OBJ\_\-GROUP@{HWLOC\_\-OBJ\_\-GROUP}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-GROUP@{HWLOC\_\-OBJ\_\-GROUP}}\item[{\em 
+\hypertarget{a00041_ggacd37bb612667dc437d66bfb175a8dc55a5269ef95be72f88465559d35c9b7ad56}{
+HWLOC\_\-OBJ\_\-GROUP}
+\label{a00041_ggacd37bb612667dc437d66bfb175a8dc55a5269ef95be72f88465559d35c9b7ad56}
+}]Group objects. Objects which do not fit in the above but are detected by hwloc and are useful to take into account for affinity. For instance, some operating systems expose their arbitrary processors aggregation this way. And hwloc may insert such objects to group NUMA nodes according to their distances. These objects are ignored when they do not bring any structure. \index{HWLOC\_\-OBJ\_\-MISC@{HWLOC\_\-OBJ\_\-MISC}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-MISC@{HWLOC\_\-OBJ\_\-MISC}}\item[{\em 
+\hypertarget{a00041_ggacd37bb612667dc437d66bfb175a8dc55a19f8a6953fa91efc76bcbcdf2d22de4d}{
+HWLOC\_\-OBJ\_\-MISC}
+\label{a00041_ggacd37bb612667dc437d66bfb175a8dc55a19f8a6953fa91efc76bcbcdf2d22de4d}
+}]Miscellaneous objects. Objects without particular meaning, that can e.g. be added by the application for its own use. \index{HWLOC\_\-OBJ\_\-BRIDGE@{HWLOC\_\-OBJ\_\-BRIDGE}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-BRIDGE@{HWLOC\_\-OBJ\_\-BRIDGE}}\item[{\em 
+\hypertarget{a00041_ggacd37bb612667dc437d66bfb175a8dc55a6825f10895fea60aca7a6ba9fe273db0}{
+HWLOC\_\-OBJ\_\-BRIDGE}
+\label{a00041_ggacd37bb612667dc437d66bfb175a8dc55a6825f10895fea60aca7a6ba9fe273db0}
+}]Bridge. Any bridge that connects the host or an I/O bus, to another I/O bus. Bridge objects have neither CPU sets nor node sets. They are not added to the topology unless I/O discovery is enabled with \hyperlink{a00044_ga6d11e53db143ac39c32cdb3912b71f99}{hwloc\_\-topology\_\-set\_\-flags()}. \index{HWLOC\_\-OBJ\_\-PCI\_\-DEVICE@{HWLOC\_\-OBJ\_\-PCI\_\-DEVICE}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-PCI\_\-DEVICE@{HWLOC\_\-OBJ\_\-PCI\_\-DEVICE}}\item[{\em 
+\hypertarget{a00041_ggacd37bb612667dc437d66bfb175a8dc55a5d8117a54df1fbd3606ab19e42cb0ea9}{
+HWLOC\_\-OBJ\_\-PCI\_\-DEVICE}
+\label{a00041_ggacd37bb612667dc437d66bfb175a8dc55a5d8117a54df1fbd3606ab19e42cb0ea9}
+}]PCI device. These objects have neither CPU sets nor node sets. They are not added to the topology unless I/O discovery is enabled with \hyperlink{a00044_ga6d11e53db143ac39c32cdb3912b71f99}{hwloc\_\-topology\_\-set\_\-flags()}. \index{HWLOC\_\-OBJ\_\-OS\_\-DEVICE@{HWLOC\_\-OBJ\_\-OS\_\-DEVICE}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-OS\_\-DEVICE@{HWLOC\_\-OBJ\_\-OS\_\-DEVICE}}\item[{\em 
+\hypertarget{a00041_ggacd37bb612667dc437d66bfb175a8dc55a51e7280240fd9f25589cbbe538bdb075}{
+HWLOC\_\-OBJ\_\-OS\_\-DEVICE}
+\label{a00041_ggacd37bb612667dc437d66bfb175a8dc55a51e7280240fd9f25589cbbe538bdb075}
+}]Operating system device. These objects have neither CPU sets nor node sets. They are not added to the topology unless I/O discovery is enabled with \hyperlink{a00044_ga6d11e53db143ac39c32cdb3912b71f99}{hwloc\_\-topology\_\-set\_\-flags()}. \index{HWLOC\_\-OBJ\_\-TYPE\_\-MAX@{HWLOC\_\-OBJ\_\-TYPE\_\-MAX}!hwlocality\_\-types@{hwlocality\_\-types}}\index{hwlocality\_\-types@{hwlocality\_\-types}!HWLOC\_\-OBJ\_\-TYPE\_\-MAX@{HWLOC\_\-OBJ\_\-TYPE\_\-MAX}}\item[{\em 
+\hypertarget{a00041_ggacd37bb612667dc437d66bfb175a8dc55addb5f843e1812445a84e6b2a844b1ebc}{
+HWLOC\_\-OBJ\_\-TYPE\_\-MAX}
+\label{a00041_ggacd37bb612667dc437d66bfb175a8dc55addb5f843e1812445a84e6b2a844b1ebc}
+}]Sentinel value \end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\hypertarget{a00041_gabd7da4f4ea12b420b8ecbde458b27805}{
+\index{hwlocality\_\-types@{hwlocality\_\-types}!hwloc\_\-compare\_\-types@{hwloc\_\-compare\_\-types}}
+\index{hwloc\_\-compare\_\-types@{hwloc\_\-compare\_\-types}!hwlocality_types@{hwlocality\_\-types}}
+\subsubsection[{hwloc\_\-compare\_\-types}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-compare\_\-types (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-obj\_\-type\_\-t}}]{type1, }
+\item[{{\bf hwloc\_\-obj\_\-type\_\-t}}]{type2}
+\end{DoxyParamCaption}
+) const}}
+\label{a00041_gabd7da4f4ea12b420b8ecbde458b27805}
+
+
+Compare the depth of two object types. 
+
+Types shouldn't be compared as they are, since newer ones may be added in the future. This function returns less than, equal to, or greater than zero respectively if {\ttfamily type1} objects usually include {\ttfamily type2} objects, are the same as {\ttfamily type2} objects, or are included in {\ttfamily type2} objects. If the types can not be compared (because neither is usually contained in the other), HWLOC\_\-TYPE\_\-UNORDERED is returned. Object types containing CPUs can always be compared (usually, a system contains machines which contain nodes which contain sockets which contain caches, which contain cores, which contain processors).
+
+\begin{DoxyNote}{Note}
+HWLOC\_\-OBJ\_\-PU will always be the deepest. 
+
+This does not mean that the actual topology will respect that order: e.g. as of today cores may also contain caches, and sockets may also contain nodes. This is thus just to be seen as a fallback comparison method. 
+\end{DoxyNote}

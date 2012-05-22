@@ -1,0 +1,19 @@
+K 10
+svn:ignore
+V 220
+Makefile
+Makefile.in
+.deps
+topology-hpux.c
+topology-darwin.c
+topology-osf.c
+traversal.c
+topology-windows.c
+topology.c
+topology-synthetic.c
+topology-freebsd.c
+topology-solaris.c
+topology-solaris-chiptype.c
+topology-aix.c
+
+END

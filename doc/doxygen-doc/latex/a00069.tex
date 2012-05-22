@@ -1,0 +1,90 @@
+\hypertarget{a00069}{
+\section{Helpers for manipulating Linux libnuma bitmask}
+\label{a00069}\index{Helpers for manipulating Linux libnuma bitmask@{Helpers for manipulating Linux libnuma bitmask}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static inline struct bitmask $\ast$ \hyperlink{a00069_ga1a2ad777b9b4cf4aac0123f61c3ab8bd}{hwloc\_\-cpuset\_\-to\_\-linux\_\-libnuma\_\-bitmask} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc\_\-const\_\-cpuset\_\-t} cpuset) 
+\item 
+static inline struct bitmask $\ast$ \hyperlink{a00069_gab67a395c48ddb56307b1465fab9bb9e6}{hwloc\_\-nodeset\_\-to\_\-linux\_\-libnuma\_\-bitmask} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00040_ga2f5276235841ad66a79bedad16a5a10c}{hwloc\_\-const\_\-nodeset\_\-t} nodeset) 
+\item 
+static inline int \hyperlink{a00069_ga47747968f12c2674d2840dfbacce4940}{hwloc\_\-cpuset\_\-from\_\-linux\_\-libnuma\_\-bitmask} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc\_\-cpuset\_\-t} cpuset, const struct bitmask $\ast$bitmask)
+\item 
+static inline int \hyperlink{a00069_ga5a1d17375cc7b65cd155330008cbdb6a}{hwloc\_\-nodeset\_\-from\_\-linux\_\-libnuma\_\-bitmask} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, \hyperlink{a00040_ga37e35730fa7e775b5bb0afe893d6d508}{hwloc\_\-nodeset\_\-t} nodeset, const struct bitmask $\ast$bitmask)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00069_ga47747968f12c2674d2840dfbacce4940}{
+\index{hwlocality\_\-linux\_\-libnuma\_\-bitmask@{hwlocality\_\-linux\_\-libnuma\_\-bitmask}!hwloc\_\-cpuset\_\-from\_\-linux\_\-libnuma\_\-bitmask@{hwloc\_\-cpuset\_\-from\_\-linux\_\-libnuma\_\-bitmask}}
+\index{hwloc\_\-cpuset\_\-from\_\-linux\_\-libnuma\_\-bitmask@{hwloc\_\-cpuset\_\-from\_\-linux\_\-libnuma\_\-bitmask}!hwlocality_linux_libnuma_bitmask@{hwlocality\_\-linux\_\-libnuma\_\-bitmask}}
+\subsubsection[{hwloc\_\-cpuset\_\-from\_\-linux\_\-libnuma\_\-bitmask}]{\setlength{\rightskip}{0pt plus 5cm}static inline int hwloc\_\-cpuset\_\-from\_\-linux\_\-libnuma\_\-bitmask (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-cpuset\_\-t}}]{cpuset, }
+\item[{const struct bitmask $\ast$}]{bitmask}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00069_ga47747968f12c2674d2840dfbacce4940}
+
+
+Convert libnuma bitmask {\ttfamily bitmask} into hwloc CPU set {\ttfamily cpuset}. 
+
+This function may be used after calling many numa\_\- functions that use a struct bitmask as an output parameter. \hypertarget{a00069_ga1a2ad777b9b4cf4aac0123f61c3ab8bd}{
+\index{hwlocality\_\-linux\_\-libnuma\_\-bitmask@{hwlocality\_\-linux\_\-libnuma\_\-bitmask}!hwloc\_\-cpuset\_\-to\_\-linux\_\-libnuma\_\-bitmask@{hwloc\_\-cpuset\_\-to\_\-linux\_\-libnuma\_\-bitmask}}
+\index{hwloc\_\-cpuset\_\-to\_\-linux\_\-libnuma\_\-bitmask@{hwloc\_\-cpuset\_\-to\_\-linux\_\-libnuma\_\-bitmask}!hwlocality_linux_libnuma_bitmask@{hwlocality\_\-linux\_\-libnuma\_\-bitmask}}
+\subsubsection[{hwloc\_\-cpuset\_\-to\_\-linux\_\-libnuma\_\-bitmask}]{\setlength{\rightskip}{0pt plus 5cm}static inline struct bitmask $\ast$ hwloc\_\-cpuset\_\-to\_\-linux\_\-libnuma\_\-bitmask (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-const\_\-cpuset\_\-t}}]{cpuset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, read\mbox{]}}}}
+\label{a00069_ga1a2ad777b9b4cf4aac0123f61c3ab8bd}
+
+
+Convert hwloc CPU set {\ttfamily cpuset} into the returned libnuma bitmask. 
+
+The returned bitmask should later be freed with numa\_\-bitmask\_\-free.
+
+This function may be used before calling many numa\_\- functions that use a struct bitmask as an input parameter.
+
+\begin{DoxyReturn}{Returns}
+newly allocated struct bitmask. 
+\end{DoxyReturn}
+\hypertarget{a00069_ga5a1d17375cc7b65cd155330008cbdb6a}{
+\index{hwlocality\_\-linux\_\-libnuma\_\-bitmask@{hwlocality\_\-linux\_\-libnuma\_\-bitmask}!hwloc\_\-nodeset\_\-from\_\-linux\_\-libnuma\_\-bitmask@{hwloc\_\-nodeset\_\-from\_\-linux\_\-libnuma\_\-bitmask}}
+\index{hwloc\_\-nodeset\_\-from\_\-linux\_\-libnuma\_\-bitmask@{hwloc\_\-nodeset\_\-from\_\-linux\_\-libnuma\_\-bitmask}!hwlocality_linux_libnuma_bitmask@{hwlocality\_\-linux\_\-libnuma\_\-bitmask}}
+\subsubsection[{hwloc\_\-nodeset\_\-from\_\-linux\_\-libnuma\_\-bitmask}]{\setlength{\rightskip}{0pt plus 5cm}static inline int hwloc\_\-nodeset\_\-from\_\-linux\_\-libnuma\_\-bitmask (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-nodeset\_\-t}}]{nodeset, }
+\item[{const struct bitmask $\ast$}]{bitmask}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00069_ga5a1d17375cc7b65cd155330008cbdb6a}
+
+
+Convert libnuma bitmask {\ttfamily bitmask} into hwloc NUMA node set {\ttfamily nodeset}. 
+
+This function may be used after calling many numa\_\- functions that use a struct bitmask as an output parameter. \hypertarget{a00069_gab67a395c48ddb56307b1465fab9bb9e6}{
+\index{hwlocality\_\-linux\_\-libnuma\_\-bitmask@{hwlocality\_\-linux\_\-libnuma\_\-bitmask}!hwloc\_\-nodeset\_\-to\_\-linux\_\-libnuma\_\-bitmask@{hwloc\_\-nodeset\_\-to\_\-linux\_\-libnuma\_\-bitmask}}
+\index{hwloc\_\-nodeset\_\-to\_\-linux\_\-libnuma\_\-bitmask@{hwloc\_\-nodeset\_\-to\_\-linux\_\-libnuma\_\-bitmask}!hwlocality_linux_libnuma_bitmask@{hwlocality\_\-linux\_\-libnuma\_\-bitmask}}
+\subsubsection[{hwloc\_\-nodeset\_\-to\_\-linux\_\-libnuma\_\-bitmask}]{\setlength{\rightskip}{0pt plus 5cm}static inline struct bitmask $\ast$ hwloc\_\-nodeset\_\-to\_\-linux\_\-libnuma\_\-bitmask (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{{\bf hwloc\_\-const\_\-nodeset\_\-t}}]{nodeset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, read\mbox{]}}}}
+\label{a00069_gab67a395c48ddb56307b1465fab9bb9e6}
+
+
+Convert hwloc NUMA node set {\ttfamily nodeset} into the returned libnuma bitmask. 
+
+The returned bitmask should later be freed with numa\_\-bitmask\_\-free.
+
+This function may be used before calling many numa\_\- functions that use a struct bitmask as an input parameter.
+
+\begin{DoxyReturn}{Returns}
+newly allocated struct bitmask. 
+\end{DoxyReturn}

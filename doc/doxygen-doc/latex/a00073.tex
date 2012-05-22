@@ -1,0 +1,49 @@
+\hypertarget{a00073}{
+\section{Myrinet Express-\/Specific Functions}
+\label{a00073}\index{Myrinet Express-\/Specific Functions@{Myrinet Express-\/Specific Functions}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static inline int \hyperlink{a00073_ga87f4746d0cad579ce4e86b98088f22a1}{hwloc\_\-mx\_\-board\_\-get\_\-device\_\-cpuset} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, unsigned id, \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc\_\-cpuset\_\-t} set)
+\item 
+static inline int \hyperlink{a00073_ga2ff7763b9c2c5975f9a2e3d638351535}{hwloc\_\-mx\_\-endpoint\_\-get\_\-device\_\-cpuset} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, mx\_\-endpoint\_\-t endpoint, \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc\_\-cpuset\_\-t} set)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{a00073_ga87f4746d0cad579ce4e86b98088f22a1}{
+\index{hwlocality\_\-myriexpress@{hwlocality\_\-myriexpress}!hwloc\_\-mx\_\-board\_\-get\_\-device\_\-cpuset@{hwloc\_\-mx\_\-board\_\-get\_\-device\_\-cpuset}}
+\index{hwloc\_\-mx\_\-board\_\-get\_\-device\_\-cpuset@{hwloc\_\-mx\_\-board\_\-get\_\-device\_\-cpuset}!hwlocality_myriexpress@{hwlocality\_\-myriexpress}}
+\subsubsection[{hwloc\_\-mx\_\-board\_\-get\_\-device\_\-cpuset}]{\setlength{\rightskip}{0pt plus 5cm}static inline int hwloc\_\-mx\_\-board\_\-get\_\-device\_\-cpuset (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{unsigned}]{id, }
+\item[{{\bf hwloc\_\-cpuset\_\-t}}]{set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00073_ga87f4746d0cad579ce4e86b98088f22a1}
+
+
+Get the CPU set of logical processors that are physically close the MX board {\ttfamily id}. 
+
+For the given Myrinet Express board index {\ttfamily id}, read the OS-\/provided NUMA node and return the corresponding CPU set.
+
+Topology {\ttfamily topology} must match the current machine. \hypertarget{a00073_ga2ff7763b9c2c5975f9a2e3d638351535}{
+\index{hwlocality\_\-myriexpress@{hwlocality\_\-myriexpress}!hwloc\_\-mx\_\-endpoint\_\-get\_\-device\_\-cpuset@{hwloc\_\-mx\_\-endpoint\_\-get\_\-device\_\-cpuset}}
+\index{hwloc\_\-mx\_\-endpoint\_\-get\_\-device\_\-cpuset@{hwloc\_\-mx\_\-endpoint\_\-get\_\-device\_\-cpuset}!hwlocality_myriexpress@{hwlocality\_\-myriexpress}}
+\subsubsection[{hwloc\_\-mx\_\-endpoint\_\-get\_\-device\_\-cpuset}]{\setlength{\rightskip}{0pt plus 5cm}static inline int hwloc\_\-mx\_\-endpoint\_\-get\_\-device\_\-cpuset (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{mx\_\-endpoint\_\-t}]{endpoint, }
+\item[{{\bf hwloc\_\-cpuset\_\-t}}]{set}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{a00073_ga2ff7763b9c2c5975f9a2e3d638351535}
+
+
+Get the CPU set of logical processors that are physically close to endpoint {\ttfamily endpoint}. 
+
+For the given Myrinet Express endpoint {\ttfamily endpoint}, read the OS-\/provided NUMA node and return the corresponding CPU set.
+
+Topology {\ttfamily topology} must match the current machine. 

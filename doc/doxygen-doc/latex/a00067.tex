@@ -1,0 +1,64 @@
+\hypertarget{a00067}{
+\section{Linux-\/only helpers}
+\label{a00067}\index{Linux-\/only helpers@{Linux-\/only helpers}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ int \hyperlink{a00067_gaeacad897c30dbea284948374ad4b010c}{hwloc\_\-linux\_\-parse\_\-cpumap\_\-file} (FILE $\ast$file, \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc\_\-cpuset\_\-t} set)
+\item 
+ int \hyperlink{a00067_gaaaca5d1687053b6c3326b2c165bd6530}{hwloc\_\-linux\_\-set\_\-tid\_\-cpubind} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, pid\_\-t tid, \hyperlink{a00040_ga1f784433e9b606261f62d1134f6a3b25}{hwloc\_\-const\_\-cpuset\_\-t} set)
+\item 
+ int \hyperlink{a00067_gaf36a9211a21eb930f59090eb5d460b8e}{hwloc\_\-linux\_\-get\_\-tid\_\-cpubind} (\hyperlink{a00039_ga9d1e76ee15a7dee158b786c30b6a6e38}{hwloc\_\-topology\_\-t} topology, pid\_\-t tid, \hyperlink{a00040_ga4bbf39b68b6f568fb92739e7c0ea7801}{hwloc\_\-cpuset\_\-t} set)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This includes helpers for manipulating linux kernel cpumap files, and hwloc equivalents of the Linux sched\_\-setaffinity and sched\_\-getaffinity system calls. 
+
+\subsection{Function Documentation}
+\hypertarget{a00067_gaf36a9211a21eb930f59090eb5d460b8e}{
+\index{hwlocality\_\-linux@{hwlocality\_\-linux}!hwloc\_\-linux\_\-get\_\-tid\_\-cpubind@{hwloc\_\-linux\_\-get\_\-tid\_\-cpubind}}
+\index{hwloc\_\-linux\_\-get\_\-tid\_\-cpubind@{hwloc\_\-linux\_\-get\_\-tid\_\-cpubind}!hwlocality_linux@{hwlocality\_\-linux}}
+\subsubsection[{hwloc\_\-linux\_\-get\_\-tid\_\-cpubind}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-linux\_\-get\_\-tid\_\-cpubind (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{pid\_\-t}]{tid, }
+\item[{{\bf hwloc\_\-cpuset\_\-t}}]{set}
+\end{DoxyParamCaption}
+)}}
+\label{a00067_gaf36a9211a21eb930f59090eb5d460b8e}
+
+
+Get the current binding of thread {\ttfamily tid}. 
+
+The behavior is exactly the same as the Linux sched\_\-getaffinity system call, but uses a hwloc cpuset. \hypertarget{a00067_gaeacad897c30dbea284948374ad4b010c}{
+\index{hwlocality\_\-linux@{hwlocality\_\-linux}!hwloc\_\-linux\_\-parse\_\-cpumap\_\-file@{hwloc\_\-linux\_\-parse\_\-cpumap\_\-file}}
+\index{hwloc\_\-linux\_\-parse\_\-cpumap\_\-file@{hwloc\_\-linux\_\-parse\_\-cpumap\_\-file}!hwlocality_linux@{hwlocality\_\-linux}}
+\subsubsection[{hwloc\_\-linux\_\-parse\_\-cpumap\_\-file}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-linux\_\-parse\_\-cpumap\_\-file (
+\begin{DoxyParamCaption}
+\item[{FILE $\ast$}]{file, }
+\item[{{\bf hwloc\_\-cpuset\_\-t}}]{set}
+\end{DoxyParamCaption}
+)}}
+\label{a00067_gaeacad897c30dbea284948374ad4b010c}
+
+
+Convert a linux kernel cpumap file {\ttfamily file} into hwloc CPU set. 
+
+Might be used when reading CPU set from sysfs attributes such as topology and caches for processors, or local\_\-cpus for devices. \hypertarget{a00067_gaaaca5d1687053b6c3326b2c165bd6530}{
+\index{hwlocality\_\-linux@{hwlocality\_\-linux}!hwloc\_\-linux\_\-set\_\-tid\_\-cpubind@{hwloc\_\-linux\_\-set\_\-tid\_\-cpubind}}
+\index{hwloc\_\-linux\_\-set\_\-tid\_\-cpubind@{hwloc\_\-linux\_\-set\_\-tid\_\-cpubind}!hwlocality_linux@{hwlocality\_\-linux}}
+\subsubsection[{hwloc\_\-linux\_\-set\_\-tid\_\-cpubind}]{\setlength{\rightskip}{0pt plus 5cm} int hwloc\_\-linux\_\-set\_\-tid\_\-cpubind (
+\begin{DoxyParamCaption}
+\item[{{\bf hwloc\_\-topology\_\-t}}]{topology, }
+\item[{pid\_\-t}]{tid, }
+\item[{{\bf hwloc\_\-const\_\-cpuset\_\-t}}]{set}
+\end{DoxyParamCaption}
+)}}
+\label{a00067_gaaaca5d1687053b6c3326b2c165bd6530}
+
+
+Bind a thread {\ttfamily tid} on cpus given in cpuset {\ttfamily set}. 
+
+The behavior is exactly the same as the Linux sched\_\-setaffinity system call, but uses a hwloc cpuset. 

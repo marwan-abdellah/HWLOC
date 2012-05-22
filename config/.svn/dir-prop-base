@@ -1,0 +1,17 @@
+K 10
+svn:ignore
+V 132
+libtool.m4
+ltoptions.m4
+ltsugar.m4
+ltversion.m4
+lt~obsolete.m4
+depcomp
+compile
+config.guess
+config.sub
+ltmain.sh
+missing
+install-sh
+
+END

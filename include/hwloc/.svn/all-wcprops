@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/hwloc/!svn/ver/4488/branches/display/include/hwloc
+END
+myriexpress.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/hwloc/!svn/ver/4478/branches/display/include/hwloc/myriexpress.h
+END
+openfabrics-verbs.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/hwloc/!svn/ver/4478/branches/display/include/hwloc/openfabrics-verbs.h
+END
+bitmap.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/hwloc/!svn/ver/4478/branches/display/include/hwloc/bitmap.h
+END
+cuda.h
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/hwloc/!svn/ver/4478/branches/display/include/hwloc/cuda.h
+END
+helper.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/hwloc/!svn/ver/4479/branches/display/include/hwloc/helper.h
+END
+linux.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/hwloc/!svn/ver/4478/branches/display/include/hwloc/linux.h
+END
+cudart.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/hwloc/!svn/ver/4478/branches/display/include/hwloc/cudart.h
+END
+gl.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/hwloc/!svn/ver/4488/branches/display/include/hwloc/gl.h
+END
+glibc-sched.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/hwloc/!svn/ver/4478/branches/display/include/hwloc/glibc-sched.h
+END
+linux-libnuma.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/hwloc/!svn/ver/4478/branches/display/include/hwloc/linux-libnuma.h
+END
+rename.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/hwloc/!svn/ver/4479/branches/display/include/hwloc/rename.h
+END

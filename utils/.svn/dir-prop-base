@@ -1,0 +1,32 @@
+K 10
+svn:ignore
+V 406
+.deps
+Makefile.in
+Makefile
+lstopo
+lstopo-gui
+lstopo.1
+hwloc.7
+hwloc-assembler
+hwloc-assembler.1
+hwloc-assembler-remote
+hwloc-assembler-remote.1
+hwloc-bind
+hwloc-bind.1
+hwloc-distrib
+hwloc-distrib.1
+hwloc-calc
+hwloc-calc.1
+hwloc-ps
+hwloc-ps.1
+hwloc-distances
+hwloc-distances.1
+hwloc-gather-topology.1
+test-hwloc-assembler.sh
+test-hwloc-calc.sh
+test-hwloc-distrib.sh
+test-hwloc-distances.sh
+test-hwloc-ls.sh
+
+END

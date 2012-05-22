@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include
+END
+windows.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/windows.h
+END
+numa.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/numa.h
+END
+radset.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/radset.h
+END
+cpuset.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/cpuset.h
+END
+pthread_np.h
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/pthread_np.h
+END
+kstat.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/kstat.h
+END
+picl.h
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/hwloc/!svn/ver/4478/branches/display/tests/ports/include/picl.h
+END

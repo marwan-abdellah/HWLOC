@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 81
+Makefile.in
+Makefile
+.deps
+hwloc-hello
+texput.log
+doxygen-doc
+doxygen-config.cfg
+
+END

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/hwloc/!svn/ver/4489/branches/display/config
+END
+hwloc_check_visibility.m4
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/hwloc/!svn/ver/4478/branches/display/config/hwloc_check_visibility.m4
+END
+distscript.csh
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/hwloc/!svn/ver/4478/branches/display/config/distscript.csh
+END
+hwloc_check_vendor.m4
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/hwloc/!svn/ver/4478/branches/display/config/hwloc_check_vendor.m4
+END
+decl.m4
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/hwloc/!svn/ver/4478/branches/display/config/decl.m4
+END
+hwloc_internal.m4
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/hwloc/!svn/ver/4489/branches/display/config/hwloc_internal.m4
+END
+hwloc_get_version.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/hwloc/!svn/ver/4478/branches/display/config/hwloc_get_version.sh
+END
+hwloc.m4
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/hwloc/!svn/ver/4489/branches/display/config/hwloc.m4
+END
+hwloc_pkg.m4
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/hwloc/!svn/ver/4478/branches/display/config/hwloc_pkg.m4
+END
+hwloc_check_attributes.m4
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/hwloc/!svn/ver/4478/branches/display/config/hwloc_check_attributes.m4
+END

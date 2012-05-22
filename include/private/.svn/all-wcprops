@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/hwloc/!svn/ver/4478/branches/display/include/private
+END
+private.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/hwloc/!svn/ver/4478/branches/display/include/private/private.h
+END
+misc.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/hwloc/!svn/ver/4478/branches/display/include/private/misc.h
+END
+solaris-chiptype.h
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/hwloc/!svn/ver/4478/branches/display/include/private/solaris-chiptype.h
+END
+cpuid.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/hwloc/!svn/ver/4478/branches/display/include/private/cpuid.h
+END
+debug.h
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/hwloc/!svn/ver/4478/branches/display/include/private/debug.h
+END
