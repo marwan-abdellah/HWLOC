@@ -21,8 +21,9 @@ extern "C" {
  */
 HWLOC_DECLSPEC hwloc_obj_t hwloc_gl_query_display(hwloc_topology_t topology, char* displayName);
 
-/** \brief Returns a cpuset of the socket attached to the host bridge
+/** \brief Retrieves a cpuset of the socket attached to the host bridge
  * where the GPU defined by pcidev_obj is connected in the topology.
+ * It returns 0 if a valid cpuset is retrieved, else -1.
  */
 HWLOC_DECLSPEC int hwloc_gl_get_pci_cpuset(hwloc_topology_t topology, hwloc_obj_t pcidev_obj, hwloc_bitmap_t* cpuset);
 

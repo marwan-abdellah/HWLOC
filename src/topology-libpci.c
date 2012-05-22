@@ -355,7 +355,7 @@ hwloc_pci_traverse_lookuposdevices_cb(struct hwloc_topology *topology, struct hw
   hwloc_linux_lookup_drm_class(topology, pcidev, pcidevpath);
   hwloc_linux_lookup_block_class(topology, pcidev, pcidevpath);
 
- #ifdef HWLOC_HAVE_GL
+#ifdef HWLOC_HAVE_GL
   /* FIXME: need proper callback in gl.c source file */
   hwloc_linux_lookup_display_class(topology, pcidev);
 #endif

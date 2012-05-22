@@ -46,9 +46,9 @@ int main(void)
       hwloc_obj_t pcidev_obj = hwloc_get_obj_by_type(topology, HWLOC_OBJ_PCI_DEVICE, i);
 
       hwloc_bitmap_t cpuset ;
-      cpuset = hwloc_bitmap_alloc();
-      hwloc_bitmap_zero(cpuset);
-      cpuset = hwloc_get_pcidevice_cpuset(topology, pcidev_obj);
+      //cpuset = hwloc_bitmap_alloc();
+      //hwloc_bitmap_zero(cpuset);
+      int err = hwloc_get_pcidevice_cpuset(topology, pcidev_obj, &cpuset);
 
       /* Print the cpuset corresponding to each pci device */
       hwloc_bitmap_asprintf(&cpuset_string, cpuset);

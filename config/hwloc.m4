@@ -10,8 +10,9 @@ dnl                         All rights reserved.
 dnl Copyright (c) 2004-2008 High Performance Computing Center Stuttgart, 
 dnl                         University of Stuttgart.  All rights reserved.
 dnl Copyright © 2006-2011  Cisco Systems, Inc.  All rights reserved.
+dnl Copyright © 2012  Blue Brain Project, BBP/EPFL. All rights reserved.
 dnl See COPYING in top-level directory.
-# FIXME marwan copyright header (check other files as well)
+
 
 # Main hwloc m4 macro, to be invoked by the user
 #
@@ -719,7 +720,7 @@ EOF])
 	   	 	
         AC_CHECK_HEADERS(NVCtrl/NVCtrl.h, [
           AC_CHECK_LIB(XNVCtrl, XNVCTRLQueryTargetAttribute, [:], [
-            AC_MSG_WARN([XextFindDisplay not found, GL backend disabled])
+            AC_MSG_WARN([XNVCTRLQueryTargetAttribute not found, GL backend disabled])
             hwloc_gl_happy=no
           ])
         ], [
