@@ -9,9 +9,6 @@
 
 #include <hwloc.h>
 
-/* FIXME: don't include this header everywhere else */
-/* FIXME: rename into display.h ? */
-
 #ifdef __cplusplus
 extern "C" {
 #endif

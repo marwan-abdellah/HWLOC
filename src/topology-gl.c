@@ -99,7 +99,6 @@ hwloc_obj_t hwloc_gl_query_display(hwloc_topology_t topology, char* displayName)
             num_pci_devices = hwloc_get_nbobjs_by_type(topology, HWLOC_OBJ_PCI_DEVICE);
             if (num_pci_devices > 0)
             {
-              printf ("num_pci_devices %d \n", num_pci_devices);
               for (i = 0; i < num_pci_devices; ++i)
               {
                 display_obj = hwloc_get_obj_by_type(topology, HWLOC_OBJ_PCI_DEVICE, i);
@@ -265,7 +264,6 @@ int hwloc_gl_get_pci_cpuset(hwloc_topology_t topology, hwloc_obj_t pcidev_obj, h
       *cpuset = hwloc_bitmap_dup(host_bridge->prev_sibling->cpuset);
       return 0;
     }
-    return -1;
   }
 
   /* If not existing in the topology */
