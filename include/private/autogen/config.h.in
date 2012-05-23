@@ -143,9 +143,6 @@
 /* Define to 1 if you have the `pci' library (-lpci). */
 #undef HAVE_LIBPCI
 
-/* Define to 1 if you have the `Xext' library (-lXext). */
-#undef HAVE_LIBXEXT
-
 /* Define to 1 if you have the <locale.h> header file. */
 #undef HAVE_LOCALE_H
 

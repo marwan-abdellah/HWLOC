@@ -712,17 +712,12 @@ EOF])
           AC_MSG_WARN([X11 headers not found, GL backend disabled])
           hwloc_gl_happy=no
         ])
-       	
-		AC_CHECK_LIB(Xext, XextFindDisplay, , [
-		  AC_MSG_WARN([XextFindDisplay not found, GL backend disabled])
-		  hwloc_gl_happy=no
-		])
-	   	 	
+       	 	
         AC_CHECK_HEADERS(NVCtrl/NVCtrl.h, [
           AC_CHECK_LIB(XNVCtrl, XNVCTRLQueryTargetAttribute, [:], [
             AC_MSG_WARN([XNVCTRLQueryTargetAttribute not found, GL backend disabled])
             hwloc_gl_happy=no
-          ])
+          ], -lXext)
         ], [
           AC_MSG_WARN([NVCtrl headers not found, GL backend disabled])
           hwloc_gl_happy=no

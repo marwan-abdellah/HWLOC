@@ -1896,17 +1896,12 @@ EOF])
           AC_MSG_WARN([X11 headers not found, GL backend disabled])
           hwloc_gl_happy=no
         ])
-       	
-		AC_CHECK_LIB(Xext, XextFindDisplay, , [
-		  AC_MSG_WARN([XextFindDisplay not found, GL backend disabled])
-		  hwloc_gl_happy=no
-		])
-	   	 	
+       	 	
         AC_CHECK_HEADERS(NVCtrl/NVCtrl.h, [
           AC_CHECK_LIB(XNVCtrl, XNVCTRLQueryTargetAttribute, [:], [
             AC_MSG_WARN([XNVCTRLQueryTargetAttribute not found, GL backend disabled])
             hwloc_gl_happy=no
-          ])
+          ], -lXext)
         ], [
           AC_MSG_WARN([NVCtrl headers not found, GL backend disabled])
           hwloc_gl_happy=no
@@ -2008,10 +2003,10 @@ EOF])
     # Success
     $2
 ])
-m4trace:config/hwloc.m4:831: -1- AC_DEFUN([HWLOC_SET_SYMBOL_PREFIX], [
+m4trace:config/hwloc.m4:826: -1- AC_DEFUN([HWLOC_SET_SYMBOL_PREFIX], [
     hwloc_symbol_prefix_value=$1
 ])
-m4trace:config/hwloc.m4:839: -1- AC_DEFUN([HWLOC_DO_AM_CONDITIONALS], [
+m4trace:config/hwloc.m4:834: -1- AC_DEFUN([HWLOC_DO_AM_CONDITIONALS], [
     AS_IF([test "$hwloc_did_am_conditionals" != "yes"],[
         AM_CONDITIONAL([HWLOC_BUILD_STANDALONE], [test "$hwloc_mode" = "standalone"])
 
@@ -2066,7 +2061,7 @@ m4trace:config/hwloc.m4:839: -1- AC_DEFUN([HWLOC_DO_AM_CONDITIONALS], [
     ])
     hwloc_did_am_conditionals=yes
 ])
-m4trace:config/hwloc.m4:897: -1- AC_DEFUN([_HWLOC_CHECK_DIFF_U], [
+m4trace:config/hwloc.m4:892: -1- AC_DEFUN([_HWLOC_CHECK_DIFF_U], [
   AC_MSG_CHECKING([whether diff accepts -u])
   if diff -u /dev/null /dev/null 2> /dev/null
   then
@@ -2077,7 +2072,7 @@ m4trace:config/hwloc.m4:897: -1- AC_DEFUN([_HWLOC_CHECK_DIFF_U], [
   AC_SUBST([HWLOC_DIFF_U])
   AC_MSG_RESULT([$HWLOC_DIFF_U])
 ])
-m4trace:config/hwloc.m4:909: -1- AC_DEFUN([_HWLOC_CHECK_DIFF_W], [
+m4trace:config/hwloc.m4:904: -1- AC_DEFUN([_HWLOC_CHECK_DIFF_W], [
   AC_MSG_CHECKING([whether diff accepts -w])
   if diff -w /dev/null /dev/null 2> /dev/null
   then
@@ -2088,7 +2083,7 @@ m4trace:config/hwloc.m4:909: -1- AC_DEFUN([_HWLOC_CHECK_DIFF_W], [
   AC_SUBST([HWLOC_DIFF_W])
   AC_MSG_RESULT([$HWLOC_DIFF_W])
 ])
-m4trace:config/hwloc.m4:927: -1- AC_DEFUN([_HWLOC_CHECK_DECL], [
+m4trace:config/hwloc.m4:922: -1- AC_DEFUN([_HWLOC_CHECK_DECL], [
   AC_MSG_CHECKING([whether function $1 is declared])
   AC_REQUIRE([AC_PROG_CC])
   AC_COMPILE_IFELSE([AC_LANG_PROGRAM([AC_INCLUDES_DEFAULT([$4])],[$1(1,2,3,4,5,6,7,8,9,10);])],
@@ -2098,7 +2093,7 @@ m4trace:config/hwloc.m4:927: -1- AC_DEFUN([_HWLOC_CHECK_DECL], [
      $2]
   )
 ])
-m4trace:config/hwloc.m4:944: -1- AC_DEFUN([_HWLOC_CHECK_DECLS], [
+m4trace:config/hwloc.m4:939: -1- AC_DEFUN([_HWLOC_CHECK_DECLS], [
   HWLOC_CHECK_DECL([$1], [ac_have_decl=1], [ac_have_decl=0], [$4])
   AC_DEFINE_UNQUOTED(AS_TR_CPP([HAVE_DECL_$1]), [$ac_have_decl],
     [Define to 1 if you have the declaration of `$1', and to 0 if you don't])
@@ -5213,7 +5208,6 @@ m4trace:configure.ac:138: -1- m4_pattern_allow([^HWLOC_HAVE_LIBPCI$])
 m4trace:configure.ac:138: -1- m4_pattern_allow([^HWLOC_HAVE_LIBPCI$])
 m4trace:configure.ac:138: -1- m4_pattern_allow([^HWLOC_HAVE_LIBPCI$])
 m4trace:configure.ac:138: -1- m4_pattern_allow([^HAVE_X11_XLIB_H$])
-m4trace:configure.ac:138: -1- m4_pattern_allow([^HAVE_LIBXEXT$])
 m4trace:configure.ac:138: -1- m4_pattern_allow([^HAVE_NVCTRL_NVCTRL_H$])
 m4trace:configure.ac:138: -1- m4_pattern_allow([^HWLOC_HAVE_GL$])
 m4trace:configure.ac:138: -1- HWLOC_PKG_CHECK_MODULES([LIBXML2], [libxml-2.0], [xmlNewDoc], [hwloc_libxml2_happy=yes], [hwloc_libxml2_happy=no])
