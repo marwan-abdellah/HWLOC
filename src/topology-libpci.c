@@ -200,7 +200,7 @@ hwloc_linux_lookup_display_class(struct hwloc_topology *topology, struct hwloc_o
   int err;
 
   /* Getting the display info [:port.device]*/
-  err = hwloc_gl_get_gpu_display_private(topology, pcidev, &port, &device);
+  err = hwloc_gl_get_gpu_display_private(pcidev, &port, &device);
 
   /* If GPU, Appending the display as a children to the GPU
    * and add a display object with the display name */
