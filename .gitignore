@@ -1,4 +1,5 @@
 CMake/
+GNUmakefile
 Makefile
 Makefile.in
 aclocal.m4
