@@ -21,6 +21,9 @@ AC_CONFIG_AUX_DIR(./config)
 # -I in ACLOCAL_AMFLAGS in the top-level Makefile.am.
 AC_CONFIG_MACRO_DIR(./config)
 
+m4_pattern_allow([AM_PROG_AR])
+AM_PROG_AR
+
 cat <<EOF
 
 ###
