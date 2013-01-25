@@ -14,6 +14,9 @@
 #include <NVCtrl/NVCtrl.h>
 #include <NVCtrl/NVCtrlLib.h>
 
+#ifdef HWLOC_HAVE_GL
+static hwloc_obj_t _hwloc_gl_query_display(hwloc_topology_t, Display*, const int);
+#endif
 /*****************************************************************
  * Allocates a hwloc_obj_t of type HWLOC_OBJ_PCI_DEVICE and returns a
  * pointer to this object.
@@ -38,11 +41,26 @@ static hwloc_obj_t hwloc_gl_alloc_pcidev_object(void)
 hwloc_obj_t hwloc_gl_query_display(hwloc_topology_t topology, char* displayName)
 {
   hwloc_obj_t display_obj = NULL;
-
 #ifdef HWLOC_HAVE_GL
-  Display* display;
+  Display* display = XOpenDisplay(displayName);
+  if (!display) {
+    return display_obj;
+  }
+
+  display_obj = _hwloc_gl_query_display(topology, display, -1);
+  XCloseDisplay(display);
+#else
+  printf("GL module is not loaded \n");
+#endif
+  return display_obj;
+}
+
+hwloc_obj_t _hwloc_gl_query_display(hwloc_topology_t topology, Display* display, const int screen)
+{
+  hwloc_obj_t display_obj = NULL;
+#ifdef HWLOC_HAVE_GL
   int opcode, event, error;
-  int default_screen_number;
+  int default_screen_number = screen;
   unsigned int *ptr_binary_data;
   int data_lenght;
   int gpu_number;
@@ -55,7 +73,6 @@ hwloc_obj_t hwloc_gl_query_display(hwloc_topology_t topology, char* displayName)
 
   int i;
 
-  display = XOpenDisplay(displayName);
   if (display == 0) {
     return display_obj;
   }
@@ -64,7 +81,8 @@ hwloc_obj_t hwloc_gl_query_display(hwloc_topology_t topology, char* displayName)
   if (!XQueryExtension(display, "NV-CONTROL", &opcode, &event, &error) )
     goto error;
 
-  default_screen_number = DefaultScreen(display);
+  if( default_screen_number < 0 )
+    default_screen_number = DefaultScreen(display);
 
   /* Gets the GPU number attached to the default screen. */
   /* For further details, see the <NVCtrl/NVCtrlLib.h> */
@@ -121,13 +139,10 @@ hwloc_obj_t hwloc_gl_query_display(hwloc_topology_t topology, char* displayName)
   fprintf(stderr, "Failed to query the attached GPUs\n");
 
   success:
-  XCloseDisplay(display);
-  return display_obj;
-
 #else
   printf("GL module is not loaded \n");
-  return display_obj;
 #endif
+  return display_obj;
 }
 
 /*****************************************************************
@@ -137,26 +152,28 @@ hwloc_obj_t hwloc_gl_query_display(hwloc_topology_t topology, char* displayName)
  ****************************************************************/
 int hwloc_gl_get_gpu_display(hwloc_topology_t topology, hwloc_obj_t pcidev_obj, unsigned *port, unsigned *device)
 {
+#ifdef HWLOC_HAVE_GL
   hwloc_obj_t query_display_obj;
-
-  unsigned x_server_max;
-  unsigned x_screen_max;
-  unsigned i,j;
 
   /* Try the first 10 servers with 10 screens */
   /* For each x server, if the first x screen fails move to the next x server */
-  x_server_max = 10;
-  x_screen_max = 10;
+  unsigned x_server_max = 10;
+  unsigned x_screen_max = 10;
+  unsigned i,j;
 
   for (i = 0; i < x_server_max; ++i) {
+    char x_display [8];
+    Display* display = NULL;
+
+    snprintf(x_display,sizeof(x_display),":%d", i);
+    display = XOpenDisplay(displayName);
+    if (!display)
+      continue;
+
     for (j = 0; j < x_screen_max; ++j) {
 
-      /* Formulate the display string with the format "[:][x_server][.][x_screen]" */
-      char x_display [10];
-      snprintf(x_display,sizeof(x_display),":%d.%d", i, j);
-
       /* Retrieve an object matching the x_display */
-      query_display_obj = hwloc_gl_query_display(topology, x_display);
+      query_display_obj = _hwloc_gl_query_display(topology, display, j);
 
       if (query_display_obj == NULL)
         break;
@@ -172,7 +189,9 @@ int hwloc_gl_get_gpu_display(hwloc_topology_t topology, hwloc_obj_t pcidev_obj, 
         return 0;
       }
     }
+    XCloseDisplay( display );
   }
+#endif
   return -1;
 }
 
