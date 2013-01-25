@@ -56,4 +56,3 @@ HWLOC_DECLSPEC int hwloc_gl_get_display_cpuset(hwloc_topology_t topology, int po
 #endif
 
 #endif /* HWLOC_GL_H */
-
