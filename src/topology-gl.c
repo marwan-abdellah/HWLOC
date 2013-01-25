@@ -166,7 +166,7 @@ int hwloc_gl_get_gpu_display(hwloc_topology_t topology, hwloc_obj_t pcidev_obj, 
     Display* display = NULL;
 
     snprintf(x_display,sizeof(x_display),":%d", i);
-    display = XOpenDisplay(displayName);
+    display = XOpenDisplay(x_display);
     if (!display)
       continue;
 
